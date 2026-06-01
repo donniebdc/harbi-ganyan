@@ -1,0 +1,134 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-04&hip=ISTANBUL&kosu=4
+Tarih/Hipodrom/Kosu: 2026-02-04 / ISTANBUL / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 64/100
+Veri guveni       : 49/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • GÜMÜŞBİKE               | Orta / Konum 54/100
+Akış 2   | No 2 • DEMİR SULTAN            | Orta / Konum 54/100
+Akış 3   | No 5 • AYCASA                  | Orta / Konum 54/100
+Akış 4   | No 11 • NASİBEYN               | Orta / Konum 54/100
+Akış 5   | No 7 • FİDELNAZ                | Orta / Konum 54/100
+Akış 6   | No 13 • SABA SULTAN            | Orta / Konum 53/100
+Akış 7   | No 8 • LADY STONE              | Sprint / Konum 35/100
+Akış 8   | No 10 • MÜEZZAHATUN            | Sprint / Konum 34/100
+Akış 9   | No 9 • MATİLDA HANIM           | Sprint / Konum 34/100
+Akış 10  | No 14 • SEVTAHA                | Sprint / Konum 34/100
+Akış 11  | No 4 • ARAPSAÇI                | Sprint / Konum 34/100
+Akış 12  | No 3 • ACEM KIZIM              | Sprint / Konum 34/100
+Akış 13  | No 12 • PRENSESMELİ            | Sprint / Konum 34/100
+Akış 14  | No 6 • FIGHT FOR ME            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 14 at · ortalama 64/100
+Model Lideri  : No 8 LADY STONE (74/100)
+Akış Lideri   : No 1 GÜMÜŞBİKE (Orta · Konum 54/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Form 79/100, Pist/Mesafe 87/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 LADY STONE
+
+- Model Payı          : %8,2 [8/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [51/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 59/100 [59/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [74/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 44/100 [44/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %32,6 [33/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,35 [91/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 14 14 16 [35/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 16 · HP 33 [41/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 5 [26/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : VEDAT ABİŞ [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [42/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 24/100 [24/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 64/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   LADY STONE               VEDAT ABİŞ           Sprint       74    24 Temkinli • 24  Hız 100/100, Form 79/100, Pist/Mesafe 87/100 | Form: 2-3-8-10-6-3-6-14-14-16
+2    1   GÜMÜŞBİKE                ALİ YILDIZ           Orta         73    51 Orta • 51     Hız 87/100, Pist/Mesafe 85/100, Uzlaşma 85/100 | Form: 2-2-6-2-1-5-7-14-4-11
+3    2   DEMİR SULTAN             NEVZAT AVCİ          Orta         72    71 Orta • 71     Hız 73/100, Pist/Mesafe 87/100, Jokey 78/100 | Form: 5-7-2-5-3-1-8-9-6-6
+4    5   AYCASA                   AKIN SÖZEN           Orta         69    71 Orta • 71     Hız 81/100, Pist/Mesafe 83/100, Uzlaşma 77/100 | Form: 6-7-5-6-7-1-14-2-7
+5    11  NASİBEYN                 AYHAN KURŞUN         Orta         68    71 Orta • 71     Hız 80/100, Pist/Mesafe 83/100, Jokey 78/100 | Form: 6-3-6-5-6-4-3-7-4-13
+6    10  MÜEZZAHATUN              BURAK AKÇAY          Sprint       66    85 Orta • 85     Pist/Mesafe 83/100, Veri 85/100 | Form: 9-8-12-5-3-10-2-5-11-9
+7    7   FİDELNAZ                 ONUR ATMACA          Orta         62    67 Temkinli • 67  Pist/Mesafe 82/100, KGS 78/100, Risk 78/100 | Form: 4-6-6-5-7-6-6-2-4-13
+8    9   MATİLDA HANIM            ENES BOZDAĞ          Sprint       62    43 Temkinli • 43  Hız 85/100, Pist/Mesafe 79/100 | Form: 8-5-7-11-13-1-11-11-7-13
+9    13  SABA SULTAN              MURAT KEÇECİ         Orta         61    43 Temkinli • 43  Hız 97/100, Stil 76/100, Uzlaşma 73/100 | Form: 2-11-5-12-4-5-5-13-8-6
+10   14  SEVTAHA                  AHMET EFEKAN ELMAS   Sprint       61    43 Temkinli • 43  Hız 76/100, Pist/Mesafe 81/100, KGS 73/100 | Form: 9-6-7-10-11-1-16-13-10-19
+11   4   ARAPSAÇI                 MEHMET KAYA          Sprint       61    24 Temkinli • 24  Hız 92/100, Pist/Mesafe 80/100, Uzlaşma 73/100 | Form: 8-8-10-12-6
+12   3   ACEM KIZIM               ZÜLFÜKAR AYDOĞDİ     Sprint       60    29 Temkinli • 29  Hız 98/100, KGS 75/100, Risk 75/100 | Form: 8-4-4-8-2-7-8-13-10-15
+13   12  PRENSESMELİ              EFE KORKMAZ          Sprint       59    61 Temkinli • 61  Pist/Mesafe 76/100, Kilo 100/100 | Form: 5-9-8-6-8-9-15
+14   6   FIGHT FOR ME             ZÜLFÜKAR KARABULUT   Sprint       52     9 Temkinli • 9  Uzlaşma 87/100, Kilo 92/100 | Form: 14-7-10-10-3-3-12
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 LADY STONE
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 1P / 2 • Galop: 74/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+
+No 1 GÜMÜŞBİKE
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 1G - 3P / 5 • Galop: 28/100
+  - Hız           87 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+
+No 2 DEMİR SULTAN
+  Ozet: Pist/Mesafe: 1G - 2P / 6 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Hız           73 | Ana · Derece ve son metreler
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+
+No 5 AYCASA
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 3 • Galop: 28/100
+  - Hız           81 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          51 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-24&hip=ADANA&kosu=8
+Tarih/Hipodrom/Kosu: 2026-03-24 / ADANA / 8
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 71/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • GÜZELNİSA               | Orta / Konum 54/100
+Akış 2   | No 1 • YILMAKIZIM              | Orta / Konum 54/100
+Akış 3   | No 5 • AKAR EDA                | Orta / Konum 53/100
+Akış 4   | No 9 • GÜLFİLİZ                | Sprint / Konum 35/100
+Akış 5   | No 8 • GÜZELMİNE               | Sprint / Konum 35/100
+Akış 6   | No 7 • ARKEN TAŞI              | Sprint / Konum 35/100
+Akış 7   | No 10 • ÜSTÜNKIZ               | Sprint / Konum 35/100
+Akış 8   | No 2 • KARANURA                | Sprint / Konum 35/100
+Akış 9   | No 6 • AYSARISI                | Sprint / Konum 34/100
+Akış 10  | No 3 • ZULEMA                  | Sprint / Konum 34/100
+Akış 11  | No 11 • PRINCESS GIRL          | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 67/100
+Model Lideri  : No 9 GÜLFİLİZ (77/100)
+Akış Lideri   : No 4 GÜZELNİSA (Orta · Konum 54/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Hız 92/100, Uzlaşma 89/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 GÜLFİLİZ
+
+- Model Payı          : %10,4 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [74/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Riskli profil · 56/100 [56/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [55/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 44/100 [44/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %13,0 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,30 [83/100]
+  Detay: Ganyan beklentisi
+- Form                : 20 14 4 4 [38/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 30 · HP 44 [65/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 2P / 7 [34/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : NİZAMETTİN DEMİR [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [52/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 58/100 [58/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   GÜLFİLİZ                 NİZAMETTİN DEMİR     Sprint       77    58 Orta • 58     Pist/Mesafe 93/100, Hız 92/100, Uzlaşma 89/100 | Form: 9-5-1-2-5-10-20-14-4-4
+2    4   GÜZELNİSA                MEHMET ALİ AKGÖBEK   Orta         73    48 Orta • 48     Hız 100/100, Pist/Mesafe 79/100, Uzlaşma 81/100 | Form: 9-1-5-6-7-7-7-15-4-7
+3    5   AKAR EDA                 ERAY ÇİZİK           Orta         70    81 Orta • 81     Pist/Mesafe 86/100, Uzlaşma 76/100, Veri 81/100 | Form: 4-4-7-3-10-6-10-6-21-7
+4    8   GÜZELMİNE                HIŞMAN ÇİZİK         Sprint       70    77 Orta • 77     Pist/Mesafe 90/100, Uzlaşma 77/100, Hava/Zemin 80/100 | Form: 2-3-5-5-9-2-1-3-9-9
+5    1   YILMAKIZIM               ERTUĞRUL CANKILIÇ    Orta         69    81 Orta • 81     Pist/Mesafe 80/100, Uzlaşma 76/100, Hava/Zemin 73/100 | Form: 6-7-3-8-7-2-5-16-4-6
+6    7   ARKEN TAŞI               VEDAT ABİŞ           Sprint       69    71 Orta • 71     Pist/Mesafe 78/100, Hız 82/100, KGS 74/100 | Form: 3-7-8-13-4-15-4-8-5-6
+7    6   AYSARISI                 SALİH ÇELİK          Sprint       64    77 Orta • 77     Pist/Mesafe 82/100, Hava/Zemin 75/100, Veri 77/100 | Form: 4-2-2-5-8-7-3-7-8-9
+8    3   ZULEMA                   ENES ATLAMAZ         Sprint       63    83 Orta • 83     Pist/Mesafe 87/100, Uzlaşma 73/100, Veri 83/100 | Form: 9-5-9-4-4-9-7-7-12-10
+9    10  ÜSTÜNKIZ                 ERKAN TUNÇ           Sprint       63    72 Temkinli • 72  KGS 86/100, Risk 86/100, Veri 72/100 | Form: 9-7-9-9-7-9-3-11-7-11
+10   11  PRINCESS GIRL            MURAT AKDAĞ          Sprint       61    77 Orta • 77     Pist/Mesafe 81/100, Veri 77/100, Kilo 100/100 | Form: 1-7-6-5-9-5-5-18-9-9
+11   2   KARANURA                 MEHMET KIYAK         Sprint       60    57 Temkinli • 57  Hız 88/100 | Form: 4-7-13-11-14-13-10-7-3-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 GÜLFİLİZ
+  Ozet: Pist/Mesafe: 1G - 2P / 7 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           92 | Ana · Derece ve son metreler
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 GÜZELNİSA
+  Ozet: Pist/Mesafe: 1G - 1P / 5 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 AKAR EDA
+  Ozet: Pist/Mesafe: 0G - 1P / 7 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           62 | Ana · Derece ve son metreler
+
+No 8 GÜZELMİNE
+  Ozet: Pist/Mesafe: 1G - 5P / 9 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           56 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

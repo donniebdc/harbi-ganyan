@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-03&hip=ADANA&kosu=4
+Tarih/Hipodrom/Kosu: 2026-02-03 / ADANA / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 50/100
+Veri guveni       : 9/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • DREAMLAND               | Seri / Konum 90/100
+Akış 2   | No 4 • TESCİL                  | Seri / Konum 89/100
+Akış 3   | No 1 • ABİDİN BEY              | Ön grup / Konum 73/100
+Akış 4   | No 6 • AĞACI ÇİÇEĞİ            | Orta / Konum 53/100
+Akış 5   | No 9 • TAHİRİN KIZI            | Orta / Konum 53/100
+Akış 6   | No 2 • BOMBAZO                 | Orta / Konum 53/100
+Akış 7   | No 5 • TOMANBAY                | Orta / Konum 53/100
+Akış 8   | No 7 • AZIGOS                  | Sprint / Konum 34/100
+Akış 9   | No 8 • HUNTRIX                 | Sprint / Konum 33/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 50/100
+Model Lideri  : No 7 AZIGOS (55/100)
+Akış Lideri   : No 3 DREAMLAND (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Uzlaşma 93/100, Kilo 100/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 AZIGOS
+
+- Model Payı          : %12,3 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [37/100]
+  Detay: Veri + skor farkı
+- AI Model            : 55/100 [55/100]
+  Detay: Uzlaşma 93/100
+- Son 6 Uyarlama      : Riskli profil · 49/100 [49/100]
+  Detay: 4/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [58/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 25/100 [25/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %1,6 [2/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 31,75 [0/100]
+  Detay: Ganyan beklentisi
+- Form                : 9 11 11 13 [13/100]
+  Detay: Son koşular
+- Hazırlık            : KGS - · HP - [0/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 3 [8/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 3 [8/100]
+  Detay: Birlikte performans
+- Jokey               : ENES ATLAMAZ [8/100]
+  Detay: Bugünkü biniş
+- Tempo               : Geriden gelebilir [7/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 9/100 [9/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 50/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   AZIGOS                   ENES ATLAMAZ         Sprint       55     9 Temkinli • 9  Uzlaşma 93/100, Kilo 100/100 | Form: 9-11-11-13
+2    8   HUNTRIX                  ERCAN ÇANKAYA        Sprint       55     9 Temkinli • 9  Uzlaşma 86/100, Kilo 100/100 | Form: 8-13
+3    6   AĞACI ÇİÇEĞİ             ERTUĞRUL CANKILIÇ    Orta         53     9 Temkinli • 9  Uzlaşma 100/100, Kilo 100/100 | Form: 7
+4    9   TAHİRİN KIZI             MEHMET AKYAVUZ       Orta         53     9 Temkinli • 9  Uzlaşma 79/100, Kilo 100/100 | Form: 5-6-10-6-9
+5    1   ABİDİN BEY               SALİH ÇELİK          Ön grup      49     9 Temkinli • 9  Uzlaşma 73/100 | Form: 3-6-3-2-2-5-4
+6    2   BOMBAZO                  MEHMET SALİH ÇELİK   Orta         47     9 Temkinli • 9  Veri sinyali temkinli | Form: 4-6-14
+7    3   DREAMLAND                VEDAT ABİŞ           Seri         47     9 Temkinli • 9  Piyasa 93/100 | Form: 1
+8    4   TESCİL                   AHMET ÇELİK          Seri         45     9 Temkinli • 9  Piyasa 81/100 | Form: 2-2-2-1-13-2
+9    5   TOMANBAY                 ERAY ÇİZİK           Orta         42     9 Temkinli • 9  Veri sinyali temkinli | Form: 6-11
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 AZIGOS
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 3 • Galop: 28/100
+  - Uzlaşma       93 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Veri           9 | Güven · Sinyal doluluğu
+
+No 8 HUNTRIX
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 1 • Galop: 0/100
+  - Uzlaşma       86 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Piyasa        70 | Destek · AGF ve ganyan ilgisi
+
+No 6 AĞACI ÇİÇEĞİ
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Uzlaşma      100 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Veri           9 | Güven · Sinyal doluluğu
+
+No 9 TAHİRİN KIZI
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Uzlaşma       79 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Piyasa        41 | Destek · AGF ve ganyan ilgisi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

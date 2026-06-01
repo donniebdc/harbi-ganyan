@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-11&hip=ISTANBUL&kosu=6
+Tarih/Hipodrom/Kosu: 2026-03-11 / ISTANBUL / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 71/100
+Veri guveni       : 72/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • ERSANŞAH                | Seri / Konum 90/100
+Akış 2   | No 2 • AŞKARTAY                | Ön grup / Konum 74/100
+Akış 3   | No 1 • AFŞAR                   | Ön grup / Konum 74/100
+Akış 4   | No 4 • MEGA STAR               | Ön grup / Konum 73/100
+Akış 5   | No 6 • TURNADAĞ                | Ön grup / Konum 73/100
+Akış 6   | No 3 • HÜKÜM                   | Orta / Konum 54/100
+Akış 7   | No 8 • BALKI TAY               | Orta / Konum 54/100
+Akış 8   | No 7 • BARAN REİS              | Sprint / Konum 35/100
+Akış 9   | No 10 • KARAKURT BEYİ          | Sprint / Konum 35/100
+Akış 10  | No 11 • YAĞIZHANBEY            | Sprint / Konum 35/100
+Akış 11  | No 9 • MENGİSOY                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 71/100
+Model Lideri  : No 5 ERSANŞAH (79/100)
+Akış Lideri   : No 5 ERSANŞAH (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 87/100, Hız 84/100, Uzlaşma 87/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 ERSANŞAH
+
+- Model Payı          : %10,2 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [77/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Pist/Mesafe 87/100
+- Son 6 Uyarlama      : Güçlü rakip · 70/100 [70/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Hazır [83/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [81/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 67/100 [67/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %36,1 [36/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,00 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 2 5 7 [77/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 98 [86/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 3P / 3 [57/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 1 [37/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ MEHDİ ALTIN [37/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [81/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 71/100 [71/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 71/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   ERSANŞAH                 ALİ MEHDİ ALTIN      Seri         79    71 Yüksek • 71   Pist/Mesafe 87/100, Hız 84/100, Uzlaşma 87/100 | Form: 1-4-7-7-2-2-2-2-5-7
+2    2   AŞKARTAY                 YASİN ŞEREF GÜMÜŞ    Ön grup      77    72 Yüksek • 72   Pist/Mesafe 93/100, Form 73/100, Hız 77/100 | Form: 1-1-6-3-4-1-4-3-9-9
+3    4   MEGA STAR                ERTUĞRUL CANKILIÇ    Ön grup      75    81 Orta • 81     Pist/Mesafe 82/100, Uzlaşma 81/100, Hava/Zemin 83/100 | Form: 3-2-6-3-4-5-2-9-7-4
+4    3   HÜKÜM                    ZÜLFÜKAR KARABULUT   Orta         74    57 Orta • 57     Hız 100/100, Pist/Mesafe 81/100, Uzlaşma 76/100 | Form: 2-5-5-4-6-5-2-7-3-6
+5    1   AFŞAR                    MURAT KEÇECİ         Ön grup      71    81 Orta • 81     Pist/Mesafe 93/100, Hava/Zemin 77/100, Veri 81/100 | Form: 5-4-6-7-4-3-4-2-1-3
+6    8   BALKI TAY                YİĞİTCAN GÖKÇE       Orta         69    95 Orta • 95     Pist/Mesafe 89/100, Veri 95/100, Kilo 100/100 | Form: 7-7-3-7-4-4-5-6-4-7
+7    9   MENGİSOY                 MUSTAFA MANAV        Sprint       68    77 Orta • 77     Pist/Mesafe 85/100, Stil 76/100, Hava/Zemin 87/100 | Form: 1-1-10-5-3-1-12-16-11-13
+8    7   BARAN REİS               UĞUR LEVENT          Sprint       68    57 Temkinli • 57  Hız 87/100, Pist/Mesafe 76/100, Uzlaşma 74/100 | Form: 5-6-8-9-8-10-6-4-7-10
+9    6   TURNADAĞ                 KÜRŞAT YILMAZ        Ön grup      66    77 Orta • 77     Veri 77/100, KGS 75/100, Risk 75/100 | Form: 3-5-4-4-5-4-7-10-5-3
+10   10  KARAKURT BEYİ            BERKANT GÖKÇE        Sprint       65    71 Temkinli • 71  Pist/Mesafe 89/100, Hız 78/100, Kilo 89/100 | Form: 10-4-4-2-6-7-12-1-4-8
+11   11  YAĞIZHANBEY              EFE ŞIKLI            Sprint       64    53 Temkinli • 53  Hız 95/100, Kilo 78/100 | Form: 5-17-12-8-6-5-1-15-9-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 ERSANŞAH
+  Ozet: Pist/Mesafe: 1G - 3P / 3 • Jokey: 0G - 1P / 1 • Galop: 83/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 AŞKARTAY
+  Ozet: Pist/Mesafe: 3G - 4P / 9 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           77 | Ana · Derece ve son metreler
+
+No 4 MEGA STAR
+  Ozet: Pist/Mesafe: 0G - 3P / 4 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           62 | Ana · Derece ve son metreler
+
+No 3 HÜKÜM
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 1 • Galop: 36/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

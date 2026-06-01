@@ -1,0 +1,136 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-19&hip=ANTALYA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-02-19 / ANTALYA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 60/100
+Veri guveni       : 42/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • BLACKFYRE               | Seri / Konum 90/100
+Akış 2   | No 11 • ŞEKER ASLAN            | Seri / Konum 90/100
+Akış 3   | No 13 • THE REAL ONE           | Seri / Konum 90/100
+Akış 4   | No 12 • TAKEOVER               | Seri / Konum 89/100
+Akış 5   | No 10 • SKY CRUISE             | Ön grup / Konum 73/100
+Akış 6   | No 8 • KALORİMATİK             | Orta / Konum 54/100
+Akış 7   | No 1 • CASH FOR YOU            | Orta / Konum 54/100
+Akış 8   | No 14 • BUMMER QUEEN           | Orta / Konum 54/100
+Akış 9   | No 9 • MONETA FLY              | Orta / Konum 54/100
+Akış 10  | No 7 • GODDİK                  | Sprint / Konum 34/100
+Akış 11  | No 2 • ART DIRECTOR            | Sprint / Konum 34/100
+Akış 12  | No 3 • ASLANHAN                | Sprint / Konum 34/100
+Akış 13  | No 6 • EGEM                    | Sprint / Konum 34/100
+Akış 14  | No 15 • VAR BİR HAYALİMİZ      | Sprint / Konum 34/100
+Akış 15  | No 4 • BARAKHAN                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 15 at · ortalama 60/100
+Model Lideri  : No 8 KALORİMATİK (77/100)
+Akış Lideri   : No 5 BLACKFYRE (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 95/100, Pist/Mesafe 80/100, Jokey 88/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 KALORİMATİK
+
+- Model Payı          : %8,6 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [64/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Hız 95/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 62/100 [62/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [69/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 42/100 [42/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %11,0 [11/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,75 [77/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 5 3 5 [70/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 23 · HP 31 [48/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 3 [30/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : SERHAT ÇELİK [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [62/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 42/100 [42/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 60/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   KALORİMATİK              SERHAT ÇELİK         Orta         77    42 Temkinli • 42  Hız 95/100, Pist/Mesafe 80/100, Jokey 88/100 | Form: 8-2-11-5-5-3-3-5-3-5
+2    1   CASH FOR YOU             GÖRKEM ÖZÇELİK       Orta         74    52 Orta • 52     Hız 79/100, Pist/Mesafe 82/100, Jokey 88/100 | Form: 4-2-5-9-2-1-6-8-6-8
+3    5   BLACKFYRE                MEHMET ALİ AKGÖBEK   Seri         68    48 Orta • 48     Hız 100/100, Pist/Mesafe 75/100, Form 72/100 | Form: 3-2-4-10-1-3-4-2-1
+4    14  BUMMER QUEEN             MEHMET KIYAK         Orta         66    67 Orta • 67     Hız 80/100, Pist/Mesafe 80/100, Kilo 100/100 | Form: 10-7-5-3-5-6-5-8
+5    7   GODDİK                   SİNAN ÖZEN           Sprint       65    62 Orta • 62     Hız 75/100, Pist/Mesafe 74/100, Uzlaşma 73/100 | Form: 7-4-8-10-14
+6    11  ŞEKER ASLAN              AYHAN KURŞUN         Seri         62    42 Temkinli • 42  Hız 89/100, Stil 76/100, Uzlaşma 74/100 | Form: 5-2-10-3-2-1-4
+7    9   MONETA FLY               FERHAT YÜCEL         Orta         61    33 Temkinli • 33  Hız 85/100, Kilo 86/100 | Form: 5-5-6-4-4-6-3-5-11-12
+8    2   ART DIRECTOR             MUSTAFA TEKPETEK     Sprint       60    62 Temkinli • 62  KGS 81/100, Risk 81/100, Kilo 86/100 | Form: 8-11-10-6-8-8-9-9-11
+9    3   ASLANHAN                 ENES ATLAMAZ         Sprint       59    56 Temkinli • 56  Kilo 86/100 | Form: 7-9-10-6-13
+10   6   EGEM                     SERCAN TIRPAN        Sprint       58    52 Temkinli • 52  Veri sinyali temkinli | Form: 7-8-9-6-15-7-4-8-5-9
+11   15  VAR BİR HAYALİMİZ        MEHMET TİBET MURTOĞLU Sprint       54    24 Temkinli • 24  Hız 91/100, Kilo 100/100 | Form: 8-12-10-14-7
+12   4   BARAKHAN                 UĞUR TEMUR           Sprint       50    57 Temkinli • 57  Veri sinyali temkinli | Form: 9-8-12-10-11-7-10-9-6-5
+13   10  SKY CRUISE               MAHMUT TURAN         Ön grup      50    14 Temkinli • 14  Veri sinyali temkinli | Form: 7-1-9-4-2-3-13-4-7-14
+14   12  TAKEOVER                 MÜSLÜM ÇELİK         Seri         47     9 Temkinli • 9  Veri sinyali temkinli | Form: 4-1-1-10-7
+15   13  THE REAL ONE             MEHMET SALİH ÇELİK   Seri         46     9 Temkinli • 9  Piyasa 76/100 | Form: 1-1-1-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 KALORİMATİK
+  Ozet: Pist/Mesafe: 0G - 2P / 3 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Hız           95 | Ana · Derece ve son metreler
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+No 1 CASH FOR YOU
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 2 • Galop: 53/100
+  - Hız           79 | Ana · Derece ve son metreler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+No 5 BLACKFYRE
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   75 | Ana · Pist/mesafe geçmişi
+  - Form          72 | Ana · Yarış geçmişi ve sonuç formu
+
+No 14 BUMMER QUEEN
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız           80 | Ana · Derece ve son metreler
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          54 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

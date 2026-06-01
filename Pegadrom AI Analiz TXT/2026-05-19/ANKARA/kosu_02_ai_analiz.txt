@@ -1,0 +1,118 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-19&hip=ANKARA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-05-19 / ANKARA / 2
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 5
+Ortalama AI puani : 51/100
+Veri guveni       : 9/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : Ankara • 2. Koşu • 14:30 • 1100m • Kum 19.05.2026 Salı
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • FATHERSD                | Seri / Konum 89/100
+Akış 2   | No 5 • SOLO IL GALA            | Seri / Konum 89/100
+Akış 3   | No 6 • DİREN KAPORTACI         | Ön grup / Konum 73/100
+Akış 4   | No 8 • ROLLER DEĞİŞTİ          | Ön grup / Konum 73/100
+Akış 5   | No 1 • DRAGON BLAZE            | Orta / Konum 53/100
+
+3) KARAR OZETI
+--------------
+Genel: 5 at · ortalama 51/100
+Model Lideri  : No 6 DİREN KAPORTACI (58/100)
+Akış Lideri   : No 2 FATHERSD (Seri · Konum 89/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Uzlaşma 100/100, Kilo 100/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar, Galop sinyali yok.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 6 DİREN KAPORTACI
+
+- Model Payı          : %22,9 [23/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [43/100]
+  Detay: Veri + skor farkı
+- AI Model            : 58/100 [58/100]
+  Detay: Uzlaşma 100/100
+- Son 6 Uyarlama      : Riskli profil · 56/100 [56/100]
+  Detay: 1/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Veri bekleniyor [0/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 25/100 [25/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %13,0 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,25 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 [70/100]
+  Detay: Son koşular
+- Hazırlık            : KGS - · HP - [0/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 1 [3/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : MÜSLÜM ÇELİK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [45/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 9/100 [9/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 51/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    6   DİREN KAPORTACI          MÜSLÜM ÇELİK         Ön grup      58     9 Temkinli • 9  Uzlaşma 100/100, Kilo 100/100 | Form: 4
+2    8   ROLLER DEĞİŞTİ           SALİH ÇELİK          Ön grup      55     9 Temkinli • 9  Uzlaşma 86/100, Kilo 100/100 | Form: 3
+3    1   DRAGON BLAZE             AYHAN KURŞUN         Orta         50     9 Temkinli • 9  Uzlaşma 73/100, Piyasa 98/100 | Form: 5
+4    2   FATHERSD                 VEDAT ABİŞ           Seri         47     9 Temkinli • 9  Piyasa 100/100 | Form: 2-1
+5    5   SOLO IL GALA             MEHMET SALİH ÇELİK   Seri         43     9 Temkinli • 9  Piyasa 81/100 | Form: 1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 6 DİREN KAPORTACI
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 0/100
+  - Uzlaşma      100 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Piyasa        69 | Destek · AGF ve ganyan ilgisi
+
+No 8 ROLLER DEĞİŞTİ
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 0G - 1P / 1 • Galop: 0/100
+  - Uzlaşma       86 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+  - Piyasa        60 | Destek · AGF ve ganyan ilgisi
+
+No 1 DRAGON BLAZE
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 0/100
+  - Uzlaşma       73 | Ana · Model içi sinyal uyumu
+  - Piyasa        98 | Destek · AGF ve ganyan ilgisi
+  - Kilo          45 | İnce · Kilo bilgisi
+
+No 2 FATHERSD
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 0G - 1P / 1 • Galop: 0/100
+  - Uzlaşma       59 | Ana · Model içi sinyal uyumu
+  - Piyasa       100 | Destek · AGF ve ganyan ilgisi
+  - Kilo          45 | İnce · Kilo bilgisi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

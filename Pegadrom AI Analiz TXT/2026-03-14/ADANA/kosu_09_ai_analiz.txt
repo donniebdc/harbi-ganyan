@@ -1,0 +1,134 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-14&hip=ADANA&kosu=9
+Tarih/Hipodrom/Kosu: 2026-03-14 / ADANA / 9
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 69/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • DEMİR HAZALIM           | Seri / Konum 90/100
+Akış 2   | No 10 • ASLAN YAĞIZ            | Ön grup / Konum 74/100
+Akış 3   | No 5 • ÖZERDEM                 | Ön grup / Konum 73/100
+Akış 4   | No 8 • KASAP ENDER             | Ön grup / Konum 73/100
+Akış 5   | No 14 • TAŞUCU                 | Orta / Konum 54/100
+Akış 6   | No 11 • ASAF BABA              | Orta / Konum 54/100
+Akış 7   | No 4 • BABADENİZ               | Sprint / Konum 35/100
+Akış 8   | No 3 • MOTOR                   | Sprint / Konum 34/100
+Akış 9   | No 1 • ATEŞ AYAZ               | Sprint / Konum 34/100
+Akış 10  | No 6 • FERMANDER               | Sprint / Konum 34/100
+Akış 11  | No 7 • FIRAT BABA              | Sprint / Konum 34/100
+Akış 12  | No 12 • BAŞARAN TAY            | Sprint / Konum 34/100
+Akış 13  | No 9 • SİYAH PENÇE             | Sprint / Konum 34/100
+Akış 14  | No 13 • AZERBAYCANLI           | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 14 at · ortalama 67/100
+Model Lideri  : No 2 DEMİR HAZALIM (75/100)
+Akış Lideri   : No 2 DEMİR HAZALIM (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 82/100, Uzlaşma 86/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 DEMİR HAZALIM
+
+- Model Payı          : %8,1 [8/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [72/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 60/100 [60/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe riski var, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [47/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 41/100 [41/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %11,0 [11/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,95 [76/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 1 7 [68/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 6 · HP 89 [71/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 3 [19/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : İSMAİL YILDIRIM [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [70/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 72/100 [72/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   DEMİR HAZALIM            İSMAİL YILDIRIM      Seri         75    72 Orta • 72     Hız 100/100, Pist/Mesafe 82/100, Uzlaşma 86/100 | Form: 3-2-3-4-5-10-1-1-1-7
+2    10  ASLAN YAĞIZ              NİZAMETTİN DEMİR     Ön grup      75    70 Orta • 70     Hız 84/100, Pist/Mesafe 75/100, Jokey 78/100 | Form: 6-1-5-6-1-1-4-3-4-10
+3    3   MOTOR                    MEHMET KIYAK         Sprint       69    77 Orta • 77     Pist/Mesafe 85/100, Hız 80/100, Uzlaşma 81/100 | Form: 1-5-2-3-9-9-12-8-1-7
+4    4   BABADENİZ                MEHMET ALİ AKGÖBEK   Sprint       69    61 Orta • 61     Hız 95/100, Uzlaşma 75/100, Hava/Zemin 75/100 | Form: 3-7-16-13-11-1-9-7-4-5
+5    14  TAŞUCU                   MERT ALİ SOLMAZ      Orta         69    57 Temkinli • 57  Hız 89/100, Uzlaşma 73/100, KGS 82/100 | Form: 3-3-5-7-10-4-4-6-7-2
+6    5   ÖZERDEM                  MEHMET AKYAVUZ       Ön grup      68    67 Temkinli • 67  Pist/Mesafe 77/100, Hız 78/100, Hava/Zemin 75/100 | Form: 3-5-7-6-10-3-5-1-3-3
+7    11  ASAF BABA                MEHMET NURİ SUNKAR   Orta         68    57 Temkinli • 57  Hız 92/100, Uzlaşma 73/100, KGS 73/100 | Form: 1-4-9-8-7-2-10-6-6-2
+8    8   KASAP ENDER              FATİH SULTAN MEHMET SANSAR Ön grup      67    85 Orta • 85     Pist/Mesafe 79/100, Hız 82/100, Uzlaşma 73/100 | Form: 5-3-4-8-4-4-8-3-6-5
+9    1   ATEŞ AYAZ                FURKAN ÇETİN         Sprint       67    77 Temkinli • 77  Pist/Mesafe 81/100, Uzlaşma 77/100, Hava/Zemin 80/100 | Form: 4-2-2-6-1-7-10-7-10-11
+10   6   FERMANDER                MÜSLÜM ÇELİK         Sprint       65    62 Temkinli • 62  Hız 94/100 | Form: 7-6-6-2-6-6-9-8-10-2
+11   7   FIRAT BABA               VELAT DEMİR          Sprint       62    81 Orta • 81     Pist/Mesafe 72/100, Hava/Zemin 83/100, Veri 81/100 | Form: 2-3-8-9-8-8-10-7-5-14
+12   12  BAŞARAN TAY              MEHMET SALİH ÇELİK   Sprint       62    67 Temkinli • 67  KGS 78/100, Risk 78/100, Kilo 82/100 | Form: 6-9-6-3-1-8-8-8-9-9
+13   9   SİYAH PENÇE              FESİH ÇETİNBAŞ       Sprint       60    62 Temkinli • 62  Pist/Mesafe 74/100 | Form: 1-6-1-9-10-14-5-7-7-11
+14   13  AZERBAYCANLI             ENES ATLAMAZ         Sprint       55    76 Orta • 76     Veri 76/100, Kilo 90/100 | Form: 4-11-8-8-3-9-9-9-12-14
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 DEMİR HAZALIM
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 0P / 1 • Galop: 47/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+
+No 10 ASLAN YAĞIZ
+  Ozet: Pist/Mesafe: 1G - 1P / 2 • Jokey: 3G - 3P / 6 • Galop: 28/100
+  - Hız           84 | Ana · Derece ve son metreler
+  - Pist/Mesafe   75 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 MOTOR
+  Ozet: Pist/Mesafe: 1G - 3P / 6 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           80 | Ana · Derece ve son metreler
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 BABADENİZ
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 1G - 2P / 8 • Galop: 28/100
+  - Hız           95 | Ana · Derece ve son metreler
+  - Pist/Mesafe   66 | Ana · Pist/mesafe geçmişi
+  - Form          55 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

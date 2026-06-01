@@ -1,0 +1,120 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-23&hip=BURSA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-02-23 / BURSA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 73/100
+Veri guveni       : 66/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • YILMA TAY               | Seri / Konum 90/100
+Akış 2   | No 2 • GÖREME BEYİ             | Seri / Konum 90/100
+Akış 3   | No 7 • TANTARIK                | Seri / Konum 90/100
+Akış 4   | No 4 • FERMAN YAZAR            | Orta / Konum 54/100
+Akış 5   | No 3 • TEKÖMER                 | Sprint / Konum 35/100
+Akış 6   | No 5 • GÜÇBATUR                | Sprint / Konum 35/100
+Akış 7   | No 6 • HEP BİRLİKTE            | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 7 at · ortalama 73/100
+Model Lideri  : No 1 YILMA TAY (82/100)
+Akış Lideri   : No 1 YILMA TAY (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 94/100, Form 87/100, Jokey 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 YILMA TAY
+
+- Model Payı          : %16,1 [16/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [77/100]
+  Detay: Veri + skor farkı
+- AI Model            : 82/100 [82/100]
+  Detay: Pist/Mesafe 94/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 69/100 [69/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 67/100 [67/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %21,8 [22/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,15 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 4 1 5 [82/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 8 · HP 63 [54/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 5G - 7P / 8 [79/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 3G - 4P / 5 [67/100]
+  Detay: Birlikte performans
+- Jokey               : NEVZAT AVCİ [67/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [72/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 71/100 [71/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 73/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   YILMA TAY                NEVZAT AVCİ          Seri         82    71 Yüksek • 71   Pist/Mesafe 94/100, Form 87/100, Jokey 100/100 | Form: 2-1-1-1-3-3-1-4-1-5
+2    2   GÖREME BEYİ              MUSTAFA ÇİÇEK        Seri         80    71 Yüksek • 71   Form 80/100, Hız 89/100, Pist/Mesafe 84/100 | Form: 2-2-3-2-5-6-2-3-2-4
+3    3   TEKÖMER                  VEDAT ABİŞ           Sprint       73    72 Orta • 72     Form 79/100, Pist/Mesafe 83/100, Stil 76/100 | Form: 2-5-3-1-1-6-9-8-17-14
+4    5   GÜÇBATUR                 ONUR YILDIZ          Sprint       73    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 90/100, Stil 76/100 | Form: 6-1-7-2-5-11-8-6-15-9
+5    7   TANTARIK                 MUHAMMED MİR BİLGİN  Seri         71    77 Orta • 77     Pist/Mesafe 84/100, Form 72/100, Stil 76/100 | Form: 7-5-1-2-2-1-6-1-6-3
+6    4   FERMAN YAZAR             MURAT KEÇECİ         Orta         68    61 Orta • 61     Pist/Mesafe 81/100, Hız 79/100, Kilo 100/100 | Form: 7-3-6-4-3-1-2-5-5-5
+7    6   HEP BİRLİKTE             MAHSUN TURAN         Sprint       61    64 Orta • 64     Pist/Mesafe 73/100, KGS 78/100, Risk 78/100 | Form: 10-11-7-8-7-16-2-11-10-6
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 YILMA TAY
+  Ozet: Pist/Mesafe: 5G - 7P / 8 • Jokey: 3G - 4P / 5 • Galop: 52/100
+  - Pist/Mesafe   94 | Ana · Pist/mesafe geçmişi
+  - Form          87 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           71 | Ana · Derece ve son metreler
+
+No 2 GÖREME BEYİ
+  Ozet: Pist/Mesafe: 0G - 2P / 3 • Jokey: 0G - 1P / 2 • Galop: 66/100
+  - Form          80 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           89 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+
+No 3 TEKÖMER
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 1 • Galop: 52/100
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Hız           69 | Ana · Derece ve son metreler
+
+No 5 GÜÇBATUR
+  Ozet: Pist/Mesafe: 0G - 0P / 4 • Jokey: 0G - 0P / 2 • Galop: 52/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

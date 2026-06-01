@@ -1,0 +1,116 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-04-27&hip=BURSA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-04-27 / BURSA / 2
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 4
+Ortalama AI puani : 73/100
+Veri guveni       : 85/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : Bursa • 2. Koşu • 14:30 • 1800m • Kum 27.04.2026 Pazartesi
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • KARA BERELİ             | Seri / Konum 90/100
+Akış 2   | No 3 • BEYLERİNBEYİ            | Seri / Konum 90/100
+Akış 3   | No 4 • ROCK FOR EVER           | Seri / Konum 90/100
+Akış 4   | No 5 • ARSLAN KAN              | Ön grup / Konum 73/100
+
+3) KARAR OZETI
+--------------
+Genel: 4 at · ortalama 73/100
+Model Lideri  : No 2 KARA BERELİ (80/100)
+Akış Lideri   : No 2 KARA BERELİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 87/100, Form 76/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 KARA BERELİ
+
+- Model Payı          : %27,3 [27/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [77/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Güçlü rakip · 70/100 [70/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [55/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 70/100 [70/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %65,0 [65/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,20 [95/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 2 1 1 [83/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 61 [59/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 3G - 4P / 4 [79/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 3G - 4P / 4 [79/100]
+  Detay: Birlikte performans
+- Jokey               : MUSTAFA ÇİÇEK [79/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [75/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 75/100 [75/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 73/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   KARA BERELİ              MUSTAFA ÇİÇEK        Seri         80    75 Yüksek • 75   Hız 100/100, Pist/Mesafe 87/100, Form 76/100 | Form: 11-1-1-2-1-1
+2    3   BEYLERİNBEYİ             MEHMET KAYA          Seri         79    85 Yüksek • 85   Pist/Mesafe 91/100, Form 76/100, Hız 76/100 | Form: 4-1-1-4-6-1-2-3-3-2
+3    4   ROCK FOR EVER            GÖRKEM ÖZÇELİK       Seri         75    97 Yüksek • 97   Pist/Mesafe 88/100, Galop 78/100, Jokey 75/100 | Form: 1-12-4-4-2-3-2-3-1-1
+4    5   ARSLAN KAN               HALİL YOLAÇICI       Ön grup      59    81 Yüksek • 81   Pist/Mesafe 80/100, Veri 81/100, Kilo 100/100 | Form: 4-6-6-10-8-5-3-4-4-5
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 KARA BERELİ
+  Ozet: Pist/Mesafe: 3G - 4P / 4 • Jokey: 3G - 4P / 4 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          76 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 BEYLERİNBEYİ
+  Ozet: Pist/Mesafe: 2G - 5P / 7 • Jokey: 2G - 4P / 4 • Galop: 28/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Form          76 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           76 | Ana · Derece ve son metreler
+
+No 4 ROCK FOR EVER
+  Ozet: Pist/Mesafe: 1G - 4P / 5 • Jokey: 3G - 7P / 10 • Galop: 78/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           57 | Ana · Derece ve son metreler
+
+No 5 ARSLAN KAN
+  Ozet: Pist/Mesafe: 0G - 0P / 5 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           45 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

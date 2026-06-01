@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-23&hip=BURSA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-03-23 / BURSA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 65/100
+Veri guveni       : 67/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • DELİ GÖNÜLLÜ            | Seri / Konum 90/100
+Akış 2   | No 2 • SABA SULTAN             | Orta / Konum 54/100
+Akış 3   | No 6 • MAHÇİÇEK                | Orta / Konum 54/100
+Akış 4   | No 8 • ŞEFİN KIZI              | Orta / Konum 53/100
+Akış 5   | No 7 • ŞAFAKAY                 | Sprint / Konum 35/100
+Akış 6   | No 3 • BUSE                    | Sprint / Konum 34/100
+Akış 7   | No 5 • GEZGİNSOY               | Sprint / Konum 34/100
+Akış 8   | No 4 • ÇELİKBENGÜ              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 65/100
+Model Lideri  : No 1 DELİ GÖNÜLLÜ (69/100)
+Akış Lideri   : No 1 DELİ GÖNÜLLÜ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Jokey 88/100, Uzlaşma 76/100, Veri 81/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 DELİ GÖNÜLLÜ
+
+- Model Payı          : %13,2 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [77/100]
+  Detay: Veri + skor farkı
+- AI Model            : 69/100 [69/100]
+  Detay: Jokey 88/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 46/100 [46/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %15,1 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,50 [82/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 3 2 15 [65/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 34 [40/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 1 [37/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 3P / 3 [42/100]
+  Detay: Birlikte performans
+- Jokey               : OKAN BALKAN [42/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [57/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 81/100 [81/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 65/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   DELİ GÖNÜLLÜ             OKAN BALKAN          Seri         69    81 Yüksek • 81   Jokey 88/100, Uzlaşma 76/100, Veri 81/100 | Form: 4-10-2-4-4-6-2-3-2-15
+2    7   ŞAFAKAY                  RECEP KETME          Sprint       68    72 Orta • 72     Pist/Mesafe 81/100, Uzlaşma 77/100, KGS 76/100 | Form: 5-6-6-3-8-1-7-15-12-15
+3    3   BUSE                     ALİ YILDIZ           Sprint       67    52 Orta • 52     Hız 80/100, Uzlaşma 80/100, Stil 76/100 | Form: 8-3-8-2-2-10-9-12-8-10
+4    2   SABA SULTAN              ALİCAN İNCİ          Orta         66    66 Orta • 66     Hız 75/100, Uzlaşma 72/100, KGS 83/100 | Form: 2-11-5-12-4-5-5-13-8-6
+5    6   MAHÇİÇEK                 YUNUS EMRE YÜKSEL    Orta         66    66 Orta • 66     Pist/Mesafe 81/100, Hız 77/100 | Form: 5-6-8-4-6-5-6-5-2-2
+6    8   ŞEFİN KIZI               YİĞİTCAN GÖKÇE       Orta         64    85 Orta • 85     Pist/Mesafe 76/100, Veri 85/100, KGS 83/100 | Form: 11-8-4-7-7-7-9-11-6-12
+7    5   GEZGİNSOY                EREN KADİRLER        Sprint       62    35 Temkinli • 35  Hız 100/100, Pist/Mesafe 73/100, Uzlaşma 76/100 | Form: 6-7-9-15-13
+8    4   ÇELİKBENGÜ               BARAN ÇETİN          Sprint       61    80 Orta • 80     Veri 80/100, Kilo 100/100 | Form: 7-4-11-9-9-5-7-8-11-17
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 DELİ GÖNÜLLÜ
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 0G - 3P / 3 • Galop: 52/100
+  - Pist/Mesafe   68 | Ana · Pist/mesafe geçmişi
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           62 | Ana · Derece ve son metreler
+
+No 7 ŞAFAKAY
+  Ozet: Pist/Mesafe: 1G - 1P / 3 • Jokey: 1G - 1P / 2 • Galop: 52/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Hız           67 | Ana · Derece ve son metreler
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 BUSE
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 2 • Galop: 58/100
+  - Hız           80 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 SABA SULTAN
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 5 • Galop: 28/100
+  - Hız           75 | Ana · Derece ve son metreler
+  - Pist/Mesafe   65 | Ana · Pist/mesafe geçmişi
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

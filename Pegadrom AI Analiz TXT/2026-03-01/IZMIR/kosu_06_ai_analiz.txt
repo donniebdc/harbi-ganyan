@@ -1,0 +1,118 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-01&hip=IZMIR&kosu=6
+Tarih/Hipodrom/Kosu: 2026-03-01 / IZMIR / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 53/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • KATI ZAMANI             | Seri / Konum 90/100
+Akış 2   | No 5 • SEÇERHAN                | Seri / Konum 90/100
+Akış 3   | No 1 • DÜNDARZADE              | Seri / Konum 90/100
+Akış 4   | No 2 • GÜRSELHAN               | Ön grup / Konum 73/100
+Akış 5   | No 6 • TILISIM                 | Ön grup / Konum 73/100
+Akış 6   | No 4 • KAYALARIN ŞAHI          | Orta / Konum 54/100
+
+3) KARAR OZETI
+--------------
+Genel: 6 at · ortalama 67/100
+Model Lideri  : No 3 KATI ZAMANI (80/100)
+Akış Lideri   : No 3 KATI ZAMANI (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 83/100, Form 87/100, Jokey 97/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 3 KATI ZAMANI
+
+- Model Payı          : %19,9 [20/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [82/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 83/100
+- Son 6 Uyarlama      : Güçlü rakip · 77/100 [77/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 87/100 [87/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %86,8 [87/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,05 [96/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 1 1 [100/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 111 [100/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 4G - 4P / 4 [90/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 6G - 7P / 7 [91/100]
+  Detay: Birlikte performans
+- Jokey               : SELİM KAYA [91/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [100/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    3   KATI ZAMANI              SELİM KAYA           Seri         80    85 Yüksek • 85   Pist/Mesafe 83/100, Form 87/100, Jokey 97/100 | Form: 1-3-1-2-1-1-1-1-1-1
+2    5   SEÇERHAN                 KADİR TOKAÇOĞLU      Seri         79    80 Yüksek • 80   Pist/Mesafe 94/100, Form 77/100, Jokey 86/100 | Form: 3-2-2-3-2-2-4-2-1-6
+3    1   DÜNDARZADE               TOLGA YILDIZ         Seri         77    80 Yüksek • 80   Pist/Mesafe 92/100, Form 73/100, Jokey 79/100 | Form: 1-2-1-4-8-6-1-8-1-6
+4    4   KAYALARIN ŞAHI           MUSTAFA ÇİÇEK        Orta         66    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 76/100, Kilo 78/100 | Form: 7-6-5-8-6-9-6-15-5-3
+5    2   GÜRSELHAN                HÜSEYİN ŞİMŞEK       Ön grup      51    14 Temkinli • 14  Uzlaşma 72/100, Kilo 78/100 | Form: 4-7-5-9-2-8-7-11-3-3
+6    6   TILISIM                  MEHMET KAYA          Ön grup      49    14 Temkinli • 14  Kilo 78/100 | Form: 5-2-6-4-4-7-9-3-3-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 3 KATI ZAMANI
+  Ozet: Pist/Mesafe: 4G - 4P / 4 • Jokey: 6G - 7P / 7 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          87 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         97 | Destek · Jokey formu ve at uyumu
+
+No 5 SEÇERHAN
+  Ozet: Pist/Mesafe: 1G - 7P / 9 • Jokey: 0G - 5P / 6 • Galop: 28/100
+  - Pist/Mesafe   94 | Ana · Pist/mesafe geçmişi
+  - Hız           65 | Ana · Derece ve son metreler
+  - Form          77 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 DÜNDARZADE
+  Ozet: Pist/Mesafe: 4G - 5P / 9 • Jokey: 3G - 4P / 9 • Galop: 47/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Hız           65 | Ana · Derece ve son metreler
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 KAYALARIN ŞAHI
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Form          51 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

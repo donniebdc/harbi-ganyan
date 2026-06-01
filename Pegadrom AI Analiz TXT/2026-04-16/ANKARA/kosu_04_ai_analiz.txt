@@ -1,0 +1,132 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-04-16&hip=ANKARA&kosu=4
+Tarih/Hipodrom/Kosu: 2026-04-16 / ANKARA / 4
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 12
+Ortalama AI puani : 70/100
+Veri guveni       : 79/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : Ankara • 4. Koşu • 16:00 • 1400m • Çim 16.04.2026 Perşembe
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 6 • METİNCİM                | Seri / Konum 90/100
+Akış 2   | No 3 • HOPDEDİK                | Seri / Konum 90/100
+Akış 3   | No 1 • CEVAHİRKAN              | Seri / Konum 90/100
+Akış 4   | No 7 • HERZAMAN                | Seri / Konum 90/100
+Akış 5   | No 5 • DELİ UMUT               | Ön grup / Konum 74/100
+Akış 6   | No 8 • ATEŞ REİSİ              | Ön grup / Konum 73/100
+Akış 7   | No 10 • KÜÇÜKCEVER             | Ön grup / Konum 73/100
+Akış 8   | No 2 • BERAY SULTAN            | Orta / Konum 54/100
+Akış 9   | No 4 • DOĞUYURT                | Orta / Konum 54/100
+Akış 10  | No 9 • ÖZTUĞ                   | Orta / Konum 54/100
+Akış 11  | No 11 • NUSRET OĞLU            | Orta / Konum 54/100
+Akış 12  | No 12 • NERGİSLİK TAY          | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 70/100
+Model Lideri  : No 2 BERAY SULTAN (80/100)
+Akış Lideri   : No 6 METİNCİM (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 100/100, Pist/Mesafe 92/100, Uzlaşma 78/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 BERAY SULTAN
+
+- Model Payı          : %9,5 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [87/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Galop 100/100
+- Son 6 Uyarlama      : Riskli profil · 55/100 [55/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [36/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf baskısı [38/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 45/100 [45/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %5,3 [5/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 12,50 [50/100]
+  Detay: Ganyan beklentisi
+- Form                : 14 9 7 7 [47/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 10 · HP 80 [69/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 4P / 8 [43/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 2 [5/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET AKYAVUZ [5/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [55/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 97/100 [97/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   BERAY SULTAN             MEHMET AKYAVUZ       Orta         80    97 Yüksek • 97   Galop 100/100, Pist/Mesafe 92/100, Uzlaşma 78/100 | Form: 7-2-2-2-1-4-14-9-7-7
+2    5   DELİ UMUT                MEHMET SALİH ÇELİK   Ön grup      79    82 Yüksek • 82   Hız 99/100, Form 72/100, Pist/Mesafe 73/100 | Form: 1-6-2-5-3-2-4-2-4-3
+3    6   METİNCİM                 VEDAT ABİŞ           Seri         75    72 Orta • 72     Form 78/100, Hız 76/100, Jokey 100/100 | Form: 5-1-2-2-2-6-1-5-8-11
+4    3   HOPDEDİK                 AYHAN KURŞUN         Seri         74    91 Yüksek • 91   Pist/Mesafe 88/100, Form 76/100, Hız 79/100 | Form: 1-4-2-4-1-1-5-3-2-4
+5    4   DOĞUYURT                 AKIN SÖZEN           Orta         71    86 Orta • 86     Hız 95/100, Pist/Mesafe 79/100, Hava/Zemin 75/100 | Form: 12-12-3-9-6-3-6-3-8-7
+6    1   CEVAHİRKAN               AHMET ÇELİK          Seri         71    76 Orta • 76     Form 81/100, Hız 79/100, Jokey 78/100 | Form: 2-4-3-1-1-1-8-4-2-2
+7    7   HERZAMAN                 HIŞMAN ÇİZİK         Seri         69    80 Orta • 80     Pist/Mesafe 78/100, Jokey 94/100, Stil 76/100 | Form: 6-6-11-2-2-1-1-1-7-2
+8    9   ÖZTUĞ                    ÖZCAN YILDIRIM       Orta         67    68 Temkinli • 68  Form 76/100, Hız 80/100, Stil 76/100 | Form: 2-3-5-1-4-1-2-8-5-6
+9    11  NUSRET OĞLU              ERAY ÇİZİK           Orta         67    68 Temkinli • 68  Hız 100/100, Pist/Mesafe 79/100, Hava/Zemin 93/100 | Form: 3-1-4-6-5-7-1-6-3-3
+10   8   ATEŞ REİSİ               MÜSLÜM ÇELİK         Ön grup      64    73 Orta • 73     Hız 72/100, Veri 73/100, Kilo 82/100 | Form: 1-2-5-4-2-5-3-10-3-1
+11   10  KÜÇÜKCEVER               NİZAMETTİN DEMİR     Ön grup      62    68 Temkinli • 68  Pist/Mesafe 72/100, KGS 80/100, Risk 80/100 | Form: 10-6-9-5-4-12-4-4-10-6
+12   12  NERGİSLİK TAY            MEHMET KESKİN        Sprint       61    83 Orta • 83     Pist/Mesafe 81/100, Hava/Zemin 77/100, Veri 83/100 | Form: 3-2-7-16-17-5-9-11-6-9
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 BERAY SULTAN
+  Ozet: Pist/Mesafe: 1G - 4P / 8 • Jokey: 0G - 0P / 2 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 DELİ UMUT
+  Ozet: Pist/Mesafe: 1G - 1P / 2 • Jokey: 0G - 2P / 4 • Galop: 67/100
+  - Hız           99 | Ana · Derece ve son metreler
+  - Galop         67 | Hazırlık · İdman dereceleri ve splitler
+  - Form          72 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 METİNCİM
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 1G - 1P / 2 • Galop: 66/100
+  - Galop         66 | Hazırlık · İdman dereceleri ve splitler
+  - Form          78 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           76 | Ana · Derece ve son metreler
+
+No 3 HOPDEDİK
+  Ozet: Pist/Mesafe: 3G - 5P / 6 • Jokey: 2G - 5P / 7 • Galop: 65/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Galop         65 | Hazırlık · İdman dereceleri ve splitler
+  - Form          76 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-26&hip=ANTALYA&kosu=5
+Tarih/Hipodrom/Kosu: 2026-03-26 / ANTALYA / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 72/100
+Veri guveni       : 75/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 9 • TORUNCALAS              | Seri / Konum 90/100
+Akış 2   | No 8 • TAŞAN                   | Seri / Konum 90/100
+Akış 3   | No 4 • DÜNDARZADE              | Seri / Konum 90/100
+Akış 4   | No 3 • CANMETE                 | Seri / Konum 90/100
+Akış 5   | No 7 • TAÇYİĞİT                | Seri / Konum 90/100
+Akış 6   | No 5 • GÖLGENİN GÜCÜ           | Ön grup / Konum 74/100
+Akış 7   | No 1 • AŞKARTAY                | Ön grup / Konum 74/100
+Akış 8   | No 2 • BER KEMAL               | Orta / Konum 54/100
+Akış 9   | No 6 • SAADIN KASIRGASI        | Orta / Konum 53/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 72/100
+Model Lideri  : No 9 TORUNCALAS (81/100)
+Akış Lideri   : No 9 TORUNCALAS (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 99/100, Form 83/100, Jokey 90/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 TORUNCALAS
+
+- Model Payı          : %12,6 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [92/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Pist/Mesafe 99/100
+- Son 6 Uyarlama      : Güçlü rakip · 73/100 [73/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [61/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 76/100 [76/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %14,8 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,40 [82/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 5 1 1 [92/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 18 · HP 99 [91/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 7G - 8P / 10 [79/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 4G - 5P / 7 [68/100]
+  Detay: Birlikte performans
+- Jokey               : FATİH SULTAN MEHMET SANSAR [68/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [91/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 72/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   TORUNCALAS               FATİH SULTAN MEHMET SANSAR Seri         81    85 Yüksek • 85   Pist/Mesafe 99/100, Form 83/100, Jokey 90/100 | Form: 1-1-1-7-2-1-1-5-1-1
+2    8   TAŞAN                    ERCAN ÇANKAYA        Seri         75    77 Orta • 77     Pist/Mesafe 96/100, Form 77/100, Uzlaşma 76/100 | Form: 2-2-1-7-2-3-1-2-2-2
+3    5   GÖLGENİN GÜCÜ            AYHAN KURŞUN         Ön grup      74    85 Yüksek • 85   Pist/Mesafe 81/100, Jokey 73/100, Stil 76/100 | Form: 7-1-7-3-1-4-7-6-9-4
+4    4   DÜNDARZADE               TOLGA YILDIZ         Seri         73    85 Orta • 85     Pist/Mesafe 90/100, Form 72/100, Jokey 74/100 | Form: 1-2-1-4-8-6-1-8-1-6
+5    1   AŞKARTAY                 MEHMET KAYA          Ön grup      73    77 Orta • 77     Pist/Mesafe 95/100, Form 77/100, Uzlaşma 78/100 | Form: 1-1-6-3-4-1-4-3-9-9
+6    2   BER KEMAL                MAHMUT TURAN         Orta         72    77 Orta • 77     Pist/Mesafe 84/100, Form 80/100, Stil 76/100 | Form: 1-4-2-1-3-2-6-3-7-7
+7    3   CANMETE                  HALİS KARATAŞ        Seri         69    72 Orta • 72     Pist/Mesafe 76/100, KGS 77/100, Risk 77/100 | Form: 5-4-4-2-4-2-5-3-1-8
+8    7   TAÇYİĞİT                 SERHAT ÇELİK         Seri         67    85 Orta • 85     Pist/Mesafe 83/100, Stil 76/100, Hava/Zemin 83/100 | Form: 12-12-2-9-1-8-9-2-8-2
+9    6   SAADIN KASIRGASI         SALİH ÇELİK          Orta         61    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 76/100 | Form: 4-7-3-3-5-7-9-6-3-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 TORUNCALAS
+  Ozet: Pist/Mesafe: 7G - 8P / 10 • Jokey: 4G - 5P / 7 • Galop: 52/100
+  - Pist/Mesafe   99 | Ana · Pist/mesafe geçmişi
+  - Form          83 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         90 | Destek · Jokey formu ve at uyumu
+
+No 8 TAŞAN
+  Ozet: Pist/Mesafe: 2G - 9P / 10 • Jokey: 1G - 4P / 4 • Galop: 66/100
+  - Pist/Mesafe   96 | Ana · Pist/mesafe geçmişi
+  - Form          77 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           55 | Ana · Derece ve son metreler
+
+No 5 GÖLGENİN GÜCÜ
+  Ozet: Pist/Mesafe: 1G - 2P / 4 • Jokey: 1G - 1P / 7 • Galop: 66/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           60 | Ana · Derece ve son metreler
+
+No 4 DÜNDARZADE
+  Ozet: Pist/Mesafe: 4G - 5P / 9 • Jokey: 3G - 4P / 9 • Galop: 47/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Form          72 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           45 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

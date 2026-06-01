@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-22&hip=IZMIR&kosu=4
+Tarih/Hipodrom/Kosu: 2026-03-22 / IZMIR / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 72/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • MONUMENTAL              | Seri / Konum 90/100
+Akış 2   | No 10 • ANGEL ON THE RIGHT     | Seri / Konum 90/100
+Akış 3   | No 2 • COOL POWER              | Orta / Konum 55/100
+Akış 4   | No 8 • BIG HONEY               | Orta / Konum 54/100
+Akış 5   | No 6 • MARDİ GRAS              | Orta / Konum 53/100
+Akış 6   | No 5 • DOĞU ASLANI             | Sprint / Konum 35/100
+Akış 7   | No 4 • REASON AND LOGİC        | Sprint / Konum 35/100
+Akış 8   | No 9 • KAANER                  | Sprint / Konum 34/100
+Akış 9   | No 1 • TIMELESS                | Sprint / Konum 34/100
+Akış 10  | No 7 • GIVE ME BREATH          | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 68/100
+Model Lideri  : No 2 COOL POWER (77/100)
+Akış Lideri   : No 3 MONUMENTAL (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 86/100, Hız 80/100, Jokey 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 COOL POWER
+
+- Model Payı          : %11,3 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [75/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Pist/Mesafe 86/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 62/100 [62/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [66/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 49/100 [49/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %25,6 [26/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,10 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 5 5 5 6 [65/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 16 · HP 53 [56/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 7 [29/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 1P / 3 [34/100]
+  Detay: Birlikte performans
+- Jokey               : ÖMER FARUK ÖZEN [34/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [64/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   COOL POWER               ÖMER FARUK ÖZEN      Orta         77    76 Yüksek • 76   Pist/Mesafe 86/100, Hız 80/100, Jokey 100/100 | Form: 6-5-7-8-1-5-5-5-5-6
+2    3   MONUMENTAL               KADİR TOKAÇOĞLU      Seri         77    71 Orta • 71     Pist/Mesafe 90/100, Hız 84/100, Jokey 88/100 | Form: 11-10-2-3-1-5-3-2-5-8
+3    8   BIG HONEY                EREN DURSUN ÖKTEN    Orta         71    81 Orta • 81     Hız 80/100, Jokey 78/100, Uzlaşma 73/100 | Form: 12-10-7-6-6-3-3-6-7-1
+4    5   DOĞU ASLANI              NEVZAT AVCİ          Sprint       70    58 Orta • 58     Hız 100/100, Pist/Mesafe 82/100, Uzlaşma 77/100 | Form: 11-8-4-2-2-4-11-15-7-8
+5    6   MARDİ GRAS               ONUR ATMACA          Orta         66    77 Orta • 77     Pist/Mesafe 87/100, Uzlaşma 74/100, KGS 85/100 | Form: 8-6-6-6-7-14-10-5-7-9
+6    9   KAANER                   EREN KADİRLER        Sprint       66    77 Orta • 77     Pist/Mesafe 79/100, Hız 73/100, Veri 77/100 | Form: 15-11-14-10-11-11-3-5-9-8
+7    1   TIMELESS                 BERKAY BÜLBÜL        Sprint       66    67 Temkinli • 67  Hız 85/100, Pist/Mesafe 79/100, Uzlaşma 73/100 | Form: 5-11-12-6-8-8-8-13-16-5
+8    10  ANGEL ON THE RIGHT       METE GÖL             Seri         66    67 Temkinli • 67  Pist/Mesafe 86/100, Hız 76/100, KGS 73/100 | Form: 13-7-7-9-6-2-2-2-2
+9    4   REASON AND LOGİC         MUSTAFA ÇİÇEK        Sprint       61    72 Temkinli • 72  Pist/Mesafe 78/100, Hava/Zemin 75/100, Veri 72/100 | Form: 8-4-3-5-2-8-4-7-10-11
+10   7   GIVE ME BREATH           YİĞİTCAN GÖKÇE       Sprint       60    77 Orta • 77     Veri 77/100, Kilo 95/100 | Form: 7-4-2-3-7-7-15-8-10-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 COOL POWER
+  Ozet: Pist/Mesafe: 1G - 1P / 7 • Jokey: 1G - 1P / 3 • Galop: 66/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           80 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 MONUMENTAL
+  Ozet: Pist/Mesafe: 1G - 5P / 9 • Jokey: 1G - 2P / 2 • Galop: 48/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+
+No 8 BIG HONEY
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Hız           80 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Form          50 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 DOĞU ASLANI
+  Ozet: Pist/Mesafe: 0G - 2P / 8 • Jokey: 0G - 1P / 2 • Galop: 80/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Form          47 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

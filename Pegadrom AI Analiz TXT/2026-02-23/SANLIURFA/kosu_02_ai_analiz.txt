@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-23&hip=SANLIURFA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-02-23 / SANLIURFA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 73/100
+Veri guveni       : 69/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • STORMY RIVER            | Seri / Konum 90/100
+Akış 2   | No 2 • ÖZAY SILAŞARA           | Seri / Konum 90/100
+Akış 3   | No 4 • HENAIRE                 | Seri / Konum 90/100
+Akış 4   | No 10 • TOWSON                 | Ön grup / Konum 74/100
+Akış 5   | No 7 • KUTUP KIZI              | Ön grup / Konum 74/100
+Akış 6   | No 8 • MERYEM SULTAN           | Orta / Konum 54/100
+Akış 7   | No 11 • AY ÇÖLÜ                | Orta / Konum 54/100
+Akış 8   | No 1 • BLUE QUEEN              | Sprint / Konum 35/100
+Akış 9   | No 9 • SEHERİN YELİ            | Sprint / Konum 34/100
+Akış 10  | No 5 • SWIFT PASSING           | Sprint / Konum 34/100
+Akış 11  | No 12 • JİNORA                 | Sprint / Konum 34/100
+Akış 12  | No 6 • DAWN OF THE NİGHT       | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 73/100
+Model Lideri  : No 10 TOWSON (79/100)
+Akış Lideri   : No 3 STORMY RIVER (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 96/100, Hız 100/100, Jokey 75/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 10 TOWSON
+
+- Model Payı          : %9,1 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [72/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Pist/Mesafe 96/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 58/100 [58/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [47/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 46/100 [46/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %8,9 [9/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 9,00 [64/100]
+  Detay: Ganyan beklentisi
+- Form                : 12 7 3 12 [47/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 61 [59/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 5 [26/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 3P / 7 [39/100]
+  Detay: Birlikte performans
+- Jokey               : İZETTİN GÜREKE [39/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [53/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 73/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    10  TOWSON                   İZETTİN GÜREKE       Ön grup      79    66 Orta • 66     Pist/Mesafe 96/100, Hız 100/100, Jokey 75/100 | Form: 4-2-4-3-1-7-12-7-3-12
+2    1   BLUE QUEEN               ERAY ÇİZİK           Sprint       78    85 Yüksek • 85   Pist/Mesafe 94/100, Hız 74/100, Jokey 75/100 | Form: 1-5-7-1-6-2-12-8-8-11
+3    9   SEHERİN YELİ             FERİT YARDIMCI       Sprint       78    85 Orta • 85     Pist/Mesafe 86/100, Jokey 100/100, Uzlaşma 77/100 | Form: 1-2-1-8-10-6-8-8-8-15
+4    3   STORMY RIVER             AZİZ AKDEMİR         Seri         78    58 Orta • 58     Hız 96/100, Form 82/100, Pist/Mesafe 85/100 | Form: 3-2-1-7-5-4-6-2-2-3
+5    2   ÖZAY SILAŞARA            İSA AKYAVUZ          Seri         76    77 Orta • 77     Pist/Mesafe 86/100, Form 77/100, Hız 75/100 | Form: 1-7-2-5-1-1-4-2-10-1
+6    4   HENAIRE                  EMRE AKKILIÇ         Seri         76    71 Orta • 71     Pist/Mesafe 94/100, Hız 77/100, Jokey 100/100 | Form: 5-9-1-8-10-2-5-3-1-4
+7    5   SWIFT PASSING            AHMET HASAN BAYAR    Sprint       76    66 Temkinli • 66  Pist/Mesafe 88/100, Hız 92/100, Jokey 83/100 | Form: 10-3-2-2-9-9-7-9-9-10
+8    7   KUTUP KIZI               HİKMET SARIDAL       Ön grup      74    66 Orta • 66     Pist/Mesafe 85/100, Hız 89/100, Uzlaşma 74/100 | Form: 2-5-5-1-3-3-7-6-4-1
+9    8   MERYEM SULTAN            YUNUS ÇELİKBAŞ       Orta         69    66 Orta • 66     Hız 86/100, Pist/Mesafe 81/100, Kilo 86/100 | Form: 4-4-5-5-4-7-8-11-9-5
+10   12  JİNORA                   MEHMET DOĞAN         Sprint       65    62 Temkinli • 62  Hız 92/100, Pist/Mesafe 75/100, KGS 76/100 | Form: 4-8-12-10-14-6-7-8-3-13
+11   11  AY ÇÖLÜ                  İSA KATAR            Orta         62    43 Temkinli • 43  Pist/Mesafe 81/100, Hız 85/100, Kilo 86/100 | Form: 9-7-9-4-6-3-4-5-9-6
+12   6   DAWN OF THE NİGHT        HASAN ALTUNDAĞ       Sprint       60    81 Orta • 81     Pist/Mesafe 78/100, Veri 81/100, Kilo 79/100 | Form: 1-15-10-8-8-7-9-8-11-10
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 10 TOWSON
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 1G - 3P / 7 • Galop: 47/100
+  - Pist/Mesafe   96 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 BLUE QUEEN
+  Ozet: Pist/Mesafe: 2G - 3P / 9 • Jokey: 1G - 2P / 6 • Galop: 28/100
+  - Pist/Mesafe   94 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           74 | Ana · Derece ve son metreler
+
+No 9 SEHERİN YELİ
+  Ozet: Pist/Mesafe: 2G - 3P / 9 • Jokey: 2G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           69 | Ana · Derece ve son metreler
+
+No 3 STORMY RIVER
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız           96 | Ana · Derece ve son metreler
+  - Form          82 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

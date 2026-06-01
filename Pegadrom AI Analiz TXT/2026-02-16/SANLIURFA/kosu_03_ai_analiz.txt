@@ -1,0 +1,138 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-16&hip=SANLIURFA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-02-16 / SANLIURFA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 68/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • DAR SOKAK               | Seri / Konum 90/100
+Akış 2   | No 5 • PIRATE OF THE SEA       | Seri / Konum 90/100
+Akış 3   | No 11 • GALLOON                | Seri / Konum 90/100
+Akış 4   | No 7 • KING OVA                | Seri / Konum 90/100
+Akış 5   | No 8 • LUKA MAGIC              | Ön grup / Konum 74/100
+Akış 6   | No 9 • ORTAK GÜÇ               | Ön grup / Konum 74/100
+Akış 7   | No 4 • EMİN AMCA               | Orta / Konum 54/100
+Akış 8   | No 10 • RAND ROWER             | Orta / Konum 54/100
+Akış 9   | No 13 • TAKİPETBENİ            | Orta / Konum 53/100
+Akış 10  | No 1 • OGİBOR                  | Sprint / Konum 35/100
+Akış 11  | No 2 • BRITISH BREEZE          | Sprint / Konum 35/100
+Akış 12  | No 12 • HOLLOW MAN             | Sprint / Konum 35/100
+Akış 13  | No 6 • CALIBRATION             | Sprint / Konum 35/100
+Akış 14  | No 14 • MUSHARRAF              | Sprint / Konum 34/100
+Akış 15  | No 15 • ARASIN ASLANI          | Sprint / Konum 34/100
+Akış 16  | No 16 • CYPRIOT                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 16 at · ortalama 70/100
+Model Lideri  : No 4 EMİN AMCA (81/100)
+Akış Lideri   : No 3 DAR SOKAK (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 91/100, Form 79/100, Hız 80/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 4 EMİN AMCA
+
+- Model Payı          : %7,2 [7/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [71/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Pist/Mesafe 91/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 68/100 [68/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [82/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 55/100 [55/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %13,6 [14/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,70 [81/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 5 3 3 [62/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 81 [81/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 5P / 8 [47/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : İSA AKYAVUZ [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [71/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 62/100 [62/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    4   EMİN AMCA                İSA AKYAVUZ          Orta         81    62 Orta • 62     Pist/Mesafe 91/100, Form 79/100, Hız 80/100 | Form: 1-2-2-7-6-11-2-5-3-3
+2    3   DAR SOKAK                NECMİ ALTIN          Seri         80    85 Yüksek • 85   Pist/Mesafe 95/100, Form 83/100, Jokey 89/100 | Form: 1-1-1-2-3-1-4-6-1-8
+3    1   OGİBOR                   MEHMET ŞAKİR         Sprint       77    76 Orta • 76     Pist/Mesafe 87/100, Form 77/100, Jokey 88/100 | Form: 2-4-2-2-1-8-10-3-14-14
+4    5   PIRATE OF THE SEA        AHMET HASAN BAYAR    Seri         76    76 Orta • 76     Pist/Mesafe 77/100, Jokey 100/100, Uzlaşma 78/100 | Form: 1-10-10-5-1-3-3-2-6-12
+5    2   BRITISH BREEZE           YUSUF CENGİZ         Sprint       76    66 Orta • 66     Pist/Mesafe 93/100, Form 73/100, Hız 76/100 | Form: 3-5-1-4-4-8-5-9-4-8
+6    11  GALLOON                  FERİT YARDIMCI       Seri         71    71 Orta • 71     Hız 100/100, Pist/Mesafe 82/100, Uzlaşma 75/100 | Form: 9-1-4-4-1-6-5-1-4-1
+7    8   LUKA MAGIC               MEHMET ALİ AKGÖBEK   Ön grup      70    71 Temkinli • 71  Pist/Mesafe 91/100, Hız 76/100, Uzlaşma 72/100 | Form: 7-7-8-1-9-5-1-4-3-7
+8    7   KING OVA                 EMRE AKKILIÇ         Seri         69    67 Temkinli • 67  Pist/Mesafe 86/100, Hız 79/100, Kilo 100/100 | Form: 5-10-3-5-11-2-1-7-3-1
+9    12  HOLLOW MAN               AZİZ AKDEMİR         Sprint       68    47 Temkinli • 47  Pist/Mesafe 84/100, Hız 85/100, KGS 78/100 | Form: 6-5-13-9-6-9-4-5-11-1
+10   14  MUSHARRAF                MEHMET ALİ AKTÜRK    Sprint       67    80 Orta • 80     Pist/Mesafe 91/100, Veri 80/100 | Form: 6-2-8-7-4-10-2-7-11-10
+11   6   CALIBRATION              HASAN ALTUNDAĞ       Sprint       66    77 Temkinli • 77  Pist/Mesafe 83/100, Veri 77/100 | Form: 2-15-8-7-8-3-2-4-8-7
+12   9   ORTAK GÜÇ                İSA KATAR            Ön grup      66    47 Temkinli • 47  Hız 94/100, Pist/Mesafe 86/100 | Form: 6-7-12-2-3-4-1-4-5-3
+13   13  TAKİPETBENİ              MUSTAFA IŞIK         Orta         65    85 Orta • 85     Pist/Mesafe 73/100, Veri 85/100, KGS 81/100 | Form: 5-3-1-7-5-5-5-13-15-16
+14   15  ARASIN ASLANI            MEHMET DOĞAN         Sprint       65    67 Temkinli • 67  Hız 78/100, Pist/Mesafe 73/100, KGS 84/100 | Form: 7-5-5-3-7-15-14-13-13-6
+15   10  RAND ROWER               İZETTİN GÜREKE       Orta         64    29 Temkinli • 29  Pist/Mesafe 91/100, Hız 95/100, Kilo 100/100 | Form: 9-5-3-4-6-2-5-3-1-6
+16   16  CYPRIOT                  BURHAN SARIDAL       Sprint       60    81 Orta • 81     Pist/Mesafe 77/100, Veri 81/100, KGS 81/100 | Form: 10-12-11-18-11-14-9-16-10-10
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 4 EMİN AMCA
+  Ozet: Pist/Mesafe: 1G - 5P / 8 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           80 | Ana · Derece ve son metreler
+
+No 3 DAR SOKAK
+  Ozet: Pist/Mesafe: 4G - 6P / 9 • Jokey: 3G - 5P / 8 • Galop: 52/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Form          83 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         89 | Destek · Jokey formu ve at uyumu
+
+No 1 OGİBOR
+  Ozet: Pist/Mesafe: 0G - 2P / 6 • Jokey: 0G - 1P / 2 • Galop: 58/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          77 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           69 | Ana · Derece ve son metreler
+
+No 5 PIRATE OF THE SEA
+  Ozet: Pist/Mesafe: 1G - 3P / 5 • Jokey: 1G - 3P / 4 • Galop: 48/100
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Hız           70 | Ana · Derece ve son metreler
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

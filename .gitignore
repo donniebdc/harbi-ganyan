@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editör
+.vscode/
+
+# Geçici / sonda dosyaları
+_probe_*.html
+_probe_*.json
+_*_log.txt
+*.tmp

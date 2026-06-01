@@ -1,0 +1,120 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-02&hip=SANLIURFA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-02 / SANLIURFA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 61/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • ÇAPUTHAN                | Seri / Konum 90/100
+Akış 2   | No 4 • FERHAT KARDEŞ           | Seri / Konum 90/100
+Akış 3   | No 1 • MUŞFIRTINASI            | Seri / Konum 90/100
+Akış 4   | No 5 • MESTAN BEY              | Seri / Konum 90/100
+Akış 5   | No 3 • ÇILGIN HEME             | Orta / Konum 55/100
+Akış 6   | No 2 • YILMABABA               | Orta / Konum 53/100
+Akış 7   | No 6 • GÖKKUZGUN               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 7 at · ortalama 68/100
+Model Lideri  : No 3 ÇILGIN HEME (86/100)
+Akış Lideri   : No 7 ÇAPUTHAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 100/100, Hız 100/100, Form 88/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 3 ÇILGIN HEME
+
+- Model Payı          : %18,0 [18/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [70/100]
+  Detay: Veri + skor farkı
+- AI Model            : 86/100 [86/100]
+  Detay: Pist/Mesafe 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [60/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 56/100 [56/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %49,1 [49/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,25 [95/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 7 8 4 [55/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 12 · HP 50 [49/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 5P / 6 [51/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 3 [46/100]
+  Detay: Birlikte performans
+- Jokey               : FERİT YARDIMCI [46/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [56/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 33/100 [33/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    3   ÇILGIN HEME              FERİT YARDIMCI       Orta         86    33 Temkinli • 33  Pist/Mesafe 100/100, Hız 100/100, Form 88/100 | Form: 1-3-3-2-2-5-7-7-8-4
+2    7   ÇAPUTHAN                 AZİZ AKDEMİR         Seri         77    85 Yüksek • 85   Pist/Mesafe 85/100, Form 74/100, Jokey 79/100 | Form: 2-1-1-11-3-4-1-1-2-1
+3    4   FERHAT KARDEŞ            İSA AKYAVUZ          Seri         73    76 Yüksek • 76   Pist/Mesafe 77/100, Jokey 100/100, Uzlaşma 77/100 | Form: 5-7-7-1-16-2-5-8-1-8
+4    1   MUŞFIRTINASI             HASAN ALTUNDAĞ       Seri         65    47 Temkinli • 47  Hız 100/100 | Form: 9-5-4-12-3-2-9-1-1-5
+5    2   YILMABABA                YUNUS ÇELİKBAŞ       Orta         63    81 Orta • 81     Pist/Mesafe 89/100, Veri 81/100, KGS 78/100 | Form: 10-8-7-10-10-7-5-10-7-9
+6    6   GÖKKUZGUN                ÇETİN CANPOLAT       Sprint       60    77 Orta • 77     Pist/Mesafe 85/100, Veri 77/100, Kilo 90/100 | Form: 13-8-9-2-10-9-4-12-6-11
+7    5   MESTAN BEY               YUSUF CENGİZ         Seri         54    29 Temkinli • 29  Kilo 90/100 | Form: 10-5-14-13-9-6-2-6-2-4
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 3 ÇILGIN HEME
+  Ozet: Pist/Mesafe: 1G - 5P / 6 • Jokey: 1G - 2P / 3 • Galop: 60/100
+  - Pist/Mesafe  100 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          88 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 ÇAPUTHAN
+  Ozet: Pist/Mesafe: 3G - 4P / 5 • Jokey: 3G - 6P / 8 • Galop: 72/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           68 | Ana · Derece ve son metreler
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 FERHAT KARDEŞ
+  Ozet: Pist/Mesafe: 1G - 2P / 4 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Hız           65 | Ana · Derece ve son metreler
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 1 MUŞFIRTINASI
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 0P / 4 • Galop: 55/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   69 | Ana · Pist/mesafe geçmişi
+  - Form          49 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

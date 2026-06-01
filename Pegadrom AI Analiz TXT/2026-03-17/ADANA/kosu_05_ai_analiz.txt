@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-17&hip=ADANA&kosu=5
+Tarih/Hipodrom/Kosu: 2026-03-17 / ADANA / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 74/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • OĞLUM VELAT             | Seri / Konum 90/100
+Akış 2   | No 2 • ENGİN REİS              | Ön grup / Konum 74/100
+Akış 3   | No 8 • VARTO ESİNTİSİ          | Ön grup / Konum 73/100
+Akış 4   | No 6 • NUR KADER               | Orta / Konum 54/100
+Akış 5   | No 7 • SEDAT GÜZELİ            | Orta / Konum 54/100
+Akış 6   | No 1 • ADEN PRENSİ             | Sprint / Konum 35/100
+Akış 7   | No 3 • İLBARS                  | Sprint / Konum 35/100
+Akış 8   | No 5 • ÖZER KAPTAN             | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 67/100
+Model Lideri  : No 6 NUR KADER (73/100)
+Akış Lideri   : No 4 OĞLUM VELAT (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 84/100, Jokey 88/100, Uzlaşma 84/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 6 NUR KADER
+
+- Model Payı          : %13,6 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [76/100]
+  Detay: Veri + skor farkı
+- AI Model            : 73/100 [73/100]
+  Detay: Pist/Mesafe 84/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 59/100 [59/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [44/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 34/100 [34/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %6,8 [7/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 7,85 [69/100]
+  Detay: Ganyan beklentisi
+- Form                : 5 1 18 9 [55/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 30 [37/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 5 [13/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : FATİH RÜSTEM BEBEK [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [49/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 81/100 [81/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    6   NUR KADER                FATİH RÜSTEM BEBEK   Orta         73    81 Yüksek • 81   Pist/Mesafe 84/100, Jokey 88/100, Uzlaşma 84/100 | Form: 5-6-5-5-6-2-5-1-18-9
+2    1   ADEN PRENSİ              İSMAİL YILDIRIM      Sprint       73    57 Orta • 57     Hız 99/100, Pist/Mesafe 83/100, Uzlaşma 80/100 | Form: 3-6-2-4-8-5-6-4-10-10
+3    3   İLBARS                   SALİH ÇELİK          Sprint       70    97 Yüksek • 97   Pist/Mesafe 80/100, Uzlaşma 77/100, Veri 97/100 | Form: 12-6-4-9-3-4-1-12-13-5
+4    2   ENGİN REİS               YUSUF CENGİZ         Ön grup      69    85 Orta • 85     Pist/Mesafe 81/100, Uzlaşma 75/100, Hava/Zemin 83/100 | Form: 8-3-2-3-6-4-3-3-4-5
+5    4   OĞLUM VELAT              NİZAMETTİN DEMİR     Seri         67    81 Orta • 81     Jokey 78/100, Hava/Zemin 87/100, Veri 81/100 | Form: 3-4-2-10-10-14-3-2-3-1
+6    8   VARTO ESİNTİSİ           MEHMET NURİ SUNKAR   Ön grup      63    77 Orta • 77     Pist/Mesafe 76/100, Veri 77/100, Kilo 84/100 | Form: 9-8-4-7-3-4-6-4-1-8
+7    7   SEDAT GÜZELİ             ERAY ÇİZİK           Orta         61    77 Orta • 77     Pist/Mesafe 79/100, Veri 77/100, Kilo 84/100 | Form: 8-4-7-12-6-4-5-7-8-4
+8    5   ÖZER KAPTAN              MEHMET TAHA COŞKUN   Sprint       60    33 Temkinli • 33  Hız 100/100, Kilo 100/100 | Form: 10-6-9
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 6 NUR KADER
+  Ozet: Pist/Mesafe: 0G - 0P / 5 • Jokey: 0G - 1P / 2 • Galop: 44/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           67 | Ana · Derece ve son metreler
+  - Form          58 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 ADEN PRENSİ
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız           99 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 İLBARS
+  Ozet: Pist/Mesafe: 1G - 2P / 5 • Jokey: 1G - 2P / 5 • Galop: 40/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           68 | Ana · Derece ve son metreler
+  - Form          54 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 ENGİN REİS
+  Ozet: Pist/Mesafe: 0G - 3P / 5 • Jokey: 0G - 4P / 9 • Galop: 55/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           63 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

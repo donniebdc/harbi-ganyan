@@ -1,0 +1,118 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-24&hip=ADANA&kosu=4
+Tarih/Hipodrom/Kosu: 2026-03-24 / ADANA / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 75/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • CEVAHİRKAN              | Seri / Konum 90/100
+Akış 2   | No 2 • BAŞ DAĞYUDAN            | Seri / Konum 90/100
+Akış 3   | No 5 • KESKİN KUŞ              | Seri / Konum 90/100
+Akış 4   | No 7 • KUZGUNİ YEŞİL           | Orta / Konum 53/100
+Akış 5   | No 3 • GÜLLÜ BAHÇE             | Sprint / Konum 34/100
+Akış 6   | No 6 • AŞK VE GAMZE            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 6 at · ortalama 70/100
+Model Lideri  : No 1 CEVAHİRKAN (75/100)
+Akış Lideri   : No 1 CEVAHİRKAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 84/100, Uzlaşma 79/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 CEVAHİRKAN
+
+- Model Payı          : %18,0 [18/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [67/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Güçlü rakip · 71/100 [71/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [69/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [81/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 70/100 [70/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %37,6 [38/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,20 [95/100]
+  Detay: Ganyan beklentisi
+- Form                : 8 4 2 2 [80/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 86 [77/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 4P / 4 [56/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 3P / 3 [72/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET SALİH ÇELİK [72/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [80/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 58/100 [58/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   CEVAHİRKAN               MEHMET SALİH ÇELİK   Seri         75    58 Orta • 58     Hız 100/100, Pist/Mesafe 84/100, Uzlaşma 79/100 | Form: 2-4-3-1-1-1-8-4-2-2
+2    2   BAŞ DAĞYUDAN             MEHMET AKYAVUZ       Seri         74    85 Yüksek • 85   Pist/Mesafe 88/100, Form 81/100, Jokey 94/100 | Form: 5-3-2-2-2-1-1-2-3-5
+3    5   KESKİN KUŞ               SALİH ÇELİK          Seri         74    80 Orta • 80     Pist/Mesafe 85/100, Hız 81/100, Uzlaşma 72/100 | Form: 5-9-4-2-4-2-10-9-2-2
+4    3   GÜLLÜ BAHÇE              MEHMET ALİ AKGÖBEK   Sprint       68    77 Orta • 77     Pist/Mesafe 85/100, Uzlaşma 75/100, Hava/Zemin 73/100 | Form: 6-2-1-6-11-10-12-5-7-11
+5    6   AŞK VE GAMZE             NİZAMETTİN DEMİR     Sprint       66    87 Orta • 87     Pist/Mesafe 88/100, Veri 87/100, KGS 81/100 | Form: 6-6-8-2-7-11-14-14-4-8
+6    7   KUZGUNİ YEŞİL            FESİH ÇETİNBAŞ       Orta         60    65 Orta • 65     Hız 94/100, Pist/Mesafe 73/100, Kilo 73/100 | Form: 4-7-7-7-10-6-12-14-2-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 CEVAHİRKAN
+  Ozet: Pist/Mesafe: 1G - 4P / 4 • Jokey: 2G - 3P / 3 • Galop: 69/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 BAŞ DAĞYUDAN
+  Ozet: Pist/Mesafe: 2G - 5P / 6 • Jokey: 1G - 3P / 4 • Galop: 28/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          81 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           56 | Ana · Derece ve son metreler
+
+No 5 KESKİN KUŞ
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 3P / 8 • Galop: 55/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           81 | Ana · Derece ve son metreler
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 GÜLLÜ BAHÇE
+  Ozet: Pist/Mesafe: 1G - 2P / 7 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           58 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

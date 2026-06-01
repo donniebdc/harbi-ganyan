@@ -1,0 +1,142 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-13&hip=ISTANBUL&kosu=8
+Tarih/Hipodrom/Kosu: 2026-05-13 / ISTANBUL / 8
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 17
+Ortalama AI puani : 68/100
+Veri guveni       : 83/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İstanbul • 8. Koşu • 18:00 • 1500m • Sentetik 13.05.2026 Çarşamba
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 15 • ASRA İNAT              | Seri / Konum 90/100
+Akış 2   | No 14 • SIRIUS VEGA            | Seri / Konum 90/100
+Akış 3   | No 3 • DESRUCTOR               | Seri / Konum 90/100
+Akış 4   | No 1 • THRACE FEVER            | Ön grup / Konum 74/100
+Akış 5   | No 10 • PAPA RUNNER            | Ön grup / Konum 73/100
+Akış 6   | No 17 • OKYANUS İNCİSİ         | Orta / Konum 54/100
+Akış 7   | No 9 • ALASER                  | Orta / Konum 54/100
+Akış 8   | No 13 • ERKOÇUM                | Orta / Konum 54/100
+Akış 9   | No 5 • FIREWOOD                | Sprint / Konum 35/100
+Akış 10  | No 11 • REDATIVE               | Sprint / Konum 35/100
+Akış 11  | No 4 • ATOMİC FORCE            | Sprint / Konum 35/100
+Akış 12  | No 7 • GOOD TIME CHARLIE       | Sprint / Konum 35/100
+Akış 13  | No 18 • PAREZKAR               | Sprint / Konum 34/100
+Akış 14  | No 12 • ONNA BUGEISHA          | Sprint / Konum 34/100
+Akış 15  | No 2 • HUMAN TORCH             | Sprint / Konum 34/100
+Akış 16  | No 16 • THE SNAKE PIT          | Sprint / Konum 34/100
+Akış 17  | No 6 • VAHŞİ BAWIKAL           | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 17 at · ortalama 68/100
+Model Lideri  : No 15 ASRA İNAT (75/100)
+Akış Lideri   : No 15 ASRA İNAT (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 73/100, Hız 88/100, Pist/Mesafe 79/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 15 ASRA İNAT
+
+- Model Payı          : %6,5 [7/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [82/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Galop 73/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [43/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [55/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 40/100 [40/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %18,0 [18/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,80 [85/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 6 9 1 [58/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 10 · HP 44 [43/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 4 [10/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 3 [46/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ YILDIZ [46/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [55/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 93/100 [93/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    15  ASRA İNAT                ALİ YILDIZ           Seri         75    93 Yüksek • 93   Galop 73/100, Hız 88/100, Pist/Mesafe 79/100 | Form: 6-8-6-2-8-4-3-6-9-1
+2    10  PAPA RUNNER              HAKAN YILDIZ         Ön grup      75    83 Yüksek • 83   Galop 100/100, Hız 88/100, Pist/Mesafe 81/100 | Form: 7-7-6-3-8-5-13-14-4-3
+3    17  OKYANUS İNCİSİ           MERT ALİ SOLMAZ      Orta         73    95 Yüksek • 95   Galop 72/100, Pist/Mesafe 85/100, Hız 89/100 | Form: 5-12-6-7-6-8-2-9-8-5
+4    5   FIREWOOD                 SİNAN ÖZEN           Sprint       73    93 Orta • 93     Hız 100/100, Pist/Mesafe 85/100, Uzlaşma 78/100 | Form: 11-3-3-12-16-4-9-5-10-9
+5    14  SIRIUS VEGA              ENES BOZDAĞ          Seri         72    97 Orta • 97     Hız 88/100, Pist/Mesafe 77/100, Uzlaşma 74/100 | Form: 1-10-5-9-7-2-10-8-3-1
+6    11  REDATIVE                 ADEM ASLAN           Sprint       71    91 Orta • 91     Hız 89/100, Pist/Mesafe 82/100, Uzlaşma 74/100 | Form: 5-8-4-9-2-3-5-10-13-21
+7    9   ALASER                   HIŞMAN ÇİZİK         Orta         71    89 Orta • 89     Hız 96/100, Pist/Mesafe 83/100, Uzlaşma 76/100 | Form: 4-1-6-5-8-7-8-5-6-14
+8    4   ATOMİC FORCE             MUHAMMED MİR BİLGİN  Sprint       71    74 Temkinli • 74  Galop 81/100, Hız 81/100, Uzlaşma 77/100 | Form: 5-4-1-1-4-4-5-10-9-17
+9    1   THRACE FEVER             İSMAİL YILDIRIM      Ön grup      70    84 Orta • 84     Pist/Mesafe 80/100, Hız 82/100, Uzlaşma 79/100 | Form: 4-8-2-3-2-2-7-4-4-7
+10   3   DESRUCTOR                ERHAN AKTUĞ          Seri         69    68 Temkinli • 68  Pist/Mesafe 80/100, Hız 78/100, Uzlaşma 78/100 | Form: 4-2-2-5-5-4-10-1-5-1
+11   18  PAREZKAR                 BERKAN ÇIĞLA         Sprint       68    87 Orta • 87     Galop 88/100, Pist/Mesafe 75/100, Hız 74/100 | Form: 8-9-9-15-9-5-7-10-7-11
+12   7   GOOD TIME CHARLIE        GÖRKEM ÖZÇELİK       Sprint       66    77 Orta • 77     Hız 96/100, Pist/Mesafe 85/100, Uzlaşma 83/100 | Form: 2-3-2-8-5-3-3-2-10-16
+13   12  ONNA BUGEISHA            UĞUR TEMUR           Sprint       63    82 Orta • 82     Pist/Mesafe 74/100, Hız 74/100, Veri 82/100 | Form: 10-10-1-1-9-9-10-15-11
+14   2   HUMAN TORCH              MURAT KEÇECİ         Sprint       63    79 Temkinli • 79  Pist/Mesafe 73/100, Hız 77/100, KGS 83/100 | Form: 2-3-3-3-8-4-4-10-11-12
+15   16  THE SNAKE PIT            ZÜLFÜKAR AYDOĞDİ     Sprint       61    73 Temkinli • 73  Pist/Mesafe 76/100, Veri 73/100, Kilo 100/100 | Form: 2-3-1-9-8-10-3-7-14-14
+16   13  ERKOÇUM                  YİĞİTCAN GÖKÇE       Orta         60    89 Orta • 89     Veri 89/100, Kilo 80/100 | Form: 7-6-6-13-14-7-4-5-2-12
+17   6   VAHŞİ BAWIKAL            ROJHAT KURT          Sprint       58    62 Temkinli • 62  Hız 76/100 | Form: 4-3-5-15-14-10-6-6-11-9
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 15 ASRA İNAT
+  Ozet: Pist/Mesafe: 0G - 0P / 4 • Jokey: 1G - 2P / 3 • Galop: 73/100
+  - Galop         73 | Hazırlık · İdman dereceleri ve splitler
+  - Hız           88 | Ana · Derece ve son metreler
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+
+No 10 PAPA RUNNER
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 0P / 1 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Hız           88 | Ana · Derece ve son metreler
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+
+No 17 OKYANUS İNCİSİ
+  Ozet: Pist/Mesafe: 0G - 1P / 7 • Jokey: 0G - 0P / 1 • Galop: 72/100
+  - Galop         72 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+
+No 5 FIREWOOD
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 0P / 2 • Galop: 66/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Galop         66 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

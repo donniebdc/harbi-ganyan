@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-09&hip=BURSA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-09 / BURSA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 64/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • MAHÇİÇEK                | Orta / Konum 54/100
+Akış 2   | No 4 • PRENS TUNA              | Orta / Konum 53/100
+Akış 3   | No 6 • KOŞBAŞAR                | Sprint / Konum 35/100
+Akış 4   | No 3 • İLKBEY                  | Sprint / Konum 35/100
+Akış 5   | No 9 • SEVDİREN                | Sprint / Konum 35/100
+Akış 6   | No 8 • ÖZ MİDYATLI             | Sprint / Konum 35/100
+Akış 7   | No 2 • AYLAKOĞLAN              | Sprint / Konum 34/100
+Akış 8   | No 1 • ATAYURT                 | Sprint / Konum 34/100
+Akış 9   | No 5 • SONAYBEY                | Sprint / Konum 34/100
+Akış 10  | No 10 • SIRTAŞI                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 66/100
+Model Lideri  : No 6 KOŞBAŞAR (72/100)
+Akış Lideri   : No 7 MAHÇİÇEK (Orta · Konum 54/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 89/100, Hız 74/100, Uzlaşma 84/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 6 KOŞBAŞAR
+
+- Model Payı          : %10,9 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [79/100]
+  Detay: Veri + skor farkı
+- AI Model            : 72/100 [72/100]
+  Detay: Pist/Mesafe 89/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 36/100 [36/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %28,2 [28/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,40 [90/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 4 11 16 [43/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 17 · HP 26 [37/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 7 [22/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 2 [5/100]
+  Detay: Birlikte performans
+- Jokey               : FURKAN KARAKURT [5/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [45/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    6   KOŞBAŞAR                 FURKAN KARAKURT      Sprint       72    76 Yüksek • 76   Pist/Mesafe 89/100, Hız 74/100, Uzlaşma 84/100 | Form: 8-3-6-10-5-7-4-4-11-16
+2    3   İLKBEY                   OKAN GÖKÇE           Sprint       69    77 Orta • 77     Pist/Mesafe 84/100, Uzlaşma 81/100, KGS 78/100 | Form: 11-2-6-8-4-7-4-1-10-13
+3    7   MAHÇİÇEK                 AHMET EFEKAN ELMAS   Orta         69    43 Temkinli • 43  Hız 99/100, Pist/Mesafe 84/100, KGS 74/100 | Form: 5-6-8-4-6-5-6-5-2-2
+4    9   SEVDİREN                 MAHMUT BAĞ           Sprint       67    58 Orta • 58     Pist/Mesafe 84/100, Hız 86/100, KGS 74/100 | Form: 12-12-7-10-2-7-9-12-7-9
+5    4   PRENS TUNA               EFE AKPINAR          Orta         66    77 Orta • 77     Pist/Mesafe 85/100, Uzlaşma 76/100, KGS 78/100 | Form: 11-10-8-10-7-6-6-6-6-9
+6    2   AYLAKOĞLAN               CEM ALTUN            Sprint       66    58 Temkinli • 58  Pist/Mesafe 85/100, Hız 79/100, Uzlaşma 78/100 | Form: 9-6-10-9
+7    1   ATAYURT                  ÇAĞLAR TAŞCI         Sprint       63    77 Temkinli • 77  Pist/Mesafe 79/100, Uzlaşma 72/100, KGS 83/100 | Form: 8-7-10-11-11-9-7-10-9-14
+8    5   SONAYBEY                 CEMAL PASO           Sprint       63    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 91/100, Uzlaşma 74/100 | Form: 8-9-3-10
+9    8   ÖZ MİDYATLI              ALİCAN İNCİ          Sprint       62    81 Orta • 81     Pist/Mesafe 81/100, Veri 81/100 | Form: 7-7-12-7-9-5-1-13-13
+10   10  SIRTAŞI                  BARAN ÇETİN          Sprint       61    53 Temkinli • 53  Hız 86/100, Kilo 89/100 | Form: 14-9-13-6-5-5-11-8-13-17
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 6 KOŞBAŞAR
+  Ozet: Pist/Mesafe: 0G - 1P / 7 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          51 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 İLKBEY
+  Ozet: Pist/Mesafe: 1G - 1P / 6 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           63 | Ana · Derece ve son metreler
+  - Form          53 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 MAHÇİÇEK
+  Ozet: Pist/Mesafe: 0G - 0P / 5 • Jokey: 0G - 0P / 1 • Galop: 60/100
+  - Hız           99 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          53 | Ana · Yarış geçmişi ve sonuç formu
+
+No 9 SEVDİREN
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 0G - 1P / 2 • Galop: 60/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           86 | Ana · Derece ve son metreler
+  - Form          41 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-06&hip=BURSA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-06 / BURSA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 68/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 6 • GÜNDÜZDÜŞÜ              | Seri / Konum 90/100
+Akış 2   | No 7 • IŞINBİKE                | Ön grup / Konum 74/100
+Akış 3   | No 1 • BELKIS ANA              | Ön grup / Konum 74/100
+Akış 4   | No 2 • CANIM ÇITIR             | Ön grup / Konum 74/100
+Akış 5   | No 8 • LUSİA                   | Ön grup / Konum 74/100
+Akış 6   | No 4 • DİLARASULTANIM          | Ön grup / Konum 73/100
+Akış 7   | No 9 • MEHİR ABLA              | Ön grup / Konum 73/100
+Akış 8   | No 11 • PRENSES DI             | Orta / Konum 54/100
+Akış 9   | No 12 • ŞEHNAZ LONGA           | Sprint / Konum 34/100
+Akış 10  | No 5 • ERVANUR                 | Sprint / Konum 34/100
+Akış 11  | No 3 • ÇAYCI KIZ               | Sprint / Konum 34/100
+Akış 12  | No 10 • MÜZEYYEN ABLA          | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 68/100
+Model Lideri  : No 7 IŞINBİKE (74/100)
+Akış Lideri   : No 6 GÜNDÜZDÜŞÜ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 89/100, Hız 78/100, Uzlaşma 76/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 IŞINBİKE
+
+- Model Payı          : %9,1 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [76/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Pist/Mesafe 89/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 68/100 [68/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [74/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [81/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 58/100 [58/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %37,5 [38/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,40 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 8 3 5 6 [63/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 18 · HP 82 [79/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 4P / 7 [37/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 3P / 6 [32/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ YILDIZ [32/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [71/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 80/100 [80/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   IŞINBİKE                 ALİ YILDIZ           Ön grup      74    80 Yüksek • 80   Pist/Mesafe 89/100, Hız 78/100, Uzlaşma 76/100 | Form: 9-7-3-3-3-3-8-3-5-6
+2    1   BELKIS ANA               ONUR YILDIZ          Ön grup      74    77 Orta • 77     Pist/Mesafe 84/100, Form 73/100, Uzlaşma 82/100 | Form: 2-5-4-3-1-3-1-1-5-4
+3    2   CANIM ÇITIR              HALİS KARATAŞ        Ön grup      74    67 Orta • 67     Pist/Mesafe 86/100, Hız 81/100, Uzlaşma 85/100 | Form: 4-1-5-3-2-2-2-8-4-4
+4    12  ŞEHNAZ LONGA             ONUR ATMACA          Sprint       72    72 Orta • 72     Pist/Mesafe 93/100, Hız 75/100, Stil 76/100 | Form: 2-7-2-2-9-12-9-9-8-1
+5    6   GÜNDÜZDÜŞÜ               TOLGA YILDIZ         Seri         70    66 Orta • 66     Pist/Mesafe 81/100, Hız 82/100, KGS 76/100 | Form: 7-4-4-7-4-2-5-8-10-1
+6    5   ERVANUR                  HALİT GÖKÇE          Sprint       69    78 Orta • 78     Pist/Mesafe 87/100, Hız 75/100, Veri 78/100 | Form: 5-2-3-8-11-11-13-12-7-9
+7    3   ÇAYCI KIZ                ALİ KAÇMAZ           Sprint       69    77 Orta • 77     Pist/Mesafe 79/100, Uzlaşma 75/100, Hava/Zemin 83/100 | Form: 6-4-3-1-3-6-6-8-9-10
+8    8   LUSİA                    GÖRKEM ÖZÇELİK       Ön grup      67    43 Temkinli • 43  Hız 99/100, Pist/Mesafe 81/100 | Form: 3-4-9-5-6-4-4-4-6-2
+9    4   DİLARASULTANIM           KADİR TOKAÇOĞLU      Ön grup      66    53 Temkinli • 53  Hız 100/100, Form 73/100, Pist/Mesafe 73/100 | Form: 7-2-2-2-4-13-10-4-9-4
+10   10  MÜZEYYEN ABLA            FURKAN KARAKURT      Sprint       61    51 Temkinli • 51  Hız 95/100, Stil 76/100, Uzlaşma 73/100 | Form: 1-5-11-10-7-6-4-11-4-9
+11   11  PRENSES DI               MUSTAFA ÇİÇEK        Orta         60    77 Orta • 77     Pist/Mesafe 72/100, Stil 76/100, Hava/Zemin 75/100 | Form: 4-4-6-8-1-9-2-6-5-6
+12   9   MEHİR ABLA               OKAN GÖKÇE           Ön grup      59    77 Temkinli • 77  Pist/Mesafe 76/100, Hava/Zemin 75/100, Veri 77/100 | Form: 6-5-3-4-3-6-1-4-9-13
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 IŞINBİKE
+  Ozet: Pist/Mesafe: 0G - 4P / 7 • Jokey: 0G - 3P / 6 • Galop: 74/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           78 | Ana · Derece ve son metreler
+  - Form          61 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 BELKIS ANA
+  Ozet: Pist/Mesafe: 2G - 3P / 4 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           70 | Ana · Derece ve son metreler
+
+No 2 CANIM ÇITIR
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           81 | Ana · Derece ve son metreler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 12 ŞEHNAZ LONGA
+  Ozet: Pist/Mesafe: 1G - 4P / 9 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

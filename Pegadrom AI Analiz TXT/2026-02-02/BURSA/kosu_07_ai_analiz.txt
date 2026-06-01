@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-02&hip=BURSA&kosu=7
+Tarih/Hipodrom/Kosu: 2026-02-02 / BURSA / 7
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 65/100
+Veri guveni       : 54/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 9 • MAHÇİÇEK                | Orta / Konum 54/100
+Akış 2   | No 7 • TEKFORD ACL             | Orta / Konum 53/100
+Akış 3   | No 6 • PRENS TUNA              | Orta / Konum 53/100
+Akış 4   | No 1 • BALATÜRK                | Sprint / Konum 35/100
+Akış 5   | No 3 • NEŞET AĞA               | Sprint / Konum 35/100
+Akış 6   | No 2 • EMİRHAT                 | Sprint / Konum 35/100
+Akış 7   | No 5 • İLKBEY                  | Sprint / Konum 35/100
+Akış 8   | No 8 • UZUN YUNUS              | Sprint / Konum 34/100
+Akış 9   | No 4 • ATİK HASAN              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 65/100
+Model Lideri  : No 1 BALATÜRK (75/100)
+Akış Lideri   : No 9 MAHÇİÇEK (Orta · Konum 54/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 77/100, Form 72/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 BALATÜRK
+
+- Model Payı          : %12,8 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [57/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [66/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 39/100 [39/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %28,0 [28/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,05 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 13 8 13 [35/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 10 · HP 30 [33/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 3 [19/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 4 [27/100]
+  Detay: Birlikte performans
+- Jokey               : OKAN GÖKÇE [27/100]
+  Detay: Bugünkü biniş
+- Tempo               : Geriden gelebilir [39/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 33/100 [33/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 65/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   BALATÜRK                 OKAN GÖKÇE           Sprint       75    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 77/100, Form 72/100 | Form: 3-2-4-7-9-7-1-13-8-13
+2    3   NEŞET AĞA                MAHMUT TURAN         Sprint       73    48 Orta • 48     Pist/Mesafe 84/100, Hız 88/100, Uzlaşma 85/100 | Form: 2-3-5-1-4-6-8-15-5-9
+3    2   EMİRHAT                  RECEP KETME          Sprint       69    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 75/100, Uzlaşma 73/100 | Form: 4-3-6-7-4-1-10-12-8-6
+4    7   TEKFORD ACL              ONUR ATMACA          Orta         68    67 Orta • 67     Pist/Mesafe 77/100, Hız 81/100, Hava/Zemin 77/100 | Form: 3-3-9-5-6-7-5-7-11-7
+5    5   İLKBEY                   HALİT GÖKÇE          Sprint       64    62 Orta • 62     Hız 84/100, Kilo 100/100 | Form: 11-2-6-8-4-7-4-1-10-13
+6    6   PRENS TUNA               AHMET EFEKAN ELMAS   Orta         62    67 Orta • 67     Hız 77/100, Kilo 100/100 | Form: 11-10-8-10-7-6-6-6-6-9
+7    8   UZUN YUNUS               MAHSUN TURAN         Sprint       60    81 Temkinli • 81  Pist/Mesafe 76/100, Veri 81/100 | Form: 6-2-5-8-4-7-5-8-9-10
+8    4   ATİK HASAN               HÜSEYİN ŞİMŞEK       Sprint       60    77 Temkinli • 77  Veri 77/100 | Form: 12-14-11-9-11-6-8-10-2-9
+9    9   MAHÇİÇEK                 YUNUS EMRE YÜKSEL    Orta         54    14 Temkinli • 14  Uzlaşma 92/100, Kilo 82/100 | Form: 5-6-8-4-6-5-6-5-2-2
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 BALATÜRK
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 2P / 4 • Galop: 52/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Form          72 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 NEŞET AĞA
+  Ozet: Pist/Mesafe: 1G - 2P / 6 • Jokey: 1G - 1P / 2 • Galop: 52/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 EMİRHAT
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 1P / 3 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   75 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 TEKFORD ACL
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Hız           81 | Ana · Derece ve son metreler
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

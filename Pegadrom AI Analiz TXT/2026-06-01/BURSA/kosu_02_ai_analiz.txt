@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-06-01&hip=BURSA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-06-01 / BURSA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 57/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • KERVAN SANCAĞI          | Seri / Konum 90/100
+Akış 2   | No 1 • ASALETLİ ÇOCUK          | Seri / Konum 90/100
+Akış 3   | No 5 • YÜCEALP                 | Seri / Konum 90/100
+Akış 4   | No 4 • ŞARK AYAZI              | Seri / Konum 90/100
+Akış 5   | No 3 • ARDAPAŞA                | Orta / Konum 54/100
+Akış 6   | No 9 • ZORLU HAYAT             | Orta / Konum 54/100
+Akış 7   | No 7 • ŞAHİNYÜREKLİ            | Orta / Konum 54/100
+Akış 8   | No 8 • YAĞIZSOY                | Sprint / Konum 34/100
+Akış 9   | No 6 • BELAMAN                 | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 69/100
+Model Lideri  : No 2 KERVAN SANCAĞI (82/100)
+Akış Lideri   : No 2 KERVAN SANCAĞI (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Galop 87/100, Pist/Mesafe 85/100, Hız 86/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 KERVAN SANCAĞI
+
+- Model Payı          : %13,1 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [87/100]
+  Detay: Veri + skor farkı
+- AI Model            : 82/100 [82/100]
+  Detay: Galop 87/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 65/100 [65/100]
+  Detay: 4/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [67/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 55/100 [55/100]
+  Detay: KGS / HP / AGF
+- AGF                 : - [0/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : - [0/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 4 3 1 [85/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 15 · HP 42 [47/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 2 [45/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 2 [62/100]
+  Detay: Birlikte performans
+- Jokey               : ERCAN ÇANKAYA [62/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [64/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 82/100 [82/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   KERVAN SANCAĞI           ERCAN ÇANKAYA        Seri         82    82 Yüksek • 82   Galop 87/100, Pist/Mesafe 85/100, Hız 86/100 | Form: 2-4-3-1
+2    1   ASALETLİ ÇOCUK           GÖKHAN KOCAKAYA      Seri         78    47 Temkinli • 47  Galop 100/100, Form 82/100, Hız 89/100 | Form: 4-1-1
+3    3   ARDAPAŞA                 MUHAMMED MİR BİLGİN  Orta         74    53 Orta • 53     Galop 76/100, Hız 100/100, Pist/Mesafe 82/100 | Form: 7-6-1
+4    9   ZORLU HAYAT              HALİT GÖKÇE          Orta         73    59 Orta • 59     Galop 92/100, Pist/Mesafe 80/100, Hız 75/100 | Form: 7-6-3
+5    5   YÜCEALP                  ÖMER FARUK ÖZEN      Seri         70    52 Temkinli • 52  Pist/Mesafe 82/100, Stil 76/100, Uzlaşma 75/100 | Form: 4-7-1
+6    7   ŞAHİNYÜREKLİ             SERCAN TIRPAN        Orta         68    87 Orta • 87     Galop 87/100, Pist/Mesafe 78/100, Jokey 78/100 | Form: 8-5-5-9-3
+7    4   ŞARK AYAZI               BEKİR MERT MIRIK     Seri         67    43 Temkinli • 43  Hız 80/100, Pist/Mesafe 74/100, Stil 76/100 | Form: 1-6
+8    8   YAĞIZSOY                 OKAN GÖKÇE           Sprint       62    56 Temkinli • 56  Galop 78/100, Pist/Mesafe 78/100, Kilo 73/100 | Form: 10-11
+9    6   BELAMAN                  NİZAMETTİN DEMİR     Sprint       51    34 Temkinli • 34  Kilo 86/100 | Form: 12
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 KERVAN SANCAĞI
+  Ozet: Pist/Mesafe: 1G - 1P / 2 • Jokey: 1G - 2P / 2 • Galop: 87/100
+  - Galop         87 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           86 | Ana · Derece ve son metreler
+
+No 1 ASALETLİ ÇOCUK
+  Ozet: Pist/Mesafe: Veri yok • Jokey: Veri yok • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Form          82 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           89 | Ana · Derece ve son metreler
+
+No 3 ARDAPAŞA
+  Ozet: Pist/Mesafe: 1G - 1P / 1 • Jokey: Veri yok • Galop: 76/100
+  - Galop         76 | Hazırlık · İdman dereceleri ve splitler
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+
+No 9 ZORLU HAYAT
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: Veri yok • Galop: 92/100
+  - Galop         92 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

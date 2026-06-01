@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-28&hip=IZMIR&kosu=1
+Tarih/Hipodrom/Kosu: 2026-05-28 / IZMIR / 1
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 10
+Ortalama AI puani : 67/100
+Veri guveni       : 80/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İzmir • 1. Koşu • 17:15 • 1200m • Kum 28.05.2026 Perşembe
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • BLUE REFLECTION         | Seri / Konum 90/100
+Akış 2   | No 4 • BATTLECAT               | Seri / Konum 90/100
+Akış 3   | No 3 • MAGIC BANK              | Seri / Konum 90/100
+Akış 4   | No 5 • KING ZELAY              | Ön grup / Konum 73/100
+Akış 5   | No 8 • MUFASA                  | Orta / Konum 54/100
+Akış 6   | No 1 • BOARDING PASS           | Orta / Konum 54/100
+Akış 7   | No 6 • GULAZER                 | Orta / Konum 54/100
+Akış 8   | No 10 • TOLGA REİS             | Orta / Konum 53/100
+Akış 9   | No 7 • YOU GOT THIS            | Sprint / Konum 35/100
+Akış 10  | No 9 • MANTI SISTER            | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 67/100
+Model Lideri  : No 8 MUFASA (75/100)
+Akış Lideri   : No 2 BLUE REFLECTION (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 88/100, Uzlaşma 81/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 MUFASA
+
+- Model Payı          : %11,1 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [71/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 59/100 [59/100]
+  Detay: 4/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [54/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 43/100 [43/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %45,6 [46/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,55 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 1 5 5 [65/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 28 · HP 42 [61/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 3 [34/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : ERHAN AKTUĞ [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [66/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 53/100 [53/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   MUFASA                   ERHAN AKTUĞ          Orta         75    53 Orta • 53     Hız 100/100, Pist/Mesafe 88/100, Uzlaşma 81/100 | Form: 7-1-5-5
+2    2   BLUE REFLECTION          BEKİR MERT MIRIK     Seri         71   100 Yüksek • 100  Pist/Mesafe 78/100, Jokey 89/100, Stil 76/100 | Form: 4-6-9-12-3-6-4-1-1-1
+3    4   BATTLECAT                ÖMER FARUK ÖZEN      Seri         71    81 Orta • 81     Pist/Mesafe 87/100, Uzlaşma 83/100, Stil 76/100 | Form: 7-7-3-2-2-2-7-4-4-2
+4    3   MAGIC BANK               SİNAN AKŞIN          Seri         71    77 Orta • 77     Pist/Mesafe 92/100, Uzlaşma 87/100, Stil 76/100 | Form: 1-4-6-6-1-3-2-6-2-10
+5    1   BOARDING PASS            ALİ MEHDİ ALTIN      Orta         70    83 Orta • 83     Pist/Mesafe 77/100, Galop 100/100, Uzlaşma 77/100 | Form: 2-1-5-5-4-2-4-7-2-6
+6    6   GULAZER                  MUHAMMED BURHAN ÖNCEL Orta         67    95 Orta • 95     Pist/Mesafe 85/100, Galop 77/100, Veri 95/100 | Form: 4-3-4-3-6-12-9-5-6-7
+7    7   YOU GOT THIS             RECEP KETME          Sprint       66    95 Orta • 95     Pist/Mesafe 91/100, Hava/Zemin 85/100, Veri 95/100 | Form: 5-3-8-2-1-3-3-9-5-8
+8    5   KING ZELAY               NEVZAT AVCİ          Ön grup      63    77 Orta • 77     Pist/Mesafe 88/100, Hava/Zemin 80/100, Veri 77/100 | Form: 1-1-3-6-7-3-8-3
+9    10  TOLGA REİS               ÇAĞLAR TAŞCI         Orta         62    81 Orta • 81     Pist/Mesafe 86/100, Veri 81/100, KGS 77/100 | Form: 2-4-3-16-12-12-5-7-5-4
+10   9   MANTI SISTER             EREN DURSUN ÖKTEN    Sprint       58    62 Temkinli • 62  Pist/Mesafe 75/100, Hız 74/100, Kilo 100/100 | Form: 9-3-10-6-1-9-7-9
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 MUFASA
+  Ozet: Pist/Mesafe: 1G - 1P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 BLUE REFLECTION
+  Ozet: Pist/Mesafe: 2G - 2P / 3 • Jokey: 3G - 3P / 4 • Galop: 55/100
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         89 | Destek · Jokey formu ve at uyumu
+
+No 4 BATTLECAT
+  Ozet: Pist/Mesafe: 0G - 4P / 6 • Jokey: 0G - 1P / 2 • Galop: 67/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           53 | Ana · Derece ve son metreler
+
+No 3 MAGIC BANK
+  Ozet: Pist/Mesafe: 2G - 5P / 9 • Jokey: 0G - 0P / 1 • Galop: 52/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           50 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

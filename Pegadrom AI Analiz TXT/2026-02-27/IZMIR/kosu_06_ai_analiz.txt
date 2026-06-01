@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-27&hip=IZMIR&kosu=6
+Tarih/Hipodrom/Kosu: 2026-02-27 / IZMIR / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 61/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • EL CACİQUE              | Seri / Konum 90/100
+Akış 2   | No 10 • IRON WILL              | Seri / Konum 90/100
+Akış 3   | No 9 • SUPER BERK              | Ön grup / Konum 74/100
+Akış 4   | No 3 • EAST WEST WARRIOR       | Ön grup / Konum 74/100
+Akış 5   | No 1 • BERİD                   | Ön grup / Konum 73/100
+Akış 6   | No 4 • BOARDING PASS           | Orta / Konum 55/100
+Akış 7   | No 12 • APOLACYPSE             | Orta / Konum 54/100
+Akış 8   | No 8 • HARVEY WALLBANGER       | Orta / Konum 54/100
+Akış 9   | No 5 • OĞLUM FIRAT             | Orta / Konum 53/100
+Akış 10  | No 11 • GULAZER                | Orta / Konum 53/100
+Akış 11  | No 6 • HUMAN TORCH             | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 69/100
+Model Lideri  : No 7 EL CACİQUE (87/100)
+Akış Lideri   : No 7 EL CACİQUE (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 98/100, Form 84/100, Hız 84/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 EL CACİQUE
+
+- Model Payı          : %11,4 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [84/100]
+  Detay: Veri + skor farkı
+- AI Model            : 87/100 [87/100]
+  Detay: Pist/Mesafe 98/100
+- Son 6 Uyarlama      : Güçlü rakip · 72/100 [72/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 75/100 [75/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %21,8 [22/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,75 [89/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 2 4 [92/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 29 · HP 60 [75/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 5G - 7P / 7 [84/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 3G - 4P / 4 [79/100]
+  Detay: Birlikte performans
+- Jokey               : MUSTAFA ÇİÇEK [79/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [85/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   EL CACİQUE               MUSTAFA ÇİÇEK        Seri         87    66 Orta • 66     Pist/Mesafe 98/100, Form 84/100, Hız 84/100 | Form: 1-1-1-3-1-2-1-1-2-4
+2    4   BOARDING PASS            BERKAY BÜLBÜL        Orta         81    51 Orta • 51     Hız 100/100, Form 82/100, Pist/Mesafe 84/100 | Form: 2-1-5-5-4-2-4-7-2-6
+3    9   SUPER BERK               ONUR ATMACA          Ön grup      80    58 Orta • 58     Pist/Mesafe 95/100, Form 86/100, Hız 84/100 | Form: 2-1-1-4-3-3-4-6-1-3
+4    6   HUMAN TORCH              SİNAN AKŞIN          Sprint       75    71 Orta • 71     Pist/Mesafe 83/100, Form 74/100, Hız 82/100 | Form: 2-3-3-3-8-4-4-10-11-12
+5    10  IRON WILL                İBRAHİM SEFA SÖĞÜT   Seri         73    81 Orta • 81     Pist/Mesafe 87/100, Form 75/100, Stil 76/100 | Form: 2-2-5-4-2-2-9-2-2-11
+6    12  APOLACYPSE               SERCAN TIRPAN        Orta         70    85 Orta • 85     Pist/Mesafe 87/100, Jokey 84/100, Hava/Zemin 73/100 | Form: 3-6-9-6-1-4-7-1-4
+7    3   EAST WEST WARRIOR        MUHAMMED MİR BİLGİN  Ön grup      68    72 Orta • 72     Pist/Mesafe 83/100, Veri 72/100 | Form: 3-5-4-4-6-1-1-7-4-4
+8    5   OĞLUM FIRAT              YİĞİTCAN GÖKÇE       Orta         65    85 Orta • 85     Pist/Mesafe 88/100, Veri 85/100, Kilo 73/100 | Form: 7-4-7-3-9-2-6-6-10-6
+9    8   HARVEY WALLBANGER        NEVZAT AVCİ          Orta         60    77 Orta • 77     Pist/Mesafe 79/100, Veri 77/100, Kilo 84/100 | Form: 1-7-6-8-4-8-3-5-7-2
+10   11  GULAZER                  METE GÖL             Orta         55    14 Temkinli • 14  Uzlaşma 82/100, Kilo 100/100 | Form: 4-3-4-3-6-12-9-5-6-7
+11   1   BERİD                    ÖMER FARUK ÖZEN      Ön grup      50    14 Temkinli • 14  Veri sinyali temkinli | Form: 6-8-4-2-6-6-6-11-4-3
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 EL CACİQUE
+  Ozet: Pist/Mesafe: 5G - 7P / 7 • Jokey: 3G - 4P / 4 • Galop: 52/100
+  - Pist/Mesafe   98 | Ana · Pist/mesafe geçmişi
+  - Form          84 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           84 | Ana · Derece ve son metreler
+
+No 4 BOARDING PASS
+  Ozet: Pist/Mesafe: 1G - 2P / 5 • Jokey: 1G - 2P / 5 • Galop: 60/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          82 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+
+No 9 SUPER BERK
+  Ozet: Pist/Mesafe: 2G - 6P / 9 • Jokey: 1G - 2P / 3 • Galop: 52/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Form          86 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           84 | Ana · Derece ve son metreler
+
+No 6 HUMAN TORCH
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 3 • Galop: 52/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           82 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

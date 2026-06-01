@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-12&hip=ANTALYA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-02-12 / ANTALYA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 60/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • CESURSOY                | Seri / Konum 90/100
+Akış 2   | No 2 • DEMİR BARBAR            | Seri / Konum 90/100
+Akış 3   | No 3 • PENÇSİR                 | Seri / Konum 90/100
+Akış 4   | No 7 • SÜPER SONİK             | Seri / Konum 90/100
+Akış 5   | No 4 • SAÇANŞAH                | Seri / Konum 90/100
+Akış 6   | No 5 • SAKALLI BABAM           | Orta / Konum 54/100
+Akış 7   | No 6 • SAMET EFENDİ            | Orta / Konum 54/100
+Akış 8   | No 9 • ATEŞ TUFANI             | Sprint / Konum 34/100
+Akış 9   | No 8 • TAYYAR BEY              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 67/100
+Model Lideri  : No 1 CESURSOY (77/100)
+Akış Lideri   : No 1 CESURSOY (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 89/100, Pist/Mesafe 83/100, Form 74/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 CESURSOY
+
+- Model Payı          : %12,8 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [74/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Hız 89/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 63/100 [63/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [44/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [63/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 47/100 [47/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %32,2 [32/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,75 [81/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 8 2 1 [75/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 13 · HP 64 [60/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 2P / 3 [46/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : ERTUĞRUL CANKILIÇ [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [70/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 58/100 [58/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   CESURSOY                 ERTUĞRUL CANKILIÇ    Seri         77    58 Orta • 58     Hız 89/100, Pist/Mesafe 83/100, Form 74/100 | Form: 5-5-1-1-4-3-3-8-2-1
+2    2   DEMİR BARBAR             HIŞMAN ÇİZİK         Seri         73    85 Yüksek • 85   Pist/Mesafe 80/100, Form 73/100, Jokey 83/100 | Form: 8-2-2-1-1-2-11-4-7-9
+3    3   PENÇSİR                  GÖRKEM ÖZÇELİK       Seri         72    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 83/100, Uzlaşma 83/100 | Form: 4-2-4-2-4-6-2-3-5-1
+4    5   SAKALLI BABAM            ADEM ASLAN           Orta         70    85 Orta • 85     Pist/Mesafe 83/100, Jokey 74/100, Uzlaşma 73/100 | Form: 4-4-4-2-5-10-2-3-8-5
+5    7   SÜPER SONİK              AYHAN KURŞUN         Seri         67    61 Orta • 61     Pist/Mesafe 78/100, Hız 72/100, KGS 73/100 | Form: 7-1-4-7-8-3-4-2-5-2
+6    9   ATEŞ TUFANI              FERHAT YÜCEL         Sprint       62    84 Orta • 84     Pist/Mesafe 80/100, Veri 84/100, Kilo 100/100 | Form: 11-1-13-12-7-12-6-9-11-13
+7    6   SAMET EFENDİ             MÜSLÜM ÇELİK         Orta         62    48 Temkinli • 48  Pist/Mesafe 76/100, Hız 78/100 | Form: 3-10-11-6-3-3-1-1-6-7
+8    8   TAYYAR BEY               FATİH SULTAN MEHMET SANSAR Sprint       60    61 Temkinli • 61  KGS 75/100, Risk 75/100 | Form: 1-14-5-8-12-5-14
+9    4   SAÇANŞAH                 AHMET ÇELİK          Seri         57    28 Temkinli • 28  Hız 83/100, Pist/Mesafe 74/100, Piyasa 84/100 | Form: 9-1-2-4-1-3-1-2-2-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 CESURSOY
+  Ozet: Pist/Mesafe: 1G - 2P / 3 • Jokey: 0G - 0P / 1 • Galop: 44/100
+  - Hız           89 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 DEMİR BARBAR
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 2G - 4P / 6 • Galop: 28/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           51 | Ana · Derece ve son metreler
+
+No 3 PENÇSİR
+  Ozet: Pist/Mesafe: 0G - 2P / 3 • Jokey: 0G - 3P / 5 • Galop: 50/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 SAKALLI BABAM
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           58 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

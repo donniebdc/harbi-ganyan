@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-04&hip=SANLIURFA&kosu=5
+Tarih/Hipodrom/Kosu: 2026-03-04 / SANLIURFA / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 74/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • ENGİN REİS              | Ön grup / Konum 74/100
+Akış 2   | No 3 • ASIM EFE                | Ön grup / Konum 73/100
+Akış 3   | No 1 • CİHAN BABA              | Orta / Konum 54/100
+Akış 4   | No 9 • UÇAN ILGIN              | Orta / Konum 54/100
+Akış 5   | No 4 • AYAZALIŞ                | Orta / Konum 54/100
+Akış 6   | No 8 • SEDAT GÜZELİ            | Orta / Konum 54/100
+Akış 7   | No 7 • SARIYAZMALIM            | Sprint / Konum 35/100
+Akış 8   | No 5 • SURUÇ BEYİ              | Sprint / Konum 34/100
+Akış 9   | No 6 • ZİYAT AĞA               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 68/100
+Model Lideri  : No 2 ENGİN REİS (76/100)
+Akış Lideri   : No 2 ENGİN REİS (Ön grup · Konum 74/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 91/100, Pist/Mesafe 79/100, Uzlaşma 82/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 ENGİN REİS
+
+- Model Payı          : %12,4 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [76/100]
+  Detay: Veri + skor farkı
+- AI Model            : 76/100 [76/100]
+  Detay: Hız 91/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 62/100 [62/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [64/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 44/100 [44/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %48,3 [48/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,60 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 3 4 5 [68/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 16 · HP 31 [40/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 3P / 5 [33/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 4P / 9 [35/100]
+  Detay: Birlikte performans
+- Jokey               : YUSUF CENGİZ [35/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [60/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 75/100 [75/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   ENGİN REİS               YUSUF CENGİZ         Ön grup      76    75 Yüksek • 75   Hız 91/100, Pist/Mesafe 79/100, Uzlaşma 82/100 | Form: 8-3-2-3-6-4-3-3-4-5
+2    1   CİHAN BABA               FERİT YARDIMCI       Orta         75    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 87/100, Uzlaşma 87/100 | Form: 3-3-4-2-4-1-7-2-6-6
+3    7   SARIYAZMALIM             İSA AKYAVUZ          Sprint       74    76 Orta • 76     Hız 84/100, Jokey 100/100, Stil 76/100 | Form: 2-9-1-11-13-2-6-6-10
+4    9   UÇAN ILGIN               HASAN ALTUNDAĞ       Orta         70    76 Orta • 76     Pist/Mesafe 79/100, Jokey 88/100, Veri 76/100 | Form: 6-11-7-6-2-1-5-3-7-9
+5    4   AYAZALIŞ                 AZİZ AKDEMİR         Orta         65    85 Orta • 85     Pist/Mesafe 79/100, Veri 85/100, KGS 73/100 | Form: 7-8-8-6-5-7-4-6-7-6
+6    8   SEDAT GÜZELİ             EMRE AKKILIÇ         Orta         65    77 Orta • 77     Pist/Mesafe 76/100, Veri 77/100, Kilo 89/100 | Form: 8-4-7-12-6-4-5-7-8-4
+7    5   SURUÇ BEYİ               NECMİ ALTIN          Sprint       63    81 Orta • 81     Hava/Zemin 73/100, Veri 81/100, KGS 81/100 | Form: 2-5-3-3-4-6-5-14-11-9
+8    3   ASIM EFE                 MAHMUT ÜNLÜ          Ön grup      63    71 Temkinli • 71  Hız 85/100, KGS 73/100, Risk 73/100 | Form: 11-8-10-3-7-2-3-3-2-11
+9    6   ZİYAT AĞA                FETHULLAH FELHAN     Sprint       60    81 Orta • 81     Pist/Mesafe 74/100, Veri 81/100, KGS 73/100 | Form: 8-11-10-10-9-4-7-11-8-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 ENGİN REİS
+  Ozet: Pist/Mesafe: 0G - 3P / 5 • Jokey: 0G - 4P / 9 • Galop: 28/100
+  - Hız           91 | Ana · Derece ve son metreler
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 CİHAN BABA
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 SARIYAZMALIM
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Hız           84 | Ana · Derece ve son metreler
+  - Pist/Mesafe   68 | Ana · Pist/mesafe geçmişi
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+
+No 9 UÇAN ILGIN
+  Ozet: Pist/Mesafe: 1G - 3P / 6 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+  - Hız           71 | Ana · Derece ve son metreler
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-27&hip=ANTALYA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-27 / ANTALYA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 67/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 9 • LUNA                    | Seri / Konum 90/100
+Akış 2   | No 4 • JET ÇELİK               | Orta / Konum 54/100
+Akış 3   | No 2 • DERMANCAN               | Orta / Konum 54/100
+Akış 4   | No 3 • BUĞLEMİM                | Orta / Konum 53/100
+Akış 5   | No 6 • NEŞET AĞA               | Sprint / Konum 35/100
+Akış 6   | No 10 • YER TİTRETEN           | Sprint / Konum 35/100
+Akış 7   | No 5 • AFŞARBEY                | Sprint / Konum 34/100
+Akış 8   | No 7 • BATUGA                  | Sprint / Konum 34/100
+Akış 9   | No 8 • GÜLLÜ KADİFE            | Sprint / Konum 34/100
+Akış 10  | No 1 • DENİZ SAVAŞI            | Sprint / Konum 34/100
+Akış 11  | No 11 • ATEŞ TUFANI            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 67/100
+Model Lideri  : No 4 JET ÇELİK (76/100)
+Akış Lideri   : No 9 LUNA (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 74/100, Jokey 100/100, Uzlaşma 84/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 4 JET ÇELİK
+
+- Model Payı          : %10,3 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [80/100]
+  Detay: Veri + skor farkı
+- AI Model            : 76/100 [76/100]
+  Detay: Hız 74/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 50/100 [50/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %18,9 [19/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,25 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 5 4 6 5 [70/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 10 · HP 38 [38/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 2 [45/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 2P / 3 [61/100]
+  Detay: Birlikte performans
+- Jokey               : ERCAN ÇANKAYA [61/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [60/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    4   JET ÇELİK                ERCAN ÇANKAYA        Orta         76    76 Yüksek • 76   Hız 74/100, Jokey 100/100, Uzlaşma 84/100 | Form: 2-1-6-7-3-1-5-4-6-5
+2    9   LUNA                     SERHAT ÇELİK         Seri         73    75 Orta • 75     Pist/Mesafe 81/100, Uzlaşma 82/100, Stil 76/100 | Form: 11-2-1-9-5-6-2-2-7-11
+3    6   NEŞET AĞA                ERHAN AKTUĞ          Sprint       72    87 Yüksek • 87   Pist/Mesafe 87/100, Uzlaşma 73/100, Hava/Zemin 77/100 | Form: 2-3-5-1-4-6-8-15-5-9
+4    5   AFŞARBEY                 HAKAN YILDIZ         Sprint       69    41 Temkinli • 41  Hız 97/100, Pist/Mesafe 80/100, Uzlaşma 76/100 | Form: 7-4-2-1-15-13-8-9-7-6
+5    2   DERMANCAN                AYHAN KURŞUN         Orta         67    43 Temkinli • 43  Hız 87/100, Pist/Mesafe 81/100, Uzlaşma 78/100 | Form: 2-6-8-5-7-4-5-5-16-13
+6    7   BATUGA                   UĞUR TEMUR           Sprint       67    37 Temkinli • 37  Hız 100/100, Uzlaşma 74/100, KGS 86/100 | Form: 5-12-3-4-3-12-9-11-17-7
+7    10  YER TİTRETEN             MAHMUT TURAN         Sprint       65    77 Orta • 77     Pist/Mesafe 73/100, Hava/Zemin 80/100, Veri 77/100 | Form: 3-1-8-11-3-7-5-9-14-10
+8    3   BUĞLEMİM                 DOĞUKAN KONUK        Orta         64    77 Orta • 77     Hava/Zemin 83/100, KGS 82/100, Risk 82/100 | Form: 4-1-2-3-11-5-9-8-7-6
+9    8   GÜLLÜ KADİFE             FATİH SULTAN MEHMET SANSAR Sprint       63    67 Temkinli • 67  Pist/Mesafe 74/100, KGS 72/100, Risk 72/100 | Form: 5-2-3-3-1-9-12-10-8-12
+10   1   DENİZ SAVAŞI             GÖRKEM ÖZÇELİK       Sprint       61    77 Orta • 77     Veri 77/100 | Form: 1-4-9-8-6-7-7-4-8-10
+11   11  ATEŞ TUFANI              MUSTAFA TEKPETEK     Sprint       60    82 Orta • 82     Veri 82/100, Kilo 100/100 | Form: 11-1-13-12-7-12-6-9-11-13
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 4 JET ÇELİK
+  Ozet: Pist/Mesafe: 1G - 1P / 2 • Jokey: 2G - 2P / 3 • Galop: 28/100
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+
+No 9 LUNA
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 1G - 2P / 4 • Galop: 28/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Hız           70 | Ana · Derece ve son metreler
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 NEŞET AĞA
+  Ozet: Pist/Mesafe: 1G - 2P / 7 • Jokey: 0G - 0P / 2 • Galop: 52/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           62 | Ana · Derece ve son metreler
+
+No 5 AFŞARBEY
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 1P / 4 • Galop: 51/100
+  - Hız           97 | Ana · Derece ve son metreler
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          58 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

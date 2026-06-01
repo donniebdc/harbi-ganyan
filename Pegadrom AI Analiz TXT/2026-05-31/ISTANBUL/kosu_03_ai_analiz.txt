@@ -1,0 +1,118 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-31&hip=ISTANBUL&kosu=3
+Tarih/Hipodrom/Kosu: 2026-05-31 / ISTANBUL / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 56/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • ALAMAÇ                  | Seri / Konum 90/100
+Akış 2   | No 2 • ALCANBERK               | Seri / Konum 90/100
+Akış 3   | No 5 • KÜÇÜK HASO              | Seri / Konum 90/100
+Akış 4   | No 4 • KORGÜN                  | Seri / Konum 90/100
+Akış 5   | No 3 • ATICI KAYA              | Ön grup / Konum 74/100
+Akış 6   | No 6 • ŞENERHAN                | Orta / Konum 54/100
+
+3) KARAR OZETI
+--------------
+Genel: 6 at · ortalama 70/100
+Model Lideri  : No 1 ALAMAÇ (75/100)
+Akış Lideri   : No 1 ALAMAÇ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 83/100, Form 85/100, Pist/Mesafe 82/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 ALAMAÇ
+
+- Model Payı          : %17,9 [18/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [69/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Galop 83/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 66/100 [66/100]
+  Detay: 3/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [67/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 63/100 [63/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %37,2 [37/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,00 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 2 1 [93/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 13 · HP 43 [45/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 1 [83/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : Veri yok [0/100]
+  Detay: Birlikte performans
+- Jokey               : SELİM KAYA [55/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [75/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   ALAMAÇ                   SELİM KAYA           Seri         75    66 Orta • 66     Galop 83/100, Form 85/100, Pist/Mesafe 82/100 | Form: 2-2-1
+2    2   ALCANBERK                ERHAN AKTUĞ          Seri         75    55 Orta • 55     Hız 100/100, Pist/Mesafe 83/100, Jokey 100/100 | Form: 14-1
+3    5   KÜÇÜK HASO               AKIN SÖZEN           Seri         73    40 Temkinli • 40  Form 91/100, Hız 76/100, Jokey 100/100 | Form: 1
+4    3   ATICI KAYA               VEDAT ABİŞ           Ön grup      68    60 Orta • 60     Galop 100/100, Pist/Mesafe 72/100 | Form: 3-4-5-1
+5    6   ŞENERHAN                 ALİ YILDIZ           Orta         65    57 Temkinli • 57  Jokey 84/100, KGS 73/100, Risk 73/100 | Form: 1-4-5
+6    4   KORGÜN                   GÖKHAN KOCAKAYA      Seri         64    55 Temkinli • 55  Form 73/100, Stil 76/100, KGS 75/100 | Form: 5-2-2
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 ALAMAÇ
+  Ozet: Pist/Mesafe: 1G - 1P / 1 • Jokey: Veri yok • Galop: 83/100
+  - Galop         83 | Hazırlık · İdman dereceleri ve splitler
+  - Form          85 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           66 | Ana · Derece ve son metreler
+
+No 2 ALCANBERK
+  Ozet: Pist/Mesafe: Veri yok • Jokey: 1G - 1P / 1 • Galop: 56/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Galop         56 | Hazırlık · İdman dereceleri ve splitler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 KÜÇÜK HASO
+  Ozet: Pist/Mesafe: Veri yok • Jokey: 1G - 1P / 1 • Galop: 69/100
+  - Form          91 | Ana · Yarış geçmişi ve sonuç formu
+  - Galop         69 | Hazırlık · İdman dereceleri ve splitler
+  - Hız           76 | Ana · Derece ve son metreler
+
+No 3 ATICI KAYA
+  Ozet: Pist/Mesafe: Veri yok • Jokey: Veri yok • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   72 | Ana · Pist/mesafe geçmişi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

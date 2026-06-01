@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-27&hip=IZMIR&kosu=4
+Tarih/Hipodrom/Kosu: 2026-03-27 / IZMIR / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 77/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • AKSU HAN                | Seri / Konum 90/100
+Akış 2   | No 4 • CANOĞLUCAN              | Seri / Konum 90/100
+Akış 3   | No 9 • ŞEKER HALHAL            | Seri / Konum 90/100
+Akış 4   | No 8 • CANIM ÇITIR             | Ön grup / Konum 74/100
+Akış 5   | No 1 • KAYAFATİH               | Ön grup / Konum 74/100
+Akış 6   | No 2 • ASLAN KILICI            | Ön grup / Konum 74/100
+Akış 7   | No 3 • BAD REFTAR              | Orta / Konum 54/100
+Akış 8   | No 6 • KAYALARIN ŞAHI          | Orta / Konum 54/100
+Akış 9   | No 11 • TEKİR BEYİ             | Sprint / Konum 35/100
+Akış 10  | No 7 • MELİHTAY                | Sprint / Konum 34/100
+Akış 11  | No 10 • HUMAY KIZIM            | Sprint / Konum 34/100
+Akış 12  | No 12 • SİLAHLIKIZ             | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 70/100
+Model Lideri  : No 8 CANIM ÇITIR (79/100)
+Akış Lideri   : No 5 AKSU HAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 98/100, Pist/Mesafe 89/100, Form 73/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 CANIM ÇITIR
+
+- Model Payı          : %9,4 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [77/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Hız 98/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 63/100 [63/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 53/100 [53/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %11,1 [11/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 7,35 [71/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 8 4 4 [73/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 82 [82/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 4 [27/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 1 [37/100]
+  Detay: Birlikte performans
+- Jokey               : NEVZAT AVCİ [37/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [76/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 72/100 [72/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   CANIM ÇITIR              NEVZAT AVCİ          Ön grup      79    72 Yüksek • 72   Hız 98/100, Pist/Mesafe 89/100, Form 73/100 | Form: 4-1-5-3-2-2-2-8-4-4
+2    5   AKSU HAN                 ALAATTİN KÜRÜNDÜK    Seri         77    83 Yüksek • 83   Pist/Mesafe 90/100, Hız 84/100, Uzlaşma 79/100 | Form: 5-1-5-8-2-2-7-3-6-2
+3    1   KAYAFATİH                ÖMER FARUK ÖZEN      Ön grup      77    77 Orta • 77     Pist/Mesafe 90/100, Hız 84/100, Form 74/100 | Form: 2-3-1-3-7-3-1-4-4-3
+4    4   CANOĞLUCAN               MUSTAFA ÇİÇEK        Seri         75    85 Orta • 85     Pist/Mesafe 93/100, Jokey 94/100, Uzlaşma 82/100 | Form: 4-2-4-4-4-9-2-1-6-9
+5    9   ŞEKER HALHAL             MUHAMMED MİR BİLGİN  Seri         73    76 Orta • 76     Hız 100/100, Pist/Mesafe 82/100, Veri 76/100 | Form: 2-5-11-12-7-3-5-4-1-2
+6    3   BAD REFTAR               BERKAY BÜLBÜL        Orta         70    85 Orta • 85     Pist/Mesafe 88/100, Jokey 75/100, Uzlaşma 74/100 | Form: 1-6-11-9-5-6-6-1-4-11
+7    2   ASLAN KILICI             MURAT KEÇECİ         Ön grup      70    77 Orta • 77     Pist/Mesafe 75/100, Hava/Zemin 87/100, Veri 77/100 | Form: 3-5-3-6-3-1-8-3-8-6
+8    7   MELİHTAY                 ALİ MEHDİ ALTIN      Sprint       67    81 Orta • 81     Pist/Mesafe 84/100, Veri 81/100, Kilo 84/100 | Form: 6-5-1-6-4-8-5-5-8-10
+9    10  HUMAY KIZIM              YİĞİTCAN GÖKÇE       Sprint       67    77 Temkinli • 77  Pist/Mesafe 84/100, Veri 77/100, Kilo 100/100 | Form: 3-8-10-7-7-5-12-9-2-11
+10   6   KAYALARIN ŞAHI           KADİR TOKAÇOĞLU      Orta         67    72 Temkinli • 72  Pist/Mesafe 77/100, Hız 80/100, Veri 72/100 | Form: 7-6-5-8-6-9-6-15-5-3
+11   11  TEKİR BEYİ               GÖKHAN GÖKÇE         Sprint       63    72 Orta • 72     Pist/Mesafe 75/100, KGS 84/100, Risk 84/100 | Form: 6-7-8-8-7-7-2-10-12-2
+12   12  SİLAHLIKIZ               UĞUR İRTİŞ           Sprint       58    68 Orta • 68     Hız 87/100, Kilo 84/100 | Form: 8-11-10-6-7-8-11-11-10-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 CANIM ÇITIR
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 1 • Galop: 52/100
+  - Hız           98 | Ana · Derece ve son metreler
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 AKSU HAN
+  Ozet: Pist/Mesafe: 1G - 4P / 6 • Jokey: 0G - 1P / 2 • Galop: 60/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 KAYAFATİH
+  Ozet: Pist/Mesafe: 2G - 5P / 8 • Jokey: 1G - 1P / 1 • Galop: 81/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 CANOĞLUCAN
+  Ozet: Pist/Mesafe: 1G - 2P / 9 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         94 | Destek · Jokey formu ve at uyumu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

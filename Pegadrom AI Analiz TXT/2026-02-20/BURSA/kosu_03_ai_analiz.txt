@@ -1,0 +1,136 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-20&hip=BURSA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-02-20 / BURSA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 64/100
+Veri guveni       : 52/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 11 • GARİPLERBEYİ           | Seri / Konum 90/100
+Akış 2   | No 5 • AVCI OĞLUM              | Seri / Konum 89/100
+Akış 3   | No 7 • SULTAN NENE             | Seri / Konum 89/100
+Akış 4   | No 3 • SEMEND BATUR            | Orta / Konum 55/100
+Akış 5   | No 14 • MANDAR ABBAS           | Orta / Konum 54/100
+Akış 6   | No 12 • ŞANSIBOLBEY            | Orta / Konum 54/100
+Akış 7   | No 2 • İKİGAİ                  | Orta / Konum 54/100
+Akış 8   | No 10 • BALMELDA               | Sprint / Konum 34/100
+Akış 9   | No 6 • EĞİLCE                  | Sprint / Konum 34/100
+Akış 10  | No 9 • KING PELE               | Sprint / Konum 34/100
+Akış 11  | No 8 • GÖZE ÇARPAN             | Sprint / Konum 34/100
+Akış 12  | No 13 • ŞANLI ANKA             | Sprint / Konum 34/100
+Akış 13  | No 1 • AFRİKA ASLANI           | Sprint / Konum 34/100
+Akış 14  | No 4 • YETİM İBRAHİM           | Sprint / Konum 34/100
+Akış 15  | No 15 • AKYEL ABİ              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 15 at · ortalama 64/100
+Model Lideri  : No 3 SEMEND BATUR (79/100)
+Akış Lideri   : No 11 GARİPLERBEYİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 90/100, Hız 74/100, Form 75/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 3 SEMEND BATUR
+
+- Model Payı          : %8,2 [8/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [85/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Pist/Mesafe 90/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 63/100 [63/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Hazır [80/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 51/100 [51/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %17,6 [18/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,85 [85/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 4 5 5 [63/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 26 · HP 66 [76/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 3P / 8 [39/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : EFE AKPINAR [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [70/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 64/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    3   SEMEND BATUR             EFE AKPINAR          Orta         79    67 Orta • 67     Pist/Mesafe 90/100, Hız 74/100, Form 75/100 | Form: 2-5-1-3-7-5-2-4-5-5
+2    14  MANDAR ABBAS             ONUR YILDIZ          Orta         70    72 Orta • 72     Pist/Mesafe 87/100, KGS 81/100, Risk 81/100 | Form: 4-9-5-6-2-1-5-9-5-6
+3    10  BALMELDA                 CEM ALTUN            Sprint       70    29 Temkinli • 29  Pist/Mesafe 90/100, Hız 93/100, Uzlaşma 79/100 | Form: 4-4-6-9-10-15-4-12-11-11
+4    6   EĞİLCE                   MAHMUT TURAN         Sprint       69    85 Orta • 85     Pist/Mesafe 89/100, Uzlaşma 78/100, Stil 76/100 | Form: 1-8-4-12-1-4-7-12-12-14
+5    11  GARİPLERBEYİ             HÜSEYİN TURAN        Seri         68    71 Orta • 71     Pist/Mesafe 74/100, KGS 75/100, Risk 75/100 | Form: 2-7-7-4-9-7-3-1-2-9
+6    12  ŞANSIBOLBEY              ONUR ATMACA          Orta         68    29 Temkinli • 29  Hız 100/100, Kilo 100/100, Piyasa 79/100 | Form: 4-2-8-2-5-4-7-3-7-1
+7    9   KING PELE                TOLGA YILDIZ         Sprint       66    77 Temkinli • 77  Pist/Mesafe 85/100, Hava/Zemin 77/100, Veri 77/100 | Form: 5-5-1-7-13-2-10-8-15-9
+8    8   GÖZE ÇARPAN              TUGAY ALICI          Sprint       66    66 Temkinli • 66  Pist/Mesafe 77/100, KGS 77/100, Risk 77/100 | Form: 6-5-3-11-11-10-13-11-5-6
+9    13  ŞANLI ANKA               ALİCAN İNCİ          Sprint       65    77 Temkinli • 77  Pist/Mesafe 90/100, Hava/Zemin 75/100, Veri 77/100 | Form: 1-2-8-7-11-3-4-11-13-10
+10   2   İKİGAİ                   BERKANT GÖKÇE        Orta         65    43 Temkinli • 43  Hız 87/100, Uzlaşma 72/100, KGS 81/100 | Form: 5-10-11-4-5-5-12-15-7-4
+11   1   AFRİKA ASLANI            FURKAN KARAKURT      Sprint       64    77 Orta • 77     KGS 82/100, Risk 82/100, Veri 77/100 | Form: 5-10-1-6-4-13-5-3-12-13
+12   5   AVCI OĞLUM               ZÜLFÜKAR KARABULUT   Seri         62    43 Temkinli • 43  Hız 91/100 | Form: 6-9-14-3-8-7-9-4-2-1
+13   4   YETİM İBRAHİM            RECEP KETME          Sprint       55    14 Temkinli • 14  Uzlaşma 80/100, KGS 80/100, Risk 80/100 | Form: 8-8-10-7-15-13-9-6-7-8
+14   15  AKYEL ABİ                KADİR TOKAÇOĞLU      Sprint       53    14 Temkinli • 14  Uzlaşma 74/100, Kilo 88/100 | Form: 5-2-10-4-11-7-10-1-8-7
+15   7   SULTAN NENE              ADEM CEYLAN          Seri         47    14 Temkinli • 14  Veri sinyali temkinli | Form: 6-4-6-9-6-12-4-1-3-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 3 SEMEND BATUR
+  Ozet: Pist/Mesafe: 1G - 3P / 8 • Jokey: 0G - 0P / 1 • Galop: 80/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          75 | Ana · Yarış geçmişi ve sonuç formu
+
+No 14 MANDAR ABBAS
+  Ozet: Pist/Mesafe: 1G - 2P / 5 • Jokey: 1G - 1P / 1 • Galop: 55/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           67 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 10 BALMELDA
+  Ozet: Pist/Mesafe: 0G - 0P / 7 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           93 | Ana · Derece ve son metreler
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 EĞİLCE
+  Ozet: Pist/Mesafe: 2G - 2P / 8 • Jokey: 1G - 1P / 4 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           52 | Ana · Derece ve son metreler
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

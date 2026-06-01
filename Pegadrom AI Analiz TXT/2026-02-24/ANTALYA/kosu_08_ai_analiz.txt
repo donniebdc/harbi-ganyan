@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-24&hip=ANTALYA&kosu=8
+Tarih/Hipodrom/Kosu: 2026-02-24 / ANTALYA / 8
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 66/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • SAPANCA AĞASI           | Seri / Konum 90/100
+Akış 2   | No 2 • DİLHUN                  | Seri / Konum 90/100
+Akış 3   | No 3 • GÖKTUĞUM                | Orta / Konum 54/100
+Akış 4   | No 8 • CEBEALP                 | Orta / Konum 53/100
+Akış 5   | No 1 • ÖZKEHRİBAR              | Sprint / Konum 35/100
+Akış 6   | No 6 • KIVIRCIK MEMET          | Sprint / Konum 34/100
+Akış 7   | No 7 • TUĞÇEYİM                | Sprint / Konum 34/100
+Akış 8   | No 4 • DERYADİL                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 66/100
+Model Lideri  : No 5 SAPANCA AĞASI (75/100)
+Akış Lideri   : No 5 SAPANCA AĞASI (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 80/100, Hız 84/100, Uzlaşma 86/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 SAPANCA AĞASI
+
+- Model Payı          : %14,3 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [74/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Pist/Mesafe 80/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 65/100 [65/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe riski var, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 53/100 [53/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %46,0 [46/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,55 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 4 4 [88/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 11 · HP 44 [44/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 2P / 3 [46/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 2P / 3 [61/100]
+  Detay: Birlikte performans
+- Jokey               : UĞUR TEMUR [61/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [72/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   SAPANCA AĞASI            UĞUR TEMUR           Seri         75    67 Orta • 67     Pist/Mesafe 80/100, Hız 84/100, Uzlaşma 86/100 | Form: 2-5-2-6-1-2-1-1-4-4
+2    1   ÖZKEHRİBAR               AYHAN KURŞUN         Sprint       73    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 81/100, Uzlaşma 89/100 | Form: 6-3-3-4-2-5-10-6-9-8
+3    2   DİLHUN                   SERHAT ÇELİK         Seri         68    77 Orta • 77     Pist/Mesafe 74/100, Uzlaşma 79/100, Stil 76/100 | Form: 2-5-9-2-3-9-1-3-2-4
+4    6   KIVIRCIK MEMET           MÜSLÜM ÇELİK         Sprint       67    66 Orta • 66     Hız 81/100, Uzlaşma 72/100, KGS 78/100 | Form: 11-10-6-5-5-6-14-8-9-12
+5    8   CEBEALP                  RECEP KETME          Orta         63    77 Orta • 77     Pist/Mesafe 76/100, KGS 78/100, Risk 78/100 | Form: 4-3-7-3-5-11-7-7-4-8
+6    7   TUĞÇEYİM                 FERHAT YÜCEL         Sprint       62    71 Orta • 71     KGS 83/100, Risk 83/100, Kilo 95/100 | Form: 6-8-10-5-14-9-7-9-9-19
+7    4   DERYADİL                 MAHMUT TURAN         Sprint       61    67 Temkinli • 67  Pist/Mesafe 78/100, Kilo 75/100 | Form: 12-10-11-5-8-8-10-11-11-1
+8    3   GÖKTUĞUM                 SİNAN ÖZEN           Orta         57    62 Temkinli • 62  Stil 76/100 | Form: 7-5-6-13-1-1-8-6-7-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 SAPANCA AĞASI
+  Ozet: Pist/Mesafe: 1G - 2P / 3 • Jokey: 2G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 ÖZKEHRİBAR
+  Ozet: Pist/Mesafe: 0G - 2P / 7 • Jokey: 0G - 1P / 2 • Galop: 48/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          61 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 DİLHUN
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Pist/Mesafe   74 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           54 | Ana · Derece ve son metreler
+
+No 6 KIVIRCIK MEMET
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 2 • Galop: 52/100
+  - Hız           81 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Form          48 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

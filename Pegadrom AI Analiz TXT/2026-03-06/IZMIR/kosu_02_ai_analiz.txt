@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-06&hip=IZMIR&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-06 / IZMIR / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 71/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • RED STORM               | Seri / Konum 90/100
+Akış 2   | No 6 • HUGE SUCCES             | Seri / Konum 90/100
+Akış 3   | No 2 • ŞEN AKYÜZ               | Ön grup / Konum 74/100
+Akış 4   | No 10 • CASH IS KING           | Ön grup / Konum 73/100
+Akış 5   | No 5 • WILD DANGER             | Ön grup / Konum 73/100
+Akış 6   | No 1 • GRAND SUN               | Orta / Konum 53/100
+Akış 7   | No 9 • KEEN EYE                | Sprint / Konum 35/100
+Akış 8   | No 3 • BAYBARS HAN             | Sprint / Konum 34/100
+Akış 9   | No 4 • NALDÖKEN RÜZGARI        | Sprint / Konum 34/100
+Akış 10  | No 8 • CRAZYGOLD               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 69/100
+Model Lideri  : No 2 ŞEN AKYÜZ (78/100)
+Akış Lideri   : No 7 RED STORM (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 99/100, Pist/Mesafe 86/100, Jokey 73/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 ŞEN AKYÜZ
+
+- Model Payı          : %11,3 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [72/100]
+  Detay: Veri + skor farkı
+- AI Model            : 78/100 [78/100]
+  Detay: Hız 99/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 63/100 [63/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 50/100 [50/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %13,5 [14/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,60 [78/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 5 2 3 [75/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 11 · HP 87 [75/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 5 [26/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 3P / 6 [32/100]
+  Detay: Birlikte performans
+- Jokey               : NURETTİN ŞEN [32/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [75/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   ŞEN AKYÜZ                NURETTİN ŞEN         Ön grup      78    66 Orta • 66     Hız 99/100, Pist/Mesafe 86/100, Jokey 73/100 | Form: 2-3-4-4-5-3-3-5-2-3
+2    7   RED STORM                ÖMER FARUK ÖZEN      Seri         77    58 Orta • 58     Pist/Mesafe 91/100, Hız 92/100, Form 75/100 | Form: 1-3-5-2-2-5-3-3-2-1
+3    6   HUGE SUCCES              MÜRSEL KAYİŞ         Seri         74    72 Orta • 72     Pist/Mesafe 95/100, Form 83/100, Hız 80/100 | Form: 1-1-1-2-5-1-5-1-3-1
+4    10  CASH IS KING             ÖZCAN YILDIRIM       Ön grup      70    77 Orta • 77     Pist/Mesafe 87/100, Uzlaşma 73/100, Hava/Zemin 80/100 | Form: 3-5-4-3-8-3-10-9-3-4
+5    1   GRAND SUN                ALAATTİN KÜRÜNDÜK    Orta         69    76 Orta • 76     Pist/Mesafe 88/100, Hız 72/100, Uzlaşma 75/100 | Form: 8-4-6-1-7-7-4-6-13-9
+6    5   WILD DANGER              ALİ MEHDİ ALTIN      Ön grup      67    81 Orta • 81     Pist/Mesafe 87/100, Hava/Zemin 75/100, Veri 81/100 | Form: 8-6-1-4-7-7-3-3-5-3
+7    3   BAYBARS HAN              MEHMET KAYA          Sprint       65    77 Orta • 77     Pist/Mesafe 84/100, Hava/Zemin 73/100, Veri 77/100 | Form: 4-2-4-8-3-9-3-11-5-15
+8    4   NALDÖKEN RÜZGARI         MURAT KEÇECİ         Sprint       63    72 Temkinli • 72  Pist/Mesafe 75/100, Veri 72/100, Kilo 76/100 | Form: 8-4-8-4-7-6-8-9-8-10
+9    9   KEEN EYE                 İBRAHİM SEFA SÖĞÜT   Sprint       63    48 Temkinli • 48  Hız 100/100, KGS 72/100, Risk 72/100 | Form: 5-10-13-9-3-6-9-3-7-11
+10   8   CRAZYGOLD                EREN DURSUN ÖKTEN    Sprint       62    81 Orta • 81     Pist/Mesafe 82/100, Veri 81/100, KGS 76/100 | Form: 6-5-4-7-9-11-8-8-7-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 ŞEN AKYÜZ
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 3P / 6 • Galop: 52/100
+  - Hız           99 | Ana · Derece ve son metreler
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 RED STORM
+  Ozet: Pist/Mesafe: 2G - 7P / 7 • Jokey: 1G - 3P / 3 • Galop: 72/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Hız           92 | Ana · Derece ve son metreler
+  - Form          75 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 HUGE SUCCES
+  Ozet: Pist/Mesafe: 5G - 6P / 7 • Jokey: 1G - 1P / 2 • Galop: 60/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Form          83 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           80 | Ana · Derece ve son metreler
+
+No 10 CASH IS KING
+  Ozet: Pist/Mesafe: 0G - 1P / 5 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           68 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-21&hip=ADANA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-02-21 / ADANA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 72/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • İCRA                    | Seri / Konum 90/100
+Akış 2   | No 8 • GOLDEN CAS              | Seri / Konum 90/100
+Akış 3   | No 3 • MAJESTIC HOLIDAY        | Ön grup / Konum 74/100
+Akış 4   | No 1 • BIG FORTUNA             | Ön grup / Konum 74/100
+Akış 5   | No 4 • LAMAZİ GOGO             | Orta / Konum 54/100
+Akış 6   | No 6 • EURO POWER              | Orta / Konum 54/100
+Akış 7   | No 5 • TEZGAHTAR NEBAHAT       | Sprint / Konum 34/100
+Akış 8   | No 9 • CLEAR SHOT              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 70/100
+Model Lideri  : No 2 İCRA (77/100)
+Akış Lideri   : No 2 İCRA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 95/100, Jokey 78/100, Uzlaşma 89/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 İCRA
+
+- Model Payı          : %13,8 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [79/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Pist/Mesafe 95/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 52/100 [52/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %12,9 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 6,40 [74/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 6 2 8 [60/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 27 · HP 56 [70/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 5P / 10 [46/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : VEDAT ABİŞ [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [65/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 81/100 [81/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   İCRA                     VEDAT ABİŞ           Seri         77    81 Yüksek • 81   Pist/Mesafe 95/100, Jokey 78/100, Uzlaşma 89/100 | Form: 1-8-3-7-1-10-3-6-2-8
+2    8   GOLDEN CAS               MÜSLÜM ÇELİK         Seri         76    77 Yüksek • 77   Pist/Mesafe 91/100, Form 73/100, Uzlaşma 82/100 | Form: 2-2-8-4-1-2-2-1-1-11
+3    4   LAMAZİ GOGO              MEHMET SALİH ÇELİK   Orta         72    43 Temkinli • 43  Pist/Mesafe 94/100, Hız 98/100, Uzlaşma 76/100 | Form: 5-5-7-7-3-5-3-9-8-6
+4    3   MAJESTIC HOLIDAY         AHMET ÇELİK          Ön grup      70    81 Orta • 81     Pist/Mesafe 83/100, Veri 81/100, KGS 77/100 | Form: 8-2-2-8-4-5-4-3-10-2
+5    1   BIG FORTUNA              ERTUĞRUL CANKILIÇ    Ön grup      69    81 Orta • 81     Pist/Mesafe 84/100, Hız 76/100, Hava/Zemin 77/100 | Form: 6-9-4-3-1-7-1-6-3-3
+6    6   EURO POWER               HIŞMAN ÇİZİK         Orta         67    58 Temkinli • 58  Hız 100/100, Pist/Mesafe 79/100 | Form: 9-5-6-5-5-4-8-6-7-4
+7    5   TEZGAHTAR NEBAHAT        MEHMET ALİ AKGÖBEK   Sprint       65    77 Orta • 77     Pist/Mesafe 77/100, KGS 83/100, Risk 83/100 | Form: 9-7-4-10-15-7-4-8-10-6
+8    9   CLEAR SHOT               MEHMET TİBET MURTOĞLU Sprint       60    77 Orta • 77     KGS 85/100, Risk 85/100, Veri 77/100 | Form: 5-10-6-8-9-11-11-10-8-15
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 İCRA
+  Ozet: Pist/Mesafe: 2G - 5P / 10 • Jokey: 0G - 1P / 2 • Galop: 52/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           60 | Ana · Derece ve son metreler
+
+No 8 GOLDEN CAS
+  Ozet: Pist/Mesafe: 1G - 3P / 5 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           66 | Ana · Derece ve son metreler
+
+No 4 LAMAZİ GOGO
+  Ozet: Pist/Mesafe: 0G - 2P / 9 • Jokey: 0G - 0P / 1 • Galop: 72/100
+  - Pist/Mesafe   94 | Ana · Pist/mesafe geçmişi
+  - Hız           98 | Ana · Derece ve son metreler
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 MAJESTIC HOLIDAY
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 1P / 2 • Galop: 66/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           67 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-04&hip=SANLIURFA&kosu=2
+Tarih/Hipodrom/Kosu: 2026-02-04 / SANLIURFA / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 56/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • BERHAN BEYLİ            | Seri / Konum 90/100
+Akış 2   | No 9 • TAM BİR SAVAŞÇI         | Ön grup / Konum 74/100
+Akış 3   | No 6 • HENAKIZ                 | Ön grup / Konum 74/100
+Akış 4   | No 1 • GÜVENABİ                | Orta / Konum 54/100
+Akış 5   | No 8 • SERHANBATUR             | Orta / Konum 53/100
+Akış 6   | No 10 • GÖLDERELİ              | Sprint / Konum 35/100
+Akış 7   | No 7 • KIZIL DORU              | Sprint / Konum 35/100
+Akış 8   | No 3 • GELİŞİ GÜZEL            | Sprint / Konum 34/100
+Akış 9   | No 2 • RAZİYE TAY              | Sprint / Konum 34/100
+Akış 10  | No 4 • TOSTOS TUĞRUL           | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 66/100
+Model Lideri  : No 10 GÖLDERELİ (74/100)
+Akış Lideri   : No 5 BERHAN BEYLİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Hız 83/100, Jokey 73/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 10 GÖLDERELİ
+
+- Model Payı          : %11,3 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [71/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Riskli profil · 55/100 [55/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [47/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 36/100 [36/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %15,4 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,20 [79/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 5 11 7 [40/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 9 · HP 37 [37/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 7 [22/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 3 [19/100]
+  Detay: Birlikte performans
+- Jokey               : NECMİ ALTIN [19/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [42/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    10  GÖLDERELİ                NECMİ ALTIN          Sprint       74    66 Orta • 66     Pist/Mesafe 93/100, Hız 83/100, Jokey 73/100 | Form: 6-4-3-4-9-13-1-5-11-7
+2    1   GÜVENABİ                 FERİT YARDIMCI       Orta         73    43 Temkinli • 43  Pist/Mesafe 93/100, Hız 88/100, Uzlaşma 91/100 | Form: 3-4-8-5-1-5-9-5-5-5
+3    3   GELİŞİ GÜZEL             SAMİ KAPLAN          Sprint       70    85 Orta • 85     Pist/Mesafe 83/100, Jokey 94/100, Veri 85/100 | Form: 8-6-7-1-2-10-7-6-9-13
+4    9   TAM BİR SAVAŞÇI          İSA KATAR            Ön grup      70    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 90/100, Kilo 95/100 | Form: 4-1-11-4-5-4-6-1-3-4
+5    6   HENAKIZ                  MEHMET ALİ AKGÖBEK   Ön grup      68    81 Orta • 81     Pist/Mesafe 84/100, Hava/Zemin 80/100, Veri 81/100 | Form: 2-6-8-3-2-4-5-3-3-7
+6    8   SERHANBATUR              AZİZ AKDEMİR         Orta         67    77 Orta • 77     Pist/Mesafe 86/100, Hava/Zemin 73/100, Veri 77/100 | Form: 7-3-2-5-5-7-9-4-13-6
+7    2   RAZİYE TAY               BURHAN SARIDAL       Sprint       65    77 Orta • 77     Pist/Mesafe 86/100, Veri 77/100 | Form: 9-4-3-8-2-6-8-6-10-10
+8    7   KIZIL DORU               AHMET HASAN BAYAR    Sprint       63    75 Orta • 75     Pist/Mesafe 76/100, Veri 75/100 | Form: 7-6-5-8-5-3-1-10-10-5
+9    5   BERHAN BEYLİ             İSA AKYAVUZ          Seri         55    14 Temkinli • 14  Uzlaşma 97/100, KGS 73/100, Risk 73/100 | Form: 2-6-6-3-6-4-3-2-1-1
+10   4   TOSTOS TUĞRUL            YUSUF CENGİZ         Sprint       51    14 Temkinli • 14  Uzlaşma 76/100, Kilo 77/100 | Form: 6-8-4-8-9-4-7-9-8-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 10 GÖLDERELİ
+  Ozet: Pist/Mesafe: 0G - 1P / 7 • Jokey: 0G - 1P / 3 • Galop: 47/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           83 | Ana · Derece ve son metreler
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 GÜVENABİ
+  Ozet: Pist/Mesafe: 1G - 2P / 8 • Jokey: 0G - 0P / 1 • Galop: 55/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 GELİŞİ GÜZEL
+  Ozet: Pist/Mesafe: 1G - 2P / 7 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Jokey         94 | Destek · Jokey formu ve at uyumu
+  - Hız           54 | Ana · Derece ve son metreler
+
+No 9 TAM BİR SAVAŞÇI
+  Ozet: Pist/Mesafe: 2G - 2P / 9 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

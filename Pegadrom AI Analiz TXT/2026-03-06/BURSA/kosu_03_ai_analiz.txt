@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-06&hip=BURSA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-06 / BURSA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 66/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • GARİPLERBEYİ            | Seri / Konum 90/100
+Akış 2   | No 9 • TUTMAÇ                  | Ön grup / Konum 73/100
+Akış 3   | No 2 • DAMLA SUYU              | Orta / Konum 54/100
+Akış 4   | No 7 • BAŞ FEDAİ               | Orta / Konum 54/100
+Akış 5   | No 10 • CEYLAN MAZEN           | Orta / Konum 53/100
+Akış 6   | No 8 • NEŞET AĞA               | Sprint / Konum 35/100
+Akış 7   | No 3 • HEP BİRLİKTE            | Sprint / Konum 35/100
+Akış 8   | No 6 • TANJU BEY               | Sprint / Konum 35/100
+Akış 9   | No 1 • BALMELDA                | Sprint / Konum 34/100
+Akış 10  | No 11 • KURUÇAY                | Sprint / Konum 34/100
+Akış 11  | No 5 • ŞANLI ANKA              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 67/100
+Model Lideri  : No 2 DAMLA SUYU (80/100)
+Akış Lideri   : No 4 GARİPLERBEYİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 91/100, Hız 84/100, Jokey 88/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 DAMLA SUYU
+
+- Model Payı          : %10,8 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [83/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 91/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [55/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 56/100 [56/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %14,0 [14/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,15 [79/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 10 8 6 [50/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 32 · HP 57 [76/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 3P / 5 [42/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 3P / 4 [47/100]
+  Detay: Birlikte performans
+- Jokey               : RECEP KETME [47/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [62/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 62/100 [62/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   DAMLA SUYU               RECEP KETME          Orta         80    62 Orta • 62     Pist/Mesafe 91/100, Hız 84/100, Jokey 88/100 | Form: 7-3-2-1-3-3-6-10-8-6
+2    8   NEŞET AĞA                ALİ KAÇMAZ           Sprint       71    72 Orta • 72     Pist/Mesafe 80/100, Form 74/100, Hız 73/100 | Form: 2-3-5-1-4-6-8-15-5-9
+3    7   BAŞ FEDAİ                ONUR ATMACA          Orta         71    58 Orta • 58     Hız 85/100, Pist/Mesafe 77/100, Uzlaşma 80/100 | Form: 2-7-5-3-5-2-3-5-6-4
+4    3   HEP BİRLİKTE             MAHSUN TURAN         Sprint       69    72 Orta • 72     Hız 86/100, Jokey 88/100, Uzlaşma 72/100 | Form: 10-11-7-8-7-16-2-11-10-6
+5    1   BALMELDA                 HALİT GÖKÇE          Sprint       67    58 Temkinli • 58  Pist/Mesafe 83/100, Hız 88/100, Uzlaşma 75/100 | Form: 4-4-6-9-10-15-4-12-11-11
+6    4   GARİPLERBEYİ             TOLGA YILDIZ         Seri         66    76 Orta • 76     Pist/Mesafe 78/100, Uzlaşma 74/100, Veri 76/100 | Form: 2-7-7-4-9-7-3-1-2-9
+7    6   TANJU BEY                GÖRKEM ÖZÇELİK       Sprint       66    65 Temkinli • 65  Hız 82/100, Pist/Mesafe 74/100, Kilo 74/100 | Form: 6-10-8-3-2-11-11-9-8-6
+8    11  KURUÇAY                  ATAKAN VURAL         Sprint       66    24 Temkinli • 24  Hız 100/100, Pist/Mesafe 81/100, Uzlaşma 79/100 | Form: 7-5-9-2-9-6-3-9-5-11
+9    5   ŞANLI ANKA               ALİCAN İNCİ          Sprint       64    81 Orta • 81     Pist/Mesafe 89/100, Uzlaşma 73/100, Veri 81/100 | Form: 1-2-8-7-11-3-4-11-13-10
+10   10  CEYLAN MAZEN             CEM ALTUN            Orta         61    85 Orta • 85     Pist/Mesafe 73/100, Veri 85/100, Kilo 80/100 | Form: 10-11-8-4-6-8-5-7-8-7
+11   9   TUTMAÇ                   GÖKHAN BEKTAŞ        Ön grup      61    77 Temkinli • 77  Veri 77/100, Kilo 91/100 | Form: 6-9-8-7-7-6-4-4-3-2
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 DAMLA SUYU
+  Ozet: Pist/Mesafe: 1G - 3P / 5 • Jokey: 1G - 3P / 4 • Galop: 55/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 8 NEŞET AĞA
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 0G - 0P / 2 • Galop: 52/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           73 | Ana · Derece ve son metreler
+
+No 7 BAŞ FEDAİ
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 1P / 2 • Galop: 60/100
+  - Hız           85 | Ana · Derece ve son metreler
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Form          61 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 HEP BİRLİKTE
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 1P / 3 • Galop: 72/100
+  - Hız           86 | Ana · Derece ve son metreler
+  - Pist/Mesafe   65 | Ana · Pist/mesafe geçmişi
+  - Form          48 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

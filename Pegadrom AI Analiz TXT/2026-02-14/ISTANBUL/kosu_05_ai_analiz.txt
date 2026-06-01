@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-14&hip=ISTANBUL&kosu=5
+Tarih/Hipodrom/Kosu: 2026-02-14 / ISTANBUL / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 58/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • ERAYKAN                 | Seri / Konum 90/100
+Akış 2   | No 8 • ŞANVERDİ                | Seri / Konum 90/100
+Akış 3   | No 2 • GÜRBÜZ TAY              | Ön grup / Konum 74/100
+Akış 4   | No 4 • LAZFATİH                | Ön grup / Konum 73/100
+Akış 5   | No 7 • SANCAR                  | Orta / Konum 54/100
+Akış 6   | No 3 • KİMSESİZ BABA           | Orta / Konum 54/100
+Akış 7   | No 6 • O BİR ÇELİK             | Orta / Konum 53/100
+Akış 8   | No 5 • MAHMUT USTA             | Sprint / Konum 34/100
+Akış 9   | No 9 • EL ÇİÇEĞİ               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 68/100
+Model Lideri  : No 1 ERAYKAN (76/100)
+Akış Lideri   : No 1 ERAYKAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 84/100, Form 74/100, Jokey 94/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 ERAYKAN
+
+- Model Payı          : %12,5 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [81/100]
+  Detay: Veri + skor farkı
+- AI Model            : 76/100 [76/100]
+  Detay: Pist/Mesafe 84/100
+- Son 6 Uyarlama      : Güçlü rakip · 73/100 [73/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [83/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 73/100 [73/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %29,7 [30/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,40 [90/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 2 1 1 [77/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 7 · HP 97 [78/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 3G - 4P / 4 [79/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 3P / 3 [72/100]
+  Detay: Birlikte performans
+- Jokey               : NEVZAT AVCİ [72/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [78/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   ERAYKAN                  NEVZAT AVCİ          Seri         76    85 Yüksek • 85   Pist/Mesafe 84/100, Form 74/100, Jokey 94/100 | Form: 2-1-3-1-2-8-6-2-1-1
+2    7   SANCAR                   ALİ YILDIZ           Orta         75    66 Orta • 66     Pist/Mesafe 79/100, Jokey 78/100, Stil 76/100 | Form: 2-3-1-6-5-6-5-5-4-7
+3    8   ŞANVERDİ                 MURAT KEÇECİ         Seri         74    76 Orta • 76     Pist/Mesafe 84/100, Form 73/100, Hız 81/100 | Form: 2-5-4-2-1-5-2-7-11-3
+4    3   KİMSESİZ BABA            MEHMET KAYA          Orta         69    80 Orta • 80     Pist/Mesafe 82/100, Hız 75/100, Veri 80/100 | Form: 8-4-5-5-3-2-5-5-6-4
+5    2   GÜRBÜZ TAY               MUHAMMED MİR BİLGİN  Ön grup      69    57 Temkinli • 57  Hız 89/100, Uzlaşma 78/100, Stil 76/100 | Form: 1-1-4-10-4-3-1-5-5-4
+6    5   MAHMUT USTA              BURAK AKÇAY          Sprint       68    70 Orta • 70     Pist/Mesafe 85/100, Kilo 82/100 | Form: 7-9-5-9-2-7-8-9-10-11
+7    4   LAZFATİH                 AKIN SÖZEN           Ön grup      67    38 Temkinli • 38  Hız 100/100, Pist/Mesafe 82/100, KGS 72/100 | Form: 9-4-3-1-1-3-4-9-6-10
+8    9   EL ÇİÇEĞİ                GÖKHAN BEKTAŞ        Sprint       61    33 Temkinli • 33  Hız 89/100, Pist/Mesafe 77/100, KGS 80/100 | Form: 9-8-9-16-8-12-10-5-7-11
+9    6   O BİR ÇELİK              TOLGA YILDIZ         Orta         49    14 Temkinli • 14  Kilo 82/100, Piyasa 96/100 | Form: 8-7-6-2-6-6-1-2-5-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 ERAYKAN
+  Ozet: Pist/Mesafe: 3G - 4P / 4 • Jokey: 2G - 3P / 3 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         94 | Destek · Jokey formu ve at uyumu
+
+No 7 SANCAR
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           70 | Ana · Derece ve son metreler
+
+No 8 ŞANVERDİ
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           81 | Ana · Derece ve son metreler
+
+No 3 KİMSESİZ BABA
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 0G - 1P / 8 • Galop: 28/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

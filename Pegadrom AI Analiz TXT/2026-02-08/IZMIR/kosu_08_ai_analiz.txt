@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-08&hip=IZMIR&kosu=8
+Tarih/Hipodrom/Kosu: 2026-02-08 / IZMIR / 8
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 64/100
+Veri guveni       : 54/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • KIZIM MERYEM            | Seri / Konum 90/100
+Akış 2   | No 1 • FAHRUNİSA               | Seri / Konum 90/100
+Akış 3   | No 2 • AYBUGA                  | Ön grup / Konum 73/100
+Akış 4   | No 3 • BERNAHANIM              | Orta / Konum 54/100
+Akış 5   | No 9 • KURUKAHVE               | Orta / Konum 54/100
+Akış 6   | No 5 • DESTAN KARACA           | Orta / Konum 53/100
+Akış 7   | No 12 • FLY RİBELLA            | Orta / Konum 53/100
+Akış 8   | No 11 • YÜREKLİ HANIM          | Sprint / Konum 35/100
+Akış 9   | No 4 • ÇAYIRKUŞU               | Sprint / Konum 34/100
+Akış 10  | No 8 • KOLOPHON                | Sprint / Konum 34/100
+Akış 11  | No 10 • MUNİSHANIM             | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 64/100
+Model Lideri  : No 7 KIZIM MERYEM (75/100)
+Akış Lideri   : No 7 KIZIM MERYEM (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 85/100, Pist/Mesafe 76/100, Jokey 88/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 KIZIM MERYEM
+
+- Model Payı          : %10,7 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [75/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 85/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 63/100 [63/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [64/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 45/100 [45/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %31,0 [31/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,65 [89/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 4 2 1 [72/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 28 · HP 32 [54/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 4 [27/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : MUHAMMED MİR BİLGİN [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [67/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 66/100 [66/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 64/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   KIZIM MERYEM             MUHAMMED MİR BİLGİN  Seri         75    66 Orta • 66     Hız 85/100, Pist/Mesafe 76/100, Jokey 88/100 | Form: 4-4-8-2-6-4-2-1
+2    3   BERNAHANIM               ALİ YILDIZ           Orta         72    67 Orta • 67     Pist/Mesafe 89/100, Hız 80/100, Uzlaşma 82/100 | Form: 5-4-3-6-5-1-6
+3    11  YÜREKLİ HANIM            ÖMER FARUK ÖZEN      Sprint       72    62 Orta • 62     Pist/Mesafe 90/100, Hız 83/100, Uzlaşma 77/100 | Form: 7-5-4-3-3-7-2-11-12-10
+4    9   KURUKAHVE                HÜSEYİN ŞİMŞEK       Orta         71    61 Orta • 61     Pist/Mesafe 87/100, Hız 88/100, Uzlaşma 75/100 | Form: 6-12-3-1-6-8-5-4-6-1
+5    1   FAHRUNİSA                SERKAN YILDIZ        Seri         70    85 Orta • 85     Pist/Mesafe 83/100, Uzlaşma 74/100, Hava/Zemin 83/100 | Form: 8-5-5-2-2-4-4-7-3-2
+6    5   DESTAN KARACA            MUHAMMED BURHAN ÖNCEL Orta         63    77 Orta • 77     Pist/Mesafe 83/100, Veri 77/100, Kilo 100/100 | Form: 12-7-5-6-5-7-9-5-8-9
+7    4   ÇAYIRKUŞU                SİNAN AKŞIN          Sprint       63    62 Temkinli • 62  Pist/Mesafe 87/100, Hız 79/100, Kilo 100/100 | Form: 8-8-10-8-8-6-6-14
+8    8   KOLOPHON                 OKTAY KIZILDAŞ       Sprint       63    61 Temkinli • 61  Hız 82/100, Pist/Mesafe 76/100, Kilo 100/100 | Form: 10-12-11-2-12-12-9
+9    12  FLY RİBELLA              İSMAİL KALE          Orta         54    24 Temkinli • 24  Hız 100/100 | Form: 7-11
+10   2   AYBUGA                   RECEP KETME          Ön grup      51    14 Temkinli • 14  Uzlaşma 75/100, Kilo 100/100 | Form: 10-4-3-3-3-5-3-3-9-7
+11   10  MUNİSHANIM               FURKAN KARAKURT      Sprint       47    14 Temkinli • 14  Kilo 89/100 | Form: 7-3-3-8-16-4-17-4-17-11
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 KIZIM MERYEM
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Hız           85 | Ana · Derece ve son metreler
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Form          61 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 BERNAHANIM
+  Ozet: Pist/Mesafe: 1G - 2P / 5 • Jokey: 1G - 1P / 3 • Galop: 0/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           80 | Ana · Derece ve son metreler
+  - Form          61 | Ana · Yarış geçmişi ve sonuç formu
+
+No 11 YÜREKLİ HANIM
+  Ozet: Pist/Mesafe: 0G - 3P / 6 • Jokey: 0G - 2P / 4 • Galop: 28/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           83 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 9 KURUKAHVE
+  Ozet: Pist/Mesafe: 1G - 1P / 5 • Jokey: 1G - 2P / 7 • Galop: 28/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

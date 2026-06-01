@@ -1,0 +1,140 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-06&hip=ISTANBUL&kosu=8
+Tarih/Hipodrom/Kosu: 2026-05-06 / ISTANBUL / 8
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 16
+Ortalama AI puani : 64/100
+Veri guveni       : 52/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İstanbul • 8. Koşu • 17:30 • 1500m • Sentetik 06.05.2026 Çarşamba
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 15 • NO MORE SORROW         | Seri / Konum 90/100
+Akış 2   | No 2 • SOCIAL BUTTERFLY        | Seri / Konum 90/100
+Akış 3   | No 13 • MARY JANE              | Seri / Konum 89/100
+Akış 4   | No 3 • HEAVEN LIGHT            | Ön grup / Konum 74/100
+Akış 5   | No 4 • AMBER TREASURE          | Ön grup / Konum 74/100
+Akış 6   | No 12 • İNŞİRAH                | Ön grup / Konum 73/100
+Akış 7   | No 1 • BIG RUGGED              | Ön grup / Konum 73/100
+Akış 8   | No 7 • CIRCUIT BREAKER         | Orta / Konum 54/100
+Akış 9   | No 11 • FIBER                  | Orta / Konum 54/100
+Akış 10  | No 5 • BELLE ESPRIT            | Orta / Konum 53/100
+Akış 11  | No 16 • SPECIAL BEAUTY         | Sprint / Konum 35/100
+Akış 12  | No 14 • MIA FIGLIA             | Sprint / Konum 34/100
+Akış 13  | No 9 • DENİZ ZAMAN             | Sprint / Konum 34/100
+Akış 14  | No 6 • BIRD CAGE               | Sprint / Konum 34/100
+Akış 15  | No 10 • EVERY LITTLE KISS      | Sprint / Konum 34/100
+Akış 16  | No 8 • DEEPLY                  | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 16 at · ortalama 64/100
+Model Lideri  : No 7 CIRCUIT BREAKER (72/100)
+Akış Lideri   : No 15 NO MORE SORROW (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 88/100, Hız 84/100, Galop 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 CIRCUIT BREAKER
+
+- Model Payı          : %7,1 [7/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [67/100]
+  Detay: Veri + skor farkı
+- AI Model            : 72/100 [72/100]
+  Detay: Pist/Mesafe 88/100
+- Son 6 Uyarlama      : Riskli profil · 54/100 [54/100]
+  Detay: 4/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [55/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 31/100 [31/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %17,0 [17/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,15 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 9 6 8 [35/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 15 [26/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 3 [8/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 2 [5/100]
+  Detay: Birlikte performans
+- Jokey               : ERHAN AKTUĞ [5/100]
+  Detay: Bugünkü biniş
+- Tempo               : Geriden gelebilir [36/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 63/100 [63/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 64/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   CIRCUIT BREAKER          ERHAN AKTUĞ          Orta         72    63 Orta • 63     Pist/Mesafe 88/100, Hız 84/100, Galop 100/100 | Form: 7-9-6-8
+2    11  FIBER                    ALİ YILDIZ           Orta         72    62 Orta • 62     Pist/Mesafe 93/100, Hız 89/100, Uzlaşma 79/100 | Form: 4-9-6-5-7
+3    15  NO MORE SORROW           AKIN SÖZEN           Seri         71    58 Orta • 58     Pist/Mesafe 93/100, Hız 88/100, Uzlaşma 77/100 | Form: 11-7-3-2-2
+4    12  İNŞİRAH                  AYHAN KURŞUN         Ön grup      69    58 Orta • 58     Pist/Mesafe 82/100, Hız 83/100, Uzlaşma 75/100 | Form: 3-3-6-3-9
+5    3   HEAVEN LIGHT             MEHMET KAYA          Ön grup      67    89 Orta • 89     Pist/Mesafe 86/100, Veri 89/100 | Form: 13-3-3-7-2-3-5-4-3-2
+6    16  SPECIAL BEAUTY           ZÜLFÜKAR KARABULUT   Sprint       67    73 Orta • 73     Pist/Mesafe 82/100, Hız 79/100, Galop 93/100 | Form: 3-9-3-5-9-12
+7    14  MIA FIGLIA               FATİH SULTAN MEHMET SANSAR Sprint       67    61 Temkinli • 61  Pist/Mesafe 79/100, Hız 80/100, Hava/Zemin 75/100 | Form: 10-3-8-7
+8    2   SOCIAL BUTTERFLY         HIŞMAN ÇİZİK         Seri         66    81 Orta • 81     Pist/Mesafe 84/100, Uzlaşma 77/100, Stil 76/100 | Form: 5-2-4-2-4-3-2-11-1-1
+9    1   BIG RUGGED               HALİS KARATAŞ        Ön grup      64    68 Temkinli • 68  Pist/Mesafe 74/100, Stil 76/100, KGS 76/100 | Form: 2-10-3-2-4-2-4-6-4-7
+10   9   DENİZ ZAMAN              BURAK BEKTAŞ         Sprint       63    34 Temkinli • 34  Hız 100/100, Galop 82/100, KGS 74/100 | Form: 9-16-10
+11   5   BELLE ESPRIT             ERTUĞRUL CANKILIÇ    Orta         62    24 Temkinli • 24  Hız 96/100, Pist/Mesafe 73/100, Uzlaşma 77/100 | Form: 7-13
+12   4   AMBER TREASURE           GÖRKEM ÖZÇELİK       Ön grup      60    77 Temkinli • 77  Pist/Mesafe 82/100, Stil 76/100, Veri 77/100 | Form: 5-10-2-8-4-2-2-3-4-11
+13   6   BIRD CAGE                YASİN ŞEREF GÜMÜŞ    Sprint       60    38 Temkinli • 38  Hız 84/100, Pist/Mesafe 78/100, Kilo 100/100 | Form: 10-11-15
+14   10  EVERY LITTLE KISS        UĞUR LEVENT          Sprint       57    33 Temkinli • 33  Hız 95/100, Kilo 100/100 | Form: 4-6-10-12
+15   8   DEEPLY                   ZÜLFÜKAR AYDOĞDİ     Sprint       53     9 Temkinli • 9  Uzlaşma 96/100, Kilo 100/100 | Form: 12
+16   13  MARY JANE                ENES BOZDAĞ          Seri         48     9 Temkinli • 9  Kilo 73/100 | Form: 14-2
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 CIRCUIT BREAKER
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 2 • Galop: 100/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+
+No 11 FIBER
+  Ozet: Pist/Mesafe: 0G - 0P / 4 • Jokey: 0G - 0P / 2 • Galop: 42/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Jokey         68 | Destek · Jokey formu ve at uyumu
+
+No 15 NO MORE SORROW
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 1 • Galop: 42/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          54 | Ana · Yarış geçmişi ve sonuç formu
+
+No 12 İNŞİRAH
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 1P / 1 • Galop: 39/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Hız           83 | Ana · Derece ve son metreler
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

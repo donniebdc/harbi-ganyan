@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-09&hip=BURSA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-03-09 / BURSA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 73/100
+Veri guveni       : 74/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • ALONE ALONE             | Seri / Konum 90/100
+Akış 2   | No 4 • HANÖMER                 | Seri / Konum 90/100
+Akış 3   | No 7 • KOÇARSLAN               | Orta / Konum 55/100
+Akış 4   | No 8 • MR MONK                 | Orta / Konum 54/100
+Akış 5   | No 6 • GLITTER WINGS           | Orta / Konum 54/100
+Akış 6   | No 3 • FORTUNELLO              | Orta / Konum 54/100
+Akış 7   | No 2 • COLLECTER               | Orta / Konum 53/100
+Akış 8   | No 1 • AĞUSTOS AHMET           | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 73/100
+Model Lideri  : No 7 KOÇARSLAN (81/100)
+Akış Lideri   : No 5 ALONE ALONE (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 83/100, Form 73/100, Hız 81/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli görünüyor; sıralama daha çok genel forma bağlı.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 KOÇARSLAN
+
+- Model Payı          : %13,9 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [76/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Pist/Mesafe 83/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 66/100 [66/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 65/100 [65/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %19,6 [20/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,20 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 5 5 6 [75/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 80 [81/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 3P / 4 [59/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 3P / 5 [51/100]
+  Detay: Birlikte performans
+- Jokey               : AYHAN KURŞUN [51/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [78/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 73/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   KOÇARSLAN                AYHAN KURŞUN         Orta         81    76 Yüksek • 76   Pist/Mesafe 83/100, Form 73/100, Hız 81/100 | Form: 5-6-1-1-1-3-1-5-5-6
+2    5   ALONE ALONE              ÖZCAN YILDIRIM       Seri         81    71 Orta • 71     Pist/Mesafe 89/100, Hız 85/100, Form 75/100 | Form: 2-4-4-1-1-4-1-5-4-7
+3    4   HANÖMER                  HALİS KARATAŞ        Seri         77    85 Yüksek • 85   Form 75/100, Pist/Mesafe 76/100, Jokey 100/100 | Form: 1-1-6-3-4-3-1-1-2-3
+4    8   MR MONK                  ALİ YILDIZ           Orta         75    81 Orta • 81     Pist/Mesafe 89/100, Jokey 100/100, Stil 76/100 | Form: 1-2-2-1-5-1-4-7-6-5
+5    6   GLITTER WINGS            ERHAN AKTUĞ          Orta         72    85 Orta • 85     Pist/Mesafe 94/100, Hava/Zemin 77/100, Veri 85/100 | Form: 2-4-1-3-6-6-7-4-5-3
+6    1   AĞUSTOS AHMET            ONUR ATMACA          Sprint       68    77 Orta • 77     Pist/Mesafe 88/100, Hava/Zemin 77/100, KGS 78/100 | Form: 5-5-1-2-3-5-9-7-3-9
+7    2   COLLECTER                MUHAMMED MİR BİLGİN  Orta         67    85 Orta • 85     Pist/Mesafe 90/100, Hava/Zemin 73/100, Veri 85/100 | Form: 5-7-2-1-9-5-8-6-8-6
+8    3   FORTUNELLO               KADİR TOKAÇOĞLU      Orta         63    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 91/100, KGS 74/100 | Form: 9-6-5-8-4-4-6-7-3-6
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 KOÇARSLAN
+  Ozet: Pist/Mesafe: 2G - 3P / 4 • Jokey: 2G - 3P / 5 • Galop: 52/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           81 | Ana · Derece ve son metreler
+
+No 5 ALONE ALONE
+  Ozet: Pist/Mesafe: 3G - 3P / 7 • Jokey: 1G - 2P / 2 • Galop: 66/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           85 | Ana · Derece ve son metreler
+  - Form          75 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 HANÖMER
+  Ozet: Pist/Mesafe: 2G - 3P / 3 • Jokey: 2G - 3P / 3 • Galop: 28/100
+  - Form          75 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 8 MR MONK
+  Ozet: Pist/Mesafe: 2G - 4P / 8 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

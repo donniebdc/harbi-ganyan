@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-26&hip=ANTALYA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-26 / ANTALYA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 65/100
+Veri guveni       : 69/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • ARİFREİS                | Seri / Konum 90/100
+Akış 2   | No 6 • MEN DAKKA DUKKA         | Seri / Konum 90/100
+Akış 3   | No 7 • MARTENİÇKA              | Orta / Konum 54/100
+Akış 4   | No 4 • KRAL HÜSEYİN            | Orta / Konum 54/100
+Akış 5   | No 3 • BÜYÜKATAK               | Orta / Konum 54/100
+Akış 6   | No 8 • MON NIA                 | Orta / Konum 53/100
+Akış 7   | No 2 • ADEN PRENSİ             | Sprint / Konum 34/100
+Akış 8   | No 5 • KARA ONUR               | Sprint / Konum 34/100
+Akış 9   | No 9 • ÖRNEKKIZ                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 65/100
+Model Lideri  : No 1 ARİFREİS (72/100)
+Akış Lideri   : No 1 ARİFREİS (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 76/100, Jokey 78/100, Uzlaşma 83/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 ARİFREİS
+
+- Model Payı          : %12,3 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [80/100]
+  Detay: Veri + skor farkı
+- AI Model            : 72/100 [72/100]
+  Detay: Pist/Mesafe 76/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 43/100 [43/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %17,1 [17/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,75 [77/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 7 1 12 [67/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 16 · HP 31 [40/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 2 [39/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : MAHMUT TURAN [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [58/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 65/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   ARİFREİS                 MAHMUT TURAN         Seri         72    85 Yüksek • 85   Pist/Mesafe 76/100, Jokey 78/100, Uzlaşma 83/100 | Form: 6-3-3-3-4-2-2-7-1-12
+2    6   MEN DAKKA DUKKA          ERCAN ÇANKAYA        Seri         71    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 83/100, Uzlaşma 85/100 | Form: 4-1-2
+3    2   ADEN PRENSİ              MEHMET KAYA          Sprint       70    76 Orta • 76     Pist/Mesafe 83/100, Jokey 88/100, Uzlaşma 78/100 | Form: 3-6-2-4-8-5-6-4-10-10
+4    7   MARTENİÇKA               GÖRKEM ÖZÇELİK       Orta         67    51 Orta • 51     Hız 92/100, Pist/Mesafe 77/100, Uzlaşma 75/100 | Form: 7-5-8-7
+5    4   KRAL HÜSEYİN             SERHAT ÇELİK         Orta         63    85 Orta • 85     Pist/Mesafe 78/100, Veri 85/100 | Form: 4-4-4-11-8-2-5-9-6-6
+6    5   KARA ONUR                ONUR ÖZTÜRK          Sprint       63    84 Orta • 84     Pist/Mesafe 72/100, Veri 84/100, KGS 73/100 | Form: 8-8-7-7-4-6-7-8-8-10
+7    3   BÜYÜKATAK                MEHMET FATİH KAYA    Orta         63    57 Temkinli • 57  Stil 76/100, Uzlaşma 72/100 | Form: 8-2-5-8-2-3-7-7-2-4
+8    9   ÖRNEKKIZ                 AYHAN KURŞUN         Sprint       60    80 Orta • 80     Veri 80/100, Kilo 78/100 | Form: 8-8-13-6-5-3-4-8
+9    8   MON NIA                  FERHAT YÜCEL         Orta         58    77 Orta • 77     Veri 77/100, Kilo 100/100 | Form: 12-8-9-12-10-7-6-5-15-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 ARİFREİS
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           60 | Ana · Derece ve son metreler
+
+No 6 MEN DAKKA DUKKA
+  Ozet: Pist/Mesafe: 1G - 1P / 1 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 ADEN PRENSİ
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           61 | Ana · Derece ve son metreler
+
+No 7 MARTENİÇKA
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 3 • Galop: 28/100
+  - Hız           92 | Ana · Derece ve son metreler
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Form          53 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

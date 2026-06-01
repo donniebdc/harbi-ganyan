@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-28&hip=ISTANBUL&kosu=8
+Tarih/Hipodrom/Kosu: 2026-02-28 / ISTANBUL / 8
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 67/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 9 • ŞANVERDİ                | Seri / Konum 90/100
+Akış 2   | No 1 • AZERİ DAMAT             | Seri / Konum 90/100
+Akış 3   | No 4 • İNEBOLU                 | Seri / Konum 90/100
+Akış 4   | No 3 • EFLAH                   | Ön grup / Konum 74/100
+Akış 5   | No 8 • O BİR ÇELİK             | Orta / Konum 54/100
+Akış 6   | No 5 • KİMSESİZ BABA           | Orta / Konum 54/100
+Akış 7   | No 6 • LAZMAN                  | Sprint / Konum 35/100
+Akış 8   | No 7 • LEONİDAS                | Sprint / Konum 34/100
+Akış 9   | No 2 • ALATTİN                 | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 69/100
+Model Lideri  : No 3 EFLAH (74/100)
+Akış Lideri   : No 9 ŞANVERDİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 77/100, Hız 77/100, Uzlaşma 80/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 3 EFLAH
+
+- Model Payı          : %12,0 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [71/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Pist/Mesafe 77/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe riski var, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [39/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [82/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 56/100 [56/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %15,0 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,40 [86/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 2 5 9 [67/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 35 · HP 95 [100/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 2 [39/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 5 [26/100]
+  Detay: Birlikte performans
+- Jokey               : ÖZCAN YILDIRIM [26/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [81/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 62/100 [62/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    3   EFLAH                    ÖZCAN YILDIRIM       Ön grup      74    62 Orta • 62     Pist/Mesafe 77/100, Hız 77/100, Uzlaşma 80/100 | Form: 2-5-3-3-3-3-4-2-5-9
+2    9   ŞANVERDİ                 BURAK AKÇAY          Seri         72    77 Orta • 77     Pist/Mesafe 84/100, Uzlaşma 80/100, Stil 76/100 | Form: 2-5-4-2-1-5-2-7-11-3
+3    1   AZERİ DAMAT              MUHAMMED MİR BİLGİN  Seri         71    80 Orta • 80     Pist/Mesafe 86/100, Jokey 94/100, Uzlaşma 78/100 | Form: 7-10-2-10-1-5-4-1-1-12
+4    4   İNEBOLU                  HALİS KARATAŞ        Seri         71    72 Orta • 72     Pist/Mesafe 74/100, Stil 76/100, Uzlaşma 75/100 | Form: 2-6-4-1-6-1-1-3-2-2
+5    8   O BİR ÇELİK              TOLGA YILDIZ         Orta         68    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 85/100, Uzlaşma 73/100 | Form: 8-7-6-2-6-6-1-2-5-8
+6    5   KİMSESİZ BABA            MEHMET KAYA          Orta         67    85 Orta • 85     Pist/Mesafe 83/100, Veri 85/100, Kilo 100/100 | Form: 8-4-5-5-3-2-5-5-6-4
+7    6   LAZMAN                   AYHAN KURŞUN         Sprint       67    53 Temkinli • 53  Pist/Mesafe 87/100, Hız 81/100, Kilo 100/100 | Form: 7-10-6-6-5-8-7-10-8-9
+8    7   LEONİDAS                 ONUR YILDIZ          Sprint       65    72 Orta • 72     Pist/Mesafe 77/100, KGS 86/100, Risk 86/100 | Form: 6-13-7-14-10-8-8-12-4-8
+9    2   ALATTİN                  ONUR ATMACA          Sprint       62    67 Temkinli • 67  Pist/Mesafe 77/100, KGS 81/100, Risk 81/100 | Form: 10-7-10-8-16-5-9-11-10-13
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 3 EFLAH
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 2P / 5 • Galop: 39/100
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           77 | Ana · Derece ve son metreler
+
+No 9 ŞANVERDİ
+  Ozet: Pist/Mesafe: 0G - 2P / 6 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           61 | Ana · Derece ve son metreler
+
+No 1 AZERİ DAMAT
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 3G - 4P / 5 • Galop: 52/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           56 | Ana · Derece ve son metreler
+
+No 4 İNEBOLU
+  Ozet: Pist/Mesafe: 1G - 3P / 4 • Jokey: 1G - 2P / 2 • Galop: 52/100
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   74 | Ana · Pist/mesafe geçmişi
+  - Hız           61 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

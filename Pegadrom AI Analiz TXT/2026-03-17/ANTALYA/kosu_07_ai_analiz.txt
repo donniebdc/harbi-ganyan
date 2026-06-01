@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-17&hip=ANTALYA&kosu=7
+Tarih/Hipodrom/Kosu: 2026-03-17 / ANTALYA / 7
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 65/100
+Veri guveni       : 64/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • ŞEKER ASLAN             | Seri / Konum 90/100
+Akış 2   | No 1 • ARCHONEI                | Ön grup / Konum 74/100
+Akış 3   | No 9 • VAELLA                  | Ön grup / Konum 73/100
+Akış 4   | No 2 • KALORİMATİK             | Orta / Konum 54/100
+Akış 5   | No 7 • ILGAZ WIND              | Orta / Konum 54/100
+Akış 6   | No 8 • LUNATIC TIME            | Orta / Konum 54/100
+Akış 7   | No 5 • BUMMER QUEEN            | Orta / Konum 54/100
+Akış 8   | No 6 • DUBLIN DREAM            | Orta / Konum 53/100
+Akış 9   | No 10 • VAR BİR HAYALİMİZ      | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 65/100
+Model Lideri  : No 9 VAELLA (75/100)
+Akış Lideri   : No 4 ŞEKER ASLAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 93/100, Pist/Mesafe 87/100, Uzlaşma 84/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 VAELLA
+
+- Model Payı          : %12,7 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [70/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 93/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 60/100 [60/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 36/100 [36/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %12,7 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,00 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 4 6 4 [58/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 32 · HP 30 [57/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 4 [27/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : GÖRKEM ÖZÇELİK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [60/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 65/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   VAELLA                   GÖRKEM ÖZÇELİK       Ön grup      75    67 Orta • 67     Hız 93/100, Pist/Mesafe 87/100, Uzlaşma 84/100 | Form: 2-11-4-3-4-6-4
+2    4   ŞEKER ASLAN              AYHAN KURŞUN         Seri         75    61 Orta • 61     Hız 100/100, Pist/Mesafe 72/100, Uzlaşma 83/100 | Form: 5-2-10-3-2-1-4
+3    2   KALORİMATİK              MEHMET KAYA          Orta         67    72 Orta • 72     Pist/Mesafe 82/100, Hız 74/100, Veri 72/100 | Form: 8-2-11-5-5-3-3-5-3-5
+4    7   ILGAZ WIND               ÖMER FARUK ÖZEN      Orta         67    67 Orta • 67     Pist/Mesafe 80/100, Hız 76/100, Uzlaşma 73/100 | Form: 8-7-7-6-7-5-1-3-13-6
+5    1   ARCHONEI                 MAHMUT TURAN         Ön grup      66    72 Orta • 72     Pist/Mesafe 87/100, Hız 85/100, Uzlaşma 78/100 | Form: 6-7-4-3-4-1-3
+6    8   LUNATIC TIME             ADEM ASLAN           Orta         65    77 Orta • 77     Pist/Mesafe 87/100, Uzlaşma 73/100, Hava/Zemin 75/100 | Form: 6-3-3-3-8-8-6-5-6-4
+7    5   BUMMER QUEEN             MEHMET ALİ AKGÖBEK   Orta         64    81 Orta • 81     Pist/Mesafe 84/100, Veri 81/100, Kilo 91/100 | Form: 10-7-5-3-5-6-5-8
+8    10  VAR BİR HAYALİMİZ        UĞUR TEMUR           Sprint       59    61 Orta • 61     Pist/Mesafe 74/100, Hız 76/100 | Form: 8-12-10-14-7
+9    6   DUBLIN DREAM             FATİH SULTAN MEHMET SANSAR Orta         51    14 Temkinli • 14  Veri sinyali temkinli | Form: 9-5-4-4-9-5-8-9-6-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 VAELLA
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız           93 | Ana · Derece ve son metreler
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 ŞEKER ASLAN
+  Ozet: Pist/Mesafe: 1G - 3P / 3 • Jokey: 0G - 2P / 4 • Galop: 35/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   72 | Ana · Pist/mesafe geçmişi
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 KALORİMATİK
+  Ozet: Pist/Mesafe: 0G - 2P / 3 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          54 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 ILGAZ WIND
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           76 | Ana · Derece ve son metreler
+  - Form          47 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

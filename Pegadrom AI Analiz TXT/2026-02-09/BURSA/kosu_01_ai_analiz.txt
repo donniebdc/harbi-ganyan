@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-09&hip=BURSA&kosu=1
+Tarih/Hipodrom/Kosu: 2026-02-09 / BURSA / 1
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 56/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • JALELA                  | Seri / Konum 90/100
+Akış 2   | No 6 • TORUNCALAS              | Seri / Konum 90/100
+Akış 3   | No 7 • FISTIK ÇAMI             | Seri / Konum 90/100
+Akış 4   | No 2 • BENİCE GÜLÜ             | Seri / Konum 90/100
+Akış 5   | No 5 • SULTAN NENE             | Seri / Konum 89/100
+Akış 6   | No 1 • BELKIS ANA              | Ön grup / Konum 74/100
+Akış 7   | No 8 • PRENSES MEHLİKA         | Sprint / Konum 35/100
+Akış 8   | No 3 • BALMELDA                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 68/100
+Model Lideri  : No 4 JALELA (80/100)
+Akış Lideri   : No 4 JALELA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 83/100, Form 79/100, Jokey 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 4 JALELA
+
+- Model Payı          : %14,8 [15/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [75/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 83/100
+- Son 6 Uyarlama      : Güçlü rakip · 70/100 [70/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [55/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [80/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 59/100 [59/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %14,8 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,35 [83/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 2 8 5 [77/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 23 · HP 78 [81/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 3P / 5 [42/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 3 [46/100]
+  Detay: Birlikte performans
+- Jokey               : ÖMER FARUK ÖZEN [46/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [79/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    4   JALELA                   ÖMER FARUK ÖZEN      Seri         80    76 Yüksek • 76   Pist/Mesafe 83/100, Form 79/100, Jokey 100/100 | Form: 2-1-2-7-2-1-2-2-8-5
+2    6   TORUNCALAS               ERTUĞRUL CANKILIÇ    Seri         80    72 Orta • 72     Pist/Mesafe 98/100, Hız 72/100, Form 82/100 | Form: 1-1-1-7-2-1-1-5-1-1
+3    1   BELKIS ANA               HALİT GÖKÇE          Ön grup      71    72 Orta • 72     Hız 85/100, Form 73/100, Hava/Zemin 83/100 | Form: 2-5-4-3-1-3-1-1-5-4
+4    7   FISTIK ÇAMI              RECEP KETME          Seri         71    72 Orta • 72     Stil 76/100, Hava/Zemin 75/100, KGS 84/100 | Form: 7-8-2-1-2-3-2-7-2-2
+5    2   BENİCE GÜLÜ              EFE AKPINAR          Seri         70    85 Orta • 85     Pist/Mesafe 88/100, Jokey 75/100, Stil 76/100 | Form: 6-14-4-2-3-2-5-1-8-14
+6    8   PRENSES MEHLİKA          FURKAN HİM           Sprint       70    42 Temkinli • 42  Hız 100/100, Pist/Mesafe 77/100, Stil 76/100 | Form: 6-1-6-4-9-3-1-5-12-14
+7    3   BALMELDA                 UĞUR LEVENT          Sprint       49    14 Temkinli • 14  Veri sinyali temkinli | Form: 4-4-6-9-10-15-4-12-11-11
+8    5   SULTAN NENE              ERHAN AKKAYA         Seri         49    14 Temkinli • 14  Veri sinyali temkinli | Form: 6-4-6-9-6-12-4-1-3-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 4 JALELA
+  Ozet: Pist/Mesafe: 1G - 3P / 5 • Jokey: 1G - 2P / 3 • Galop: 55/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Hız           63 | Ana · Derece ve son metreler
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 TORUNCALAS
+  Ozet: Pist/Mesafe: 7G - 8P / 10 • Jokey: 1G - 1P / 1 • Galop: 52/100
+  - Pist/Mesafe   98 | Ana · Pist/mesafe geçmişi
+  - Hız           72 | Ana · Derece ve son metreler
+  - Form          82 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 BELKIS ANA
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Hız           85 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 FISTIK ÇAMI
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   69 | Ana · Pist/mesafe geçmişi
+  - Hız           69 | Ana · Derece ve son metreler
+  - Form          72 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,118 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-06&hip=IZMIR&kosu=5
+Tarih/Hipodrom/Kosu: 2026-02-06 / IZMIR / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 74/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • DROWZEE                 | Seri / Konum 90/100
+Akış 2   | No 5 • VOLPI                   | Seri / Konum 90/100
+Akış 3   | No 4 • NO PASARAN              | Seri / Konum 89/100
+Akış 4   | No 2 • BATMAN ÇOCUĞU           | Orta / Konum 54/100
+Akış 5   | No 3 • ICE BEAR                | Orta / Konum 54/100
+Akış 6   | No 6 • BIG HONEY               | Orta / Konum 54/100
+
+3) KARAR OZETI
+--------------
+Genel: 6 at · ortalama 70/100
+Model Lideri  : No 1 DROWZEE (79/100)
+Akış Lideri   : No 1 DROWZEE (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Form 79/100, Jokey 87/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 DROWZEE
+
+- Model Payı          : %18,9 [19/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [83/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Güçlü rakip · 75/100 [75/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [82/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 71/100 [71/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %77,5 [77/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,15 [95/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 1 4 4 [87/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 19 · HP 99 [92/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 4G - 6P / 8 [69/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 3P / 6 [47/100]
+  Detay: Birlikte performans
+- Jokey               : AKIN SÖZEN [47/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [89/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   DROWZEE                  AKIN SÖZEN           Seri         79    85 Yüksek • 85   Pist/Mesafe 93/100, Form 79/100, Jokey 87/100 | Form: 5-1-6-1-2-1-2-1-4-4
+2    2   BATMAN ÇOCUĞU            MUSTAFA ÇİÇEK        Orta         77    85 Yüksek • 85   Pist/Mesafe 92/100, Form 74/100, Jokey 94/100 | Form: 4-1-2-4-1-4-5-1-6-6
+3    3   ICE BEAR                 ALİ YILDIZ           Orta         70    77 Orta • 77     Hız 76/100, Hava/Zemin 77/100, Veri 77/100 | Form: 4-5-1-5-2-5-2-4-5-4
+4    5   VOLPI                    ALAATTİN KÜRÜNDÜK    Seri         69    62 Orta • 62     Hız 100/100, Pist/Mesafe 78/100 | Form: 4-6-5-5-2-6-2-8-5-1
+5    6   BIG HONEY                İBRAHİM SEFA SÖĞÜT   Orta         64    67 Orta • 67     Hız 91/100, KGS 76/100, Risk 76/100 | Form: 12-10-7-6-6-3-3-6-7-1
+6    4   NO PASARAN               SİNAN AKŞIN          Seri         60    67 Orta • 67     Pist/Mesafe 85/100, Stil 76/100, Kilo 100/100 | Form: 4-6-2-1-2-5-6-13-11-3
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 DROWZEE
+  Ozet: Pist/Mesafe: 4G - 6P / 8 • Jokey: 2G - 3P / 6 • Galop: 52/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         87 | Destek · Jokey formu ve at uyumu
+
+No 2 BATMAN ÇOCUĞU
+  Ozet: Pist/Mesafe: 3G - 4P / 7 • Jokey: 2G - 3P / 4 • Galop: 28/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         94 | Destek · Jokey formu ve at uyumu
+
+No 3 ICE BEAR
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           76 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+
+No 5 VOLPI
+  Ozet: Pist/Mesafe: 1G - 1P / 4 • Jokey: 0G - 0P / 2 • Galop: 52/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Form          58 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,120 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-13&hip=IZMIR&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-13 / IZMIR / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 72/100
+Veri guveni       : 67/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • RED STORM               | Seri / Konum 90/100
+Akış 2   | No 2 • OBRADA                  | Seri / Konum 90/100
+Akış 3   | No 1 • JUNIOR BAŞKAN           | Seri / Konum 90/100
+Akış 4   | No 4 • MUCHACHO                | Seri / Konum 90/100
+Akış 5   | No 7 • TOROS EXPRESS           | Ön grup / Konum 73/100
+Akış 6   | No 6 • BOARDING PASS           | Orta / Konum 55/100
+Akış 7   | No 3 • THE ADMIRAL             | Orta / Konum 55/100
+
+3) KARAR OZETI
+--------------
+Genel: 7 at · ortalama 72/100
+Model Lideri  : No 5 RED STORM (80/100)
+Akış Lideri   : No 5 RED STORM (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Form 78/100, Hız 73/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 RED STORM
+
+- Model Payı          : %15,9 [16/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [79/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Güçlü rakip · 70/100 [70/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [72/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 68/100 [68/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %39,3 [39/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,00 [92/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 3 2 1 [83/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 7 · HP 84 [68/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 7P / 7 [65/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 3P / 3 [57/100]
+  Detay: Birlikte performans
+- Jokey               : ÖMER FARUK ÖZEN [57/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [78/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 71/100 [71/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 72/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   RED STORM                ÖMER FARUK ÖZEN      Seri         80    71 Yüksek • 71   Pist/Mesafe 93/100, Form 78/100, Hız 73/100 | Form: 1-3-5-2-2-5-3-3-2-1
+2    2   OBRADA                   ALİ MEHDİ ALTIN      Seri         77    71 Orta • 71     Pist/Mesafe 87/100, Hız 73/100, Jokey 100/100 | Form: 1-7-1-6-1-10-3-2-6-3
+3    6   BOARDING PASS            BERKAY BÜLBÜL        Orta         76    66 Orta • 66     Pist/Mesafe 84/100, Hız 89/100, Form 73/100 | Form: 2-1-5-5-4-2-4-7-2-6
+4    3   THE ADMIRAL              KÜRŞAT YILMAZ        Orta         75    58 Orta • 58     Hız 100/100, Pist/Mesafe 89/100, Uzlaşma 76/100 | Form: 2-5-5-4-7-5-1-1-3-7
+5    1   JUNIOR BAŞKAN            MURAT KEÇECİ         Seri         73    72 Orta • 72     Pist/Mesafe 94/100, Uzlaşma 79/100, Stil 76/100 | Form: 6-1-1-4-5-3-1-4-1-5
+6    4   MUCHACHO                 RECEP KETME          Seri         66    77 Orta • 77     Pist/Mesafe 87/100, Hava/Zemin 75/100, Veri 77/100 | Form: 7-10-5-6-3-2-6-4-2-2
+7    7   TOROS EXPRESS            MÜRSEL KAYİŞ         Ön grup      57    57 Orta • 57     Veri sinyali temkinli | Form: 4-4-1-3-4-7-2-3-5-11
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 RED STORM
+  Ozet: Pist/Mesafe: 2G - 7P / 7 • Jokey: 1G - 3P / 3 • Galop: 72/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          78 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           73 | Ana · Derece ve son metreler
+
+No 2 OBRADA
+  Ozet: Pist/Mesafe: 2G - 4P / 7 • Jokey: 2G - 5P / 7 • Galop: 28/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           73 | Ana · Derece ve son metreler
+
+No 6 BOARDING PASS
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 1G - 2P / 5 • Galop: 60/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 THE ADMIRAL
+  Ozet: Pist/Mesafe: 2G - 4P / 9 • Jokey: 0G - 0P / 1 • Galop: 60/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

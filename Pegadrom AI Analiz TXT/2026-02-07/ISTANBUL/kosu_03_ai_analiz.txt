@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-07&hip=ISTANBUL&kosu=3
+Tarih/Hipodrom/Kosu: 2026-02-07 / ISTANBUL / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 54/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • BİLETÇİ KIZ             | Seri / Konum 90/100
+Akış 2   | No 10 • MİNİK ANNE             | Seri / Konum 90/100
+Akış 3   | No 5 • SUBİKE                  | Seri / Konum 90/100
+Akış 4   | No 8 • IĞDIR KIZI              | Seri / Konum 90/100
+Akış 5   | No 9 • LUSİA                   | Ön grup / Konum 74/100
+Akış 6   | No 2 • IŞINBİKE                | Ön grup / Konum 74/100
+Akış 7   | No 3 • KOŞAN NUR               | Ön grup / Konum 74/100
+Akış 8   | No 4 • FIRATIN GÜCÜ            | Orta / Konum 53/100
+Akış 9   | No 1 • GÜL AYALI               | Sprint / Konum 35/100
+Akış 10  | No 6 • BERRENKIZ               | Sprint / Konum 34/100
+Akış 11  | No 11 • TURBOLU                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 66/100
+Model Lideri  : No 9 LUSİA (81/100)
+Akış Lideri   : No 7 BİLETÇİ KIZ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 97/100, Hız 100/100, Jokey 78/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 LUSİA
+
+- Model Payı          : %11,1 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [61/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Pist/Mesafe 97/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [67/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 54/100 [54/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %23,2 [23/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,45 [90/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 4 6 2 [67/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 92 [89/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 5 [19/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ YILDIZ [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [77/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 33/100 [33/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   LUSİA                    ALİ YILDIZ           Ön grup      81    33 Temkinli • 33  Pist/Mesafe 97/100, Hız 100/100, Jokey 78/100 | Form: 3-4-9-5-6-4-4-4-6-2
+2    7   BİLETÇİ KIZ              HALİS KARATAŞ        Seri         78    94 Yüksek • 94   Pist/Mesafe 80/100, Hız 75/100, Form 73/100 | Form: 1-1-7-2-6-2-4-6-1-1
+3    1   GÜL AYALI                NEVZAT AVCİ          Sprint       78    47 Temkinli • 47  Pist/Mesafe 86/100, Hız 89/100, Jokey 100/100 | Form: 1-8-5-3-12-2-1-4-10-9
+4    10  MİNİK ANNE               MEHMET KAYA          Seri         69    62 Orta • 62     Pist/Mesafe 78/100, Hız 78/100, Form 81/100 | Form: 1-2-4-3-1-1-2-7-6-4
+5    4   FIRATIN GÜCÜ             ALİ KAÇMAZ           Orta         65    76 Orta • 76     Pist/Mesafe 79/100, KGS 78/100, Risk 78/100 | Form: 6-6-5-2-7-9-7-11-7-9
+6    2   IŞINBİKE                 ONUR YILDIZ          Ön grup      65    43 Temkinli • 43  Hız 82/100, Pist/Mesafe 74/100, Uzlaşma 72/100 | Form: 9-7-3-3-3-3-8-3-5-6
+7    3   KOŞAN NUR                VEDAT ABİŞ           Ön grup      64    29 Temkinli • 29  Pist/Mesafe 91/100, Hız 95/100 | Form: 9-6-7-3-3-1-2-4-3-8
+8    6   BERRENKIZ                BURAK AKÇAY          Sprint       59    77 Temkinli • 77  Veri 77/100, Kilo 74/100 | Form: 12-4-11-10-4-6-8-6-8-11
+9    11  TURBOLU                  UĞUR LEVENT          Sprint       59    77 Temkinli • 77  Pist/Mesafe 76/100, Veri 77/100, Kilo 96/100 | Form: 7-10-12-8-11-8-11-12-10-12
+10   5   SUBİKE                   MURAT KEÇECİ         Seri         59    42 Temkinli • 42  Hız 85/100, KGS 74/100, Risk 74/100 | Form: 9-9-4-4-2-1-5-5-1-4
+11   8   IĞDIR KIZI               BURAK BAGUÇ          Seri         53    14 Temkinli • 14  Uzlaşma 75/100, Kilo 100/100 | Form: 11-9-3-5-4-1-1-5-2-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 LUSİA
+  Ozet: Pist/Mesafe: 0G - 1P / 5 • Jokey: 0G - 2P / 3 • Galop: 67/100
+  - Pist/Mesafe   97 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 BİLETÇİ KIZ
+  Ozet: Pist/Mesafe: 1G - 2P / 4 • Jokey: 0G - 1P / 3 • Galop: 52/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 GÜL AYALI
+  Ozet: Pist/Mesafe: 1G - 1P / 3 • Jokey: 2G - 3P / 6 • Galop: 64/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 10 MİNİK ANNE
+  Ozet: Pist/Mesafe: 1G - 3P / 4 • Jokey: 1G - 2P / 2 • Galop: 28/100
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Hız           78 | Ana · Derece ve son metreler
+  - Form          81 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

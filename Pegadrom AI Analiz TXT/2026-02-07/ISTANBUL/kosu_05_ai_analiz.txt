@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-07&hip=ISTANBUL&kosu=5
+Tarih/Hipodrom/Kosu: 2026-02-07 / ISTANBUL / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 67/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • ERSANŞAH                | Seri / Konum 90/100
+Akış 2   | No 4 • ERAYKAN                 | Seri / Konum 90/100
+Akış 3   | No 2 • AFŞAR                   | Ön grup / Konum 74/100
+Akış 4   | No 7 • HÜKÜM                   | Orta / Konum 54/100
+Akış 5   | No 8 • KİMSESİZ BABA           | Orta / Konum 54/100
+Akış 6   | No 6 • FIRTINALAR DİYARI       | Orta / Konum 54/100
+Akış 7   | No 9 • NİĞBOLU                 | Orta / Konum 54/100
+Akış 8   | No 1 • ÖZGÜR FURKAN            | Sprint / Konum 35/100
+Akış 9   | No 3 • BARAN REİS              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 68/100
+Model Lideri  : No 7 HÜKÜM (78/100)
+Akış Lideri   : No 5 ERSANŞAH (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 83/100, Jokey 74/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 HÜKÜM
+
+- Model Payı          : %12,7 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [67/100]
+  Detay: Veri + skor farkı
+- AI Model            : 78/100 [78/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 51/100 [51/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %33,2 [33/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,85 [93/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 7 3 6 [62/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 101 [88/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 4 [19/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 3 [19/100]
+  Detay: Birlikte performans
+- Jokey               : HALİS KARATAŞ [19/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [74/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 51/100 [51/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   HÜKÜM                    HALİS KARATAŞ        Orta         78    51 Orta • 51     Hız 100/100, Pist/Mesafe 83/100, Jokey 74/100 | Form: 2-5-5-4-6-5-2-7-3-6
+2    5   ERSANŞAH                 MEHMET KAYA          Seri         76    51 Orta • 51     Pist/Mesafe 81/100, Hız 81/100, Jokey 100/100 | Form: 1-4-7-7-2-2-2-2-5-7
+3    4   ERAYKAN                  NEVZAT AVCİ          Seri         75    81 Orta • 81     Pist/Mesafe 82/100, Form 73/100, Jokey 88/100 | Form: 2-1-3-1-2-8-6-2-1-1
+4    1   ÖZGÜR FURKAN             KÜRŞAT YILMAZ        Sprint       68    85 Orta • 85     Pist/Mesafe 81/100, Veri 85/100, Kilo 100/100 | Form: 4-9-8-10-14-1-8-8-5-1
+5    3   BARAN REİS               ZÜLFÜKAR KARABULUT   Sprint       68    58 Temkinli • 58  Pist/Mesafe 85/100, Hız 85/100, Uzlaşma 75/100 | Form: 5-6-8-9-8-10-6-4-7-10
+6    2   AFŞAR                    VEDAT ABİŞ           Ön grup      66    67 Temkinli • 67  Pist/Mesafe 83/100, Uzlaşma 76/100, KGS 74/100 | Form: 5-4-6-7-4-3-4-2-1-3
+7    8   KİMSESİZ BABA            MUHAMMED MİR BİLGİN  Orta         65    67 Temkinli • 67  Pist/Mesafe 82/100, Hız 80/100 | Form: 8-4-5-5-3-2-5-5-6-4
+8    6   FIRTINALAR DİYARI        BERKANT GÖKÇE        Orta         62    77 Orta • 77     Pist/Mesafe 77/100, Veri 77/100, Kilo 100/100 | Form: 8-9-6-3-4-5-3-10-6-6
+9    9   NİĞBOLU                  ALİ YILDIZ           Orta         58    66 Orta • 66     Pist/Mesafe 76/100, Hız 77/100 | Form: 7-7-7-7-2-4-5-6-6-7
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 HÜKÜM
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 1P / 3 • Galop: 52/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 ERSANŞAH
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 1G - 2P / 4 • Galop: 67/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Hız           81 | Ana · Derece ve son metreler
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 ERAYKAN
+  Ozet: Pist/Mesafe: 1G - 4P / 5 • Jokey: 2G - 3P / 3 • Galop: 28/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+No 1 ÖZGÜR FURKAN
+  Ozet: Pist/Mesafe: 2G - 2P / 6 • Jokey: 1G - 1P / 5 • Galop: 28/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Hız           60 | Ana · Derece ve son metreler
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

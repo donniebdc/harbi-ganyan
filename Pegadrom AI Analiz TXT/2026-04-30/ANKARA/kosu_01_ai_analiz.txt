@@ -1,0 +1,134 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-04-30&hip=ANKARA&kosu=1
+Tarih/Hipodrom/Kosu: 2026-04-30 / ANKARA / 1
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 13
+Ortalama AI puani : 55/100
+Veri guveni       : 16/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : Ankara • 1. Koşu • 14:00 • 900m • Çim 30.04.2026 Perşembe
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 7 • METSO                   | Seri / Konum 90/100
+Akış 2   | No 5 • HEYHAT                  | Seri / Konum 90/100
+Akış 3   | No 3 • CİHAT BEY               | Seri / Konum 90/100
+Akış 4   | No 8 • OBAĞAÇ                  | Ön grup / Konum 73/100
+Akış 5   | No 10 • SÜPEROĞLAN             | Orta / Konum 54/100
+Akış 6   | No 11 • TAŞKIN KRAL            | Orta / Konum 54/100
+Akış 7   | No 14 • SERÇE KIZI             | Orta / Konum 53/100
+Akış 8   | No 6 • İSKENDEROVA             | Sprint / Konum 34/100
+Akış 9   | No 13 • MÜTEVAZİ KIZ           | Sprint / Konum 34/100
+Akış 10  | No 12 • HAYDİ BİTANEM          | Sprint / Konum 34/100
+Akış 11  | No 4 • GÖKTUĞBABA              | Sprint / Konum 34/100
+Akış 12  | No 2 • ASLANLI OVA             | Sprint / Konum 34/100
+Akış 13  | No 15 • ÜÇKONAKLI              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 13 at · ortalama 55/100
+Model Lideri  : No 6 İSKENDEROVA (65/100)
+Akış Lideri   : No 7 METSO (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 100/100, Uzlaşma 93/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 6 İSKENDEROVA
+
+- Model Payı          : %9,1 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [42/100]
+  Detay: Veri + skor farkı
+- AI Model            : 65/100 [65/100]
+  Detay: Galop 100/100
+- Son 6 Uyarlama      : Riskli profil · 49/100 [49/100]
+  Detay: 1/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [48/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [58/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 24/100 [24/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %6,7 [7/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 12,25 [51/100]
+  Detay: Ganyan beklentisi
+- Form                : 12 [10/100]
+  Detay: Son koşular
+- Hazırlık            : KGS - · HP - [0/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 1 [3/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : SERHAT ÇELİK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Geriden gelebilir [10/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 15/100 [15/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 55/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    6   İSKENDEROVA              SERHAT ÇELİK         Sprint       65    15 Temkinli • 15  Galop 100/100, Uzlaşma 93/100 | Form: 12
+2    10  SÜPEROĞLAN               ERAY ÇİZİK           Orta         65    15 Temkinli • 15  Galop 96/100, Uzlaşma 87/100 | Form: 8-3-7
+3    13  MÜTEVAZİ KIZ             MERT GÖKALP ARSLAN   Sprint       62    15 Temkinli • 15  Galop 88/100, Uzlaşma 92/100, Kilo 100/100 | Form: 10-12-4-11
+4    7   METSO                    MÜSLÜM ÇELİK         Seri         59    15 Temkinli • 15  Galop 81/100, Uzlaşma 77/100 | Form: 3-1
+5    5   HEYHAT                   FATİH SULTAN MEHMET SANSAR Seri         58    15 Temkinli • 15  Galop 87/100, Uzlaşma 83/100 | Form: 1-3
+6    12  HAYDİ BİTANEM            MEHMET NURİ SUNKAR   Sprint       57    26 Temkinli • 26  Uzlaşma 81/100, Kilo 100/100 | Form: 9-2-9
+7    4   GÖKTUĞBABA               VEDAT ABİŞ           Sprint       55    15 Temkinli • 15  Uzlaşma 73/100, Piyasa 94/100 | Form: 13-8
+8    11  TAŞKIN KRAL              MEHMET SALİH ÇELİK   Orta         53    15 Temkinli • 15  Veri sinyali temkinli | Form: 5-6
+9    8   OBAĞAÇ                   HIŞMAN ÇİZİK         Ön grup      51    15 Temkinli • 15  Veri sinyali temkinli | Form: 4-1-3
+10   3   CİHAT BEY                ERCAN ÇANKAYA        Seri         50    15 Temkinli • 15  Veri sinyali temkinli | Form: 2-1
+11   2   ASLANLI OVA              SALİH ÇELİK          Sprint       49    14 Temkinli • 14  Veri sinyali temkinli | Form: 11-9-2
+12   14  SERÇE KIZI               MEHMET AKYAVUZ       Orta         48    15 Temkinli • 15  Kilo 100/100 | Form: 6-7-9-2
+13   15  ÜÇKONAKLI                FATİH RÜSTEM BEBEK   Sprint       46    15 Temkinli • 15  Kilo 100/100 | Form: 7-8-4-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 6 İSKENDEROVA
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       93 | Ana · Model içi sinyal uyumu
+  - Kilo          45 | İnce · Kilo bilgisi
+
+No 10 SÜPEROĞLAN
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 2 • Galop: 96/100
+  - Galop         96 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       87 | Ana · Model içi sinyal uyumu
+  - Kilo          45 | İnce · Kilo bilgisi
+
+No 13 MÜTEVAZİ KIZ
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 1 • Galop: 88/100
+  - Galop         88 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       92 | Ana · Model içi sinyal uyumu
+  - Kilo         100 | İnce · Kilo bilgisi
+
+No 7 METSO
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 1G - 2P / 2 • Galop: 81/100
+  - Galop         81 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       77 | Ana · Model içi sinyal uyumu
+  - Kilo          45 | İnce · Kilo bilgisi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

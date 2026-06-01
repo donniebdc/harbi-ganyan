@@ -1,0 +1,116 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-01&hip=IZMIR&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-01 / IZMIR / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 76/100
+Veri guveni       : 63/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • HARD RUNNER             | Seri / Konum 90/100
+Akış 2   | No 2 • TOLPER                  | Seri / Konum 90/100
+Akış 3   | No 4 • VİTE VİTE               | Seri / Konum 90/100
+Akış 4   | No 5 • STORM QUEEN             | Ön grup / Konum 74/100
+Akış 5   | No 3 • ÇEPNİ                   | Orta / Konum 54/100
+
+3) KARAR OZETI
+--------------
+Genel: 5 at · ortalama 76/100
+Model Lideri  : No 1 HARD RUNNER (81/100)
+Akış Lideri   : No 1 HARD RUNNER (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Form 88/100, Pist/Mesafe 92/100, Jokey 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 HARD RUNNER
+
+- Model Payı          : %21,4 [21/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [80/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Form 88/100
+- Son 6 Uyarlama      : Güçlü rakip · 75/100 [75/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 77/100 [77/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %34,9 [35/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,00 [92/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 1 1 [98/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 13 · HP 70 [65/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 7G - 8P / 8 [94/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 2P / 2 [85/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET KAYA [85/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [85/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 81/100 [81/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 76/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   HARD RUNNER              MEHMET KAYA          Seri         81    81 Yüksek • 81   Form 88/100, Pist/Mesafe 92/100, Jokey 100/100 | Form: 1-1-2-1-2-1-1-1-1-1
+2    5   STORM QUEEN              BEKİR MERT MIRIK     Ön grup      80    71 Orta • 71     Pist/Mesafe 89/100, Form 78/100, Hız 79/100 | Form: 1-4-1-4-4-6-1-4-4-6
+3    2   TOLPER                   SELİM KAYA           Seri         78    58 Orta • 58     Pist/Mesafe 93/100, Form 88/100, Hız 84/100 | Form: 1-2-1-5-4-4-9
+4    3   ÇEPNİ                    AKIN SÖZEN           Orta         71    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 84/100, Form 73/100 | Form: 3-3-6-4-1-5-7-10-11-5
+5    4   VİTE VİTE                MUHAMMED MİR BİLGİN  Seri         69    77 Orta • 77     Pist/Mesafe 90/100, Form 79/100, Stil 76/100 | Form: 4-1-2-2-4-1-2-4-2-4
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 HARD RUNNER
+  Ozet: Pist/Mesafe: 7G - 8P / 8 • Jokey: 2G - 2P / 2 • Galop: 28/100
+  - Form          88 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 5 STORM QUEEN
+  Ozet: Pist/Mesafe: 2G - 2P / 4 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Form          78 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           79 | Ana · Derece ve son metreler
+
+No 2 TOLPER
+  Ozet: Pist/Mesafe: 1G - 2P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          88 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           84 | Ana · Derece ve son metreler
+
+No 3 ÇEPNİ
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 1P / 2 • Galop: 66/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

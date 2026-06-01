@@ -1,0 +1,120 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-01&hip=ADANA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-03-01 / ADANA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 75/100
+Veri guveni       : 73/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • GÜRAYHAN                | Seri / Konum 90/100
+Akış 2   | No 4 • ENDORFİN                | Seri / Konum 90/100
+Akış 3   | No 7 • TUNÇDAĞ                 | Ön grup / Konum 74/100
+Akış 4   | No 2 • ORÇUNTAY                | Orta / Konum 54/100
+Akış 5   | No 5 • FUNDO                   | Orta / Konum 54/100
+Akış 6   | No 6 • SEHHAR                  | Sprint / Konum 35/100
+Akış 7   | No 3 • ANADOLU GÜCÜ            | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 7 at · ortalama 75/100
+Model Lideri  : No 1 GÜRAYHAN (80/100)
+Akış Lideri   : No 1 GÜRAYHAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 91/100, Form 80/100, Jokey 92/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 GÜRAYHAN
+
+- Model Payı          : %15,3 [15/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [82/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 91/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 66/100 [66/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [62/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 67/100 [67/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %54,7 [55/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,55 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 6 4 8 [73/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 15 · HP 99 [88/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 4P / 6 [53/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 3G - 3P / 5 [61/100]
+  Detay: Birlikte performans
+- Jokey               : ERCAN ÇANKAYA [61/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [80/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 75/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   GÜRAYHAN                 ERCAN ÇANKAYA        Seri         80    85 Yüksek • 85   Pist/Mesafe 91/100, Form 80/100, Jokey 92/100 | Form: 4-4-3-1-2-1-1-6-4-8
+2    2   ORÇUNTAY                 MEHMET SALİH ÇELİK   Orta         79    76 Yüksek • 76   Pist/Mesafe 93/100, Jokey 88/100, Uzlaşma 82/100 | Form: 5-2-1-2-7-5-4-3-9-5
+3    7   TUNÇDAĞ                  MÜSLÜM ÇELİK         Ön grup      78    71 Orta • 71     Pist/Mesafe 93/100, Hız 88/100, Uzlaşma 77/100 | Form: 6-1-3-4-1-11-3-4-7-10
+4    4   ENDORFİN                 VEDAT ABİŞ           Seri         76    71 Orta • 71     Pist/Mesafe 90/100, Hız 87/100, Uzlaşma 76/100 | Form: 3-4-3-5-2-1-1-4-2-3
+5    6   SEHHAR                   AHMET ÇELİK          Sprint       76    62 Orta • 62     Hız 100/100, Pist/Mesafe 94/100, Uzlaşma 72/100 | Form: 4-4-3-4-3-8-8-1-1-16
+6    5   FUNDO                    ERAY ÇİZİK           Orta         67    72 Orta • 72     Pist/Mesafe 87/100, Hava/Zemin 75/100, Veri 72/100 | Form: 1-8-7-4-3-7-7-10-7-5
+7    3   ANADOLU GÜCÜ             AHMET HASAN BAYAR    Sprint       66    75 Orta • 75     Pist/Mesafe 87/100, Stil 76/100, Hava/Zemin 77/100 | Form: 14-1-9-2-3-13-4-1-9-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 GÜRAYHAN
+  Ozet: Pist/Mesafe: 2G - 4P / 6 • Jokey: 3G - 3P / 5 • Galop: 28/100
+  - Pist/Mesafe   91 | Ana · Pist/mesafe geçmişi
+  - Form          80 | Ana · Yarış geçmişi ve sonuç formu
+  - Jokey         92 | Destek · Jokey formu ve at uyumu
+
+No 2 ORÇUNTAY
+  Ozet: Pist/Mesafe: 1G - 3P / 7 • Jokey: 0G - 1P / 4 • Galop: 51/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           71 | Ana · Derece ve son metreler
+
+No 7 TUNÇDAĞ
+  Ozet: Pist/Mesafe: 2G - 3P / 8 • Jokey: 1G - 2P / 4 • Galop: 83/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 ENDORFİN
+  Ozet: Pist/Mesafe: 1G - 6P / 8 • Jokey: 2G - 5P / 6 • Galop: 55/100
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Hız           87 | Ana · Derece ve son metreler
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-08&hip=IZMIR&kosu=5
+Tarih/Hipodrom/Kosu: 2026-03-08 / IZMIR / 5
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 73/100
+Veri guveni       : 62/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 8 • TORUNCALAS              | Seri / Konum 90/100
+Akış 2   | No 5 • BAYAN ALTIN             | Seri / Konum 90/100
+Akış 3   | No 3 • AHUU ATA                | Seri / Konum 90/100
+Akış 4   | No 1 • GÖZPINARI               | Seri / Konum 90/100
+Akış 5   | No 7 • SULTAN NENE             | Seri / Konum 90/100
+Akış 6   | No 9 • TÜRKAN HANIM            | Ön grup / Konum 74/100
+Akış 7   | No 2 • KIVILCIM ATEŞİ          | Orta / Konum 55/100
+Akış 8   | No 6 • ÖZGÜNSULTAN             | Orta / Konum 54/100
+Akış 9   | No 4 • ATEŞ BAHAR              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 73/100
+Model Lideri  : No 8 TORUNCALAS (83/100)
+Akış Lideri   : No 8 TORUNCALAS (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 98/100, Form 83/100, Jokey 88/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 TORUNCALAS
+
+- Model Payı          : %12,7 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [82/100]
+  Detay: Veri + skor farkı
+- AI Model            : 83/100 [83/100]
+  Detay: Pist/Mesafe 98/100
+- Son 6 Uyarlama      : Güçlü rakip · 74/100 [74/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [62/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 79/100 [79/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %18,6 [19/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,20 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 5 1 1 [92/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 27 · HP 99 [100/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 7G - 8P / 10 [79/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 4G - 5P / 7 [68/100]
+  Detay: Birlikte performans
+- Jokey               : FATİH SULTAN MEHMET SANSAR [68/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [95/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 85/100 [85/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 73/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   TORUNCALAS               FATİH SULTAN MEHMET SANSAR Seri         83    85 Yüksek • 85   Pist/Mesafe 98/100, Form 83/100, Jokey 88/100 | Form: 1-1-1-7-2-1-1-5-1-1
+2    5   BAYAN ALTIN              MUSTAFA ÇİÇEK        Seri         82    81 Yüksek • 81   Pist/Mesafe 87/100, Jokey 100/100, Form 76/100 | Form: 6-1-1-2-4-2-2-10-7-9
+3    2   KIVILCIM ATEŞİ           SİNAN AKŞIN          Orta         82    51 Orta • 51     Hız 99/100, Pist/Mesafe 83/100, Form 86/100 | Form: 2-1-7-3-4-3-6-6-5-6
+4    3   AHUU ATA                 MUHAMMED MİR BİLGİN  Seri         73    71 Orta • 71     Pist/Mesafe 88/100, Hız 76/100, Stil 76/100 | Form: 6-3-2-2-5-3-2-3-10-5
+5    1   GÖZPINARI                HALİS KARATAŞ        Seri         72    75 Orta • 75     Form 76/100, Jokey 72/100, Stil 76/100 | Form: 4-3-3-5-2-1-1-3-9-1
+6    9   TÜRKAN HANIM             ALAATTİN KÜRÜNDÜK    Ön grup      70    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 93/100, Uzlaşma 73/100 | Form: 6-4-1-4-6-5-6-3-2-4
+7    7   SULTAN NENE              RECEP KETME          Seri         67    47 Temkinli • 47  Hız 94/100, Pist/Mesafe 81/100, Kilo 100/100 | Form: 6-4-6-9-6-12-4-1-3-1
+8    6   ÖZGÜNSULTAN              ALİCAN İNCİ          Orta         64    43 Temkinli • 43  Hız 89/100, Pist/Mesafe 82/100, Kilo 100/100 | Form: 9-5-9-6-10-10-8-5-6-3
+9    4   ATEŞ BAHAR               YİĞİTCAN GÖKÇE       Sprint       62    77 Orta • 77     Pist/Mesafe 81/100, Veri 77/100, Kilo 100/100 | Form: 4-6-8-8-7-6-10-8-12-14
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 TORUNCALAS
+  Ozet: Pist/Mesafe: 7G - 8P / 10 • Jokey: 4G - 5P / 7 • Galop: 52/100
+  - Pist/Mesafe   98 | Ana · Pist/mesafe geçmişi
+  - Form          83 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           56 | Ana · Derece ve son metreler
+
+No 5 BAYAN ALTIN
+  Ozet: Pist/Mesafe: 1G - 4P / 5 • Jokey: 1G - 2P / 4 • Galop: 28/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           64 | Ana · Derece ve son metreler
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 2 KIVILCIM ATEŞİ
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 1G - 3P / 6 • Galop: 80/100
+  - Hız           99 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          86 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 AHUU ATA
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 2P / 4 • Galop: 60/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Hız           76 | Ana · Derece ve son metreler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,122 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-27&hip=ANTALYA&kosu=1
+Tarih/Hipodrom/Kosu: 2026-03-27 / ANTALYA / 1
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 66/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 5 • BERİVANCAN              | Seri / Konum 90/100
+Akış 2   | No 2 • KRAL ATLAS              | Seri / Konum 90/100
+Akış 3   | No 4 • ZELİŞSU                 | Orta / Konum 54/100
+Akış 4   | No 7 • EFSANEGÜL               | Orta / Konum 53/100
+Akış 5   | No 8 • HÜRHANA                 | Sprint / Konum 35/100
+Akış 6   | No 1 • FIRTINA AKSU            | Sprint / Konum 34/100
+Akış 7   | No 6 • BİLİNÇLİ HATUN          | Sprint / Konum 34/100
+Akış 8   | No 9 • KENANIN KIZI            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 66/100
+Model Lideri  : No 8 HÜRHANA (74/100)
+Akış Lideri   : No 5 BERİVANCAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 94/100, Hız 88/100, Uzlaşma 83/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 HÜRHANA
+
+- Model Payı          : %14,0 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [73/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Pist/Mesafe 94/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 33/100 [33/100]
+  Detay: KGS / HP / AGF
+- AGF                 : - [0/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,75 [85/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 15 11 16 [37/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 30 [37/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 6 [26/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 2 [5/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET KAYA [5/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [41/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   HÜRHANA                  MEHMET KAYA          Sprint       74    67 Orta • 67     Pist/Mesafe 94/100, Hız 88/100, Uzlaşma 83/100 | Form: 2-2-8-4-6-4-15-11-16
+2    5   BERİVANCAN               MAHMUT TURAN         Seri         72    91 Yüksek • 91   Pist/Mesafe 85/100, Galop 100/100, Uzlaşma 82/100 | Form: 6-6-7-10-8-2-4-2-3-5
+3    1   FIRTINA AKSU             ERHAN AKTUĞ          Sprint       67    67 Orta • 67     Pist/Mesafe 87/100, Hız 88/100, Uzlaşma 75/100 | Form: 6-6-9-13-1-8-11
+4    2   KRAL ATLAS               AYHAN KURŞUN         Seri         66    58 Orta • 58     Hız 89/100, Pist/Mesafe 83/100, Uzlaşma 75/100 | Form: 10-8-6-2-2-2-7
+5    7   EFSANEGÜL                GÖRKEM ÖZÇELİK       Orta         64    53 Temkinli • 53  Pist/Mesafe 87/100, Hız 89/100 | Form: 11-9-5-5-4-6
+6    4   ZELİŞSU                  SERHAT ÇELİK         Orta         63    83 Orta • 83     Hız 100/100, Pist/Mesafe 77/100, Veri 83/100 | Form: 7-4-7-3-5-4-5-15-5-3
+7    6   BİLİNÇLİ HATUN           MEHMET ALİ AKGÖBEK   Sprint       62    29 Temkinli • 29  Pist/Mesafe 91/100, Hız 89/100, Uzlaşma 76/100 | Form: 8-7-9
+8    9   KENANIN KIZI             MUSTAFA TEKPETEK     Sprint       61    81 Orta • 81     Pist/Mesafe 77/100, Veri 81/100, Kilo 89/100 | Form: 4-5-6-9-7-9-8-4-10-17
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 HÜRHANA
+  Ozet: Pist/Mesafe: 0G - 2P / 6 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   94 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 BERİVANCAN
+  Ozet: Pist/Mesafe: 0G - 3P / 5 • Jokey: 0G - 2P / 3 • Galop: 100/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+
+No 1 FIRTINA AKSU
+  Ozet: Pist/Mesafe: 1G - 1P / 4 • Jokey: 1G - 1P / 1 • Galop: 28/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          44 | Ana · Yarış geçmişi ve sonuç formu
+
+No 2 KRAL ATLAS
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Hız           89 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          42 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

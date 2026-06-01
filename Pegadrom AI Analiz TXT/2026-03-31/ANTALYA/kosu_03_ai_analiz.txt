@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-31&hip=ANTALYA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-31 / ANTALYA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 68/100
+Veri guveni       : 75/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • BLUE REFLECTION         | Seri / Konum 90/100
+Akış 2   | No 7 • APOLACYPSE              | Orta / Konum 54/100
+Akış 3   | No 1 • KAROZBEY                | Orta / Konum 54/100
+Akış 4   | No 3 • MELİS HANIM             | Orta / Konum 54/100
+Akış 5   | No 6 • DOĞU ASLANI             | Sprint / Konum 35/100
+Akış 6   | No 5 • WIND OF SİDE            | Sprint / Konum 34/100
+Akış 7   | No 8 • YILDIZÖREN              | Sprint / Konum 34/100
+Akış 8   | No 2 • HIGH SYMPHONY           | Sprint / Konum 34/100
+Akış 9   | No 9 • FAVORİ HAWK             | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 68/100
+Model Lideri  : No 7 APOLACYPSE (73/100)
+Akış Lideri   : No 4 BLUE REFLECTION (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 86/100, Hız 75/100, Uzlaşma 83/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 APOLACYPSE
+
+- Model Payı          : %12,0 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [76/100]
+  Detay: Veri + skor farkı
+- AI Model            : 73/100 [73/100]
+  Detay: Pist/Mesafe 86/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 66/100 [66/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 58/100 [58/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %23,9 [24/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,30 [87/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 7 1 4 [72/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 32 · HP 40 [64/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 2P / 7 [40/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 1P / 1 [83/100]
+  Detay: Birlikte performans
+- Jokey               : AYHAN KURŞUN [83/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [70/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 77/100 [77/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 68/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   APOLACYPSE               AYHAN KURŞUN         Orta         73    77 Yüksek • 77   Pist/Mesafe 86/100, Hız 75/100, Uzlaşma 83/100 | Form: 3-6-9-6-1-4-7-1-4
+2    6   DOĞU ASLANI              MAHMUT TURAN         Sprint       72    67 Orta • 67     Hız 93/100, Pist/Mesafe 84/100, Stil 76/100 | Form: 11-8-4-2-2-4-11-15-7-8
+3    1   KAROZBEY                 ERCAN ÇANKAYA        Orta         71    77 Orta • 77     Pist/Mesafe 86/100, Uzlaşma 83/100, Hava/Zemin 83/100 | Form: 3-3-2-3-9-5-3-5-6-4
+4    3   MELİS HANIM              MEHMET KAYA          Orta         71    77 Orta • 77     Pist/Mesafe 84/100, Hız 81/100, Uzlaşma 75/100 | Form: 6-4-5-2-5-6-5-5-3-4
+5    5   WIND OF SİDE             ERHAN AKTUĞ          Sprint       71    77 Orta • 77     Pist/Mesafe 90/100, Uzlaşma 79/100, Hava/Zemin 77/100 | Form: 1-4-3-3-12-7-11-4-7-10
+6    8   YILDIZÖREN               SERKAN YILDIZ        Sprint       70    77 Orta • 77     Pist/Mesafe 84/100, Hız 78/100, Uzlaşma 73/100 | Form: 7-5-8-5-7-9-6-7-14-13
+7    4   BLUE REFLECTION          UĞUR TEMUR           Seri         66    62 Temkinli • 62  Hız 100/100 | Form: 4-6-9-12-3-6-4-1-1-1
+8    2   HIGH SYMPHONY            DOĞUKAN KONUK        Sprint       63    85 Orta • 85     Hız 77/100, Veri 85/100 | Form: 1-7-11-9-13-11-8-9-14-10
+9    9   FAVORİ HAWK              HAKAN YILDIZ         Sprint       53    77 Orta • 77     Veri 77/100, Kilo 100/100 | Form: 17-12-15-13-7-11-11-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 APOLACYPSE
+  Ozet: Pist/Mesafe: 2G - 2P / 7 • Jokey: 1G - 1P / 1 • Galop: 28/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 DOĞU ASLANI
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 1P / 1 • Galop: 80/100
+  - Hız           93 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          54 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 KAROZBEY
+  Ozet: Pist/Mesafe: 0G - 4P / 6 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           68 | Ana · Derece ve son metreler
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 MELİS HANIM
+  Ozet: Pist/Mesafe: 0G - 2P / 6 • Jokey: 0G - 0P / 1 • Galop: 52/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           81 | Ana · Derece ve son metreler
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

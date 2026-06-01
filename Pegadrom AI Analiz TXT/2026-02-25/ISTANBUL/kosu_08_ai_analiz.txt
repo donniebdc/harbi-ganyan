@@ -1,0 +1,136 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-25&hip=ISTANBUL&kosu=8
+Tarih/Hipodrom/Kosu: 2026-02-25 / ISTANBUL / 8
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 68/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 13 • KİM TUTAR SENİ         | Seri / Konum 90/100
+Akış 2   | No 3 • MAVİ LADİN              | Ön grup / Konum 74/100
+Akış 3   | No 5 • ÇİÇEK TOHUMU            | Ön grup / Konum 73/100
+Akış 4   | No 1 • DEMİR SULTAN            | Orta / Konum 54/100
+Akış 5   | No 15 • AL SEHER               | Orta / Konum 54/100
+Akış 6   | No 12 • EFSUNHATUN             | Orta / Konum 53/100
+Akış 7   | No 10 • BOLGA                  | Sprint / Konum 35/100
+Akış 8   | No 6 • ÇİLEK HÜMA              | Sprint / Konum 35/100
+Akış 9   | No 8 • İREM HATUN              | Sprint / Konum 35/100
+Akış 10  | No 9 • ALKANDEMİR              | Sprint / Konum 34/100
+Akış 11  | No 7 • GÖNÜLPINARI             | Sprint / Konum 34/100
+Akış 12  | No 14 • DENİZ İNCİSİ           | Sprint / Konum 34/100
+Akış 13  | No 11 • CİDE GÜLÜ              | Sprint / Konum 34/100
+Akış 14  | No 4 • SEBİLE HANIM            | Sprint / Konum 34/100
+Akış 15  | No 2 • ELİFLİ                  | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 15 at · ortalama 69/100
+Model Lideri  : No 10 BOLGA (83/100)
+Akış Lideri   : No 13 KİM TUTAR SENİ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 90/100, Form 82/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 10 BOLGA
+
+- Model Payı          : %8,0 [8/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [64/100]
+  Detay: Veri + skor farkı
+- AI Model            : 83/100 [83/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 5/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 46/100 [46/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %45,0 [45/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,65 [93/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 10 18 15 [42/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 40 [52/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 2 [22/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 3 [46/100]
+  Detay: Birlikte performans
+- Jokey               : MUHAMMED MİR BİLGİN [46/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [50/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 46/100 [46/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    10  BOLGA                    MUHAMMED MİR BİLGİN  Sprint       83    46 Temkinli • 46  Hız 100/100, Pist/Mesafe 90/100, Form 82/100 | Form: 3-1-10-18-15
+2    3   MAVİ LADİN               BEKİR MERT MIRIK     Ön grup      82    47 Temkinli • 47  Pist/Mesafe 95/100, Hız 94/100, Form 74/100 | Form: 1-4-14-6-2-4-3-9-4-5
+3    5   ÇİÇEK TOHUMU             MEHMET KAYA          Ön grup      77    62 Orta • 62     Pist/Mesafe 93/100, Hız 84/100, Jokey 88/100 | Form: 2-7-4-1-3-10-9-2-4-3
+4    9   ALKANDEMİR               ERHAN AKTUĞ          Sprint       72    77 Orta • 77     Pist/Mesafe 88/100, Uzlaşma 79/100, Stil 76/100 | Form: 5-3-1-16-6-2-7-13-9
+5    6   ÇİLEK HÜMA               ALİ YILDIZ           Sprint       70    58 Temkinli • 58  Pist/Mesafe 91/100, Hız 84/100, Uzlaşma 77/100 | Form: 11-6-2-9-17-10-4-1-12-5
+6    8   İREM HATUN               ROJHAT KURT          Sprint       69    85 Orta • 85     Pist/Mesafe 89/100, Veri 85/100, Kilo 84/100 | Form: 10-8-9-7-1-9-6-3-4-11
+7    1   DEMİR SULTAN             VEDAT ABİŞ           Orta         69    72 Temkinli • 72  Pist/Mesafe 84/100, Uzlaşma 74/100, Hava/Zemin 75/100 | Form: 5-7-2-5-3-1-8-9-6-6
+8    7   GÖNÜLPINARI              AKIN SÖZEN           Sprint       69    58 Temkinli • 58  Pist/Mesafe 82/100, Hız 76/100, Stil 76/100 | Form: 2-10-3-4-15-8-10-12-9-17
+9    14  DENİZ İNCİSİ             SAMETCAN YAZICIOĞLU  Sprint       68    85 Orta • 85     Pist/Mesafe 87/100, Hava/Zemin 73/100, Veri 85/100 | Form: 3-7-4-1-11-11-13-12-11-14
+10   13  KİM TUTAR SENİ           ALİ KAÇMAZ           Seri         68    76 Temkinli • 76  Pist/Mesafe 86/100, Jokey 78/100, Veri 76/100 | Form: 11-9-8-6-3-2-2-9-8-2
+11   11  CİDE GÜLÜ                ONUR YILDIZ          Sprint       67    77 Orta • 77     Pist/Mesafe 82/100, Hava/Zemin 77/100, Veri 77/100 | Form: 4-5-8-6-1-3-15-14-10-14
+12   15  AL SEHER                 GÖRKEM ÖZÇELİK       Orta         63    48 Temkinli • 48  Hız 85/100, KGS 78/100, Risk 78/100 | Form: 12-12-7-3-6-2-3-5-7-14
+13   12  EFSUNHATUN               BURAK AKÇAY          Orta         62    75 Temkinli • 75  Pist/Mesafe 76/100, Veri 75/100 | Form: 6-5-10-11-5-5-12-6-7-6
+14   4   SEBİLE HANIM             BERKANT GÖKÇE        Sprint       62    72 Temkinli • 72  Pist/Mesafe 80/100, Hava/Zemin 75/100, Veri 72/100 | Form: 6-3-2-14-1-4-4-13-9-11
+15   2   ELİFLİ                   CEM ALTUN            Sprint       57    76 Orta • 76     Pist/Mesafe 72/100, Veri 76/100 | Form: 8-5-4-8-7-18-6-9-12-13
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 10 BOLGA
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   90 | Ana · Pist/mesafe geçmişi
+  - Form          82 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 MAVİ LADİN
+  Ozet: Pist/Mesafe: 1G - 3P / 9 • Jokey: 1G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           94 | Ana · Derece ve son metreler
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 ÇİÇEK TOHUMU
+  Ozet: Pist/Mesafe: 1G - 4P / 7 • Jokey: 1G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           84 | Ana · Derece ve son metreler
+  - Form          65 | Ana · Yarış geçmişi ve sonuç formu
+
+No 9 ALKANDEMİR
+  Ozet: Pist/Mesafe: 1G - 3P / 6 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           64 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

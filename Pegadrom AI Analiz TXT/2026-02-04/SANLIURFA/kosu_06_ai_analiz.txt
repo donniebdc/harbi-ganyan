@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-04&hip=SANLIURFA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-02-04 / SANLIURFA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 62/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 11 • VARTOALAGÖZ            | Seri / Konum 90/100
+Akış 2   | No 4 • DENİZ TUTKUSU           | Ön grup / Konum 73/100
+Akış 3   | No 3 • AKAR YILDIZI            | Ön grup / Konum 73/100
+Akış 4   | No 10 • TOYPINAR               | Orta / Konum 54/100
+Akış 5   | No 1 • NAZLI BERRA             | Orta / Konum 54/100
+Akış 6   | No 7 • NURŞULE                 | Orta / Konum 53/100
+Akış 7   | No 8 • SAĞIRLI HATUNU          | Orta / Konum 53/100
+Akış 8   | No 2 • SOSAN TAY               | Sprint / Konum 35/100
+Akış 9   | No 5 • KIZIMANNA               | Sprint / Konum 34/100
+Akış 10  | No 9 • SÜPER MATRA             | Sprint / Konum 34/100
+Akış 11  | No 6 • KÜÇÜK ADUL              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 67/100
+Model Lideri  : No 2 SOSAN TAY (76/100)
+Akış Lideri   : No 11 VARTOALAGÖZ (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Hız 95/100, Jokey 88/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 SOSAN TAY
+
+- Model Payı          : %10,3 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [70/100]
+  Detay: Veri + skor farkı
+- AI Model            : 76/100 [76/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Riskli profil · 57/100 [57/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [64/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 39/100 [39/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %20,9 [21/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,75 [85/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 9 8 10 [42/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 9 · HP 23 [26/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 7 [27/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 2P / 3 [30/100]
+  Detay: Birlikte performans
+- Jokey               : AHMET HASAN BAYAR [30/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [40/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 62/100 [62/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   SOSAN TAY                AHMET HASAN BAYAR    Sprint       76    62 Orta • 62     Pist/Mesafe 93/100, Hız 95/100, Jokey 88/100 | Form: 5-10-2-2-5-3-6-9-8-10
+2    4   DENİZ TUTKUSU            FERİT YARDIMCI       Ön grup      75    33 Temkinli • 33  Pist/Mesafe 95/100, Hız 100/100, Uzlaşma 87/100 | Form: 4-3-4-8-2-6-3-8
+3    10  TOYPINAR                 YUSUF CENGİZ         Orta         74    43 Temkinli • 43  Pist/Mesafe 95/100, Hız 97/100, Uzlaşma 82/100 | Form: 2-7-8-6-7-5-11-4-7-8
+4    3   AKAR YILDIZI             İSA KATAR            Ön grup      69    77 Orta • 77     Pist/Mesafe 89/100, Uzlaşma 77/100, Hava/Zemin 73/100 | Form: 6-3-5-8-11-3-4
+5    11  VARTOALAGÖZ              AZİZ AKDEMİR         Seri         69    76 Orta • 76     Pist/Mesafe 88/100, Hız 76/100, Hava/Zemin 75/100 | Form: 3-3-6-11-5-7-3-3-2-2
+6    7   NURŞULE                  MEHMET ALİ AKGÖBEK   Orta         67    77 Orta • 77     Pist/Mesafe 90/100, Veri 77/100, Kilo 100/100 | Form: 12-6-7-7-9-3-7-6-9-8
+7    8   SAĞIRLI HATUNU           HASAN ALTUNDAĞ       Orta         65    81 Orta • 81     Pist/Mesafe 90/100, Veri 81/100, KGS 73/100 | Form: 12-4-9-4-5-6-7-8-8-6
+8    5   KIZIMANNA                NECMİ ALTIN          Sprint       63    72 Temkinli • 72  Pist/Mesafe 87/100, Veri 72/100, Kilo 76/100 | Form: 12-10-6-9-10-5-9
+9    9   SÜPER MATRA              SAMİ KAPLAN          Sprint       62    77 Orta • 77     Pist/Mesafe 89/100, Veri 77/100, KGS 73/100 | Form: 8-15-9-10-10-6-11
+10   6   KÜÇÜK ADUL               BURHAN SARIDAL       Sprint       61    75 Temkinli • 75  Pist/Mesafe 91/100, Veri 75/100, KGS 73/100 | Form: 13-10-11-12-10
+11   1   NAZLI BERRA              İSA AKYAVUZ          Orta         55    14 Temkinli • 14  Uzlaşma 87/100, KGS 73/100, Risk 73/100 | Form: 1-5-3-5-1-4-4-6-7-6
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 SOSAN TAY
+  Ozet: Pist/Mesafe: 0G - 2P / 7 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           95 | Ana · Derece ve son metreler
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 DENİZ TUTKUSU
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 10 TOYPINAR
+  Ozet: Pist/Mesafe: 0G - 1P / 5 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           97 | Ana · Derece ve son metreler
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 AKAR YILDIZI
+  Ozet: Pist/Mesafe: 0G - 2P / 6 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           64 | Ana · Derece ve son metreler
+  - Form          55 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

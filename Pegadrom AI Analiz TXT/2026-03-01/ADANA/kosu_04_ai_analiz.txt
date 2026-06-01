@@ -1,0 +1,138 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-01&hip=ADANA&kosu=4
+Tarih/Hipodrom/Kosu: 2026-03-01 / ADANA / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 61/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 9 • FIRTINAYÜREK            | Seri / Konum 90/100
+Akış 2   | No 10 • LİDERKATI              | Seri / Konum 90/100
+Akış 3   | No 16 • KARA AYHAN             | Seri / Konum 89/100
+Akış 4   | No 11 • ARSLAN OĞLU            | Ön grup / Konum 74/100
+Akış 5   | No 4 • MİRŞEŞEN                | Orta / Konum 54/100
+Akış 6   | No 3 • TUNA ADAM               | Orta / Konum 54/100
+Akış 7   | No 15 • YOLKIRAN               | Orta / Konum 54/100
+Akış 8   | No 6 • MİRİALEM                | Orta / Konum 54/100
+Akış 9   | No 12 • İKİMİZ                 | Orta / Konum 54/100
+Akış 10  | No 5 • YILMAKIZIM              | Orta / Konum 54/100
+Akış 11  | No 13 • ASIL OĞUL              | Orta / Konum 54/100
+Akış 12  | No 1 • ÇELİK SEMEND            | Sprint / Konum 35/100
+Akış 13  | No 2 • BABA CAVİT              | Sprint / Konum 34/100
+Akış 14  | No 7 • MUFUKCAN                | Sprint / Konum 34/100
+Akış 15  | No 14 • KIVIRCIK OKTAY         | Sprint / Konum 34/100
+Akış 16  | No 8 • FEYAZBEY                | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 16 at · ortalama 67/100
+Model Lideri  : No 9 FIRTINAYÜREK (79/100)
+Akış Lideri   : No 9 FIRTINAYÜREK (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 95/100, Hız 85/100, Form 76/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 FIRTINAYÜREK
+
+- Model Payı          : %7,4 [7/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [73/100]
+  Detay: Veri + skor farkı
+- AI Model            : 79/100 [79/100]
+  Detay: Pist/Mesafe 95/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 47/100 [47/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %14,7 [15/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 8,70 [65/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 3 2 7 [65/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 12 · HP 61 [57/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 5P / 6 [59/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : SALİH ÇELİK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [62/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   FIRTINAYÜREK             SALİH ÇELİK          Seri         79    67 Orta • 67     Pist/Mesafe 95/100, Hız 85/100, Form 76/100 | Form: 2-3-1-3-14-4-1-3-2-7
+2    11  ARSLAN OĞLU              VEDAT ABİŞ           Ön grup      78    71 Orta • 71     Pist/Mesafe 85/100, Hız 83/100, Jokey 100/100 | Form: 3-4-1-7-1-4-3-5-7-4
+3    4   MİRŞEŞEN                 ERCAN ÇANKAYA        Orta         76    67 Orta • 67     Pist/Mesafe 93/100, Hız 83/100, Uzlaşma 86/100 | Form: 2-2-3-16-4-16-6-5-4-5
+4    3   TUNA ADAM                FESİH ÇETİNBAŞ       Orta         75    66 Orta • 66     Hız 91/100, Pist/Mesafe 84/100, Jokey 84/100 | Form: 4-1-4-8-3-5-7-2-7-3
+5    10  LİDERKATI                MEHMET AKYAVUZ       Seri         75    47 Temkinli • 47  Hız 100/100, Pist/Mesafe 86/100, Uzlaşma 82/100 | Form: 5-4-3-1-1-1-5-8-5-4
+6    15  YOLKIRAN                 MEHMET ALİ AKGÖBEK   Orta         70    53 Temkinli • 53  Pist/Mesafe 90/100, Hız 87/100, Uzlaşma 76/100 | Form: 2-17-9-12-2-5-6-11-2-6
+7    6   MİRİALEM                 HIŞMAN ÇİZİK         Orta         69    76 Temkinli • 76  Pist/Mesafe 80/100, Hız 76/100, Veri 76/100 | Form: 4-1-6-4-6-6-4-7-6-16
+8    12  İKİMİZ                   NİZAMETTİN DEMİR     Orta         69    75 Temkinli • 75  Pist/Mesafe 88/100, Hız 82/100, Veri 75/100 | Form: 10-9-4-6-10-7-8-9-3-6
+9    5   YILMAKIZIM               ERTUĞRUL CANKILIÇ    Orta         66    67 Temkinli • 67  Hız 77/100, Pist/Mesafe 72/100 | Form: 6-7-3-8-7-2-5-16-4-6
+10   13  ASIL OĞUL                MEHMET TAHA COŞKUN   Orta         66    43 Temkinli • 43  Hız 90/100, Pist/Mesafe 74/100, Hava/Zemin 75/100 | Form: 3-11-2-7-6-5-9-6-10-3
+11   2   BABA CAVİT               İSMAİL YILDIRIM      Sprint       64    77 Orta • 77     Pist/Mesafe 82/100, KGS 80/100, Risk 80/100 | Form: 12-5-4-10-7-14-9-6-15-8
+12   7   MUFUKCAN                 MEHMET TİBET MURTOĞLU Sprint       63    86 Orta • 86     Veri 86/100, Kilo 78/100 | Form: 12-8-7-7-7-10-11-10-11-7
+13   14  KIVIRCIK OKTAY           MEHMET ÇELİK         Sprint       59    81 Orta • 81     Pist/Mesafe 76/100, Veri 81/100, Kilo 100/100 | Form: 6-6-8-7-8-10-12-9-16-10
+14   16  KARA AYHAN               FATİH SULTAN MEHMET SANSAR Seri         57    14 Temkinli • 14  Uzlaşma 95/100, KGS 84/100, Risk 84/100 | Form: 2-5-3-8-6-1-1-10-2-7
+15   8   FEYAZBEY                 MÜSLÜM ÇELİK         Sprint       56    77 Temkinli • 77  Pist/Mesafe 76/100, Veri 77/100 | Form: 8-8-8-9-7-5-4-6-9-13
+16   1   ÇELİK SEMEND             ENES ATLAMAZ         Sprint       51    14 Temkinli • 14  Veri sinyali temkinli | Form: 5-8-6-8-7-2-9-3-6-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 FIRTINAYÜREK
+  Ozet: Pist/Mesafe: 2G - 5P / 6 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           85 | Ana · Derece ve son metreler
+  - Form          76 | Ana · Yarış geçmişi ve sonuç formu
+
+No 11 ARSLAN OĞLU
+  Ozet: Pist/Mesafe: 2G - 4P / 7 • Jokey: 2G - 3P / 5 • Galop: 55/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           83 | Ana · Derece ve son metreler
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 MİRŞEŞEN
+  Ozet: Pist/Mesafe: 0G - 3P / 8 • Jokey: 0G - 0P / 1 • Galop: 55/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           83 | Ana · Derece ve son metreler
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 TUNA ADAM
+  Ozet: Pist/Mesafe: 1G - 3P / 7 • Jokey: 1G - 1P / 3 • Galop: 55/100
+  - Hız           91 | Ana · Derece ve son metreler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

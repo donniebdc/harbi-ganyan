@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-11&hip=ISTANBUL&kosu=4
+Tarih/Hipodrom/Kosu: 2026-03-11 / ISTANBUL / 4
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 70/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • RAZKAN                  | Seri / Konum 90/100
+Akış 2   | No 9 • FISTIK ÇAMI             | Seri / Konum 90/100
+Akış 3   | No 3 • ŞİMŞEK YELELİ           | Seri / Konum 90/100
+Akış 4   | No 1 • GÜLALP KIZI             | Ön grup / Konum 73/100
+Akış 5   | No 5 • CABİRE SULTAN           | Sprint / Konum 35/100
+Akış 6   | No 4 • AZİZEHATUN              | Sprint / Konum 35/100
+Akış 7   | No 8 • EFSANE HANIM            | Sprint / Konum 34/100
+Akış 8   | No 7 • ÇİĞDEMİN DENİZİ         | Sprint / Konum 34/100
+Akış 9   | No 6 • ÇELİKBENGÜ              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 67/100
+Model Lideri  : No 2 RAZKAN (77/100)
+Akış Lideri   : No 2 RAZKAN (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 77/100, Jokey 100/100, Uzlaşma 85/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 RAZKAN
+
+- Model Payı          : %12,8 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [81/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Hız 77/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 63/100 [63/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %43,7 [44/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,35 [95/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 10 7 2 [68/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 46 · HP 51 [87/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 2P / 2 [62/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 2P / 2 [85/100]
+  Detay: Birlikte performans
+- Jokey               : HALİS KARATAŞ [85/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [77/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 76/100 [76/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   RAZKAN                   HALİS KARATAŞ        Seri         77    76 Yüksek • 76   Hız 77/100, Jokey 100/100, Uzlaşma 85/100 | Form: 10-5-1-2-1-1-4-10-7-2
+2    9   FISTIK ÇAMI              ALİ YILDIZ           Seri         74    85 Yüksek • 85   Jokey 78/100, Uzlaşma 84/100, Stil 76/100 | Form: 7-8-2-1-2-3-2-7-2-2
+3    3   ŞİMŞEK YELELİ            ZÜLFÜKAR KARABULUT   Seri         73    80 Orta • 80     Hız 76/100, Jokey 75/100, Uzlaşma 82/100 | Form: 11-4-1-2-13-6-4-1-2-3
+4    8   EFSANE HANIM             VEDAT ABİŞ           Sprint       71    85 Orta • 85     Pist/Mesafe 75/100, Jokey 78/100, Hava/Zemin 83/100 | Form: 2-3-6-3-11-6-4-9-9-12
+5    5   CABİRE SULTAN            ALİ KAÇMAZ           Sprint       68    58 Orta • 58     Hız 100/100, Hava/Zemin 75/100, KGS 83/100 | Form: 9-7-3-10-5-5-8-2-8-8
+6    7   ÇİĞDEMİN DENİZİ          ERHAN AKTUĞ          Sprint       64    75 Orta • 75     Hız 74/100, KGS 83/100, Risk 83/100 | Form: 11-11-5-1-15-8-13-11-5-5
+7    4   AZİZEHATUN               YİĞİTCAN GÖKÇE       Sprint       61    83 Orta • 83     Stil 76/100, Hava/Zemin 83/100, Veri 83/100 | Form: 4-3-2-3-1-2-8-9-7-13
+8    6   ÇELİKBENGÜ               ATAKAN VURAL         Sprint       59    77 Orta • 77     Veri 77/100, Kilo 100/100 | Form: 7-4-11-9-9-5-7-8-11-17
+9    1   GÜLALP KIZI              AHMET EFEKAN ELMAS   Ön grup      54    14 Temkinli • 14  Uzlaşma 76/100, KGS 75/100, Risk 75/100 | Form: 3-3-7-4-4-3-5-6-3-4
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 RAZKAN
+  Ozet: Pist/Mesafe: 1G - 2P / 2 • Jokey: 2G - 2P / 2 • Galop: 28/100
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           77 | Ana · Derece ve son metreler
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+
+No 9 FISTIK ÇAMI
+  Ozet: Pist/Mesafe: 0G - 1P / 1 • Jokey: 1G - 6P / 7 • Galop: 28/100
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   71 | Ana · Pist/mesafe geçmişi
+  - Jokey         78 | Destek · Jokey formu ve at uyumu
+
+No 3 ŞİMŞEK YELELİ
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 1G - 2P / 4 • Galop: 28/100
+  - Hız           76 | Ana · Derece ve son metreler
+  - Pist/Mesafe   68 | Ana · Pist/mesafe geçmişi
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+
+No 8 EFSANE HANIM
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   75 | Ana · Pist/mesafe geçmişi
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           64 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

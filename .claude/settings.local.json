@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/Ganyan Gemini/**)",
+      "Write(//d/Ganyan Gemini/**)",
+      "Edit(//d/Ganyan Gemini/**)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(type:*)",
+      "Bash(cat:*)",
+      "Bash(del:*)",
+      "Bash(mkdir:*)",
+      "Bash(echo:*)",
+      "Bash(curl:*)",
+      "Bash(curl.exe:*)",
+      "WebFetch(domain:www.pegadrom.com)",
+      "WebFetch(domain:pegadrom.com)",
+      "WebFetch(domain:tjkbulten.atyarisi.com)",
+      "WebFetch(domain:services-ns.liderform.com.tr)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,132 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-15&hip=IZMIR&kosu=9
+Tarih/Hipodrom/Kosu: 2026-03-15 / IZMIR / 9
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 63/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • YENİBEY                 | Seri / Konum 90/100
+Akış 2   | No 8 • ŞAİBESİZ                | Seri / Konum 90/100
+Akış 3   | No 12 • KING GÖKÇE             | Seri / Konum 90/100
+Akış 4   | No 6 • BER KEMAL               | Orta / Konum 55/100
+Akış 5   | No 5 • SEMEND BATUR            | Orta / Konum 55/100
+Akış 6   | No 2 • GÜROBASI                | Orta / Konum 54/100
+Akış 7   | No 1 • BAD REFTAR              | Orta / Konum 54/100
+Akış 8   | No 11 • ESMERDAĞ               | Orta / Konum 54/100
+Akış 9   | No 7 • ŞİFNE EFESİ             | Sprint / Konum 35/100
+Akış 10  | No 10 • KAYA DÜNYASI           | Sprint / Konum 35/100
+Akış 11  | No 9 • MERTCAN TAY             | Sprint / Konum 35/100
+Akış 12  | No 4 • AYDINEFESİ              | Sprint / Konum 34/100
+Akış 13  | No 13 • KÜÇÜK ERCAN            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 13 at · ortalama 69/100
+Model Lideri  : No 3 YENİBEY (85/100)
+Akış Lideri   : No 3 YENİBEY (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Pist/Mesafe 95/100, Hız 85/100, Form 76/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 3 YENİBEY
+
+- Model Payı          : %9,5 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [86/100]
+  Detay: Veri + skor farkı
+- AI Model            : 85/100 [85/100]
+  Detay: Pist/Mesafe 95/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [44/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 65/100 [65/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %25,0 [25/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 4,00 [84/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 1 7 7 [70/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 17 · HP 71 [70/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 3G - 4P / 6 [61/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 2G - 3P / 4 [59/100]
+  Detay: Birlikte performans
+- Jokey               : YİĞİTCAN GÖKÇE [59/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [71/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 75/100 [75/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    3   YENİBEY                  YİĞİTCAN GÖKÇE       Seri         85    75 Yüksek • 75   Pist/Mesafe 95/100, Hız 85/100, Form 76/100 | Form: 3-5-1-1-6-1-2-1-7-7
+2    6   BER KEMAL                NEVZAT AVCİ          Orta         80    76 Yüksek • 76   Pist/Mesafe 88/100, Form 78/100, Hız 75/100 | Form: 1-4-2-1-3-2-6-3-7-7
+3    7   ŞİFNE EFESİ              ÖMER FARUK ÖZEN      Sprint       79    75 Orta • 75     Pist/Mesafe 84/100, Form 77/100, Hız 82/100 | Form: 2-4-2-2-3-8-9-9-7-7
+4    5   SEMEND BATUR             MUHAMMED MİR BİLGİN  Orta         75    80 Orta • 80     Pist/Mesafe 78/100, Jokey 74/100, Uzlaşma 77/100 | Form: 2-5-1-3-7-5-2-4-5-5
+5    8   ŞAİBESİZ                 İBRAHİM SEFA SÖĞÜT   Seri         74    81 Orta • 81     Pist/Mesafe 89/100, Stil 76/100, Uzlaşma 76/100 | Form: 2-7-5-2-1-5-1-11-4-1
+6    4   AYDINEFESİ               RECEP KETME          Sprint       70    71 Orta • 71     Pist/Mesafe 91/100, Hız 84/100, Uzlaşma 74/100 | Form: 4-7-8-4-12-5-11-8-18-15
+7    2   GÜROBASI                 AHMET EFEKAN ELMAS   Orta         69    51 Temkinli • 51  Hız 100/100, Pist/Mesafe 88/100, Uzlaşma 73/100 | Form: 4-7-4-6-3-6-5-12-1-6
+8    1   BAD REFTAR               BERKAY BÜLBÜL        Orta         66    81 Orta • 81     Pist/Mesafe 87/100, Veri 81/100 | Form: 1-6-11-9-5-6-6-1-4-11
+9    10  KAYA DÜNYASI             ALİBERK METİN        Sprint       66    58 Temkinli • 58  Pist/Mesafe 87/100, Hız 87/100, Kilo 100/100 | Form: 4-5-3-9-10-2-14-1-14-10
+10   11  ESMERDAĞ                 MUHAMMED BURHAN ÖNCEL Orta         63    29 Temkinli • 29  Hız 92/100, KGS 78/100, Risk 78/100 | Form: 9-7-3-6-6-14-2-11-5-5
+11   13  KÜÇÜK ERCAN              EREN DURSUN ÖKTEN    Sprint       61    81 Orta • 81     Pist/Mesafe 78/100, KGS 82/100, Risk 82/100 | Form: 11-8-9-10-6-8-9-7-6-13
+12   9   MERTCAN TAY              BEKİR MERT MIRIK     Sprint       60    52 Temkinli • 52  Hız 82/100, Pist/Mesafe 72/100, Kilo 84/100 | Form: 10-9-10-10-7-10-11-1-3-8
+13   12  KING GÖKÇE               OKTAY KIZILDAŞ       Seri         51    14 Temkinli • 14  Kilo 100/100 | Form: 8-2-7-6-3-6-1-6-2-2
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 3 YENİBEY
+  Ozet: Pist/Mesafe: 3G - 4P / 6 • Jokey: 2G - 3P / 4 • Galop: 44/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           85 | Ana · Derece ve son metreler
+  - Form          76 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 BER KEMAL
+  Ozet: Pist/Mesafe: 2G - 4P / 6 • Jokey: 1G - 2P / 2 • Galop: 80/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          78 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           75 | Ana · Derece ve son metreler
+
+No 7 ŞİFNE EFESİ
+  Ozet: Pist/Mesafe: 0G - 3P / 5 • Jokey: 0G - 3P / 4 • Galop: 80/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          77 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           82 | Ana · Derece ve son metreler
+
+No 5 SEMEND BATUR
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 1P / 3 • Galop: 80/100
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           71 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

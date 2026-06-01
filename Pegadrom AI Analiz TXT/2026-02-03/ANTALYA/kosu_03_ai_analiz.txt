@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-03&hip=ANTALYA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-02-03 / ANTALYA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 61/100
+Veri guveni       : 57/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • ARAM SAMSAM             | Ön grup / Konum 73/100
+Akış 2   | No 8 • ÖZTAMER                 | Ön grup / Konum 73/100
+Akış 3   | No 2 • GÜRSELHAN               | Ön grup / Konum 73/100
+Akış 4   | No 11 • MEYMENE                | Orta / Konum 54/100
+Akış 5   | No 5 • HIRSIN ATEŞİ            | Orta / Konum 53/100
+Akış 6   | No 6 • CEBEALP                 | Orta / Konum 53/100
+Akış 7   | No 7 • ASTEKPORT               | Sprint / Konum 35/100
+Akış 8   | No 3 • ÇELİKMAVİ               | Sprint / Konum 34/100
+Akış 9   | No 1 • ÇÖL PAŞA                | Sprint / Konum 34/100
+Akış 10  | No 12 • KIZIM YENİDOĞAN        | Sprint / Konum 34/100
+Akış 11  | No 9 • KIVIRCIK MEMET          | Sprint / Konum 34/100
+Akış 12  | No 10 • BABA TUNA              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 61/100
+Model Lideri  : No 7 ASTEKPORT (75/100)
+Akış Lideri   : No 4 ARAM SAMSAM (Ön grup · Konum 73/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 77/100, Jokey 78/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 7 ASTEKPORT
+
+- Model Payı          : %10,2 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [67/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 62/100 [62/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [35/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : KV/Açık tecrübesi [76/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 60/100 [60/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %20,8 [21/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,40 [86/100]
+  Detay: Ganyan beklentisi
+- Form                : 8 11 5 8 [43/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 7 · HP 53 [46/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 1P / 1 [83/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 3P / 4 [47/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET KAYA [47/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [48/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 33/100 [33/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 61/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    7   ASTEKPORT                MEHMET KAYA          Sprint       75    33 Temkinli • 33  Hız 100/100, Pist/Mesafe 77/100, Jokey 78/100 | Form: 3-1-5-2-3-6-8-11-5-8
+2    4   ARAM SAMSAM              AYHAN KURŞUN         Ön grup      68    85 Yüksek • 85   Jokey 73/100, Uzlaşma 76/100, Veri 85/100 | Form: 3-7-5-4-11-3-3-4-5-5
+3    11  MEYMENE                  CANER TEPE           Orta         66    72 Orta • 72     Pist/Mesafe 76/100, Uzlaşma 73/100, KGS 73/100 | Form: 4-3-5-15-5-4-7-5-6-8
+4    3   ÇELİKMAVİ                TOLGA YILDIZ         Sprint       63    72 Orta • 72     Pist/Mesafe 84/100, Uzlaşma 78/100, KGS 75/100 | Form: 5-6-5-10-5-11-12-11-3-8
+5    8   ÖZTAMER                  ALİ YILDIZ           Ön grup      63    43 Temkinli • 43  Uzlaşma 77/100 | Form: 9-9-3-10-3-3-7-5-1-9
+6    5   HIRSIN ATEŞİ             UĞUR TEMUR           Orta         62    85 Orta • 85     Pist/Mesafe 85/100, Veri 85/100 | Form: 5-6-10-7-5-12-8-6-6-9
+7    6   CEBEALP                  SERHAT ÇELİK         Orta         62    77 Temkinli • 77  Pist/Mesafe 73/100, Veri 77/100, Kilo 74/100 | Form: 4-3-7-3-5-11-7-7-4-8
+8    1   ÇÖL PAŞA                 RECEP KETME          Sprint       61    52 Temkinli • 52  Hız 74/100, Uzlaşma 73/100 | Form: 3-4-8-4-9-13-6-8-8-12
+9    12  KIZIM YENİDOĞAN          ROBİN BORAN DÜNDAR   Sprint       57    85 Orta • 85     Veri 85/100, Kilo 100/100 | Form: 12-8-12-12-7-12-6-8-11-12
+10   9   KIVIRCIK MEMET           MÜSLÜM ÇELİK         Sprint       57    48 Temkinli • 48  Hız 73/100, Kilo 83/100 | Form: 11-10-6-5-5-6-14-8-9-12
+11   2   GÜRSELHAN                BERKANT GÖKÇE        Ön grup      52    14 Temkinli • 14  Uzlaşma 77/100 | Form: 4-7-5-9-2-8-7-11-3-3
+12   10  BABA TUNA                FERHAT YÜCEL         Sprint       50    14 Temkinli • 14  Kilo 100/100 | Form: 7-4-5-6-6-8-9-8-6-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 7 ASTEKPORT
+  Ozet: Pist/Mesafe: 1G - 1P / 1 • Jokey: 1G - 3P / 4 • Galop: 35/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   77 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 ARAM SAMSAM
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   69 | Ana · Pist/mesafe geçmişi
+  - Form          59 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           65 | Ana · Derece ve son metreler
+
+No 11 MEYMENE
+  Ozet: Pist/Mesafe: 0G - 0P / 4 • Jokey: 0G - 0P / 3 • Galop: 28/100
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Hız           66 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 ÇELİKMAVİ
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Form          47 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           49 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

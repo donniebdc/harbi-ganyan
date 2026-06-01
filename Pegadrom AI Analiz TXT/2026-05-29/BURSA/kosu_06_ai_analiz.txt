@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-29&hip=BURSA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-05-29 / BURSA / 6
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 8
+Ortalama AI puani : 70/100
+Veri guveni       : 81/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : Bursa • 6. Koşu • 17:00 • 1400m • Kum 29.05.2026 Cuma
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 4 • CUCURELLA               | Seri / Konum 90/100
+Akış 2   | No 6 • EMREEFE                 | Seri / Konum 90/100
+Akış 3   | No 3 • ŞEN AKYÜZ               | Ön grup / Konum 74/100
+Akış 4   | No 2 • THE ADMIRAL             | Orta / Konum 54/100
+Akış 5   | No 5 • ÇİKOK AĞA               | Orta / Konum 54/100
+Akış 6   | No 1 • KOÇARSLAN               | Orta / Konum 54/100
+Akış 7   | No 7 • PAKSUHAN                | Sprint / Konum 34/100
+Akış 8   | No 8 • ULUBEY                  | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 8 at · ortalama 70/100
+Model Lideri  : No 2 THE ADMIRAL (80/100)
+Akış Lideri   : No 4 CUCURELLA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 93/100, Hız 89/100, Galop 100/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 THE ADMIRAL
+
+- Model Payı          : %14,3 [14/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [81/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Pist/Mesafe 93/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 51/100 [51/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %26,4 [26/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,90 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 1 1 3 7 [70/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 8 · HP 85 [70/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 4P / 10 [43/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : BERKANT GÖKÇE [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [71/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 88/100 [88/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   THE ADMIRAL              BERKANT GÖKÇE        Orta         80    88 Yüksek • 88   Pist/Mesafe 93/100, Hız 89/100, Galop 100/100 | Form: 2-5-5-4-7-5-1-1-3-7
+2    4   CUCURELLA                ERTUĞRUL CANKILIÇ    Seri         80    85 Yüksek • 85   Hız 100/100, Pist/Mesafe 88/100, Uzlaşma 85/100 | Form: 7-11-1-1-6-3-4-1-7-1
+3    3   ŞEN AKYÜZ                EFE AKPINAR          Ön grup      72    83 Orta • 83     Pist/Mesafe 80/100, Hız 75/100, Uzlaşma 72/100 | Form: 2-3-4-4-5-3-3-5-2-3
+4    5   ÇİKOK AĞA                SADIK ALTAY          Orta         71    83 Orta • 83     Pist/Mesafe 87/100, Hız 90/100, Hava/Zemin 73/100 | Form: 8-8-2-7-4-6-5-2-10-5
+5    1   KOÇARSLAN                ALİ MEHDİ ALTIN      Orta         70    77 Orta • 77     Form 76/100, Pist/Mesafe 72/100, Uzlaşma 79/100 | Form: 5-6-1-1-1-3-1-5-5-6
+6    6   EMREEFE                  RECEP KETME          Seri         70    77 Orta • 77     Pist/Mesafe 91/100, Hız 91/100, Uzlaşma 77/100 | Form: 7-5-1-5-3-2-2-9-3-2
+7    7   PAKSUHAN                 HALİT GÖKÇE          Sprint       61    77 Orta • 77     Pist/Mesafe 83/100, KGS 78/100, Risk 78/100 | Form: 7-6-8-8-9-10-7-12-7-4
+8    8   ULUBEY                   EREN AKDUMAN         Sprint       57    77 Orta • 77     Pist/Mesafe 73/100, Veri 77/100, Kilo 76/100 | Form: 2-10-8-8-8-3-9-8-10-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 THE ADMIRAL
+  Ozet: Pist/Mesafe: 2G - 4P / 10 • Jokey: 0G - 1P / 2 • Galop: 100/100
+  - Pist/Mesafe   93 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 CUCURELLA
+  Ozet: Pist/Mesafe: 4G - 4P / 6 • Jokey: 3G - 4P / 4 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 ŞEN AKYÜZ
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 1P / 1 • Galop: 54/100
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Hız           75 | Ana · Derece ve son metreler
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 ÇİKOK AĞA
+  Ozet: Pist/Mesafe: 0G - 2P / 8 • Jokey: 0G - 0P / 1 • Galop: 45/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           90 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

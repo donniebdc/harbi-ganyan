@@ -1,0 +1,132 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-28&hip=ISTANBUL&kosu=7
+Tarih/Hipodrom/Kosu: 2026-03-28 / ISTANBUL / 7
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 65/100
+Veri guveni       : 35/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 8 • TALİPHAN BEY            | Seri / Konum 90/100
+Akış 2   | No 5 • MY FEARLESS SON         | Seri / Konum 90/100
+Akış 3   | No 1 • GÜMRÜKCÜ MURAT          | Seri / Konum 90/100
+Akış 4   | No 13 • NO MORE SORROW         | Seri / Konum 90/100
+Akış 5   | No 2 • DOĞANHAN                | Orta / Konum 54/100
+Akış 6   | No 10 • FIBER                  | Orta / Konum 54/100
+Akış 7   | No 9 • WATERSHED               | Orta / Konum 54/100
+Akış 8   | No 11 • GIPSY THUNDER          | Orta / Konum 53/100
+Akış 9   | No 12 • HAŞARI                 | Sprint / Konum 35/100
+Akış 10  | No 4 • INVINCIBLE ARES         | Sprint / Konum 34/100
+Akış 11  | No 3 • GONE WITH STORM         | Sprint / Konum 34/100
+Akış 12  | No 6 • ORION SKY               | Sprint / Konum 34/100
+Akış 13  | No 7 • SILVER PUNCH            | Sprint / Konum 33/100
+
+3) KARAR OZETI
+--------------
+Genel: 13 at · ortalama 65/100
+Model Lideri  : No 8 TALİPHAN BEY (84/100)
+Akış Lideri   : No 8 TALİPHAN BEY (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 98/100, Hız 100/100, Uzlaşma 92/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 TALİPHAN BEY
+
+- Model Payı          : %9,9 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [55/100]
+  Detay: Veri + skor farkı
+- AI Model            : 84/100 [84/100]
+  Detay: Pist/Mesafe 98/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 69/100 [69/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [53/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 56/100 [56/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %34,0 [34/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,00 [92/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 2 1 1 [92/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 28 · HP - [31/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 4P / 4 [44/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 1 [37/100]
+  Detay: Birlikte performans
+- Jokey               : VEDAT ABİŞ [37/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [69/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 28/100 [28/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 65/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   TALİPHAN BEY             VEDAT ABİŞ           Seri         84    28 Temkinli • 28  Pist/Mesafe 98/100, Hız 100/100, Uzlaşma 92/100 | Form: 2-3-2-2-1-1
+2    5   MY FEARLESS SON          ALİ YILDIZ           Seri         83    32 Temkinli • 32  Pist/Mesafe 97/100, Hız 100/100, Uzlaşma 85/100 | Form: 3-2-1-3
+3    1   GÜMRÜKCÜ MURAT           HALİS KARATAŞ        Seri         80    70 Orta • 70     Pist/Mesafe 92/100, Uzlaşma 81/100, Hava/Zemin 95/100 | Form: 2-2-2-2-1
+4    2   DOĞANHAN                 NEVZAT AVCİ          Orta         75    33 Temkinli • 33  Pist/Mesafe 95/100, Hız 96/100, Uzlaşma 77/100 | Form: 4-5
+5    12  HAŞARI                   MUHAMMED MİR BİLGİN  Sprint       72    38 Temkinli • 38  Pist/Mesafe 91/100, Hız 79/100, Uzlaşma 75/100 | Form: 2-5-4-8-17-3-13-9
+6    10  FIBER                    AKIN SÖZEN           Orta         64    29 Temkinli • 29  Pist/Mesafe 95/100, Hız 91/100, Kilo 91/100 | Form: 4-9-6-5-7
+7    4   INVINCIBLE ARES          MURAT KEÇECİ         Sprint       62    72 Temkinli • 72  Pist/Mesafe 78/100, Veri 72/100, Kilo 100/100 | Form: 8-4-12-8-8-6-8-6-12-5
+8    11  GIPSY THUNDER            ENES BOZDAĞ          Orta         62    24 Temkinli • 24  Pist/Mesafe 80/100, Hız 74/100, KGS 81/100 | Form: 11-13-4-7-7
+9    13  NO MORE SORROW           BURAK AKÇAY          Seri         60    29 Temkinli • 29  Pist/Mesafe 91/100, Hız 86/100, Kilo 91/100 | Form: 11-7-3-2-2
+10   9   WATERSHED                MEHMET KAYA          Orta         58    24 Temkinli • 24  Hız 91/100, Pist/Mesafe 73/100, Kilo 73/100 | Form: 7-10-2-6-6-4-2
+11   3   GONE WITH STORM          MUSTAFA ÇİÇEK        Sprint       55    52 Temkinli • 52  Kilo 73/100 | Form: 8-5-8-8-11-8-4
+12   6   ORION SKY                AYHAN KURŞUN         Sprint       48     9 Temkinli • 9  Kilo 73/100 | Form: 8-8
+13   7   SILVER PUNCH             ERHAN AKTUĞ          Sprint       47     9 Temkinli • 9  Kilo 73/100 | Form: 12
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 TALİPHAN BEY
+  Ozet: Pist/Mesafe: 0G - 4P / 4 • Jokey: 0G - 1P / 1 • Galop: 53/100
+  - Pist/Mesafe   98 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Uzlaşma       92 | Ana · Model içi sinyal uyumu
+
+No 5 MY FEARLESS SON
+  Ozet: Pist/Mesafe: 1G - 3P / 3 • Jokey: 1G - 4P / 4 • Galop: 66/100
+  - Pist/Mesafe   97 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Uzlaşma       85 | Ana · Model içi sinyal uyumu
+
+No 1 GÜMRÜKCÜ MURAT
+  Ozet: Pist/Mesafe: 1G - 3P / 3 • Jokey: 1G - 3P / 3 • Galop: 28/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Hız           67 | Ana · Derece ve son metreler
+  - Uzlaşma       81 | Ana · Model içi sinyal uyumu
+
+No 2 DOĞANHAN
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 0G - 0P / 2 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           96 | Ana · Derece ve son metreler
+  - Uzlaşma       77 | Ana · Model içi sinyal uyumu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-27&hip=ISTANBUL&kosu=1
+Tarih/Hipodrom/Kosu: 2026-05-27 / ISTANBUL / 1
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 11
+Ortalama AI puani : 72/100
+Veri guveni       : 90/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İstanbul • 1. Koşu • 15:00 • 2100m • Sentetik 27.05.2026 Çarşamba
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • UZUNKÖPRÜ               | Seri / Konum 90/100
+Akış 2   | No 2 • GARİPLERBEYİ            | Seri / Konum 90/100
+Akış 3   | No 5 • BALDER                  | Ön grup / Konum 75/100
+Akış 4   | No 1 • DAMLA SUYU              | Orta / Konum 54/100
+Akış 5   | No 8 • ÖZGÜNBERK               | Orta / Konum 54/100
+Akış 6   | No 6 • ERSELAY                 | Orta / Konum 54/100
+Akış 7   | No 11 • İLKUTHAN               | Sprint / Konum 35/100
+Akış 8   | No 10 • BABA TUNA              | Sprint / Konum 35/100
+Akış 9   | No 4 • GÜNMETE                 | Sprint / Konum 35/100
+Akış 10  | No 7 • UMUDUNU KAYBETME        | Sprint / Konum 34/100
+Akış 11  | No 9 • TUNÇYILMAZ              | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 72/100
+Model Lideri  : No 5 BALDER (84/100)
+Akış Lideri   : No 3 UZUNKÖPRÜ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday rakiplerinden ayrışıyor; yine de veri güveniyle birlikte okunmalı.
+2. Öne çıkan sinyaller: Galop 97/100, Hız 100/100, Pist/Mesafe 82/100.
+3. Belirgin veri uyarısı görünmüyor.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 BALDER
+
+- Model Payı          : %10,6 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [93/100]
+  Detay: Veri + skor farkı
+- AI Model            : 84/100 [84/100]
+  Detay: Galop 97/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 66/100 [66/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [60/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 55/100 [55/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %43,5 [43/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,55 [94/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 1 2 3 [85/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 12 · HP 57 [54/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 1G - 4P / 5 [49/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 1 [37/100]
+  Detay: Birlikte performans
+- Jokey               : GÖKHAN KOCAKAYA [37/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [74/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 90/100 [90/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 72/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   BALDER                   GÖKHAN KOCAKAYA      Ön grup      84    90 Yüksek • 90   Galop 97/100, Hız 100/100, Pist/Mesafe 82/100 | Form: 7-2-3-4-4-3-2-1-2-3
+2    3   UZUNKÖPRÜ                MEHMET SALİH ÇELİK   Seri         79    97 Yüksek • 97   Pist/Mesafe 84/100, Hız 87/100, Form 74/100 | Form: 1-4-2-4-1-2-6-3-2-2
+3    11  İLKUTHAN                 GÖRKEM ÖZÇELİK       Sprint       78    95 Yüksek • 95   Galop 98/100, Hız 100/100, Pist/Mesafe 85/100 | Form: 10-12-14-8-13-2-8-12-5-4
+4    1   DAMLA SUYU               YİĞİTCAN GÖKÇE       Orta         77    95 Yüksek • 95   Galop 100/100, Pist/Mesafe 84/100, Hız 82/100 | Form: 7-3-2-1-3-3-6-10-8-6
+5    8   ÖZGÜNBERK                ALİ YILDIZ           Orta         72   100 Yüksek • 100  Galop 75/100, Pist/Mesafe 85/100, Jokey 89/100 | Form: 3-8-7-5-5-4-7-1-3-1
+6    7   UMUDUNU KAYBETME         MEHMET KAYA          Sprint       69    98 Orta • 98     Galop 74/100, Hız 85/100, Pist/Mesafe 79/100 | Form: 2-2-3-7-9-8-9-10-11-5
+7    10  BABA TUNA                MUHAMMED MİR BİLGİN  Sprint       68    95 Orta • 95     Hız 91/100, Pist/Mesafe 85/100, Veri 95/100 | Form: 7-4-5-6-6-8-9-8-6-8
+8    4   GÜNMETE                  SİNAN ÖZEN           Sprint       67    79 Orta • 79     Galop 78/100, Stil 76/100, Veri 79/100 | Form: 2-1-1-8-2-10-6-2-13-11
+9    9   TUNÇYILMAZ               ENES BOZDAĞ          Sprint       66    83 Orta • 83     Hız 100/100, Pist/Mesafe 82/100, Veri 83/100 | Form: 7-10-10-8-5-11-8-9-8-10
+10   6   ERSELAY                  ERHAN AKTUĞ          Orta         65    87 Orta • 87     Hız 92/100, Pist/Mesafe 80/100, Veri 87/100 | Form: 1-3-4-3-6-3-5-10-8-7
+11   2   GARİPLERBEYİ             ERHAN AKKAYA         Seri         65    74 Temkinli • 74  Stil 76/100, Veri 74/100 | Form: 2-7-7-4-9-7-3-1-2-9
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 BALDER
+  Ozet: Pist/Mesafe: 1G - 4P / 5 • Jokey: 0G - 1P / 1 • Galop: 97/100
+  - Galop         97 | Hazırlık · İdman dereceleri ve splitler
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+
+No 3 UZUNKÖPRÜ
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 1G - 4P / 4 • Galop: 62/100
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           87 | Ana · Derece ve son metreler
+  - Galop         62 | Hazırlık · İdman dereceleri ve splitler
+
+No 11 İLKUTHAN
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 0G - 0P / 1 • Galop: 98/100
+  - Galop         98 | Hazırlık · İdman dereceleri ve splitler
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+
+No 1 DAMLA SUYU
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 0P / 1 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   84 | Ana · Pist/mesafe geçmişi
+  - Hız           82 | Ana · Derece ve son metreler
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

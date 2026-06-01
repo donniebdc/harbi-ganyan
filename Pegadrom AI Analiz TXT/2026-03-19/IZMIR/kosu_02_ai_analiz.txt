@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-19&hip=IZMIR&kosu=2
+Tarih/Hipodrom/Kosu: 2026-03-19 / IZMIR / 2
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 72/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • ABUZER BABA             | Seri / Konum 90/100
+Akış 2   | No 7 • ULU YAŞAR               | Seri / Konum 90/100
+Akış 3   | No 2 • SERTTAYKUT              | Ön grup / Konum 74/100
+Akış 4   | No 8 • TURBO BEYİ              | Ön grup / Konum 73/100
+Akış 5   | No 5 • KÜLÜNÇ AĞASI            | Orta / Konum 55/100
+Akış 6   | No 4 • DEMİRNAL                | Orta / Konum 54/100
+Akış 7   | No 3 • SANCAR EFESİ            | Orta / Konum 54/100
+Akış 8   | No 6 • TURGUT BEY              | Sprint / Konum 34/100
+Akış 9   | No 9 • MOR BEYAZ               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 70/100
+Model Lideri  : No 5 KÜLÜNÇ AĞASI (77/100)
+Akış Lideri   : No 1 ABUZER BABA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 81/100, Jokey 94/100, Uzlaşma 81/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 KÜLÜNÇ AĞASI
+
+- Model Payı          : %12,3 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [78/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Pist/Mesafe 81/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [72/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 49/100 [49/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %7,7 [8/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 8,10 [68/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 2 5 2 [63/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 21 · HP 39 [51/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 3P / 5 [33/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 4P / 6 [45/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ MEHDİ ALTIN [45/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [59/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 80/100 [80/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   KÜLÜNÇ AĞASI             ALİ MEHDİ ALTIN      Orta         77    80 Yüksek • 80   Pist/Mesafe 81/100, Jokey 94/100, Uzlaşma 81/100 | Form: 2-2-1-7-6-6-7-2-5-2
+2    2   SERTTAYKUT               VEDAT ABİŞ           Ön grup      76    53 Orta • 53     Hız 100/100, Form 74/100, Pist/Mesafe 76/100 | Form: 2-2-3-4-5-1-7-9-3-3
+3    4   DEMİRNAL                 BEKİR MERT MIRIK     Orta         72    76 Orta • 76     Pist/Mesafe 74/100, Hız 73/100, Jokey 88/100 | Form: 1-6-6-6-2-3-9-6-10-6
+4    1   ABUZER BABA              NEVZAT AVCİ          Seri         72    72 Orta • 72     Pist/Mesafe 76/100, Hız 79/100, Uzlaşma 82/100 | Form: 2-1-9-11-1-1-7-1-1-5
+5    8   TURBO BEYİ               YİĞİTCAN GÖKÇE       Ön grup      70    66 Orta • 66     Pist/Mesafe 82/100, Hız 84/100, Stil 76/100 | Form: 9-7-1-7-4-15-11-5-4-4
+6    3   SANCAR EFESİ             MUSTAFA ÇİÇEK        Orta         69    76 Orta • 76     Pist/Mesafe 78/100, Hız 81/100, Hava/Zemin 77/100 | Form: 8-5-2-3-6-5-7-4-8-10
+7    7   ULU YAŞAR                MUHAMMED MİR BİLGİN  Seri         65    67 Temkinli • 67  Hız 89/100, Pist/Mesafe 74/100, Kilo 81/100 | Form: 7-4-11-4-2-11-4-4-1-1
+8    6   TURGUT BEY               ÖMER FARUK ÖZEN      Sprint       64    77 Orta • 77     Pist/Mesafe 82/100, Veri 77/100, Kilo 100/100 | Form: 6-4-1-9-11-7-9
+9    9   MOR BEYAZ                ALİCAN İNCİ          Sprint       62    77 Orta • 77     Pist/Mesafe 76/100, KGS 82/100, Risk 82/100 | Form: 5-1-9-8-10-9-8-8-11-16
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 KÜLÜNÇ AĞASI
+  Ozet: Pist/Mesafe: 0G - 3P / 5 • Jokey: 1G - 4P / 6 • Galop: 72/100
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          71 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           69 | Ana · Derece ve son metreler
+
+No 2 SERTTAYKUT
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 0P / 1 • Galop: 52/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          74 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+
+No 4 DEMİRNAL
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Pist/Mesafe   74 | Ana · Pist/mesafe geçmişi
+  - Hız           73 | Ana · Derece ve son metreler
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 ABUZER BABA
+  Ozet: Pist/Mesafe: 2G - 2P / 3 • Jokey: 3G - 3P / 4 • Galop: 28/100
+  - Pist/Mesafe   76 | Ana · Pist/mesafe geçmişi
+  - Hız           79 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

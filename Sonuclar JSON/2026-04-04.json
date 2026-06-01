@@ -1,0 +1,2790 @@
+{
+ "tarih": "2026-04-04",
+ "kaynak": "tjk",
+ "hipodromlar": {
+  "ISTANBUL": {
+   "ad": "İstanbul Veliefendi Hipodromu",
+   "kosular": {
+    "1": {
+     "no": 1,
+     "n_at": 9,
+     "kazanan": 5,
+     "kazananlar": [
+      5
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2000,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 5,
+       "at": "TERCAL NİHAT",
+       "derece": "2.06.00",
+       "ganyan": 8.1,
+       "jokey_kodu": 1489,
+       "agf": 811.0
+      },
+      {
+       "sira": 2,
+       "at_no": 3,
+       "at": "GAME SAVER",
+       "derece": "2.06.21",
+       "ganyan": 1.55,
+       "jokey_kodu": 94,
+       "agf": 4066.0
+      },
+      {
+       "sira": 3,
+       "at_no": 1,
+       "at": "GHOST OF NIGHT",
+       "derece": "2.06.34",
+       "ganyan": 1.95,
+       "jokey_kodu": 333,
+       "agf": 3661.0
+      },
+      {
+       "sira": 4,
+       "at_no": 6,
+       "at": "CROWN JEWEL",
+       "derece": "2.08.67",
+       "ganyan": 14.45,
+       "jokey_kodu": 2869,
+       "agf": 314.0
+      },
+      {
+       "sira": 5,
+       "at_no": 4,
+       "at": "KARA BİGA",
+       "derece": "2.08.78",
+       "ganyan": 11.7,
+       "jokey_kodu": 2708,
+       "agf": 991.0
+      },
+      {
+       "sira": 6,
+       "at_no": 9,
+       "at": "SEVEN SKY ALMİLA",
+       "derece": "2.09.86",
+       "ganyan": 146.85,
+       "jokey_kodu": 3141,
+       "agf": 11.0
+      },
+      {
+       "sira": 7,
+       "at_no": 8,
+       "at": "SECRET VICTOR",
+       "derece": "2.17.09",
+       "ganyan": 64.5,
+       "jokey_kodu": 2499,
+       "agf": 23.0
+      },
+      {
+       "sira": 8,
+       "at_no": 7,
+       "at": "MEVLÜDE HATUN",
+       "derece": "2.17.46",
+       "ganyan": 33.35,
+       "jokey_kodu": 3095,
+       "agf": 46.0
+      },
+      {
+       "sira": 9,
+       "at_no": 2,
+       "at": "CHAGATAI",
+       "derece": "2.17.87",
+       "ganyan": 58.15,
+       "jokey_kodu": 3094,
+       "agf": 78.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(5): 8,10TL İKİLİ(3/5): 7,35TL SIRALI İKİLİ(5/3): 24,45TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "5",
+        "tutar": 8.1
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "3/5",
+        "tutar": 7.35
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "5/3",
+        "tutar": 24.45
+       }
+      ]
+     }
+    },
+    "2": {
+     "no": 2,
+     "n_at": 9,
+     "kazanan": 2,
+     "kazananlar": [
+      2
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2100,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 2,
+       "at": "SPLENDID",
+       "derece": "2.10.70",
+       "ganyan": 1.85,
+       "jokey_kodu": 1264,
+       "agf": 6787.0
+      },
+      {
+       "sira": 2,
+       "at_no": 1,
+       "at": "REAL TROUBLE",
+       "derece": "2.11.50",
+       "ganyan": 4.2,
+       "jokey_kodu": 2869,
+       "agf": 987.0
+      },
+      {
+       "sira": 3,
+       "at_no": 9,
+       "at": "JIMDEMA",
+       "derece": "2.11.82",
+       "ganyan": 18.95,
+       "jokey_kodu": 2701,
+       "agf": 265.0
+      },
+      {
+       "sira": 4,
+       "at_no": 5,
+       "at": "PEHLİVAN KIZIM",
+       "derece": "2.12.07",
+       "ganyan": 11.2,
+       "jokey_kodu": 1337,
+       "agf": 138.0
+      },
+      {
+       "sira": 5,
+       "at_no": 6,
+       "at": "ROZERYA",
+       "derece": "2.12.09",
+       "ganyan": 20.35,
+       "jokey_kodu": 3095,
+       "agf": 115.0
+      },
+      {
+       "sira": 6,
+       "at_no": 7,
+       "at": "CAPE COD",
+       "derece": "2.12.59",
+       "ganyan": 2.7,
+       "jokey_kodu": 2708,
+       "agf": 1422.0
+      },
+      {
+       "sira": 7,
+       "at_no": 3,
+       "at": "ANADOLU PRENSESİ",
+       "derece": "2.12.68",
+       "ganyan": 10.9,
+       "jokey_kodu": 2495,
+       "agf": 233.0
+      },
+      {
+       "sira": 8,
+       "at_no": 4,
+       "at": "NEVACAN",
+       "derece": "2.14.63",
+       "ganyan": 43.6,
+       "jokey_kodu": 2499,
+       "agf": 24.0
+      },
+      {
+       "sira": 9,
+       "at_no": 8,
+       "at": "I AM INVINCIBLE",
+       "derece": "2.23.67",
+       "ganyan": 24.75,
+       "jokey_kodu": 3067,
+       "agf": 28.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(2): 1,85TL İKİLİ(1/2): 3,60TL SIRALI İKİLİ(2/1): 4,80TL ÜÇLÜ BAHİS(2/1/9): 53,30TL PLASE(1): 1,05TL PLASE(2): 1,05TL 1. ÇİFTE(5/2): 14,45TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "2",
+        "tutar": 1.85
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 3.6
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "2/1",
+        "tutar": 4.8
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "2/1/9",
+        "tutar": 53.3
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "1",
+        "tutar": 1.05
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "2",
+        "tutar": 1.05
+       },
+       {
+        "tip": "1. ÇİFTE",
+        "kombinasyon": "5/2",
+        "tutar": 14.45
+       }
+      ]
+     }
+    },
+    "3": {
+     "no": 3,
+     "n_at": 8,
+     "kazanan": 2,
+     "kazananlar": [
+      2
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2000,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 2,
+       "at": "KAYROS",
+       "derece": "2.03.53",
+       "ganyan": 2.5,
+       "jokey_kodu": 94,
+       "agf": 3080.0
+      },
+      {
+       "sira": 2,
+       "at_no": 3,
+       "at": "CHOSEN ONE",
+       "derece": "2.03.54",
+       "ganyan": 5.9,
+       "jokey_kodu": 2701,
+       "agf": 1221.0
+      },
+      {
+       "sira": 3,
+       "at_no": 6,
+       "at": "LAST HERO",
+       "derece": "2.03.82",
+       "ganyan": 15.5,
+       "jokey_kodu": 2495,
+       "agf": 418.0
+      },
+      {
+       "sira": 4,
+       "at_no": 1,
+       "at": "SOCIAL BEE",
+       "derece": "2.04.46",
+       "ganyan": 4.1,
+       "jokey_kodu": 2869,
+       "agf": 1664.0
+      },
+      {
+       "sira": 5,
+       "at_no": 4,
+       "at": "FINALLY ITS TIME",
+       "derece": "2.04.47",
+       "ganyan": 8.2,
+       "jokey_kodu": 2708,
+       "agf": 918.0
+      },
+      {
+       "sira": 6,
+       "at_no": 5,
+       "at": "DARMADUMAN",
+       "derece": "2.04.57",
+       "ganyan": 9.6,
+       "jokey_kodu": 1489,
+       "agf": 276.0
+      },
+      {
+       "sira": 7,
+       "at_no": 7,
+       "at": "VENUS DOOM",
+       "derece": "2.04.83",
+       "ganyan": 21.9,
+       "jokey_kodu": 2977,
+       "agf": 341.0
+      },
+      {
+       "sira": 8,
+       "at_no": 8,
+       "at": "ZYRA",
+       "derece": "2.06.72",
+       "ganyan": 2.95,
+       "jokey_kodu": 566,
+       "agf": 2082.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(2): 2,50TL İKİLİ(2/3): 9,35TL SIRALI İKİLİ(2/3): 14,75TL 2. ÇİFTE(2/2): 2,75TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "2",
+        "tutar": 2.5
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "2/3",
+        "tutar": 9.35
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "2/3",
+        "tutar": 14.75
+       },
+       {
+        "tip": "2. ÇİFTE",
+        "kombinasyon": "2/2",
+        "tutar": 2.75
+       }
+      ]
+     }
+    },
+    "4": {
+     "no": 4,
+     "n_at": 13,
+     "kazanan": 1,
+     "kazananlar": [
+      1
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2000,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 1,
+       "at": "DAŞ FATİH",
+       "derece": "2.16.42",
+       "ganyan": 2.05,
+       "jokey_kodu": 1337,
+       "agf": 2188.0
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "ERSANŞAH",
+       "derece": "2.16.49",
+       "ganyan": 3.0,
+       "jokey_kodu": 333,
+       "agf": 2345.0
+      },
+      {
+       "sira": 3,
+       "at_no": 12,
+       "at": "TURNADAĞ",
+       "derece": "2.16.69",
+       "ganyan": 18.25,
+       "jokey_kodu": 2701,
+       "agf": 439.0
+      },
+      {
+       "sira": 4,
+       "at_no": 10,
+       "at": "NİĞBOLU",
+       "derece": "2.16.90",
+       "ganyan": 7.05,
+       "jokey_kodu": 2869,
+       "agf": 1500.0
+      },
+      {
+       "sira": 5,
+       "at_no": 3,
+       "at": "HÜKÜM",
+       "derece": "2.17.09",
+       "ganyan": 5.7,
+       "jokey_kodu": 94,
+       "agf": 1458.0
+      },
+      {
+       "sira": 6,
+       "at_no": 5,
+       "at": "BARAN REİS",
+       "derece": "2.17.13",
+       "ganyan": 47.0,
+       "jokey_kodu": 2695,
+       "agf": 50.0
+      },
+      {
+       "sira": 7,
+       "at_no": 4,
+       "at": "BALKI TAY",
+       "derece": "2.17.74",
+       "ganyan": 12.95,
+       "jokey_kodu": 2495,
+       "agf": 806.0
+      },
+      {
+       "sira": 8,
+       "at_no": 8,
+       "at": "LAZMAN",
+       "derece": "2.17.82",
+       "ganyan": 21.45,
+       "jokey_kodu": 3067,
+       "agf": 158.0
+      },
+      {
+       "sira": 9,
+       "at_no": 6,
+       "at": "EGETAY",
+       "derece": "2.18.24",
+       "ganyan": 61.15,
+       "jokey_kodu": 2499,
+       "agf": 31.0
+      },
+      {
+       "sira": 10,
+       "at_no": 9,
+       "at": "MAHMUT USTA",
+       "derece": "2.18.49",
+       "ganyan": 22.0,
+       "jokey_kodu": 2708,
+       "agf": 192.0
+      },
+      {
+       "sira": 11,
+       "at_no": 7,
+       "at": "KIRMÜJDE",
+       "derece": "2.19.16",
+       "ganyan": 64.15,
+       "jokey_kodu": 3144,
+       "agf": 44.0
+      },
+      {
+       "sira": 12,
+       "at_no": 11,
+       "at": "ÖZÜDOĞRU",
+       "derece": "2.21.16",
+       "ganyan": 22.05,
+       "jokey_kodu": 1465,
+       "agf": 580.0
+      },
+      {
+       "sira": 13,
+       "at_no": 13,
+       "at": "TUTKUNLAR",
+       "derece": "2.22.10",
+       "ganyan": 28.35,
+       "jokey_kodu": 3095,
+       "agf": 207.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(1): 2,05TL 1. 3'LÜ GANYAN(2/2/1): 22,30TL İKİLİ(1/2): 4,60TL SIRALI İKİLİ(1/2): 9,25TL ÜÇLÜ BAHİS(1/2/12): 236,60TL PLASE(1): 1,20TL PLASE İKİLİ(1/12): 13,40TL PLASE İKİLİ(1/2): 6,30TL PLASE(2): 1,95TL PLASE İKİLİ(2/12): 19,50TL SIRALI 5 Lİ BAHİS(1/2/12/10/3): 2.213,06TL 3. ÇİFTE(2/1): 5,60TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "1",
+        "tutar": 2.05
+       },
+       {
+        "tip": "1. 3'LÜ GANYAN",
+        "kombinasyon": "2/2/1",
+        "tutar": 22.3
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 4.6
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 9.25
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "1/2/12",
+        "tutar": 236.6
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "1",
+        "tutar": 1.2
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/12",
+        "tutar": 13.4
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 6.3
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "2",
+        "tutar": 1.95
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "2/12",
+        "tutar": 19.5
+       },
+       {
+        "tip": "SIRALI 5 Lİ BAHİS",
+        "kombinasyon": "1/2/12/10/3",
+        "tutar": 2213.06
+       },
+       {
+        "tip": "3. ÇİFTE",
+        "kombinasyon": "2/1",
+        "tutar": 5.6
+       }
+      ]
+     }
+    },
+    "5": {
+     "no": 5,
+     "n_at": 15,
+     "kazanan": 3,
+     "kazananlar": [
+      3
+     ],
+     "ekuri": [
+      [
+       3,
+       13
+      ],
+      [
+       5,
+       10,
+       15
+      ]
+     ],
+     "kosmaz": [],
+     "mesafe": 1300,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 3,
+       "at": "GÜL AYALI",
+       "derece": "1.25.89",
+       "ganyan": 4.8,
+       "jokey_kodu": 1337,
+       "agf": 1421.0
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "FISTIK ÇAMI",
+       "derece": "1.25.93",
+       "ganyan": 3.0,
+       "jokey_kodu": 2869,
+       "agf": 2432.0
+      },
+      {
+       "sira": 3,
+       "at_no": 5,
+       "at": "KOŞAN NUR",
+       "derece": "1.25.96",
+       "ganyan": 4.95,
+       "jokey_kodu": 1491,
+       "agf": 1111.0
+      },
+      {
+       "sira": 4,
+       "at_no": 7,
+       "at": "ERDEK",
+       "derece": "1.26.12",
+       "ganyan": 3.55,
+       "jokey_kodu": 3095,
+       "agf": 1830.0
+      },
+      {
+       "sira": 5,
+       "at_no": 12,
+       "at": "CABİRE SULTAN",
+       "derece": "1.26.51",
+       "ganyan": 11.1,
+       "jokey_kodu": 566,
+       "agf": 708.0
+      },
+      {
+       "sira": 6,
+       "at_no": 13,
+       "at": "DEMİR SULTAN",
+       "derece": "1.26.79",
+       "ganyan": 4.8,
+       "jokey_kodu": 997,
+       "agf": 67.0
+      },
+      {
+       "sira": 7,
+       "at_no": 11,
+       "at": "GENÇ MİMAR",
+       "derece": "1.27.68",
+       "ganyan": 18.15,
+       "jokey_kodu": 1346,
+       "agf": 260.0
+      },
+      {
+       "sira": 8,
+       "at_no": 4,
+       "at": "KIR PAPATYASI",
+       "derece": "1.27.70",
+       "ganyan": 6.0,
+       "jokey_kodu": 2495,
+       "agf": 1103.0
+      },
+      {
+       "sira": 9,
+       "at_no": 15,
+       "at": "EFSANE HANIM",
+       "derece": "1.27.84",
+       "ganyan": 4.95,
+       "jokey_kodu": 3140,
+       "agf": 64.0
+      },
+      {
+       "sira": 10,
+       "at_no": 1,
+       "at": "ÇAYCI KIZ",
+       "derece": "1.28.56",
+       "ganyan": 15.55,
+       "jokey_kodu": 2499,
+       "agf": 519.0
+      },
+      {
+       "sira": 11,
+       "at_no": 9,
+       "at": "KOŞUCU KIZ",
+       "derece": "1.28.57",
+       "ganyan": 48.05,
+       "jokey_kodu": 3094,
+       "agf": 118.0
+      },
+      {
+       "sira": 12,
+       "at_no": 14,
+       "at": "TURBOLU",
+       "derece": "1.29.35",
+       "ganyan": 88.4,
+       "jokey_kodu": 618,
+       "agf": 33.0
+      },
+      {
+       "sira": 13,
+       "at_no": 10,
+       "at": "AZİZEHATUN",
+       "derece": "1.29.41",
+       "ganyan": 4.95,
+       "jokey_kodu": 3136,
+       "agf": 81.0
+      },
+      {
+       "sira": 14,
+       "at_no": 8,
+       "at": "ADİLE HANIM",
+       "derece": "1.29.84",
+       "ganyan": 65.8,
+       "jokey_kodu": 3142,
+       "agf": 95.0
+      },
+      {
+       "sira": 15,
+       "at_no": 6,
+       "at": "MAHİNURUM",
+       "derece": "1.30.05",
+       "ganyan": 26.65,
+       "jokey_kodu": 3067,
+       "agf": 157.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(3): 4,80TL İKİLİ(2/3): 12,05TL SIRALI İKİLİ(3/2): 33,20TL PLASE(2): 1,30TL PLASE İKİLİ(2/3): 12,30TL PLASE İKİLİ(2/5): 7,70TL PLASE(3): 2,05TL PLASE İKİLİ(3/5): 18,30TL SIRALI 5 Lİ BAHİS(3/2/5/7/12): 3.090,50TL TABELA BAHİS(3/2/5/7): 641,10TL TABELA BAHİS SIRASIZ(3/2/5/7): 10,12TL 4. ÇİFTE(1/3,13): 22,85TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "3",
+        "tutar": 4.8
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "2/3",
+        "tutar": 12.05
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "3/2",
+        "tutar": 33.2
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "2",
+        "tutar": 1.3
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "2/3",
+        "tutar": 12.3
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "2/5",
+        "tutar": 7.7
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "3",
+        "tutar": 2.05
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/5",
+        "tutar": 18.3
+       },
+       {
+        "tip": "SIRALI 5 Lİ BAHİS",
+        "kombinasyon": "3/2/5/7/12",
+        "tutar": 3090.5
+       },
+       {
+        "tip": "TABELA BAHİS",
+        "kombinasyon": "3/2/5/7",
+        "tutar": 641.1
+       },
+       {
+        "tip": "TABELA BAHİS SIRASIZ",
+        "kombinasyon": "3/2/5/7",
+        "tutar": 10.12
+       },
+       {
+        "tip": "4. ÇİFTE",
+        "kombinasyon": "1/3,13",
+        "tutar": 22.85
+       }
+      ]
+     }
+    },
+    "6": {
+     "no": 6,
+     "n_at": 7,
+     "kazanan": 1,
+     "kazananlar": [
+      1
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1500,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 1,
+       "at": "ÇELİKGİLLER",
+       "derece": "1.40.04",
+       "ganyan": 4.6,
+       "jokey_kodu": 1264,
+       "agf": 1788.0
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "KERBEROS",
+       "derece": "1.40.32",
+       "ganyan": 1.6,
+       "jokey_kodu": 2708,
+       "agf": 4267.0
+      },
+      {
+       "sira": 3,
+       "at_no": 4,
+       "at": "DOĞUYURT",
+       "derece": "1.40.57",
+       "ganyan": 8.75,
+       "jokey_kodu": 94,
+       "agf": 653.0
+      },
+      {
+       "sira": 4,
+       "at_no": 7,
+       "at": "ÖZARDIÇ",
+       "derece": "1.41.31",
+       "ganyan": 3.15,
+       "jokey_kodu": 333,
+       "agf": 2090.0
+      },
+      {
+       "sira": 5,
+       "at_no": 5,
+       "at": "GÜRCEYHUN",
+       "derece": "1.41.35",
+       "ganyan": 28.8,
+       "jokey_kodu": 2495,
+       "agf": 160.0
+      },
+      {
+       "sira": 6,
+       "at_no": 6,
+       "at": "KRAL SULTAN",
+       "derece": "1.41.56",
+       "ganyan": 5.65,
+       "jokey_kodu": 2701,
+       "agf": 999.0
+      },
+      {
+       "sira": 7,
+       "at_no": 3,
+       "at": "BİGBERK",
+       "derece": "1.41.82",
+       "ganyan": 53.9,
+       "jokey_kodu": 2499,
+       "agf": 44.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(1): 4,60TL 1. 6'LI GANYAN(5/2/2/1/3,13/1): 7.544,18TL İKİLİ(1/2): 3,50TL SIRALI İKİLİ(1/2): 10,15TL ÜÇLÜ BAHİS(1/2/4): 95,40TL 5. ÇİFTE(3,13/1): 49,00TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "1",
+        "tutar": 4.6
+       },
+       {
+        "tip": "1. 6'LI GANYAN",
+        "kombinasyon": "5/2/2/1/3,13/1",
+        "tutar": 7544.18
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 3.5
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "1/2",
+        "tutar": 10.15
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "1/2/4",
+        "tutar": 95.4
+       },
+       {
+        "tip": "5. ÇİFTE",
+        "kombinasyon": "3,13/1",
+        "tutar": 49.0
+       }
+      ]
+     }
+    },
+    "7": {
+     "no": 7,
+     "n_at": 9,
+     "kazanan": 3,
+     "kazananlar": [
+      3
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2000,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 3,
+       "at": "KING OF PROTI",
+       "derece": "2.05.58",
+       "ganyan": 4.7,
+       "jokey_kodu": 3067,
+       "agf": null
+      },
+      {
+       "sira": 2,
+       "at_no": 4,
+       "at": "WATERSHED",
+       "derece": "2.06.03",
+       "ganyan": 31.25,
+       "jokey_kodu": 1501,
+       "agf": null
+      },
+      {
+       "sira": 3,
+       "at_no": 2,
+       "at": "HEAVEN TIME",
+       "derece": "2.06.86",
+       "ganyan": 1.05,
+       "jokey_kodu": 3066,
+       "agf": null
+      },
+      {
+       "sira": 4,
+       "at_no": 1,
+       "at": "EVERMORE",
+       "derece": "2.07.61",
+       "ganyan": 7.5,
+       "jokey_kodu": 94,
+       "agf": null
+      },
+      {
+       "sira": 5,
+       "at_no": 5,
+       "at": "WELLERMAN",
+       "derece": "2.07.85",
+       "ganyan": 46.1,
+       "jokey_kodu": 2695,
+       "agf": null
+      },
+      {
+       "sira": 6,
+       "at_no": 9,
+       "at": "SWEET LADY",
+       "derece": "2.08.04",
+       "ganyan": 11.8,
+       "jokey_kodu": 3095,
+       "agf": null
+      },
+      {
+       "sira": 7,
+       "at_no": 8,
+       "at": "SAMUİ",
+       "derece": "2.08.94",
+       "ganyan": 33.75,
+       "jokey_kodu": 2499,
+       "agf": null
+      },
+      {
+       "sira": 8,
+       "at_no": 6,
+       "at": "ASTRAEA",
+       "derece": "2.10.42",
+       "ganyan": 143.55,
+       "jokey_kodu": 3139,
+       "agf": null
+      },
+      {
+       "sira": 9,
+       "at_no": 7,
+       "at": "REYWU",
+       "derece": "2.10.50",
+       "ganyan": 37.35,
+       "jokey_kodu": 2495,
+       "agf": null
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(3): 4,70TL İKİLİ(3/4): 49,45TL SIRALI İKİLİ(3/4): 98,95TL ÜÇLÜ BAHİS(3/4/2): 291,50TL PLASE(3): 5,90TL PLASE(4): 40,65TL 6. ÇİFTE(1/3): 25,65TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "3",
+        "tutar": 4.7
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "3/4",
+        "tutar": 49.45
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "3/4",
+        "tutar": 98.95
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "3/4/2",
+        "tutar": 291.5
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "3",
+        "tutar": 5.9
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "4",
+        "tutar": 40.65
+       },
+       {
+        "tip": "6. ÇİFTE",
+        "kombinasyon": "1/3",
+        "tutar": 25.65
+       }
+      ]
+     }
+    },
+    "8": {
+     "no": 8,
+     "n_at": 18,
+     "kazanan": 11,
+     "kazananlar": [
+      11
+     ],
+     "ekuri": [
+      [
+       3,
+       6
+      ]
+     ],
+     "kosmaz": [],
+     "mesafe": 2200,
+     "pist": "Sentetik",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 11,
+       "at": "SWORD OF HONOUR",
+       "derece": "2.17.48",
+       "ganyan": 12.95,
+       "jokey_kodu": 3140,
+       "agf": null
+      },
+      {
+       "sira": 2,
+       "at_no": 10,
+       "at": "BLACK RUBY",
+       "derece": "2.17.52",
+       "ganyan": 8.95,
+       "jokey_kodu": 997,
+       "agf": null
+      },
+      {
+       "sira": 3,
+       "at_no": 4,
+       "at": "START UP",
+       "derece": "2.17.57",
+       "ganyan": 4.5,
+       "jokey_kodu": 2708,
+       "agf": null
+      },
+      {
+       "sira": 4,
+       "at_no": 17,
+       "at": "ASRA İNAT",
+       "derece": "2.17.64",
+       "ganyan": 11.6,
+       "jokey_kodu": 1346,
+       "agf": null
+      },
+      {
+       "sira": 5,
+       "at_no": 13,
+       "at": "ÖZGÜR ABİ",
+       "derece": "2.18.03",
+       "ganyan": 10.5,
+       "jokey_kodu": 2495,
+       "agf": null
+      },
+      {
+       "sira": 6,
+       "at_no": 15,
+       "at": "CANKAFESİM",
+       "derece": "2.18.04",
+       "ganyan": 10.8,
+       "jokey_kodu": 1337,
+       "agf": null
+      },
+      {
+       "sira": 7,
+       "at_no": 3,
+       "at": "SENKRON",
+       "derece": "2.18.06",
+       "ganyan": 15.75,
+       "jokey_kodu": 1459,
+       "agf": null
+      },
+      {
+       "sira": 8,
+       "at_no": 8,
+       "at": "MARISCAL",
+       "derece": "2.18.33",
+       "ganyan": 19.3,
+       "jokey_kodu": 1491,
+       "agf": null
+      },
+      {
+       "sira": 9,
+       "at_no": 7,
+       "at": "FILIUS VENTUS",
+       "derece": "2.18.56",
+       "ganyan": 18.25,
+       "jokey_kodu": 2695,
+       "agf": null
+      },
+      {
+       "sira": 10,
+       "at_no": 9,
+       "at": "SIRIUS VEGA",
+       "derece": "2.18.67",
+       "ganyan": 3.85,
+       "jokey_kodu": 2977,
+       "agf": null
+      },
+      {
+       "sira": 11,
+       "at_no": 14,
+       "at": "GORTAN",
+       "derece": "2.18.99",
+       "ganyan": 51.2,
+       "jokey_kodu": 2697,
+       "agf": null
+      },
+      {
+       "sira": 12,
+       "at_no": 18,
+       "at": "SARILAR KIZI",
+       "derece": "2.19.54",
+       "ganyan": 40.15,
+       "jokey_kodu": 2250,
+       "agf": null
+      },
+      {
+       "sira": 13,
+       "at_no": 1,
+       "at": "KAVALA GÜCÜ",
+       "derece": "2.19.73",
+       "ganyan": 7.2,
+       "jokey_kodu": 2869,
+       "agf": null
+      },
+      {
+       "sira": 14,
+       "at_no": 16,
+       "at": "SUICIDE KING",
+       "derece": "2.20.45",
+       "ganyan": 68.15,
+       "jokey_kodu": 3095,
+       "agf": null
+      },
+      {
+       "sira": 15,
+       "at_no": 6,
+       "at": "SEMİNTOSH",
+       "derece": "2.22.77",
+       "ganyan": 15.75,
+       "jokey_kodu": 3139,
+       "agf": null
+      },
+      {
+       "sira": 16,
+       "at_no": 12,
+       "at": "SKYDIVE",
+       "derece": "2.25.87",
+       "ganyan": 29.7,
+       "jokey_kodu": 3067,
+       "agf": null
+      },
+      {
+       "sira": 17,
+       "at_no": 5,
+       "at": "CRAZYBLOOD",
+       "derece": "2.44.67",
+       "ganyan": 8.55,
+       "jokey_kodu": 94,
+       "agf": null
+      },
+      {
+       "sira": 18,
+       "at_no": 2,
+       "at": "VELOX",
+       "derece": "Derecesiz",
+       "ganyan": 41.4,
+       "jokey_kodu": 1489,
+       "agf": null
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(11): 12,95TL 7'Lİ PLASE(1,2/2,3/1,2/2,3,13/1,2/3,4/10,11): 787,30TL 2. 6'LI GANYAN(2/1/3,13/1/3/11): 29.723,18TL 5'Lİ GANYAN(1/3,13/1/3/11): 13.288,50TL 4'LÜ GANYAN(3,13/1/3/11): 3.930,85TL 2. 3'LÜ GANYAN(1/3/11): 418,00TL İKİLİ(10/11): 42,65TL SIRALI İKİLİ(11/10): 111,80TL PLASE(10): 5,55TL PLASE İKİLİ(10/11): 22,80TL PLASE(11): 5,55TL PLASE İKİLİ(4/10): 23,90TL PLASE İKİLİ(4/11): 29,80TL SIRALI 5 Lİ BAHİS(11/10/4/17/13): 46.606,18TL TABELA BAHİS(11/10/4/17): 5.646,22TL TABELA BAHİS SIRASIZ(11/10/4/17): 120,00TL 7. ÇİFTE(3/11): 57,60TL 7'Lİ GANYAN(2/2/1/3,13/1/3/11): 29.275,70TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "11",
+        "tutar": 12.95
+       },
+       {
+        "tip": "7'Lİ PLASE",
+        "kombinasyon": "1,2/2,3/1,2/2,3,13/1,2/3,4/10,11",
+        "tutar": 787.3
+       },
+       {
+        "tip": "2. 6'LI GANYAN",
+        "kombinasyon": "2/1/3,13/1/3/11",
+        "tutar": 29723.18
+       },
+       {
+        "tip": "5'Lİ GANYAN",
+        "kombinasyon": "1/3,13/1/3/11",
+        "tutar": 13288.5
+       },
+       {
+        "tip": "4'LÜ GANYAN",
+        "kombinasyon": "3,13/1/3/11",
+        "tutar": 3930.85
+       },
+       {
+        "tip": "2. 3'LÜ GANYAN",
+        "kombinasyon": "1/3/11",
+        "tutar": 418.0
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "10/11",
+        "tutar": 42.65
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "11/10",
+        "tutar": 111.8
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "10",
+        "tutar": 5.55
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "10/11",
+        "tutar": 22.8
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "11",
+        "tutar": 5.55
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "4/10",
+        "tutar": 23.9
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "4/11",
+        "tutar": 29.8
+       },
+       {
+        "tip": "SIRALI 5 Lİ BAHİS",
+        "kombinasyon": "11/10/4/17/13",
+        "tutar": 46606.18
+       },
+       {
+        "tip": "TABELA BAHİS",
+        "kombinasyon": "11/10/4/17",
+        "tutar": 5646.22
+       },
+       {
+        "tip": "TABELA BAHİS SIRASIZ",
+        "kombinasyon": "11/10/4/17",
+        "tutar": 120.0
+       },
+       {
+        "tip": "7. ÇİFTE",
+        "kombinasyon": "3/11",
+        "tutar": 57.6
+       },
+       {
+        "tip": "7'Lİ GANYAN",
+        "kombinasyon": "2/2/1/3,13/1/3/11",
+        "tutar": 29275.7
+       }
+      ]
+     }
+    }
+   }
+  },
+  "ADANA": {
+   "ad": "Adana Yeşiloba Hipodromu",
+   "kosular": {
+    "1": {
+     "no": 1,
+     "n_at": 9,
+     "kazanan": 3,
+     "kazananlar": [
+      3
+     ],
+     "ekuri": [],
+     "kosmaz": [
+      9
+     ],
+     "mesafe": 1500,
+     "pist": "Kum",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 3,
+       "at": "FORTHCOMING QUEEN",
+       "derece": "1.36.69",
+       "ganyan": 3.4,
+       "jokey_kodu": 3045,
+       "agf": 1740.0
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "KARDAHA",
+       "derece": "1.37.61",
+       "ganyan": 13.2,
+       "jokey_kodu": 2493,
+       "agf": 417.0
+      },
+      {
+       "sira": 3,
+       "at_no": 1,
+       "at": "GRINGA",
+       "derece": "1.37.94",
+       "ganyan": 1.5,
+       "jokey_kodu": 107,
+       "agf": 4957.0
+      },
+      {
+       "sira": 4,
+       "at_no": 8,
+       "at": "HIGH HILLS",
+       "derece": "1.38.19",
+       "ganyan": 19.6,
+       "jokey_kodu": 3070,
+       "agf": 562.0
+      },
+      {
+       "sira": 5,
+       "at_no": 7,
+       "at": "RICHWOOD",
+       "derece": "1.38.46",
+       "ganyan": 5.0,
+       "jokey_kodu": 2714,
+       "agf": 1253.0
+      },
+      {
+       "sira": 6,
+       "at_no": 6,
+       "at": "MALCOOBA",
+       "derece": "1.38.96",
+       "ganyan": 31.9,
+       "jokey_kodu": 2879,
+       "agf": 125.0
+      },
+      {
+       "sira": 7,
+       "at_no": 4,
+       "at": "DANİSKA",
+       "derece": "1.39.17",
+       "ganyan": 15.7,
+       "jokey_kodu": 2378,
+       "agf": 308.0
+      },
+      {
+       "sira": 8,
+       "at_no": 5,
+       "at": "QUEEN SEÇİL",
+       "derece": "1.40.59",
+       "ganyan": 10.75,
+       "jokey_kodu": 437,
+       "agf": 516.0
+      },
+      {
+       "sira": 9,
+       "at_no": 10,
+       "at": "DÜNYA BOŞTUR",
+       "derece": "1.44.27",
+       "ganyan": 62.35,
+       "jokey_kodu": 3061,
+       "agf": 67.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(3): 3,40TL İKİLİ(2/3): 34,45TL SIRALI İKİLİ(3/2): 49,90TL AGF:1",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "3",
+        "tutar": 3.4
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "2/3",
+        "tutar": 34.45
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "3/2",
+        "tutar": 49.9
+       }
+      ]
+     }
+    },
+    "2": {
+     "no": 2,
+     "n_at": 11,
+     "kazanan": 1,
+     "kazananlar": [
+      1
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1300,
+     "pist": "Çim",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 1,
+       "at": "KALEM KIRAN",
+       "derece": "1.28.11",
+       "ganyan": 1.4,
+       "jokey_kodu": 1548,
+       "agf": 4464.0
+      },
+      {
+       "sira": 2,
+       "at_no": 8,
+       "at": "GÜLZEMİN",
+       "derece": "1.29.13",
+       "ganyan": 41.45,
+       "jokey_kodu": 3102,
+       "agf": 135.0
+      },
+      {
+       "sira": 3,
+       "at_no": 6,
+       "at": "YERALAN",
+       "derece": "1.29.24",
+       "ganyan": 29.95,
+       "jokey_kodu": 2703,
+       "agf": 335.0
+      },
+      {
+       "sira": 4,
+       "at_no": 3,
+       "at": "FATİHİNOĞLU",
+       "derece": "1.29.78",
+       "ganyan": 48.45,
+       "jokey_kodu": 3064,
+       "agf": 130.0
+      },
+      {
+       "sira": 5,
+       "at_no": 9,
+       "at": "CAVİDAN HATUN",
+       "derece": "1.29.79",
+       "ganyan": 13.0,
+       "jokey_kodu": 958,
+       "agf": 623.0
+      },
+      {
+       "sira": 6,
+       "at_no": 7,
+       "at": "GÖKÇEAY",
+       "derece": "1.31.27",
+       "ganyan": 28.4,
+       "jokey_kodu": 2384,
+       "agf": 283.0
+      },
+      {
+       "sira": 7,
+       "at_no": 10,
+       "at": "ÇİĞDEMLİ",
+       "derece": "1.32.47",
+       "ganyan": 2.2,
+       "jokey_kodu": 2883,
+       "agf": 3407.0
+      },
+      {
+       "sira": 8,
+       "at_no": 11,
+       "at": "KATI PRENSES",
+       "derece": "1.34.52",
+       "ganyan": 51.95,
+       "jokey_kodu": 2707,
+       "agf": 49.0
+      },
+      {
+       "sira": 9,
+       "at_no": 5,
+       "at": "ŞAİROĞLU",
+       "derece": "1.35.59",
+       "ganyan": 11.9,
+       "jokey_kodu": 3070,
+       "agf": 370.0
+      },
+      {
+       "sira": 10,
+       "at_no": 4,
+       "at": "NEVALİ",
+       "derece": "1.35.68",
+       "ganyan": 41.5,
+       "jokey_kodu": 2710,
+       "agf": 118.0
+      },
+      {
+       "sira": 11,
+       "at_no": 2,
+       "at": "ALTIN YUMRUK",
+       "derece": "1.36.09",
+       "ganyan": 55.85,
+       "jokey_kodu": 3061,
+       "agf": 85.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(1): 1,40TL İKİLİ(1/8): 48,25TL SIRALI İKİLİ(1/8): 49,35TL ÜÇLÜ BAHİS(1/8/6): 881,80TL PLASE(1): 1,05TL PLASE İKİLİ(1/6): 12,00TL PLASE İKİLİ(1/8): 12,90TL PLASE İKİLİ(6/8): 85,80TL PLASE(8): 3,15TL 1. ÇİFTE(3/1): 10,40TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "1",
+        "tutar": 1.4
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "1/8",
+        "tutar": 48.25
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "1/8",
+        "tutar": 49.35
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "1/8/6",
+        "tutar": 881.8
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "1",
+        "tutar": 1.05
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/6",
+        "tutar": 12.0
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/8",
+        "tutar": 12.9
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "6/8",
+        "tutar": 85.8
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "8",
+        "tutar": 3.15
+       },
+       {
+        "tip": "1. ÇİFTE",
+        "kombinasyon": "3/1",
+        "tutar": 10.4
+       }
+      ]
+     }
+    },
+    "3": {
+     "no": 3,
+     "n_at": 11,
+     "kazanan": 8,
+     "kazananlar": [
+      8
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1300,
+     "pist": "Kum",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 8,
+       "at": "KAYIP İNCİ",
+       "derece": "1.30.90",
+       "ganyan": 13.3,
+       "jokey_kodu": 3064,
+       "agf": 777.0
+      },
+      {
+       "sira": 2,
+       "at_no": 6,
+       "at": "GÜNÇE KIZ",
+       "derece": "1.31.12",
+       "ganyan": 5.45,
+       "jokey_kodu": 3070,
+       "agf": 1102.0
+      },
+      {
+       "sira": 3,
+       "at_no": 1,
+       "at": "NAZİKO",
+       "derece": "1.31.33",
+       "ganyan": 3.6,
+       "jokey_kodu": 2714,
+       "agf": 1956.0
+      },
+      {
+       "sira": 4,
+       "at_no": 9,
+       "at": "KILIÇ KIZI",
+       "derece": "1.31.34",
+       "ganyan": 3.4,
+       "jokey_kodu": 2500,
+       "agf": 1786.0
+      },
+      {
+       "sira": 5,
+       "at_no": 3,
+       "at": "PAKELİF",
+       "derece": "1.31.55",
+       "ganyan": 15.3,
+       "jokey_kodu": 2703,
+       "agf": 624.0
+      },
+      {
+       "sira": 6,
+       "at_no": 2,
+       "at": "ÖZNİLAY",
+       "derece": "1.32.13",
+       "ganyan": 6.1,
+       "jokey_kodu": 2978,
+       "agf": 1289.0
+      },
+      {
+       "sira": 7,
+       "at_no": 10,
+       "at": "ZULEMA",
+       "derece": "1.32.91",
+       "ganyan": 52.9,
+       "jokey_kodu": 2981,
+       "agf": 141.0
+      },
+      {
+       "sira": 8,
+       "at_no": 7,
+       "at": "İKİMİZ",
+       "derece": "1.34.53",
+       "ganyan": 23.1,
+       "jokey_kodu": 2710,
+       "agf": 166.0
+      },
+      {
+       "sira": 9,
+       "at_no": 5,
+       "at": "ATEŞİM",
+       "derece": "1.34.63",
+       "ganyan": 16.7,
+       "jokey_kodu": 958,
+       "agf": 432.0
+      },
+      {
+       "sira": 10,
+       "at_no": 4,
+       "at": "LARİSA",
+       "derece": "1.41.47",
+       "ganyan": 3.4,
+       "jokey_kodu": 3045,
+       "agf": 1698.0
+      },
+      {
+       "sira": 11,
+       "at_no": 11,
+       "at": "ABUDABİ GÜZELİ",
+       "derece": "1.43.20",
+       "ganyan": 75.85,
+       "jokey_kodu": 2885,
+       "agf": 29.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(8): 13,30TL İKİLİ(6/8): 30,30TL SIRALI İKİLİ(8/6): 72,60TL ÜÇLÜ BAHİS(8/6/1): 753,30TL PLASE İKİLİ(1/6): 13,20TL PLASE İKİLİ(1/8): 18,30TL PLASE(6): 2,50TL PLASE İKİLİ(6/8): 17,90TL PLASE(8): 3,65TL 2. ÇİFTE(1/8): 35,05TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "8",
+        "tutar": 13.3
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "6/8",
+        "tutar": 30.3
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "8/6",
+        "tutar": 72.6
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "8/6/1",
+        "tutar": 753.3
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/6",
+        "tutar": 13.2
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "1/8",
+        "tutar": 18.3
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "6",
+        "tutar": 2.5
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "6/8",
+        "tutar": 17.9
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "8",
+        "tutar": 3.65
+       },
+       {
+        "tip": "2. ÇİFTE",
+        "kombinasyon": "1/8",
+        "tutar": 35.05
+       }
+      ]
+     }
+    },
+    "4": {
+     "no": 4,
+     "n_at": 10,
+     "kazanan": 6,
+     "kazananlar": [
+      6
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1300,
+     "pist": "Çim",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 6,
+       "at": "TUMBUL MÜZEYYEN",
+       "derece": "1.28.65",
+       "ganyan": 3.1,
+       "jokey_kodu": 2703,
+       "agf": 1978.0
+      },
+      {
+       "sira": 2,
+       "at_no": 8,
+       "at": "DENİZ TUTKUSU",
+       "derece": "1.28.91",
+       "ganyan": 8.2,
+       "jokey_kodu": 2378,
+       "agf": 1115.0
+      },
+      {
+       "sira": 3,
+       "at_no": 4,
+       "at": "GONDAR",
+       "derece": "1.29.14",
+       "ganyan": 2.45,
+       "jokey_kodu": 107,
+       "agf": 2576.0
+      },
+      {
+       "sira": 4,
+       "at_no": 2,
+       "at": "AYBERKHAN",
+       "derece": "1.29.34",
+       "ganyan": 29.4,
+       "jokey_kodu": 3070,
+       "agf": 166.0
+      },
+      {
+       "sira": 5,
+       "at_no": 1,
+       "at": "ALTINDAĞ",
+       "derece": "1.30.22",
+       "ganyan": 21.5,
+       "jokey_kodu": 2710,
+       "agf": 495.0
+      },
+      {
+       "sira": 6,
+       "at_no": 3,
+       "at": "CAYMAZBEY",
+       "derece": "1.31.55",
+       "ganyan": 6.55,
+       "jokey_kodu": 1548,
+       "agf": 1204.0
+      },
+      {
+       "sira": 7,
+       "at_no": 9,
+       "at": "SEMİRAMİS",
+       "derece": "1.31.96",
+       "ganyan": 26.8,
+       "jokey_kodu": 2879,
+       "agf": 200.0
+      },
+      {
+       "sira": 8,
+       "at_no": 10,
+       "at": "SONJET",
+       "derece": "1.32.65",
+       "ganyan": 13.5,
+       "jokey_kodu": 2978,
+       "agf": 679.0
+      },
+      {
+       "sira": 9,
+       "at_no": 7,
+       "at": "AYSUNAR",
+       "derece": "1.44.57",
+       "ganyan": 3.55,
+       "jokey_kodu": 2883,
+       "agf": 1473.0
+      },
+      {
+       "sira": 10,
+       "at_no": 5,
+       "at": "SERT YÜREK",
+       "derece": "2.05.70",
+       "ganyan": 57.35,
+       "jokey_kodu": 3101,
+       "agf": 113.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(6): 3,10TL İKİLİ(6/8): 18,55TL SIRALI İKİLİ(6/8): 34,60TL 3. ÇİFTE(8/6): 64,80TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "6",
+        "tutar": 3.1
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "6/8",
+        "tutar": 18.55
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "6/8",
+        "tutar": 34.6
+       },
+       {
+        "tip": "3. ÇİFTE",
+        "kombinasyon": "8/6",
+        "tutar": 64.8
+       }
+      ]
+     }
+    },
+    "5": {
+     "no": 5,
+     "n_at": 14,
+     "kazanan": 6,
+     "kazananlar": [
+      6
+     ],
+     "ekuri": [
+      [
+       7,
+       11
+      ]
+     ],
+     "kosmaz": [],
+     "mesafe": 2100,
+     "pist": "Çim",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 6,
+       "at": "KALKÜTA",
+       "derece": "2.12.91",
+       "ganyan": 1.75,
+       "jokey_kodu": 107,
+       "agf": 3600.0
+      },
+      {
+       "sira": 2,
+       "at_no": 7,
+       "at": "ESCAPE PATH",
+       "derece": "2.13.31",
+       "ganyan": 5.45,
+       "jokey_kodu": 2493,
+       "agf": 1530.0
+      },
+      {
+       "sira": 3,
+       "at_no": 3,
+       "at": "BOUCHERON",
+       "derece": "2.13.72",
+       "ganyan": 5.8,
+       "jokey_kodu": 2500,
+       "agf": 1180.0
+      },
+      {
+       "sira": 4,
+       "at_no": 1,
+       "at": "LUKA MAGIC",
+       "derece": "2.13.86",
+       "ganyan": 10.85,
+       "jokey_kodu": 3045,
+       "agf": 752.0
+      },
+      {
+       "sira": 5,
+       "at_no": 5,
+       "at": "HEAD VORKER",
+       "derece": "2.14.35",
+       "ganyan": 5.65,
+       "jokey_kodu": 2714,
+       "agf": 1527.0
+      },
+      {
+       "sira": 6,
+       "at_no": 8,
+       "at": "PALURİ MAN",
+       "derece": "2.14.66",
+       "ganyan": 54.45,
+       "jokey_kodu": 3102,
+       "agf": 38.0
+      },
+      {
+       "sira": 7,
+       "at_no": 14,
+       "at": "FALCONGIRL",
+       "derece": "2.14.94",
+       "ganyan": 68.45,
+       "jokey_kodu": 2707,
+       "agf": 31.0
+      },
+      {
+       "sira": 8,
+       "at_no": 9,
+       "at": "SOUTHERN FIRE",
+       "derece": "2.15.14",
+       "ganyan": 16.3,
+       "jokey_kodu": 958,
+       "agf": 381.0
+      },
+      {
+       "sira": 9,
+       "at_no": 13,
+       "at": "SOLİDO HERMANOS",
+       "derece": "2.15.31",
+       "ganyan": 53.3,
+       "jokey_kodu": 2981,
+       "agf": 56.0
+      },
+      {
+       "sira": 10,
+       "at_no": 11,
+       "at": "VAHŞİ BAWIKAL",
+       "derece": "2.15.73",
+       "ganyan": 5.45,
+       "jokey_kodu": 3064,
+       "agf": 49.0
+      },
+      {
+       "sira": 11,
+       "at_no": 2,
+       "at": "BABA RACİ",
+       "derece": "2.17.98",
+       "ganyan": 17.95,
+       "jokey_kodu": 437,
+       "agf": 328.0
+      },
+      {
+       "sira": 12,
+       "at_no": 12,
+       "at": "HARD LION",
+       "derece": "2.19.18",
+       "ganyan": 15.25,
+       "jokey_kodu": 2378,
+       "agf": 279.0
+      },
+      {
+       "sira": 13,
+       "at_no": 4,
+       "at": "HANDSOME LAKE",
+       "derece": "2.25.05",
+       "ganyan": 45.45,
+       "jokey_kodu": 2384,
+       "agf": 83.0
+      },
+      {
+       "sira": 14,
+       "at_no": 10,
+       "at": "WE ARE THE BEST",
+       "derece": "2.27.65",
+       "ganyan": 25.85,
+       "jokey_kodu": 3070,
+       "agf": 166.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(6): 1,75TL 1. 3'LÜ GANYAN(8/6/6): 281,90TL İKİLİ(6/7): 6,80TL SIRALI İKİLİ(6/7): 9,15TL PLASE İKİLİ(3/6): 4,30TL PLASE İKİLİ(3/7): 10,00TL PLASE(6): 1,70TL PLASE İKİLİ(6/7): 4,80TL PLASE(7): 2,45TL SIRALI 5 Lİ BAHİS(6/7/3/1/5): 697,18TL TABELA BAHİS(6/7/3/1): 226,95TL TABELA BAHİS SIRASIZ(6/7/3/1): 10,87TL 4. ÇİFTE(6/6): 9,45TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "6",
+        "tutar": 1.75
+       },
+       {
+        "tip": "1. 3'LÜ GANYAN",
+        "kombinasyon": "8/6/6",
+        "tutar": 281.9
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "6/7",
+        "tutar": 6.8
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "6/7",
+        "tutar": 9.15
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/6",
+        "tutar": 4.3
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/7",
+        "tutar": 10.0
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "6",
+        "tutar": 1.7
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "6/7",
+        "tutar": 4.8
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "7",
+        "tutar": 2.45
+       },
+       {
+        "tip": "SIRALI 5 Lİ BAHİS",
+        "kombinasyon": "6/7/3/1/5",
+        "tutar": 697.18
+       },
+       {
+        "tip": "TABELA BAHİS",
+        "kombinasyon": "6/7/3/1",
+        "tutar": 226.95
+       },
+       {
+        "tip": "TABELA BAHİS SIRASIZ",
+        "kombinasyon": "6/7/3/1",
+        "tutar": 10.87
+       },
+       {
+        "tip": "4. ÇİFTE",
+        "kombinasyon": "6/6",
+        "tutar": 9.45
+       }
+      ]
+     }
+    },
+    "6": {
+     "no": 6,
+     "n_at": 5,
+     "kazanan": 3,
+     "kazananlar": [
+      3
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1400,
+     "pist": "Kum",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 3,
+       "at": "METAL HEART",
+       "derece": "1.27.89",
+       "ganyan": 5.3,
+       "jokey_kodu": 2714,
+       "agf": 944.0
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "FIRE OF TYGAR",
+       "derece": "1.28.09",
+       "ganyan": 10.3,
+       "jokey_kodu": 107,
+       "agf": 401.0
+      },
+      {
+       "sira": 3,
+       "at_no": 5,
+       "at": "ZAGROS RÜZGARI",
+       "derece": "1.28.31",
+       "ganyan": 2.85,
+       "jokey_kodu": 437,
+       "agf": 2067.0
+      },
+      {
+       "sira": 4,
+       "at_no": 4,
+       "at": "SILENT TREATMENT",
+       "derece": "1.29.11",
+       "ganyan": 1.25,
+       "jokey_kodu": 377,
+       "agf": 6492.0
+      },
+      {
+       "sira": 5,
+       "at_no": 1,
+       "at": "CAPTIVATING",
+       "derece": "1.30.88",
+       "ganyan": 15.8,
+       "jokey_kodu": 958,
+       "agf": 96.0
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(3): 5,30TL 1. 6'LI GANYAN(3/1/8/6/6/3): 20.850,81TL 1. 5'Lİ GANYAN(1/8/6/6/3): 4.423,87TL SIRALI İKİLİ(3/2): 42,10TL 5. ÇİFTE(6/3): 24,90TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "3",
+        "tutar": 5.3
+       },
+       {
+        "tip": "1. 6'LI GANYAN",
+        "kombinasyon": "3/1/8/6/6/3",
+        "tutar": 20850.81
+       },
+       {
+        "tip": "1. 5'Lİ GANYAN",
+        "kombinasyon": "1/8/6/6/3",
+        "tutar": 4423.87
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "3/2",
+        "tutar": 42.1
+       },
+       {
+        "tip": "5. ÇİFTE",
+        "kombinasyon": "6/3",
+        "tutar": 24.9
+       }
+      ]
+     }
+    },
+    "7": {
+     "no": 7,
+     "n_at": 10,
+     "kazanan": 8,
+     "kazananlar": [
+      8
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 2000,
+     "pist": "Kum",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 8,
+       "at": "BEST ALYA",
+       "derece": "2.11.61",
+       "ganyan": 3.9,
+       "jokey_kodu": 450,
+       "agf": null
+      },
+      {
+       "sira": 2,
+       "at_no": 7,
+       "at": "İCRA",
+       "derece": "2.11.98",
+       "ganyan": 10.55,
+       "jokey_kodu": 2978,
+       "agf": null
+      },
+      {
+       "sira": 3,
+       "at_no": 3,
+       "at": "BIG FORTUNA",
+       "derece": "2.12.30",
+       "ganyan": 2.25,
+       "jokey_kodu": 958,
+       "agf": null
+      },
+      {
+       "sira": 4,
+       "at_no": 4,
+       "at": "SHINING FORCE",
+       "derece": "2.12.58",
+       "ganyan": 9.05,
+       "jokey_kodu": 2500,
+       "agf": null
+      },
+      {
+       "sira": 5,
+       "at_no": 9,
+       "at": "SEYYAHIM",
+       "derece": "2.12.81",
+       "ganyan": 68.1,
+       "jokey_kodu": 2501,
+       "agf": null
+      },
+      {
+       "sira": 6,
+       "at_no": 1,
+       "at": "KANINDO",
+       "derece": "2.13.31",
+       "ganyan": 10.2,
+       "jokey_kodu": 3064,
+       "agf": null
+      },
+      {
+       "sira": 7,
+       "at_no": 6,
+       "at": "STAR GATE",
+       "derece": "2.13.59",
+       "ganyan": 4.65,
+       "jokey_kodu": 3070,
+       "agf": null
+      },
+      {
+       "sira": 8,
+       "at_no": 10,
+       "at": "EURO POWER",
+       "derece": "2.14.64",
+       "ganyan": 26.45,
+       "jokey_kodu": 1503,
+       "agf": null
+      },
+      {
+       "sira": 9,
+       "at_no": 5,
+       "at": "FEMALE EAGLE",
+       "derece": "2.16.09",
+       "ganyan": 5.15,
+       "jokey_kodu": 2714,
+       "agf": null
+      },
+      {
+       "sira": 10,
+       "at_no": 2,
+       "at": "KIZIM MERCAN",
+       "derece": "2.20.98",
+       "ganyan": 38.85,
+       "jokey_kodu": 2703,
+       "agf": null
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(8): 3,90TL İKİLİ(7/8): 22,35TL SIRALI İKİLİ(8/7): 42,15TL ÜÇLÜ BAHİS(8/7/3): 303,40TL PLASE İKİLİ(3/7): 6,80TL PLASE İKİLİ(3/8): 6,10TL PLASE(7): 7,40TL PLASE İKİLİ(7/8): 12,10TL PLASE(8): 3,00TL 6. ÇİFTE(3/8): 37,45TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "8",
+        "tutar": 3.9
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "7/8",
+        "tutar": 22.35
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "8/7",
+        "tutar": 42.15
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "8/7/3",
+        "tutar": 303.4
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/7",
+        "tutar": 6.8
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/8",
+        "tutar": 6.1
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "7",
+        "tutar": 7.4
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "7/8",
+        "tutar": 12.1
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "8",
+        "tutar": 3.0
+       },
+       {
+        "tip": "6. ÇİFTE",
+        "kombinasyon": "3/8",
+        "tutar": 37.45
+       }
+      ]
+     }
+    },
+    "8": {
+     "no": 8,
+     "n_at": 11,
+     "kazanan": 6,
+     "kazananlar": [
+      6
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1300,
+     "pist": "Çim",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 6,
+       "at": "SUSUZKURT",
+       "derece": "1.28.58",
+       "ganyan": 3.6,
+       "jokey_kodu": 3064,
+       "agf": null
+      },
+      {
+       "sira": 2,
+       "at_no": 3,
+       "at": "EMSALLİ ER",
+       "derece": "1.28.66",
+       "ganyan": 3.4,
+       "jokey_kodu": 958,
+       "agf": null
+      },
+      {
+       "sira": 3,
+       "at_no": 4,
+       "at": "KASIRGA AĞASI",
+       "derece": "1.28.77",
+       "ganyan": 11.5,
+       "jokey_kodu": 1504,
+       "agf": null
+      },
+      {
+       "sira": 4,
+       "at_no": 7,
+       "at": "ÇUHA GÜLÜ",
+       "derece": "1.29.09",
+       "ganyan": 5.55,
+       "jokey_kodu": 2493,
+       "agf": null
+      },
+      {
+       "sira": 5,
+       "at_no": 2,
+       "at": "TAHİR VELİ",
+       "derece": "1.29.29",
+       "ganyan": 3.15,
+       "jokey_kodu": 1548,
+       "agf": null
+      },
+      {
+       "sira": 6,
+       "at_no": 8,
+       "at": "RODİGÜLÜ",
+       "derece": "1.29.37",
+       "ganyan": 17.9,
+       "jokey_kodu": 2384,
+       "agf": null
+      },
+      {
+       "sira": 7,
+       "at_no": 1,
+       "at": "BÜYÜKATAK",
+       "derece": "1.29.66",
+       "ganyan": 5.6,
+       "jokey_kodu": 3101,
+       "agf": null
+      },
+      {
+       "sira": 8,
+       "at_no": 11,
+       "at": "SONAŞK",
+       "derece": "1.31.79",
+       "ganyan": 42.5,
+       "jokey_kodu": 3061,
+       "agf": null
+      },
+      {
+       "sira": 9,
+       "at_no": 5,
+       "at": "ÖZER KAPTAN",
+       "derece": "1.31.87",
+       "ganyan": 65.1,
+       "jokey_kodu": 3102,
+       "agf": null
+      },
+      {
+       "sira": 10,
+       "at_no": 9,
+       "at": "SOSAN TAY",
+       "derece": "1.32.22",
+       "ganyan": 22.35,
+       "jokey_kodu": 3070,
+       "agf": null
+      },
+      {
+       "sira": 11,
+       "at_no": 10,
+       "at": "MUCİZENİNKIZI",
+       "derece": "1.36.78",
+       "ganyan": 65.35,
+       "jokey_kodu": 3100,
+       "agf": null
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(6): 3,60TL İKİLİ(3/6): 9,00TL SIRALI İKİLİ(6/3): 19,65TL ÜÇLÜ BAHİS(6/3/4): 294,90TL PLASE(3): 2,80TL PLASE İKİLİ(3/4): 8,80TL PLASE İKİLİ(3/6): 7,10TL PLASE İKİLİ(4/6): 8,00TL PLASE(6): 4,30TL 7. ÇİFTE(8/6): 26,35TL",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "6",
+        "tutar": 3.6
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "3/6",
+        "tutar": 9.0
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "6/3",
+        "tutar": 19.65
+       },
+       {
+        "tip": "ÜÇLÜ BAHİS",
+        "kombinasyon": "6/3/4",
+        "tutar": 294.9
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "3",
+        "tutar": 2.8
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/4",
+        "tutar": 8.8
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "3/6",
+        "tutar": 7.1
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "4/6",
+        "tutar": 8.0
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "6",
+        "tutar": 4.3
+       },
+       {
+        "tip": "7. ÇİFTE",
+        "kombinasyon": "8/6",
+        "tutar": 26.35
+       }
+      ]
+     }
+    },
+    "9": {
+     "no": 9,
+     "n_at": 17,
+     "kazanan": 10,
+     "kazananlar": [
+      10
+     ],
+     "ekuri": [],
+     "kosmaz": [],
+     "mesafe": 1400,
+     "pist": "Kum",
+     "siralama": [
+      {
+       "sira": 1,
+       "at_no": 10,
+       "at": "PALA SALİH",
+       "derece": "1.37.51",
+       "ganyan": 17.7,
+       "jokey_kodu": 3070,
+       "agf": null
+      },
+      {
+       "sira": 2,
+       "at_no": 2,
+       "at": "ERKURT",
+       "derece": "1.37.80",
+       "ganyan": 5.25,
+       "jokey_kodu": 2493,
+       "agf": null
+      },
+      {
+       "sira": 3,
+       "at_no": 8,
+       "at": "HER DAİM",
+       "derece": "1.38.01",
+       "ganyan": 29.5,
+       "jokey_kodu": 2883,
+       "agf": null
+      },
+      {
+       "sira": 4,
+       "at_no": 16,
+       "at": "CANMERT",
+       "derece": "1.38.13",
+       "ganyan": 3.15,
+       "jokey_kodu": 958,
+       "agf": null
+      },
+      {
+       "sira": 5,
+       "at_no": 6,
+       "at": "ARSLAN OĞLU",
+       "derece": "1.38.14",
+       "ganyan": 2.7,
+       "jokey_kodu": 2714,
+       "agf": null
+      },
+      {
+       "sira": 6,
+       "at_no": 7,
+       "at": "MİRŞEŞEN",
+       "derece": "1.38.17",
+       "ganyan": 25.65,
+       "jokey_kodu": 1548,
+       "agf": null
+      },
+      {
+       "sira": 7,
+       "at_no": 9,
+       "at": "MİRİALEM",
+       "derece": "1.38.31",
+       "ganyan": 16.3,
+       "jokey_kodu": 2710,
+       "agf": null
+      },
+      {
+       "sira": 8,
+       "at_no": 14,
+       "at": "ODABAŞI",
+       "derece": "1.38.96",
+       "ganyan": 16.25,
+       "jokey_kodu": 2378,
+       "agf": null
+      },
+      {
+       "sira": 9,
+       "at_no": 15,
+       "at": "ASIL OĞUL",
+       "derece": "1.39.30",
+       "ganyan": 52.5,
+       "jokey_kodu": 3102,
+       "agf": null
+      },
+      {
+       "sira": 10,
+       "at_no": 5,
+       "at": "TABİP BEY",
+       "derece": "1.39.81",
+       "ganyan": 7.85,
+       "jokey_kodu": 437,
+       "agf": null
+      },
+      {
+       "sira": 11,
+       "at_no": 12,
+       "at": "ENFES TAMER",
+       "derece": "1.40.21",
+       "ganyan": 133.55,
+       "jokey_kodu": 3100,
+       "agf": null
+      },
+      {
+       "sira": 12,
+       "at_no": 17,
+       "at": "RİBARO",
+       "derece": "1.40.66",
+       "ganyan": 115.75,
+       "jokey_kodu": 2501,
+       "agf": null
+      },
+      {
+       "sira": 13,
+       "at_no": 13,
+       "at": "HIZLI MEHMET",
+       "derece": "1.41.15",
+       "ganyan": 65.3,
+       "jokey_kodu": 2879,
+       "agf": null
+      },
+      {
+       "sira": 14,
+       "at_no": 1,
+       "at": "KULAGER",
+       "derece": "1.43.04",
+       "ganyan": 32.2,
+       "jokey_kodu": 3064,
+       "agf": null
+      },
+      {
+       "sira": 15,
+       "at_no": 3,
+       "at": "SOCIAL DISTANCE",
+       "derece": "1.43.48",
+       "ganyan": 15.85,
+       "jokey_kodu": 2500,
+       "agf": null
+      },
+      {
+       "sira": 16,
+       "at_no": 11,
+       "at": "YILMAKIZIM",
+       "derece": "1.44.43",
+       "ganyan": 26.55,
+       "jokey_kodu": 3045,
+       "agf": null
+      },
+      {
+       "sira": 17,
+       "at_no": 4,
+       "at": "MEHMETGİLLER",
+       "derece": "1.45.92",
+       "ganyan": 22.8,
+       "jokey_kodu": 2707,
+       "agf": null
+      }
+     ],
+     "bahisler": {
+      "raw": "GANYAN(10): 17,70TL 7'Lİ PLASE(6,8/6,8/6,7,11/2,3/7,8/3,6/2,10): 39.221,00TL 2. 6'LI GANYAN(6/6/3/8/6/10): 184.263,81TL 2. 5'Lİ GANYAN(6/3/8/6/10): 36.194,85TL 4'LÜ GANYAN(3/8/6/10): 10.356,06TL 2. 3'LÜ GANYAN(8/6/10): 1.184,20TL SIRALI İKİLİ(10/2): 311,55TL İKİLİ(2/10): 85,15TL PLASE(10): 8,00TL PLASE(2): 5,10TL PLASE İKİLİ(2/10): 35,20TL PLASE İKİLİ(2/8): 88,20TL PLASE İKİLİ(8/10): 130,80TL SIRALI 5 Lİ BAHİS(10/2/8/16/6): 175.247,12TL TABELA BAHİS(10/2/8/16): 58.485,67TL TABELA BAHİS SIRASIZ(10/2/8/16): 455,70TL 8. ÇİFTE(6/10): 171,75TL 7'Lİ GANYAN(8/6/6/3/8/6/10): Bilen çıkmamıştır, 643.896,00 TL devretmiştir.",
+      "kalemler": [
+       {
+        "tip": "GANYAN",
+        "kombinasyon": "10",
+        "tutar": 17.7
+       },
+       {
+        "tip": "7'Lİ PLASE",
+        "kombinasyon": "6,8/6,8/6,7,11/2,3/7,8/3,6/2,10",
+        "tutar": 39221.0
+       },
+       {
+        "tip": "2. 6'LI GANYAN",
+        "kombinasyon": "6/6/3/8/6/10",
+        "tutar": 184263.81
+       },
+       {
+        "tip": "2. 5'Lİ GANYAN",
+        "kombinasyon": "6/3/8/6/10",
+        "tutar": 36194.85
+       },
+       {
+        "tip": "4'LÜ GANYAN",
+        "kombinasyon": "3/8/6/10",
+        "tutar": 10356.06
+       },
+       {
+        "tip": "2. 3'LÜ GANYAN",
+        "kombinasyon": "8/6/10",
+        "tutar": 1184.2
+       },
+       {
+        "tip": "SIRALI İKİLİ",
+        "kombinasyon": "10/2",
+        "tutar": 311.55
+       },
+       {
+        "tip": "İKİLİ",
+        "kombinasyon": "2/10",
+        "tutar": 85.15
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "10",
+        "tutar": 8.0
+       },
+       {
+        "tip": "PLASE",
+        "kombinasyon": "2",
+        "tutar": 5.1
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "2/10",
+        "tutar": 35.2
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "2/8",
+        "tutar": 88.2
+       },
+       {
+        "tip": "PLASE İKİLİ",
+        "kombinasyon": "8/10",
+        "tutar": 130.8
+       },
+       {
+        "tip": "SIRALI 5 Lİ BAHİS",
+        "kombinasyon": "10/2/8/16/6",
+        "tutar": 175247.12
+       },
+       {
+        "tip": "TABELA BAHİS",
+        "kombinasyon": "10/2/8/16",
+        "tutar": 58485.67
+       },
+       {
+        "tip": "TABELA BAHİS SIRASIZ",
+        "kombinasyon": "10/2/8/16",
+        "tutar": 455.7
+       },
+       {
+        "tip": "8. ÇİFTE",
+        "kombinasyon": "6/10",
+        "tutar": 171.75
+       }
+      ]
+     }
+    }
+   }
+  }
+ }
+}

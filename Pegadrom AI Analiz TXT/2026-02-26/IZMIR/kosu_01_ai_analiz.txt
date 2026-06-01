@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-26&hip=IZMIR&kosu=1
+Tarih/Hipodrom/Kosu: 2026-02-26 / IZMIR / 1
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 47/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • MR DEMİRAYAK            | Seri / Konum 90/100
+Akış 2   | No 1 • MOMENT SAVER            | Ön grup / Konum 74/100
+Akış 3   | No 9 • ARMENİN KIZI            | Orta / Konum 54/100
+Akış 4   | No 5 • GRAY MOON               | Orta / Konum 54/100
+Akış 5   | No 4 • BLUEBACK                | Orta / Konum 54/100
+Akış 6   | No 8 • SINGLE GUN              | Orta / Konum 54/100
+Akış 7   | No 3 • ATİK MEHMET             | Orta / Konum 53/100
+Akış 8   | No 6 • JULYUS                  | Sprint / Konum 34/100
+Akış 9   | No 7 • LA PUERTA               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 67/100
+Model Lideri  : No 2 MR DEMİRAYAK (72/100)
+Akış Lideri   : No 2 MR DEMİRAYAK (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 92/100, Uzlaşma 81/100, Hava/Zemin 77/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 2 MR DEMİRAYAK
+
+- Model Payı          : %12,0 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [69/100]
+  Detay: Veri + skor farkı
+- AI Model            : 72/100 [72/100]
+  Detay: Pist/Mesafe 92/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [69/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 35/100 [35/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %13,5 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 3,05 [88/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 1 5 3 [78/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 14 · HP 30 [37/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 5 [26/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : ÖMER FARUK ÖZEN [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [64/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    2   MR DEMİRAYAK             ÖMER FARUK ÖZEN      Seri         72    67 Orta • 67     Pist/Mesafe 92/100, Uzlaşma 81/100, Hava/Zemin 77/100 | Form: 3-4-2-4-7-1-2-1-5-3
+2    1   MOMENT SAVER             NEVZAT AVCİ          Ön grup      72    58 Orta • 58     Pist/Mesafe 88/100, Hız 74/100, Uzlaşma 77/100 | Form: 5-2-3-1-5-1-3-6-3-9
+3    9   ARMENİN KIZI             BERKAY BÜLBÜL        Orta         71    65 Orta • 65     Pist/Mesafe 92/100, Hız 74/100, Uzlaşma 76/100 | Form: 7-4-5-2-4-4-5-6-8-6
+4    5   GRAY MOON                BEKİR MERT MIRIK     Orta         71    42 Temkinli • 42  Pist/Mesafe 89/100, Hız 89/100, Uzlaşma 73/100 | Form: 6-4-4-6-2-5-1-8
+5    4   BLUEBACK                 İBRAHİM SEFA SÖĞÜT   Orta         64    29 Temkinli • 29  Hız 93/100, Pist/Mesafe 85/100, Uzlaşma 78/100 | Form: 11-9-5-5-1-6-4-4-9
+6    3   ATİK MEHMET              METE GÖL             Orta         63    67 Temkinli • 67  Pist/Mesafe 84/100, Kilo 86/100 | Form: 4-4-5-3-6-4-7-5-8-8
+7    6   JULYUS                   İSMAİL KALE          Sprint       63    29 Temkinli • 29  Hız 93/100, Pist/Mesafe 85/100 | Form: 8-8-13-8-8-10-15
+8    8   SINGLE GUN               ALİCAN İNCİ          Orta         63    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 85/100 | Form: 8-3-5-5-3-10-1
+9    7   LA PUERTA                ALAATTİN KÜRÜNDÜK    Sprint       62    39 Temkinli • 39  Hız 95/100, Pist/Mesafe 88/100 | Form: 13-8-5-3
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 2 MR DEMİRAYAK
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 0P / 1 • Galop: 52/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Hız           62 | Ana · Derece ve son metreler
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 MOMENT SAVER
+  Ozet: Pist/Mesafe: 2G - 5P / 7 • Jokey: 1G - 1P / 1 • Galop: 60/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 9 ARMENİN KIZI
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 0G - 1P / 6 • Galop: 63/100
+  - Pist/Mesafe   92 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          57 | Ana · Yarış geçmişi ve sonuç formu
+
+No 5 GRAY MOON
+  Ozet: Pist/Mesafe: 0G - 0P / 2 • Jokey: 1G - 1P / 3 • Galop: 28/100
+  - Pist/Mesafe   89 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Form          56 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

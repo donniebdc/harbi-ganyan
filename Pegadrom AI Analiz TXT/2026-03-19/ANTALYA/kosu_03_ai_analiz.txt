@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-19&hip=ANTALYA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-19 / ANTALYA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 58/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • PATPAT                  | Seri / Konum 90/100
+Akış 2   | No 4 • BLACKFYRE               | Seri / Konum 90/100
+Akış 3   | No 8 • EXIREL                  | Seri / Konum 90/100
+Akış 4   | No 2 • TAŞDEMİR HAN            | Seri / Konum 90/100
+Akış 5   | No 1 • HUAYRA                  | Ön grup / Konum 73/100
+Akış 6   | No 5 • GRAY MOON               | Orta / Konum 54/100
+Akış 7   | No 9 • GREAT ANGEL             | Orta / Konum 53/100
+Akış 8   | No 10 • SPECIAL STAR           | Sprint / Konum 34/100
+Akış 9   | No 7 • ÜÇYÜREK                 | Sprint / Konum 34/100
+Akış 10  | No 6 • PEACE AMBASSADOR        | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 67/100
+Model Lideri  : No 1 HUAYRA (77/100)
+Akış Lideri   : No 3 PATPAT (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 94/100, Pist/Mesafe 83/100, Uzlaşma 89/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 HUAYRA
+
+- Model Payı          : %11,5 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [70/100]
+  Detay: Veri + skor farkı
+- AI Model            : 77/100 [77/100]
+  Detay: Hız 94/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 59/100 [59/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [32/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [66/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 45/100 [45/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %18,0 [18/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,15 [79/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 4 8 11 [52/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 30 · HP 35 [58/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 2 [39/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : UĞUR TEMUR [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [56/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 58/100 [58/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   HUAYRA                   UĞUR TEMUR           Ön grup      77    58 Orta • 58     Hız 94/100, Pist/Mesafe 83/100, Uzlaşma 89/100 | Form: 3-6-2-3-2-4-7-4-8-11
+2    3   PATPAT                   MEHMET SALİH ÇELİK   Seri         75    67 Orta • 67     Hız 86/100, Pist/Mesafe 81/100, Uzlaşma 82/100 | Form: 6-5-2-3-2-9-1-2-4-7
+3    4   BLACKFYRE                ERCAN ÇANKAYA        Seri         71    62 Orta • 62     Hız 88/100, Uzlaşma 78/100, Hava/Zemin 75/100 | Form: 3-2-4-10-1-3-4-2-1
+4    8   EXIREL                   ERHAN AKTUĞ          Seri         68    67 Orta • 67     Hava/Zemin 93/100, KGS 77/100, Risk 77/100 | Form: 15-4-9-2-5-3-7-2-1-1
+5    10  SPECIAL STAR             GÖRKEM ÖZÇELİK       Sprint       67    47 Temkinli • 47  Hız 100/100, Pist/Mesafe 78/100, Uzlaşma 76/100 | Form: 10-8-4-6-12-4-11
+6    9   GREAT ANGEL              FATİH SULTAN MEHMET SANSAR Orta         66    77 Orta • 77     Pist/Mesafe 77/100, KGS 77/100, Risk 77/100 | Form: 5-5-3-9-5-6-9-4-7-9
+7    2   TAŞDEMİR HAN             MEHMET KAYA          Seri         66    57 Temkinli • 57  Form 72/100, Stil 76/100, Piyasa 85/100 | Form: 6-2-2-3-2-5-1-5-8-2
+8    5   GRAY MOON                MAHMUT TURAN         Orta         66    48 Temkinli • 48  Hız 86/100, KGS 78/100, Risk 78/100 | Form: 6-4-4-6-2-5-1-8
+9    7   ÜÇYÜREK                  RECEP KETME          Sprint       56    67 Temkinli • 67  Kilo 100/100 | Form: 8-9-10-9-8-6-8-6-3-4
+10   6   PEACE AMBASSADOR         SADIK ALTAY          Sprint       55    33 Temkinli • 33  Hız 75/100, Kilo 94/100 | Form: 8-14-10-10
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 HUAYRA
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 1P / 2 • Galop: 32/100
+  - Hız           94 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 PATPAT
+  Ozet: Pist/Mesafe: 0G - 2P / 2 • Jokey: 0G - 1P / 1 • Galop: 28/100
+  - Hız           86 | Ana · Derece ve son metreler
+  - Pist/Mesafe   81 | Ana · Pist/mesafe geçmişi
+  - Form          66 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 BLACKFYRE
+  Ozet: Pist/Mesafe: 1G - 2P / 2 • Jokey: 1G - 1P / 1 • Galop: 28/100
+  - Hız           88 | Ana · Derece ve son metreler
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   64 | Ana · Pist/mesafe geçmişi
+
+No 8 EXIREL
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   68 | Ana · Pist/mesafe geçmişi
+  - Hız           69 | Ana · Derece ve son metreler
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

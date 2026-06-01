@@ -1,0 +1,130 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-15&hip=IZMIR&kosu=7
+Tarih/Hipodrom/Kosu: 2026-02-15 / IZMIR / 7
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 64/100
+Veri guveni       : 46/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 6 • AHUU ATA                | Seri / Konum 90/100
+Akış 2   | No 3 • GÜNDÜZDÜŞÜ              | Seri / Konum 90/100
+Akış 3   | No 5 • SULTAN NENE             | Seri / Konum 89/100
+Akış 4   | No 8 • CANIM ÇITIR             | Ön grup / Konum 74/100
+Akış 5   | No 1 • TÜRKAN HANIM            | Ön grup / Konum 74/100
+Akış 6   | No 4 • ÖZGÜLEN GÜZELİ          | Orta / Konum 54/100
+Akış 7   | No 7 • SUFLE                   | Orta / Konum 54/100
+Akış 8   | No 10 • ÖZGÜNSULTAN            | Orta / Konum 54/100
+Akış 9   | No 2 • EĞİLCE                  | Sprint / Konum 35/100
+Akış 10  | No 9 • ATEŞ BAHAR              | Sprint / Konum 34/100
+Akış 11  | No 11 • TOPUKLU EFEM           | Sprint / Konum 34/100
+Akış 12  | No 12 • MEŞE PALAMUDU          | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 12 at · ortalama 64/100
+Model Lideri  : No 8 CANIM ÇITIR (75/100)
+Akış Lideri   : No 6 AHUU ATA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 96/100, Pist/Mesafe 75/100, Uzlaşma 79/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 8 CANIM ÇITIR
+
+- Model Payı          : %9,8 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [67/100]
+  Detay: Veri + skor farkı
+- AI Model            : 75/100 [75/100]
+  Detay: Hız 96/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [52/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 52/100 [52/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %20,0 [20/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,75 [89/100]
+  Detay: Ganyan beklentisi
+- Form                : 2 8 4 4 [73/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 24 · HP 82 [85/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 2P / 4 [27/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 1P / 2 [22/100]
+  Detay: Birlikte performans
+- Jokey               : KÜRŞAT YILMAZ [22/100]
+  Detay: Bugünkü biniş
+- Tempo               : Öne düşebilir [79/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 58/100 [58/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 64/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    8   CANIM ÇITIR              KÜRŞAT YILMAZ        Ön grup      75    58 Orta • 58     Hız 96/100, Pist/Mesafe 75/100, Uzlaşma 79/100 | Form: 4-1-5-3-2-2-2-8-4-4
+2    4   ÖZGÜLEN GÜZELİ           ÖMER FARUK ÖZEN      Orta         74    71 Orta • 71     Pist/Mesafe 88/100, Hız 73/100, Uzlaşma 78/100 | Form: 4-3-5-1-12-7-8-6-7-11
+3    6   AHUU ATA                 BERKAY BÜLBÜL        Seri         74    43 Temkinli • 43  Hız 100/100, Pist/Mesafe 88/100, Uzlaşma 79/100 | Form: 6-3-2-2-5-3-2-3-10-5
+4    3   GÜNDÜZDÜŞÜ               HÜSEYİN TURAN        Seri         71    43 Temkinli • 43  Hız 95/100, Pist/Mesafe 74/100, Uzlaşma 74/100 | Form: 7-4-4-7-4-2-5-8-10-1
+5    2   EĞİLCE                   EFE AKPINAR          Sprint       70    77 Orta • 77     Pist/Mesafe 92/100, Uzlaşma 80/100, Stil 76/100 | Form: 1-8-4-12-1-4-7-12-12-14
+6    7   SUFLE                    ENES ÜSTÜN           Orta         68    53 Temkinli • 53  Hız 90/100, Pist/Mesafe 81/100, KGS 73/100 | Form: 7-9-6-11-9-11-5-6-6-2
+7    9   ATEŞ BAHAR               EREN DURSUN ÖKTEN    Sprint       67    72 Temkinli • 72  Pist/Mesafe 81/100, KGS 73/100, Risk 73/100 | Form: 4-6-8-8-7-6-10-8-12-14
+8    11  TOPUKLU EFEM             METİN MERT KARABULUT Sprint       63    77 Orta • 77     Pist/Mesafe 88/100, Veri 77/100, Kilo 82/100 | Form: 2-9-10-4-9-10-10-8-9-18
+9    10  ÖZGÜNSULTAN              YİĞİTCAN GÖKÇE       Orta         55    14 Temkinli • 14  Uzlaşma 90/100, KGS 75/100, Risk 75/100 | Form: 9-5-9-6-10-10-8-5-6-3
+10   1   TÜRKAN HANIM             SİNAN AKŞIN          Ön grup      53    14 Temkinli • 14  Uzlaşma 75/100, KGS 73/100, Risk 73/100 | Form: 6-4-1-4-6-5-6-3-2-4
+11   12  MEŞE PALAMUDU            UĞUR İRTİŞ           Sprint       50    14 Temkinli • 14  Kilo 100/100 | Form: 8-4-7-6-9-17-12-7-15-17
+12   5   SULTAN NENE              RECEP KETME          Seri         47    14 Temkinli • 14  Veri sinyali temkinli | Form: 6-4-6-9-6-12-4-1-3-1
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 8 CANIM ÇITIR
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 1P / 2 • Galop: 52/100
+  - Hız           96 | Ana · Derece ve son metreler
+  - Pist/Mesafe   75 | Ana · Pist/mesafe geçmişi
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 ÖZGÜLEN GÜZELİ
+  Ozet: Pist/Mesafe: 0G - 1P / 6 • Jokey: 1G - 1P / 2 • Galop: 44/100
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Hız           73 | Ana · Derece ve son metreler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 AHUU ATA
+  Ozet: Pist/Mesafe: 0G - 2P / 5 • Jokey: 0G - 1P / 1 • Galop: 60/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   88 | Ana · Pist/mesafe geçmişi
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 GÜNDÜZDÜŞÜ
+  Ozet: Pist/Mesafe: 0G - 1P / 4 • Jokey: 0G - 0P / 2 • Galop: 66/100
+  - Hız           95 | Ana · Derece ve son metreler
+  - Pist/Mesafe   74 | Ana · Pist/mesafe geçmişi
+  - Form          60 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

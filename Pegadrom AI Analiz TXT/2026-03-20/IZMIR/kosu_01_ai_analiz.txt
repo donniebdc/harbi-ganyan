@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-20&hip=IZMIR&kosu=1
+Tarih/Hipodrom/Kosu: 2026-03-20 / IZMIR / 1
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 67/100
+Veri guveni       : 55/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • ÇİFTÇİ STELLA           | Seri / Konum 90/100
+Akış 2   | No 1 • BEŞ ON SEKİZ            | Seri / Konum 90/100
+Akış 3   | No 10 • SULTANIM NERİMAN       | Seri / Konum 90/100
+Akış 4   | No 5 • HALEP MEKTUBU           | Ön grup / Konum 74/100
+Akış 5   | No 8 • RAYNE                   | Ön grup / Konum 73/100
+Akış 6   | No 6 • HOLLABACK GIRL          | Ön grup / Konum 73/100
+Akış 7   | No 4 • EMERY                   | Orta / Konum 54/100
+Akış 8   | No 11 • VAHŞİ YILDIZ           | Orta / Konum 54/100
+Akış 9   | No 9 • RISE REASON             | Orta / Konum 53/100
+Akış 10  | No 7 • MAKE IT RAIN            | Orta / Konum 53/100
+Akış 11  | No 2 • CAT WOMAN               | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 67/100
+Model Lideri  : No 5 HALEP MEKTUBU (74/100)
+Akış Lideri   : No 3 ÇİFTÇİ STELLA (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Hız 100/100, Pist/Mesafe 83/100, Uzlaşma 90/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 5 HALEP MEKTUBU
+
+- Model Payı          : %10,1 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [53/100]
+  Detay: Veri + skor farkı
+- AI Model            : 74/100 [74/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 5/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf avantajı [65/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 35/100 [35/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %28,2 [28/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 1,95 [92/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 3 3 3 [76/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 29 · HP - [32/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 1 [3/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : YİĞİTCAN GÖKÇE [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [61/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 29/100 [29/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 67/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    5   HALEP MEKTUBU            YİĞİTCAN GÖKÇE       Ön grup      74    29 Temkinli • 29  Hız 100/100, Pist/Mesafe 83/100, Uzlaşma 90/100 | Form: 4-4-3-3-3
+2    4   EMERY                    ONUR YILDIZ          Orta         73    75 Orta • 75     Pist/Mesafe 86/100, Jokey 78/100, Uzlaşma 80/100 | Form: 10-7-4-2-6
+3    3   ÇİFTÇİ STELLA            GÖKHAN GÖKÇE         Seri         72    71 Orta • 71     Pist/Mesafe 83/100, Jokey 88/100, Uzlaşma 78/100 | Form: 8-7-4-2-3-6-2-2-3-9
+4    1   BEŞ ON SEKİZ             ALİ MEHDİ ALTIN      Seri         70    47 Temkinli • 47  Hız 83/100, Pist/Mesafe 72/100, Jokey 88/100 | Form: 12-2-9-2-12-4-1
+5    10  SULTANIM NERİMAN         NURETTİN ŞEN         Seri         69    33 Temkinli • 33  Hız 95/100, Pist/Mesafe 81/100, Uzlaşma 75/100 | Form: 5-1-8
+6    8   RAYNE                    KADİR TOKAÇOĞLU      Ön grup      68    76 Orta • 76     Pist/Mesafe 81/100, KGS 76/100, Risk 76/100 | Form: 4-4-4-5-6-10-8
+7    11  VAHŞİ YILDIZ             FEYZULLAH AVCI       Orta         66    80 Orta • 80     Pist/Mesafe 86/100, Veri 80/100 | Form: 6-3-7-5-6-8-6-5-5-8
+8    9   RISE REASON              HALİM YİĞİT ÜNVER    Orta         63    77 Orta • 77     Pist/Mesafe 83/100, Veri 77/100, Kilo 100/100 | Form: 5-7-3-11-6-7-7-9-6-13
+9    6   HOLLABACK GIRL           İBRAHİM SEFA SÖĞÜT   Ön grup      62    33 Temkinli • 33  Pist/Mesafe 81/100, Hız 73/100, Uzlaşma 72/100 | Form: 5-11-4-4-12
+10   7   MAKE IT RAIN             ÖMER FARUK ÖZEN      Orta         61    42 Temkinli • 42  Hız 79/100, Pist/Mesafe 72/100, KGS 76/100 | Form: 6-12-5-4
+11   2   CAT WOMAN                ALAATTİN KÜRÜNDÜK    Sprint       55    37 Temkinli • 37  KGS 76/100, Risk 76/100 | Form: 10-9-9-10-10-5-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 5 HALEP MEKTUBU
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          64 | Ana · Yarış geçmişi ve sonuç formu
+
+No 4 EMERY
+  Ozet: Pist/Mesafe: 0G - 1P / 3 • Jokey: 0G - 1P / 3 • Galop: 80/100
+  - Pist/Mesafe   86 | Ana · Pist/mesafe geçmişi
+  - Hız           68 | Ana · Derece ve son metreler
+  - Jokey         78 | Destek · Jokey formu ve at uyumu
+
+No 3 ÇİFTÇİ STELLA
+  Ozet: Pist/Mesafe: 0G - 2P / 4 • Jokey: 0G - 2P / 2 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Hız           70 | Ana · Derece ve son metreler
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+No 1 BEŞ ON SEKİZ
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 2P / 3 • Galop: 28/100
+  - Hız           83 | Ana · Derece ve son metreler
+  - Pist/Mesafe   72 | Ana · Pist/mesafe geçmişi
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

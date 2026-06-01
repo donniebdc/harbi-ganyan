@@ -1,0 +1,126 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-21&hip=ADANA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-02-21 / ADANA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 69/100
+Veri guveni       : 64/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • CAZGIR YAŞAR            | Seri / Konum 90/100
+Akış 2   | No 10 • GECE IŞIĞI             | Ön grup / Konum 73/100
+Akış 3   | No 6 • YAMAÇ RÜZGARI           | Orta / Konum 54/100
+Akış 4   | No 7 • MİRİALEM                | Orta / Konum 54/100
+Akış 5   | No 9 • CENGEBEY                | Orta / Konum 53/100
+Akış 6   | No 3 • TURAN YILDIZI           | Sprint / Konum 35/100
+Akış 7   | No 8 • MUFUKCAN                | Sprint / Konum 34/100
+Akış 8   | No 2 • BAŞARAN TAY             | Sprint / Konum 34/100
+Akış 9   | No 4 • AZERBAYCANLI            | Sprint / Konum 34/100
+Akış 10  | No 5 • ÇELİK SEMEND            | Sprint / Konum 34/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 69/100
+Model Lideri  : No 6 YAMAÇ RÜZGARI (83/100)
+Akış Lideri   : No 1 CAZGIR YAŞAR (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Pist/Mesafe 96/100, Hız 89/100, Form 79/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 6 YAMAÇ RÜZGARI
+
+- Model Payı          : %12,0 [12/100]
+  Detay: Karşılaştırma payı
+- Güven               : Orta [74/100]
+  Detay: Veri + skor farkı
+- AI Model            : 83/100 [83/100]
+  Detay: Pist/Mesafe 96/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 59/100 [59/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 49/100 [49/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %20,9 [21/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 2,60 [90/100]
+  Detay: Ganyan beklentisi
+- Form                : 7 7 5 9 [42/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 28 · HP 66 [78/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 2G - 3P / 7 [45/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : MEHMET ALİ AKGÖBEK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [59/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 67/100 [67/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 69/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    6   YAMAÇ RÜZGARI            MEHMET ALİ AKGÖBEK   Orta         83    67 Orta • 67     Pist/Mesafe 96/100, Hız 89/100, Form 79/100 | Form: 1-3-5-1-5-8-7-7-5-9
+2    1   CAZGIR YAŞAR             ERTUĞRUL CANKILIÇ    Seri         82    58 Orta • 58     Pist/Mesafe 95/100, Hız 96/100, Form 81/100 | Form: 2-1-2-2-8-4-5-4-1-8
+3    7   MİRİALEM                 SERHAT ÇELİK         Orta         72    67 Orta • 67     Hız 96/100, Pist/Mesafe 83/100, Piyasa 74/100 | Form: 4-1-6-4-6-6-4-7-6-16
+4    3   TURAN YILDIZI            KADİR DEMİREL        Sprint       70    58 Orta • 58     Hız 100/100, Pist/Mesafe 80/100, Uzlaşma 73/100 | Form: 8-8-4-1-4-5-2-5-8-12
+5    8   MUFUKCAN                 MEHMET TİBET MURTOĞLU Sprint       69    77 Orta • 77     Hız 88/100, Pist/Mesafe 76/100, Veri 77/100 | Form: 12-8-7-7-7-10-11-10-11-7
+6    9   CENGEBEY                 İSMAİL YILDIRIM      Orta         69    72 Orta • 72     Pist/Mesafe 84/100, Hız 78/100, Veri 72/100 | Form: 1-5-11-10-11-7-7-14-6-4
+7    2   BAŞARAN TAY              FURKAN ÇETİN         Sprint       68    77 Orta • 77     Pist/Mesafe 85/100, Hava/Zemin 73/100, Veri 77/100 | Form: 6-9-6-3-1-8-8-8-9-9
+8    10  GECE IŞIĞI               TAMER BALİ           Ön grup      66    77 Orta • 77     Pist/Mesafe 87/100, Veri 77/100, Kilo 100/100 | Form: 8-2-8-6-2-7-14-3-2-3
+9    4   AZERBAYCANLI             MURAT AKDAĞ          Sprint       62    77 Orta • 77     Veri 77/100 | Form: 4-11-8-8-3-9-9-9-12-14
+10   5   ÇELİK SEMEND             ENES ATLAMAZ         Sprint       51    14 Temkinli • 14  Veri sinyali temkinli | Form: 5-8-6-8-7-2-9-3-6-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 6 YAMAÇ RÜZGARI
+  Ozet: Pist/Mesafe: 2G - 3P / 7 • Jokey: 0G - 0P / 1 • Galop: 28/100
+  - Pist/Mesafe   96 | Ana · Pist/mesafe geçmişi
+  - Hız           89 | Ana · Derece ve son metreler
+  - Form          79 | Ana · Yarış geçmişi ve sonuç formu
+
+No 1 CAZGIR YAŞAR
+  Ozet: Pist/Mesafe: 1G - 4P / 8 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Hız           96 | Ana · Derece ve son metreler
+  - Form          81 | Ana · Yarış geçmişi ve sonuç formu
+
+No 7 MİRİALEM
+  Ozet: Pist/Mesafe: 1G - 1P / 4 • Jokey: 0G - 0P / 1 • Galop: 55/100
+  - Hız           96 | Ana · Derece ve son metreler
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Form          67 | Ana · Yarış geçmişi ve sonuç formu
+
+No 3 TURAN YILDIZI
+  Ozet: Pist/Mesafe: 1G - 1P / 5 • Jokey: 1G - 1P / 1 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Pist/Mesafe   80 | Ana · Pist/mesafe geçmişi
+  - Form          52 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

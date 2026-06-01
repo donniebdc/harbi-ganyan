@@ -1,0 +1,124 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-02-13&hip=IZMIR&kosu=1
+Tarih/Hipodrom/Kosu: 2026-02-13 / IZMIR / 1
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 70/100
+Veri guveni       : 49/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 3 • KÖYCÜ BEY               | Seri / Konum 90/100
+Akış 2   | No 1 • UMUT TAY                | Seri / Konum 90/100
+Akış 3   | No 6 • ASLAN KILICI            | Ön grup / Konum 74/100
+Akış 4   | No 4 • TILISIM                 | Ön grup / Konum 73/100
+Akış 5   | No 8 • KAZANCI                 | Orta / Konum 55/100
+Akış 6   | No 7 • ÇEŞME KALESİ            | Orta / Konum 54/100
+Akış 7   | No 9 • SÖZÜ GEÇER              | Orta / Konum 54/100
+Akış 8   | No 5 • ŞAH DRAGON              | Orta / Konum 54/100
+Akış 9   | No 10 • ŞİFNE EFESİ            | Sprint / Konum 35/100
+
+3) KARAR OZETI
+--------------
+Genel: 9 at · ortalama 70/100
+Model Lideri  : No 10 ŞİFNE EFESİ (81/100)
+Akış Lideri   : No 3 KÖYCÜ BEY (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Pist/Mesafe 98/100, Hız 100/100, Uzlaşma 85/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Ön grup baskı görebilir; takipte kalanlar avantaj bulabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 10 ŞİFNE EFESİ
+
+- Model Payı          : %12,9 [13/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [57/100]
+  Detay: Veri + skor farkı
+- AI Model            : 81/100 [81/100]
+  Detay: Pist/Mesafe 98/100
+- Son 6 Uyarlama      : Riskli profil · 56/100 [56/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Hazır [80/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [59/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 41/100 [41/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %12,6 [13/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 6,25 [75/100]
+  Detay: Ganyan beklentisi
+- Form                : 9 9 7 7 [38/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 19 · HP 60 [64/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 5 [19/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : ONUR ATMACA [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [51/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 29/100 [29/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 70/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    10  ŞİFNE EFESİ              ONUR ATMACA          Sprint       81    29 Temkinli • 29  Pist/Mesafe 98/100, Hız 100/100, Uzlaşma 85/100 | Form: 2-4-2-2-3-8-9-9-7-7
+2    8   KAZANCI                  MURAT KEÇECİ         Orta         79    47 Temkinli • 47  Pist/Mesafe 87/100, Hız 90/100, Jokey 100/100 | Form: 6-1-5-3-2-4-6-4-5-5
+3    7   ÇEŞME KALESİ             NEVZAT AVCİ          Orta         77    81 Yüksek • 81   Pist/Mesafe 95/100, Jokey 100/100, Uzlaşma 76/100 | Form: 8-1-7-4-3-1-9-5-3-7
+4    3   KÖYCÜ BEY                HALİT GÖKÇE          Seri         74    76 Orta • 76     Pist/Mesafe 85/100, Jokey 88/100, Hava/Zemin 75/100 | Form: 9-2-5-2-7-8-6-9-2-1
+5    9   SÖZÜ GEÇER               ALİCAN İNCİ          Orta         74    67 Orta • 67     Pist/Mesafe 95/100, Uzlaşma 79/100, Hava/Zemin 77/100 | Form: 1-1-4-7-7-7-4-4-5-10
+6    6   ASLAN KILICI             HÜSEYİN ŞİMŞEK       Ön grup      73    51 Temkinli • 51  Hız 92/100, Pist/Mesafe 83/100, Hava/Zemin 75/100 | Form: 3-5-3-6-3-1-8-3-8-6
+7    1   UMUT TAY                 ÖMER FARUK ÖZEN      Seri         68    47 Temkinli • 47  Hız 93/100, Hava/Zemin 75/100, KGS 72/100 | Form: 2-9-1-1-8-6-4-2-11-1
+8    5   ŞAH DRAGON               ONUR YILDIZ          Orta         52    32 Temkinli • 32  Veri sinyali temkinli | Form: 8-7-5-6-3-1-4-1-9-7
+9    4   TILISIM                  ALAATTİN KÜRÜNDÜK    Ön grup      49    14 Temkinli • 14  Veri sinyali temkinli | Form: 5-2-6-4-4-7-9-3-3-8
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 10 ŞİFNE EFESİ
+  Ozet: Pist/Mesafe: 0G - 1P / 5 • Jokey: 0G - 0P / 1 • Galop: 80/100
+  - Pist/Mesafe   98 | Ana · Pist/mesafe geçmişi
+  - Hız          100 | Ana · Derece ve son metreler
+  - Uzlaşma       85 | Ana · Model içi sinyal uyumu
+
+No 8 KAZANCI
+  Ozet: Pist/Mesafe: 1G - 3P / 8 • Jokey: 1G - 3P / 4 • Galop: 60/100
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+  - Hız           90 | Ana · Derece ve son metreler
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+
+No 7 ÇEŞME KALESİ
+  Ozet: Pist/Mesafe: 2G - 4P / 10 • Jokey: 1G - 1P / 2 • Galop: 52/100
+  - Pist/Mesafe   95 | Ana · Pist/mesafe geçmişi
+  - Jokey        100 | Destek · Jokey formu ve at uyumu
+  - Hız           45 | Ana · Derece ve son metreler
+
+No 3 KÖYCÜ BEY
+  Ozet: Pist/Mesafe: 1G - 3P / 6 • Jokey: 0G - 1P / 2 • Galop: 80/100
+  - Pist/Mesafe   85 | Ana · Pist/mesafe geçmişi
+  - Hız           59 | Ana · Derece ve son metreler
+  - Jokey         88 | Destek · Jokey formu ve at uyumu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

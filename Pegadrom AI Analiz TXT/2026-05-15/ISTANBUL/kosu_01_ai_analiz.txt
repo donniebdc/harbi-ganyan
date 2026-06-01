@@ -1,0 +1,134 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-05-15&hip=ISTANBUL&kosu=1
+Tarih/Hipodrom/Kosu: 2026-05-15 / ISTANBUL / 1
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 13
+Ortalama AI puani : 56/100
+Veri guveni       : 15/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İstanbul • 1. Koşu • 17:15 • 1000m • Çim 15.05.2026 Cuma
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 2 • AL CEMAL                | Seri / Konum 90/100
+Akış 2   | No 5 • DELİKANLI               | Seri / Konum 90/100
+Akış 3   | No 3 • BARLİN AĞA              | Seri / Konum 89/100
+Akış 4   | No 1 • AKSU AĞA                | Ön grup / Konum 74/100
+Akış 5   | No 8 • ERÇETİN                 | Ön grup / Konum 73/100
+Akış 6   | No 6 • DEV YÜREK               | Ön grup / Konum 73/100
+Akış 7   | No 10 • KOMBO                  | Ön grup / Konum 73/100
+Akış 8   | No 11 • TOROSOĞLU              | Orta / Konum 54/100
+Akış 9   | No 9 • KANDIRALI               | Orta / Konum 53/100
+Akış 10  | No 12 • ULUŞİRAN BEYİ          | Sprint / Konum 34/100
+Akış 11  | No 13 • YALKINOĞLU             | Sprint / Konum 34/100
+Akış 12  | No 7 • EMİR EL ZAMAN           | Sprint / Konum 34/100
+Akış 13  | No 4 • BOZALAN                 | Sprint / Konum 33/100
+
+3) KARAR OZETI
+--------------
+Genel: 13 at · ortalama 56/100
+Model Lideri  : No 11 TOROSOĞLU (66/100)
+Akış Lideri   : No 2 AL CEMAL (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 92/100, Uzlaşma 88/100, Kilo 78/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 11 TOROSOĞLU
+
+- Model Payı          : %9,0 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [45/100]
+  Detay: Veri + skor farkı
+- AI Model            : 66/100 [66/100]
+  Detay: Galop 92/100
+- Son 6 Uyarlama      : Riskli profil · 51/100 [51/100]
+  Detay: 2/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Orta [43/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 24/100 [24/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %6,1 [6/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,80 [77/100]
+  Detay: Ganyan beklentisi
+- Form                : 6 5 [55/100]
+  Detay: Son koşular
+- Hazırlık            : KGS - · HP - [0/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 1 [3/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 1 [3/100]
+  Detay: Birlikte performans
+- Jokey               : MÜSLÜM ÇELİK [3/100]
+  Detay: Bugünkü biniş
+- Tempo               : Geriden gelebilir [36/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 21/100 [21/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 56/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    11  TOROSOĞLU                MÜSLÜM ÇELİK         Orta         66    21 Temkinli • 21  Galop 92/100, Uzlaşma 88/100, Kilo 78/100 | Form: 6-5
+2    2   AL CEMAL                 ALİ YILDIZ           Seri         66    15 Temkinli • 15  Galop 100/100, Uzlaşma 99/100, Kilo 78/100 | Form: 7-2
+3    1   AKSU AĞA                 VEDAT ABİŞ           Ön grup      64    15 Temkinli • 15  Galop 83/100, Uzlaşma 92/100, Kilo 78/100 | Form: 4
+4    8   ERÇETİN                  MERT ALİ SOLMAZ      Ön grup      60    15 Temkinli • 15  Galop 78/100, Uzlaşma 78/100, Kilo 78/100 | Form: 5-4
+5    6   DEV YÜREK                HALİS KARATAŞ        Ön grup      59    15 Temkinli • 15  Galop 77/100, Uzlaşma 75/100, Kilo 78/100 | Form: 10-4
+6    9   KANDIRALI                MEHMET KAYA          Orta         59    14 Temkinli • 14  Galop 82/100, Uzlaşma 81/100, Kilo 78/100 | Form: 8-7
+7    5   DELİKANLI                MEHMET AKYAVUZ       Seri         56    15 Temkinli • 15  Galop 76/100, Uzlaşma 72/100, Kilo 78/100 | Form: 2
+8    12  ULUŞİRAN BEYİ            AKIN SÖZEN           Sprint       53    15 Temkinli • 15  Kilo 78/100 | Form: 9
+9    3   BARLİN AĞA               MUHAMMED MİR BİLGİN  Seri         53    14 Temkinli • 14  Uzlaşma 83/100, Kilo 78/100, Piyasa 89/100 | Form: 12-1
+10   13  YALKINOĞLU               FATİH RÜSTEM BEBEK   Sprint       52    15 Temkinli • 15  Kilo 78/100 | Form: 11-10
+11   10  KOMBO                    HÜSEYİN TURAN        Ön grup      51    15 Temkinli • 15  Kilo 78/100 | Form: 3
+12   7   EMİR EL ZAMAN            ENES BOZDAĞ          Sprint       50    15 Temkinli • 15  Kilo 78/100 | Form: 13
+13   4   BOZALAN                  MEHMET NURİ SUNKAR   Sprint       45    15 Temkinli • 15  Kilo 78/100 | Form: 12
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 11 TOROSOĞLU
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 92/100
+  - Galop         92 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       88 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+
+No 2 AL CEMAL
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       99 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+
+No 1 AKSU AĞA
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 83/100
+  - Galop         83 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       92 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+
+No 8 ERÇETİN
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 78/100
+  - Galop         78 | Hazırlık · İdman dereceleri ve splitler
+  - Uzlaşma       78 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

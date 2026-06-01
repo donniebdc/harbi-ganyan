@@ -1,0 +1,134 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-03-04&hip=SANLIURFA&kosu=3
+Tarih/Hipodrom/Kosu: 2026-03-04 / SANLIURFA / 3
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 66/100
+Veri guveni       : 73/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 1 • BERATKIZ                | Seri / Konum 90/100
+Akış 2   | No 7 • GÖKÇEKRALİÇE            | Ön grup / Konum 73/100
+Akış 3   | No 14 • NAZLI BERRA            | Orta / Konum 54/100
+Akış 4   | No 12 • ALKURUŞKIZI            | Orta / Konum 54/100
+Akış 5   | No 13 • HİPOTENÜS              | Orta / Konum 54/100
+Akış 6   | No 8 • KARAZEMİN GÜLÜ          | Sprint / Konum 35/100
+Akış 7   | No 4 • KIZIL DORU              | Sprint / Konum 35/100
+Akış 8   | No 6 • Bİ ANKA                 | Sprint / Konum 34/100
+Akış 9   | No 2 • YALANCI BAHAR           | Sprint / Konum 34/100
+Akış 10  | No 3 • KARACA DÜNYA            | Sprint / Konum 34/100
+Akış 11  | No 9 • YILDIRIM FIRTINASI      | Sprint / Konum 34/100
+Akış 12  | No 11 • KIYI                   | Sprint / Konum 34/100
+Akış 13  | No 10 • FATİHİN KIZI           | Sprint / Konum 34/100
+Akış 14  | No 5 • MARTI GIRL              | Sprint / Konum 33/100
+
+3) KARAR OZETI
+--------------
+Genel: 14 at · ortalama 66/100
+Model Lideri  : No 14 NAZLI BERRA (80/100)
+Akış Lideri   : No 1 BERATKIZ (Seri · Konum 90/100)
+
+Karar notlari:
+1. Öndeki aday az farkla ayrılıyor; yakın rakipler birlikte izlenmeli.
+2. Öne çıkan sinyaller: Hız 100/100, Form 89/100, Pist/Mesafe 87/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo dengeli, sprint bekleyenler için son bölüm değerli olabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 14 NAZLI BERRA
+
+- Model Payı          : %8,6 [9/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [59/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Hız 100/100
+- Son 6 Uyarlama      : Riskli profil · 56/100 [56/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu orta, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Zayıf [28/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [55/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 34/100 [34/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %12,2 [12/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 5,10 [80/100]
+  Detay: Ganyan beklentisi
+- Form                : 4 6 7 6 [63/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 28 · HP 30 [52/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 0P / 4 [10/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 0P / 4 [10/100]
+  Detay: Birlikte performans
+- Jokey               : AHMET HASAN BAYAR [10/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [60/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 29/100 [29/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 66/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    14  NAZLI BERRA              AHMET HASAN BAYAR    Orta         80    29 Temkinli • 29  Hız 100/100, Form 89/100, Pist/Mesafe 87/100 | Form: 1-5-3-5-1-4-4-6-7-6
+2    1   BERATKIZ                 FERİT YARDIMCI       Seri         77    71 Yüksek • 71   Pist/Mesafe 83/100, Hız 77/100, Jokey 100/100 | Form: 1-6-1-11-1-3-5-3-1-1
+3    12  ALKURUŞKIZI              MEHMET EMİN DOĞAN    Orta         74    85 Yüksek • 85   Pist/Mesafe 78/100, Jokey 85/100, Uzlaşma 80/100 | Form: 9-2-4-1-7-7-4-6-7-15
+4    7   GÖKÇEKRALİÇE             EMRE AKKILIÇ         Ön grup      71    72 Orta • 72     Pist/Mesafe 82/100, Hız 74/100, Uzlaşma 81/100 | Form: 8-2-4-1-15-9-5-4-7-3
+5    13  HİPOTENÜS                AZİZ AKDEMİR         Orta         69    72 Orta • 72     Pist/Mesafe 76/100, Hız 72/100, Uzlaşma 77/100 | Form: 9-2-5-11-1-2-5-4-6-6
+6    6   Bİ ANKA                  NECMİ ALTIN          Sprint       68    67 Orta • 67     Hız 83/100, Pist/Mesafe 73/100, Stil 76/100 | Form: 8-4-2-13-7-11-9-5-13-13
+7    8   KARAZEMİN GÜLÜ           BURHAN SARIDAL       Sprint       66    77 Temkinli • 77  Pist/Mesafe 76/100, Uzlaşma 72/100, KGS 78/100 | Form: 8-5-13-7-1-17-14-8-3-4
+8    4   KIZIL DORU               İSA AKYAVUZ          Sprint       66    72 Temkinli • 72  Pist/Mesafe 84/100, Uzlaşma 76/100, KGS 86/100 | Form: 7-6-5-8-5-3-1-10-10-5
+9    2   YALANCI BAHAR            MEHMET ŞAKİR         Sprint       62    77 Temkinli • 77  Veri 77/100 | Form: 1-4-2-5-3-7-8-6-16-13
+10   3   KARACA DÜNYA             ÇETİN CANPOLAT       Sprint       62    77 Temkinli • 77  Pist/Mesafe 78/100, Veri 77/100 | Form: 9-3-7-6-9-13-8-2-12-3
+11   9   YILDIRIM FIRTINASI       FETHULLAH FELHAN     Sprint       62    77 Temkinli • 77  Pist/Mesafe 73/100, KGS 78/100, Risk 78/100 | Form: 8-7-9-6-14-11-10-12-6-14
+12   11  KIYI                     HASAN ALTUNDAĞ       Sprint       61    81 Orta • 81     Pist/Mesafe 85/100, Veri 81/100, Kilo 82/100 | Form: 6-4-11-11-2-16-12-11-11-14
+13   10  FATİHİN KIZI             MAZLUM PİR DEMİR     Sprint       60    77 Orta • 77     Pist/Mesafe 73/100, Veri 77/100, Kilo 78/100 | Form: 1-4-9-4-12-13-12-15-6-16
+14   5   MARTI GIRL               YUSUF CENGİZ         Sprint       52    81 Orta • 81     Veri 81/100 | Form: 5-1-8-10-13-11-14-10-12-16
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 14 NAZLI BERRA
+  Ozet: Pist/Mesafe: 0G - 0P / 4 • Jokey: 0G - 0P / 4 • Galop: 28/100
+  - Hız          100 | Ana · Derece ve son metreler
+  - Form          89 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   87 | Ana · Pist/mesafe geçmişi
+
+No 1 BERATKIZ
+  Ozet: Pist/Mesafe: 3G - 5P / 6 • Jokey: 3G - 3P / 3 • Galop: 28/100
+  - Pist/Mesafe   83 | Ana · Pist/mesafe geçmişi
+  - Hız           77 | Ana · Derece ve son metreler
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 12 ALKURUŞKIZI
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 1G - 2P / 6 • Galop: 44/100
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Form          62 | Ana · Yarış geçmişi ve sonuç formu
+  - Hız           65 | Ana · Derece ve son metreler
+
+No 7 GÖKÇEKRALİÇE
+  Ozet: Pist/Mesafe: 0G - 0P / 3 • Jokey: 0G - 1P / 2 • Galop: 28/100
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Hız           74 | Ana · Derece ve son metreler
+  - Form          63 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-04-15&hip=ISTANBUL&kosu=4
+Tarih/Hipodrom/Kosu: 2026-04-15 / ISTANBUL / 4
+
+1) SAYFA OZETI
+--------------
+Kosucu sayisi     : 10
+Ortalama AI puani : 49/100
+Veri guveni       : 9/100
+Katman sayisi     : 17 sinyal
+Secili kosu       : İstanbul • 4. Koşu • 15:30 • 1000m • Sentetik 15.04.2026 Çarşamba
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 6 • KORGÜN                  | Seri / Konum 90/100
+Akış 2   | No 10 • ŞELEMZAR               | Seri / Konum 90/100
+Akış 3   | No 8 • SEHER ZAMANI            | Seri / Konum 89/100
+Akış 4   | No 1 • ATICI KAYA              | Ön grup / Konum 74/100
+Akış 5   | No 5 • KABALBEYİ               | Ön grup / Konum 73/100
+Akış 6   | No 4 • HAN ÇERCİ               | Orta / Konum 53/100
+Akış 7   | No 7 • PARLAMA ZAMANI          | Orta / Konum 53/100
+Akış 8   | No 9 • ŞAHİNYÜREKLİ            | Orta / Konum 53/100
+Akış 9   | No 2 • BOZAĞIN KRALI           | Sprint / Konum 33/100
+Akış 10  | No 3 • ERYÜREKLİ               | Sprint / Konum 33/100
+
+3) KARAR OZETI
+--------------
+Genel: 10 at · ortalama 49/100
+Model Lideri  : No 1 ATICI KAYA (55/100)
+Akış Lideri   : No 6 KORGÜN (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Uzlaşma 100/100, Kilo 78/100.
+3. Dikkat edilmesi gerekenler: Veri kapsamı sınırlı, Güven temkinli, Rakip farkı dar.
+4. Tempo yüksek görünüyor; bekleme yapan atlara sonlarda alan açılabilir.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 1 ATICI KAYA
+
+- Model Payı          : %11,1 [11/100]
+  Detay: Karşılaştırma payı
+- Güven               : Temkinli [37/100]
+  Detay: Veri + skor farkı
+- AI Model            : 55/100 [55/100]
+  Detay: Uzlaşma 100/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 61/100 [61/100]
+  Detay: 4/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist uyumu yüksek.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [74/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [60/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 43/100 [43/100]
+  Detay: KGS / HP / AGF
+- AGF                 : %4,1 [4/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : 19,40 [22/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 4 5 1 [78/100]
+  Detay: Son koşular
+- Hazırlık            : KGS - · HP - [0/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 2 [22/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 1G - 2P / 2 [62/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ YILDIZ [62/100]
+  Detay: Bugünkü biniş
+- Tempo               : Takipte kalır [45/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 9/100 [9/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 49/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    1   ATICI KAYA               ALİ YILDIZ           Ön grup      55     9 Temkinli • 9  Uzlaşma 100/100, Kilo 78/100 | Form: 3-4-5-1
+2    2   BOZAĞIN KRALI            AHMET ÇELİK          Sprint       55     9 Temkinli • 9  Uzlaşma 94/100, Kilo 78/100, Piyasa 81/100 | Form: 10
+3    3   ERYÜREKLİ                VEDAT ABİŞ           Sprint       53     8 Temkinli • 8  Uzlaşma 88/100, Kilo 78/100 | Form: 9
+4    4   HAN ÇERCİ                AKIN SÖZEN           Orta         51     9 Temkinli • 9  Uzlaşma 82/100, Kilo 78/100 | Form: 7-5
+5    5   KABALBEYİ                MÜSLÜM ÇELİK         Ön grup      50     9 Temkinli • 9  Uzlaşma 76/100, Kilo 78/100 | Form: 4-7-3-2
+6    6   KORGÜN                   MUHAMMED MİR BİLGİN  Seri         49     9 Temkinli • 9  Kilo 78/100 | Form: 5-2-2
+7    7   PARLAMA ZAMANI           KEREM CAN ABİŞ       Orta         47     9 Temkinli • 9  Kilo 78/100 | Form: 6-5
+8    8   SEHER ZAMANI             MEHMET KAYA          Seri         47     8 Temkinli • 8  Kilo 78/100, Piyasa 100/100 | Form: 1-2-3
+9    9   ŞAHİNYÜREKLİ             MAHSUN TURAN         Orta         44     9 Temkinli • 9  Kilo 78/100 | Form: 8-5-5-9-3
+10   10  ŞELEMZAR                 GÖRKEM ÖZÇELİK       Seri         43     9 Temkinli • 9  Kilo 78/100 | Form: 2-2-4
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 1 ATICI KAYA
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 1G - 2P / 2 • Galop: 74/100
+  - Uzlaşma      100 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+  - Veri           9 | Güven · Sinyal doluluğu
+
+No 2 BOZAĞIN KRALI
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 0/100
+  - Uzlaşma       94 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+  - Piyasa        81 | Destek · AGF ve ganyan ilgisi
+
+No 3 ERYÜREKLİ
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 0/100
+  - Uzlaşma       88 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+  - Piyasa        71 | Destek · AGF ve ganyan ilgisi
+
+No 4 HAN ÇERCİ
+  Ozet: Pist/Mesafe: 0G - 0P / 1 • Jokey: 0G - 0P / 1 • Galop: 42/100
+  - Uzlaşma       82 | Ana · Model içi sinyal uyumu
+  - Kilo          78 | İnce · Kilo bilgisi
+  - Veri           9 | Güven · Sinyal doluluğu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.

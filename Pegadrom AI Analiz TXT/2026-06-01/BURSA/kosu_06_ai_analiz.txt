@@ -1,0 +1,128 @@
+PEGADROM AI ANALIZ - OKUNABILIR VERI DOKUMU
+===========================================
+Kaynak URL: https://www.pegadrom.com/ai-analiz?tarih=2026-06-01&hip=BURSA&kosu=6
+Tarih/Hipodrom/Kosu: 2026-06-01 / BURSA / 6
+
+1) SAYFA OZETI
+--------------
+Ortalama AI puani : 72/100
+Veri guveni       : 90/100
+Katman sayisi     : 17 sinyal
+
+2) YARIS AKISI - TEMPO / KONUM
+------------------------------
+Akış 1   | No 8 • ŞAFAK ZAMANI            | Seri / Konum 90/100
+Akış 2   | No 6 • MUZATCAN                | Seri / Konum 90/100
+Akış 3   | No 11 • TARÇINKIZ              | Seri / Konum 90/100
+Akış 4   | No 10 • SOYUPAK                | Seri / Konum 90/100
+Akış 5   | No 7 • SEYRET BENİ             | Seri / Konum 90/100
+Akış 6   | No 5 • GÜNÖTESİ                | Seri / Konum 90/100
+Akış 7   | No 9 • FİKRET ABİ              | Ön grup / Konum 74/100
+Akış 8   | No 2 • ASLAN YAĞIZ             | Ön grup / Konum 74/100
+Akış 9   | No 4 • EFLAH                   | Ön grup / Konum 74/100
+Akış 10  | No 3 • BARBUDA                 | Ön grup / Konum 74/100
+Akış 11  | No 1 • AKGOBAK                 | Orta / Konum 54/100
+
+3) KARAR OZETI
+--------------
+Genel: 11 at · ortalama 72/100
+Model Lideri  : No 9 FİKRET ABİ (80/100)
+Akış Lideri   : No 8 ŞAFAK ZAMANI (Seri · Konum 90/100)
+
+Karar notlari:
+1. İlk iki aday birbirine çok yakın; tek ata yaslanmadan okumak daha doğru.
+2. Öne çıkan sinyaller: Galop 95/100, Pist/Mesafe 79/100, Form 73/100.
+3. Dikkat edilmesi gerekenler: Rakip farkı dar.
+4. Ön tarafta tempo baskısı yüksek; seri atların enerjisi önemli.
+
+4) 17 VERI KATMANI
+------------------
+Model lideri: No 9 FİKRET ABİ
+
+- Model Payı          : %10,1 [10/100]
+  Detay: Karşılaştırma payı
+- Güven               : Yüksek [87/100]
+  Detay: Veri + skor farkı
+- AI Model            : 80/100 [80/100]
+  Detay: Galop 95/100
+- Son 6 Uyarlama      : Sürpriz potansiyeli · 64/100 [64/100]
+  Detay: 6/6 koşu bugünkü mesafe, pist ve sınıfa uyarlanarak okundu. Mesafe uyumu yüksek, Pist geçişi kabul edilebilir.
+- Hız                 : D [46/100]
+  Detay: Split verisi sınırlı
+- Galop / İş          : Takipte [64/100]
+  Detay: İdman ve pist uyumu
+- Sınıf               : Sınıf dengeli [58/100]
+  Detay: Bugünkü koşu seviyesiyle son 6 içindeki en sert seviye karşılaştırıldı
+- Bülten              : 48/100 [48/100]
+  Detay: KGS / HP / AGF
+- AGF                 : - [0/100]
+  Detay: Piyasa ilgisi
+- Piyasa              : - [0/100]
+  Detay: Ganyan beklentisi
+- Form                : 3 3 3 2 [82/100]
+  Detay: Son koşular
+- Hazırlık            : KGS 10 · HP 69 [61/100]
+  Detay: Kondisyon göstergesi
+- Pist / Mesafe       : 0G - 1P / 2 [22/100]
+  Detay: Yakın geçmiş uyumu
+- Jokey Uyum          : 0G - 3P / 3 [42/100]
+  Detay: Birlikte performans
+- Jokey               : ALİ YILDIZ [42/100]
+  Detay: Bugünkü biniş
+- Tempo               : Teması korur [68/100]
+  Detay: Yarış içi gidişat
+- Veri Kapsamı        : 96/100 [96/100]
+  Detay: Doluluk kalitesi
+
+5) MODEL SIRALAMASI
+-------------------
+Ortalama puan 72/100
+
+Sira No  At                       Jokey                Akis      Model  Veri Guven         Sinyaller / Son Form
+---------------------------------------------------------------------------------------------------------------
+1    9   FİKRET ABİ               ALİ YILDIZ           Ön grup      80    96 Yüksek • 96   Galop 95/100, Pist/Mesafe 79/100, Form 73/100 | Form: 11-1-5-3-3-3-3-3-3-2
+2    8   ŞAFAK ZAMANI             MUHAMMED MİR BİLGİN  Seri         79    95 Yüksek • 95   Galop 100/100, Pist/Mesafe 78/100, Jokey 80/100 | Form: 3-9-7-2-1-1-12-9-1-5
+3    6   MUZATCAN                 MUSTAFA ÇİÇEK        Seri         79    90 Yüksek • 90   Galop 94/100, Pist/Mesafe 72/100, Jokey 94/100 | Form: 2-1-5-5-5-4-1-1-6-2
+4    11  TARÇINKIZ                BEKİR MERT MIRIK     Seri         77   100 Yüksek • 100  Galop 83/100, Pist/Mesafe 82/100, Stil 76/100 | Form: 2-6-4-2-3-7-3-12-2-1
+5    10  SOYUPAK                  ERCAN ÇANKAYA        Seri         72    81 Orta • 81     Hız 100/100, Pist/Mesafe 89/100, Form 72/100 | Form: 1-1-2-1-16-9
+6    1   AKGOBAK                  OĞUZ EREN            Orta         71   100 Orta • 100    Galop 82/100, Pist/Mesafe 80/100, Veri 100/100 | Form: 3-3-4-9-6-5-7-11-1-4
+7    7   SEYRET BENİ              İSMAİL YILDIRIM      Seri         71    97 Orta • 97     Pist/Mesafe 78/100, Hız 76/100, Jokey 100/100 | Form: 5-3-2-4-5-7-1-10-3-1
+8    5   GÜNÖTESİ                 MEHMET SALİH ÇELİK   Seri         70    83 Orta • 83     Pist/Mesafe 86/100, Uzlaşma 79/100, Stil 76/100 | Form: 4-1-1-1-4-8-2-1-6-6
+9    2   ASLAN YAĞIZ              NİZAMETTİN DEMİR     Ön grup      67    83 Orta • 83     Pist/Mesafe 75/100, Jokey 76/100, Hava/Zemin 83/100 | Form: 6-1-5-6-1-1-4-3-4-10
+10   4   EFLAH                    GÖKHAN KOCAKAYA      Ön grup      65    92 Orta • 92     Galop 79/100, Veri 92/100 | Form: 2-5-3-3-3-3-4-2-5-9
+11   3   BARBUDA                  NURETTİN ŞEN         Ön grup      64    74 Temkinli • 74  Galop 93/100, Veri 74/100 | Form: 5-10-7-9-4-2-6-3-3-16
+
+6) VERI DAYANAKLARI - AT BAZLI
+------------------------------
+No 9 FİKRET ABİ
+  Ozet: Pist/Mesafe: 0G - 1P / 2 • Jokey: 0G - 3P / 3 • Galop: 95/100
+  - Galop         95 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   79 | Ana · Pist/mesafe geçmişi
+  - Form          73 | Ana · Yarış geçmişi ve sonuç formu
+
+No 8 ŞAFAK ZAMANI
+  Ozet: Pist/Mesafe: 1G - 1P / 3 • Jokey: 1G - 1P / 2 • Galop: 100/100
+  - Galop        100 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   78 | Ana · Pist/mesafe geçmişi
+  - Form          68 | Ana · Yarış geçmişi ve sonuç formu
+
+No 6 MUZATCAN
+  Ozet: Pist/Mesafe: 1G - 1P / 2 • Jokey: 1G - 2P / 2 • Galop: 94/100
+  - Galop         94 | Hazırlık · İdman dereceleri ve splitler
+  - Form          70 | Ana · Yarış geçmişi ve sonuç formu
+  - Pist/Mesafe   72 | Ana · Pist/mesafe geçmişi
+
+No 11 TARÇINKIZ
+  Ozet: Pist/Mesafe: 0G - 3P / 3 • Jokey: 0G - 1P / 2 • Galop: 83/100
+  - Galop         83 | Hazırlık · İdman dereceleri ve splitler
+  - Pist/Mesafe   82 | Ana · Pist/mesafe geçmişi
+  - Form          69 | Ana · Yarış geçmişi ve sonuç formu
+
+
+7) KULLANILABILIR ALANLAR
+-------------------------
+- Model skoru ve veri guveni: ana aday siralamasi icin.
+- Yaris akisi / konum: tempo senaryosu ve onde giden-sprinter ayrimi icin.
+- 17 veri katmani: sinyal bazli model feature seti icin.
+- Veri dayanaklari: at bazli Pist/Mesafe, Galop, Form, Hiz, Jokey gibi ayrik feature kaynaklari icin.
+- Son form dizisi: yakin donem performans trendi ve pist tipi gecmisi icin.
