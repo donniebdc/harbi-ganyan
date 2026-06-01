@@ -31,8 +31,16 @@ CAP = 8
 KUPON_TIERS = [
     ("Simitçi 6'lısı",       400,  600),
     ("Harbi Ganyan 6'lısı", 1000, 1600),
-    ("Ortaklı 6'lı",        1600, 2500),
+    ("Ortaklı 6'lı",        1700, 2800),
 ]
+
+# KOŞULLU BANKO EŞİĞİ (kullanıcı direktifi: "illa her kupona banko yazma zorunluluğu yok;
+# yalnız çok güçlü/net üstünlük varsa banko yaz"). Banko-aday ayağın favori EFEKTİF güveni
+# (banko_guven_eff: kendi + eküri ortağı kazanma payı) bu eşiğin ALTINDAYSA o kuponda banko
+# YAZILMAZ — ayak en az 2'ye genişler. 441 altılı taramasında 0.46–0.60 platosu (122-123/441,
+# %27.7-27.9); 0.55 = "favori ≥%55 kazanır" net üstünlük eşiği. Bankoyu tamamen kapatmak
+# (kontrol: 119/441) koşullu tutmaktan daha kötü — bu yüzden eşik, sıfır değil.
+BANKO_ZORUNLU_ESIK = 0.55
 
 # 5-SATIR TABANI tier politikası (220 altılı testi, kupon_fix_test_raporu.md):
 #   - Simitçi (dar bütçe):  floor_only           -> +3 kupon (%13.2->%14.5)
@@ -159,7 +167,7 @@ def _flow_kredili_surpriz(lg, floor_flow):
 
 def build_coupon(legs, max_komb, cal=None, force_banko=True, banko_esik=0.0,
                  bes_floor=False, floor_flow=3, floor_bonus=4.0, banko_kac=True,
-                 min_width=None, fixed_banko=None):
+                 min_width=None, fixed_banko=None, banko_zorunlu_esik=None):
     """legs: [ {'kno':int,'atlar':[{at_no,at,ana,agf}...] (ANA azalan),
                'n_at':int,'fark':float} ... ]  (6 ayak)
     force_banko=True -> en güçlü ayak tek-at banko'ya kilitlenir (kullanıcı direktifi).
@@ -198,9 +206,16 @@ def build_coupon(legs, max_komb, cal=None, force_banko=True, banko_esik=0.0,
         width = [max(1, min(min_width[i], info[i]["maxw"])) for i in range(L)]
     else:
         width = [1] * L
+    # KOŞULLU BANKO: banko ancak banko-aday ayağın favori efektif güveni eşiği geçerse
+    # kilitlenir. Eşik None ise eski davranış (her zaman banko). Eşik geçilemezse banko
+    # YAZILMAZ → aşağıda tüm ayaklar min 2'ye genişler (tek-at çöküşü engellenir).
+    banko_etkin = force_banko and (
+        banko_zorunlu_esik is None
+        or info[banko_idx]["guven"] >= banko_zorunlu_esik
+    )
     locked = set()
     lider_yari = False
-    if force_banko:
+    if banko_etkin:
         locked = {banko_idx}
         if width[banko_idx] < 2 and info[banko_idx]["guven"] < banko_esik and info[banko_idx]["maxw"] >= 2:
             width[banko_idx] = 2
@@ -250,7 +265,7 @@ def build_coupon(legs, max_komb, cal=None, force_banko=True, banko_esik=0.0,
         secilen = select_with_ekuri(lg["atlar"], w, lg.get("ekuri") or [])
         is_banko = (w == 1)
         guven = info[i]["guven"]
-        is_lider = (i == banko_idx and force_banko)
+        is_lider = (i == banko_idx and banko_etkin)
         if is_lider and lider_yari:
             etiket = "🔑 ÇIPA (yarı-banko)"
         elif is_lider:
@@ -274,13 +289,15 @@ def build_coupon(legs, max_komb, cal=None, force_banko=True, banko_esik=0.0,
                                     if any(a["at_no"] in g for g in lg_ekuri)}})
     return plan, komb(width)
 
-def build_tier(legs, tier, birim, cal=None, banko_esik=0.50, **kw):
+def build_tier(legs, tier, birim, cal=None, banko_esik=0.50,
+               banko_zorunlu_esik=BANKO_ZORUNLU_ESIK, **kw):
     """Bir bütçe kademesi (ad, lo, hi) için kupon kurar. max_komb = hi/birim.
     Ek kwargs (bes_floor, floor_flow, floor_bonus, banko_kac) build_coupon'a geçer."""
     ad, lo, hi = tier
     max_komb = int(hi / birim)
     plan, komb = build_coupon(legs, max_komb, cal, force_banko=True,
-                              banko_esik=banko_esik, **kw)
+                              banko_esik=banko_esik,
+                              banko_zorunlu_esik=banko_zorunlu_esik, **kw)
     return ad, lo, hi, plan, komb
 
 def _komb_from_widths(widths):
@@ -461,7 +478,8 @@ def _sadece_ekle_bes(legs, base_plan, max_komb, profile=None, risk_mult=0.5):
 
 
 def build_nested_tiers(legs, tiers=None, birim=BIRIM_TL, cal=None, banko_esik=0.50,
-                       policies=None, ortakli_mode="test3", ortakli_profile=None):
+                       policies=None, ortakli_mode="test3", ortakli_profile=None,
+                       banko_zorunlu_esik=BANKO_ZORUNLU_ESIK):
     """İÇ İÇE (SUPERSET) KADEMELER — kullanıcı direktifi (ŞABLON ÖRNEKLEM):
       Harbi ⊇ Simitçi, Ortaklı ⊇ Harbi  (her ayakta, at bazında).
     Her üst kademe alt kademenin ayak genişliklerini TABAN alır ve yalnızca genişler;
@@ -486,7 +504,8 @@ def build_nested_tiers(legs, tiers=None, birim=BIRIM_TL, cal=None, banko_esik=0.
         kw = dict(policies.get(ad, {}))
         plan, komb = build_coupon(legs, max_komb, cal, force_banko=True,
                                   banko_esik=banko_esik, min_width=prev_w,
-                                  fixed_banko=banko_idx, **kw)
+                                  fixed_banko=banko_idx,
+                                  banko_zorunlu_esik=banko_zorunlu_esik, **kw)
         if ad == "Ortaklı 6'lı":
             if ortakli_mode == "test3":
                 plan, komb = apply_test3_tip_genis_ortakli(legs, prev_plan or plan, max_komb)

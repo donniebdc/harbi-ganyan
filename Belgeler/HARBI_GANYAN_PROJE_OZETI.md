@@ -38,6 +38,46 @@ Teknik değişiklikler:
 
 15.03.2026 ADANA notu: TJK resmi JSON sonucu `--force` ile yeniden çekildi; ADANA için yalnızca 2 koşu sonucu dönüyor, IZMIR için 9 koşu dönüyor. Bu yüzden `TahminSonuçları/2026-03-15.txt` dosyasında ADANA 2. koşudan sonra 5 satır karşılaştırma bloğu yok; tahmin dosyası eksik değil, sonuç kaynağı o şehir için 2 koşuda bitiyor. Mevcut `TahminSonuçları` klasöründe altılı sonuç satırında `?` kalan tek dosya `2026-03-15.txt`.
 
+## 14.11 KOŞULLU BANKO + Bütçe Güncellemesi (01.06.2026)
+
+Kullanıcı direktifi: *"İlla her kupona banko yazmak zorunda değiliz. Gerçekten çok güçlü
+veri / net üstünlük varsa korkmadan banko yazalım; dışında banko zorunluluğunu kaldıralım."*
+
+**Kanıt (441 altılı read-only simülasyon):** Eski sistem her kupona zorunlu tek-at banko
+kilitliyordu (`force_banko=True`), ama kilitlenen banko-lider ayağın favori EFEKTİF kazanma
+olasılığı medyanda yalnız **%44** (p90 %59, max %67). Yani favorisi yarıdan fazla kez kaybeden
+ayaklara bile banko yazıp üç kuponu birden riske atıyorduk.
+
+**Eşik eğrisi (yeni @2800 bütçe):** force=118, 0.50→122, **0.55→120 (ÜRETİM)**, 0.58→121,
+hiç-banko→119. KRİTİK: bankoyu *tamamen* kapatmak koşullu tutmaktan DAHA KÖTÜ (119<122).
+Optimum "hep banko" da "hiç banko" da değil — **koşullu banko**. Eşik 0.46–0.60 platosunda
+sonuç ±1 altılı (overfit değil). Kullanıcı **0.55**'i seçti ("favori ≥%55 → net üstünlük").
+
+**Net etki (ESKİ force@2500 → YENİ koşullu0.55@2800):** herhangi 6/6 = 115 (%26.1) →
+**120 (%27.2), +5 altılı**. Zorunlu banko-lider = 441/441 → **127/441 (%28.8)** (yalnız
+güçlülerde). İç içe kural (Simitçi ⊆ Harbi ⊆ Ortaklı) korunur (doğrulandı: True).
+
+**Teknik değişiklikler:**
+
+- `motor/altili_kupon_v2.py`:
+  - Yeni sabit `BANKO_ZORUNLU_ESIK = 0.55`.
+  - `build_coupon(...)`: yeni param `banko_zorunlu_esik`. `banko_etkin = force_banko and
+    (esik is None or info[banko_idx]["guven"] >= esik)`. Banko etkin değilse hiçbir ayak
+    tek-ata kilitlenmez; greedy tüm ayakları min 2'ye genişletir.
+  - `build_tier` / `build_nested_tiers`: eşiği varsayılan olarak taşır (üretim default).
+  - `KUPON_TIERS` Ortaklı: **1600–2500 → 1700–2800 TL** (Simitçi 400–600, Harbi 1000–1600
+    değişmedi). `max_komb = hi/birim` olduğundan üst sınır otomatik etkili.
+- `ganyan_master.py`: ölü eski iki-mod (BONKÖR/SİMİTÇİ) `ayak_genisligi`/`kupon_uret`
+  kurucusu KALDIRILDI (hiçbir yerden çağrılmıyordu, kendi sabit `width=1→BANKO` kurallarıyla
+  yeni politikayla çelişiyordu). Altılı kuponlar tek merkezden: `altili_uretim
+  .hipodrom_altili_bloku → build_nested_tiers`. `toplu_tahmin.py` ile senkron.
+
+**Sıradaki cephe (model tavanı):** Kalan 5/6 kayıplarının ~%45'inde kazanan 5-satırın
+TAMAMEN DIŞINDA; ~%55'inde 5-satırda ama derin slotta (YAZ/HAR/BOM). Dağıtım/banko/bütçe
+kaldıraçları tükendi; %27→%35+ ancak 5-satır/ANA skor modelini iyileştirerek gelir.
+Raporlar: `Raporlar/banko_aktarim_derin_analiz_raporu.md`,
+`Raporlar/altili_aktarim_optim_raporu.md`. Üretici: `motor/banko_aktarim_derin_analiz.py`.
+
 ## 1. Projenin Amacı
 
 Harbi Ganyan, Türkiye at yarışları için veri-kanıtlı tahmin üreten bir sistemdir.
@@ -636,21 +676,26 @@ Kupon (GÜNCEL — §14.5 Akıllı Banko sistemi geçerlidir):
 
 - Birim fiyat hipodroma göre: 1.25 TL (İstanbul/Ankara/İzmir/Adana/Bursa/Kocaeli/
   Antalya), 1.00 TL (Şanlıurfa/Elazığ/Diyarbakır). Bkz. `altili_lib.birim_fiyat`.
-- Kademeler (01.06.2026 GÜNCEL): Simitçi 6'lısı (400-600₺), Harbi Ganyan 6'lısı
-  (1000-1600₺), Ortaklı 6'lı (1600-2200₺). Kombinasyon = üst_sınır / birim.
+- Kademeler (§14.11 GÜNCEL): Simitçi 6'lısı (400-600₺), Harbi Ganyan 6'lısı
+  (1000-1600₺), Ortaklı 6'lı (**1700-2800₺**). Kombinasyon = üst_sınır / birim.
 - **İÇ İÇE (SUPERSET) KADEMELER (§14.9):** Harbi ⊇ Simitçi, Ortaklı ⊇ Harbi (ayak-ayak).
   `build_nested_tiers` ile kurulur; üst kademe alt kademenin genişliklerini taban alır,
-  banko ayağı sabit. "Kazanan Harbi'de var, Ortaklı'da yok" sorununu yapısal olarak bitirir.
-- Akıllı banko: her kuponda lider çıpa ayağı; güçlüyse tek-at banko, zayıfsa 2-at.
+  banko ayağı (varsa) sabit. "Kazanan Harbi'de var, Ortaklı'da yok" sorununu yapısal bitirir.
+- **KOŞULLU BANKO (§14.11):** banko zorunlu DEĞİL. Banko-aday ayağın favori efektif güveni
+  `BANKO_ZORUNLU_ESIK=0.55` eşiğini geçerse tek-at banko kilitlenir; geçmezse o kuponda banko
+  yazılmaz, tüm ayaklar min 2'ye genişler. Üretimde kuponların ~%29'u banko alıyor (eskiden
+  %100). Bankoyu tamamen kapatmak daha kötü → eşik sıfır değil.
 - 5-SATIR TABANI (§14.7): `tier_policy(ad)` ile Simitçi+Harbi'de akış-güvenilir
   BOM/HAR atı kupona taşınır (bütçe-nötr); Ortaklı'da kapalı. Net +3/+4/0 kupon.
-- Eski garantici/avcı modları ve "ardışık banko" kuralı devre dışı (referans kod).
+- Eski garantici/avcı modları KALDIRILDI (§14.11; ganyan_master.py'den silindi).
 
 Kalabalık saha (14+ at) stratejisi (31.05.2026 eklendi):
 
 - 14+ atlı sahalar yapısal olarak düşük isabetli: 5 satır ≈ %78.7 (≤9'da %95.1). Bu tavan, mevcut sinyalleri yeniden ağırlıklandırarak kırılamadı (test edildi).
 - Günlük çıktıda 14+ koşular `⚠️ DÜŞÜK GÜVEN (kalabalık saha)` etiketiyle işaretlenir.
-- Kupon: garantici mod 14+'ı zaten `min(6,n)` genişletiyordu; avcı moda da 14+ için (banko değilse, fark<25) `min(5,n)` genişletme eklendi.
+- Kupon: 14+ kalabalık sahalar koşullu banko (§14.11) ile zaten banko-dışı bırakılıp
+  genişliyor (favori güveni düşük → eşik geçilmez). Eski garantici/avcı moddaki 14+
+  genişletme kuralları, o modlar kaldırıldığı için artık geçersiz (referans).
 
 ---
 

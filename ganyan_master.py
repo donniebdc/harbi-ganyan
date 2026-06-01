@@ -286,68 +286,10 @@ class GanyanMasterEngine:
     def altili_ayaklari(self, bets_by_kosu, son_kosu):
         return altili_ayaklari(bets_by_kosu, son_kosu)
 
-    # ── KUPON: AYAK GENİŞLİĞİ (iki mod) ──────────────────────────────────────────
-    FAVORI_DUSMAN = {'kv6','kv7','kv21','kv22','h14'}
-    FAVORI_DOST   = {'kv8','s4','s5','h15','h16'}
-
-    def ayak_genisligi(self, kv, mod):
-        n=kv['n_at']; fark=kv['fark']; alt=kv['alt']
-        if mod=='garantici':
-            if fark>=45 and n<=8 and alt in self.FAVORI_DOST:
-                return 1, "🔒 BANKO"
-            if fark>=35 and n<=10 and alt not in self.FAVORI_DUSMAN:
-                return 2, "🎯 YARI BANKO"
-            if alt in self.FAVORI_DUSMAN or fark<10 or n>=14:
-                return min(6,n), "🌪️ SÜRPRİZE AÇIK"
-            if fark>=20:
-                return 3, "✍️ STANDART"
-            return 4, "⚖️ AÇIK"
-        else:
-            if fark>=30 and alt in self.FAVORI_DOST:
-                return 1, "🔒 BANKO"
-            if fark>=40 and n<=9 and alt not in self.FAVORI_DUSMAN:
-                return 1, "🔒 BANKO"
-            # Kalabalik saha (14+): yapisal dusuk guven, banko degilse genislet.
-            if n>=14 and fark<25:
-                return min(5,n), "🌪️ SÜRPRİZE AÇIK"
-            if fark>=20 and alt not in self.FAVORI_DUSMAN:
-                return 2, "🎯 YARI BANKO"
-            if alt in self.FAVORI_DUSMAN:
-                return 4, "🌪️ SÜRPRİZE AÇIK"
-            return 3, "✍️ STANDART"
-
-    def kupon_uret(self, ayaklar, kosu_verileri, mod):
-        mod_isim = "🛡️ BONKÖR" if mod=='garantici' else "🎯 SİMİTÇİ"
-        toplam_komb=1
-        ayak_detay=[]
-        for sira, kno in enumerate(ayaklar, 1):
-            kv=kosu_verileri.get(kno)
-            if not kv:
-                ayak_detay.append((sira, kno, 0, "VERİ YOK", []))
-                continue
-            gen, etiket = self.ayak_genisligi(kv, mod)
-            secilen=kv['atlar_sirali'][:gen]
-            ayak_detay.append((sira, kno, gen, etiket, secilen))
-        # 'ard arda iki ayağı tek geçme' kuralı
-        for i in range(1, len(ayak_detay)):
-            if ayak_detay[i][2]==1 and ayak_detay[i-1][2]==1:
-                sira,kno,gen,etiket,sec=ayak_detay[i]
-                kv=kosu_verileri.get(kno)
-                if kv and kv['n_at']>=2:
-                    ayak_detay[i]=(sira,kno,2,"🎯 YARI BANKO*",kv['atlar_sirali'][:2])
-        for _,_,gen,_,_ in ayak_detay:
-            toplam_komb *= max(gen,1)
-        bedel=toplam_komb*1.25
-        satirlar=[f"  {mod_isim} (~{toplam_komb} kombinasyon, ~{bedel:.0f} TL)",
-                  "─"*60, ""]
-        for sira, kno, gen, etiket, secilen in ayak_detay:
-            if gen==0:
-                satirlar.append(f"    Ayak {sira} (Koşu {kno}): veri yok")
-            else:
-                atlar_str=", ".join(a['raw_at'] for a in secilen)
-                satirlar.append(f"    Ayak {sira} (Koşu {kno}) {etiket} [{gen} at]: {atlar_str}")
-            satirlar.append("")
-        return satirlar
+    # NOT: Eski iki-mod (BONKÖR/SİMİTÇİ) kupon kurucu (ayak_genisligi/kupon_uret)
+    # kaldırıldı. Altılı kuponlar artık tek merkezden — altili_uretim.hipodrom_altili_bloku
+    # → altili_kupon_v2.build_nested_tiers — koşullu banko (BANKO_ZORUNLU_ESIK) + iç içe
+    # kademe (Simitçi⊆Harbi⊆Ortaklı) mantığıyla kuruluyor. toplu_tahmin.py ile senkron.
 
     def run(self, target_date):
         print("="*85)
