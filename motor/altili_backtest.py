@@ -14,8 +14,8 @@ from altili_kupon_v2 import build_coupon, build_tier, load_cal, seg_n, KUPON_TIE
 import glob as _glob
 
 def _newest_bulk():
-    cands = sorted(_glob.glob(os.path.join(BASE, "v5_tahmin_*.txt")), key=os.path.getmtime)
-    return cands[-1] if cands else os.path.join(BASE, "v5_tahmin_01042026-30052026.txt")
+    cands = sorted(_glob.glob(os.path.join(BASE, "Toplu Tahminler", "v5_tahmin_*.txt")), key=os.path.getmtime)
+    return cands[-1] if cands else os.path.join(BASE, "Toplu Tahminler", "v5_tahmin_01042026-30052026.txt")
 
 TAHMIN = _newest_bulk()
 TIERS = KUPON_TIERS   # (ad, lo, hi) — birim fiyat hipodroma göre
@@ -202,7 +202,7 @@ def main():
             R(f"| {p['kno']} | {p['width']} | {p['etiket']} | {nos} | {kaz} {mark} |")
         R("")
 
-    out = os.path.join(BASE, "altili_backtest_raporu.md")
+    out = os.path.join(BASE, "Raporlar", "altili_backtest_raporu.md")
     with open(out, "w", encoding="utf-8") as f:
         f.write("\n".join(rapor))
     print(f"\n📝 Rapor: {out}")

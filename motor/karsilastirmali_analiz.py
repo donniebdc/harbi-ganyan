@@ -83,7 +83,7 @@ def main():
     args=[a for a in sys.argv[1:]]
     if args: path=args[0]
     else:
-        cands=sorted(glob.glob(os.path.join(BASE,"v5_tahmin_*.txt")), key=os.path.getmtime)
+        cands=sorted(glob.glob(os.path.join(BASE,"Toplu Tahminler","v5_tahmin_*.txt")), key=os.path.getmtime)
         if not cands: print("Toplu tahmin dosyasi yok (v5_tahmin_*.txt)."); return
         path=cands[-1]
     print(f"Tahmin dosyasi: {os.path.basename(path)}")

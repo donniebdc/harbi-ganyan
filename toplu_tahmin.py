@@ -12,6 +12,7 @@ from pegadrom_ai_features import load_ai_txt_root
 from pegadrom_ai_txt_topla import DEFAULT_DELAY, DEFAULT_OUT, collect_range
 from altili_uretim import altili_ayaklari, hipodrom_altili_bloku, analiz_dosyalari_yaz
 from altili_lib import ekuri_gruplari, ekuri_serialize
+from tahmin_sonuc_karsilastir import uret_aralik as tahmin_sonuc_uret
 
 TURKIYE_HIPODROMS = {
     "ANKARA","İSTANBUL","ISTANBUL","İZMİR","IZMIR","BURSA","ADANA",
@@ -59,7 +60,8 @@ class TopluTahminV5:
         self.peg_ai_data=load_ai_txt_root(os.path.join(self.data_path,DEFAULT_OUT))
 
     def load_pegadrom(self):
-        for fp in [os.path.join(self.data_path,"pegadrom_skorlar.json"), "pegadrom_skorlar.json"]:
+        for fp in [os.path.join(os.path.dirname(os.path.abspath(__file__)),"motor","pegadrom_skorlar.json"),
+                   os.path.join(self.data_path,"pegadrom_skorlar.json"), "pegadrom_skorlar.json"]:
             try:
                 if os.path.exists(fp):
                     with open(fp, encoding="utf-8") as f:
@@ -328,6 +330,8 @@ class TopluTahminV5:
                 if len(atlar)<2: continue
                 atlar,kaynak=self.hesapla(atlar,ag,alt)
                 sec=self.bes_satir(atlar)
+                bes_secim=[sec.get('favori'),sec.get('surpriz_degil'),
+                           sec.get('yazilabilir'),sec.get('bomba'),sec.get('harbi')]
                 gruplar=ekuri_gruplari(atlar)   # eküri (stablemate+sahip)
 
                 # Parse-edilebilir çıktı (Tahminler dosyası + bulk rapor)
@@ -355,6 +359,8 @@ class TopluTahminV5:
                     sirali=sorted(atlar,key=lambda x:x['ana_skor'],reverse=True)
                     fark=(sirali[0]['ana_skor']-sirali[1]['ana_skor']) if len(sirali)>=2 else 100.0
                     kosu_verileri[kno]={'atlar_sirali':sirali,'n_at':len(atlar),'fark':fark,
+                                        'race_type':ag,'race_subtype':alt,
+                                        'bes_nos':[x['at_no'] for x in bes_secim if x],
                                         'ekuri':gruplar}
 
             # ── Hipodrom bitti: altılı kuponları ──
@@ -393,10 +399,20 @@ class TopluTahminV5:
             print(f"⏳ {ts}...")
             self.isle_tarih(ts,tjk_h,lider_h)
             gun+=timedelta(days=1)
-        dosya=f"v5_tahmin_{bas.replace('.','')}-{bit.replace('.','')}.txt"
+        _tt=os.path.join(os.path.dirname(os.path.abspath(__file__)),"Toplu Tahminler")
+        os.makedirs(_tt,exist_ok=True)
+        dosya=os.path.join(_tt,f"v5_tahmin_{bas.replace('.','')}-{bit.replace('.','')}.txt")
         with open(dosya,"w",encoding="utf-8") as f: f.write("\n".join(self.rapor))
         print(f"\n✅ Tamamlandı. Rapor: '{dosya}'")
-        print("Bu dosyayı + CSV zip'lerini Claude'a gönderin.")
+        try:
+            yazilan = tahmin_sonuc_uret(bas, bit, collect_results=True)
+            if yazilan:
+                print(f"📊 TahminSonuçları üretildi: {len(yazilan)} gün")
+                print(f"   Klasör: {os.path.join(os.path.dirname(os.path.abspath(__file__)), 'TahminSonuçları')}")
+            else:
+                print("📊 TahminSonuçları: aralıkta sonuç bulunamadı/henüz oluşmadı.")
+        except Exception as ex:
+            print(f"⚠️ TahminSonuçları üretilemedi: {ex}")
 
 
 if __name__=="__main__":

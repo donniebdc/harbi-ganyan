@@ -30,8 +30,8 @@ from pegadrom_ai_features import load_ai_txt_root
 ROOT = Path(BASE)
 ANALIZ_ROOT = ROOT / "Harbi_Ganyan_Analiz"
 PEG_TXT_ROOT = ROOT / "Pegadrom AI Analiz TXT"
-PEG_JSON = ROOT / "pegadrom_skorlar.json"
-OUT = ROOT / "kapsamli_sistem_analizi_raporu.md"
+PEG_JSON = ROOT / "motor" / "pegadrom_skorlar.json"
+OUT = ROOT / "Raporlar" / "kapsamli_sistem_analizi_raporu.md"
 
 START = datetime.strptime("01.02.2026", "%d.%m.%Y")
 END = datetime.strptime("30.05.2026", "%d.%m.%Y")

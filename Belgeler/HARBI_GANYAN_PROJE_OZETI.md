@@ -1,10 +1,42 @@
 # HARBI GANYAN - Proje Özeti, İşlem Haritası ve Yol Haritası
 
-Son güncelleme: 01.06.2026 (TJK JSON sonuç altyapısı §14.8 + iç içe kademeler & sonuç çıktıları §14.9)
+Son güncelleme: 01.06.2026 (TJK JSON sonuç altyapısı §14.8 + iç içe kademeler & otomatik sonuç çıktıları §14.9)
 
 Bu belge Harbi Ganyan projesinin güncel çalışma haritasıdır. Yeni bir oturumda önce bu dosya okunmalı; ardından kök'teki `ganyan_master.py` ve `toplu_tahmin.py`, sonra `motor/` klasöründeki modüller (`altili_kupon_v2.py`, `altili_uretim.py`, `altili_lib.py`, `pegadrom_ai_txt_topla.py`, `pegadrom_ai_features.py`) incelenmelidir.
 
 ---
+
+## 14.10 Ortaklı Test 3 Kupon Genişletme Kuralı (01.06.2026)
+
+`TahminSonuçları` klasöründeki 2026-02-01 / 2026-05-30 aralığı incelendiğinde ana problem tahminin kazananı bulamaması değil, 5 satırdaki kazanan adayların 6'lı kupon dağıtımına yeterince taşınmaması olarak ayrıştı. Üç özel test çalıştırıldı:
+
+Claude Code geçiş detayı: `Belgeler/CLAUDE_GECIS_RAPORU_2026-06-01.md`.
+
+| Test | Mantık | Sonuç |
+|---|---|---:|
+| Test 1 | Her 6'lıda en az 1 banko, diğer ayakları daha geniş yaz | 125/433, %28.9 |
+| Test 2 | En az 1 banko + bir ayakta maksimum 2 favori, kalan ayakları genişlet | 125/433, %28.9 |
+| Test 3 | Handikap / maiden / şartlı koşuları mümkün olduğunca genişlet | 147/433, %33.9 |
+| Test 3, 3000 TL üst bant | Aynı mantık, daha geniş üst limit | 149/433, %34.4 |
+
+Karar: Test 3 mantığı üretime alındı, fakat kullanıcı direktifi gereği iç içe kupon yapısı korunur:
+
+- Simitçi 6'lısı Harbi içinde kalır.
+- Harbi Ganyan 6'lısı Ortaklı içinde kalır.
+- Ortaklı katmanı artık 1600-2500 TL bandına kadar genişleyebilir.
+- Ortaklı genişletme sırası:
+  1. Handikap / maiden / şartlı ayakları önce 5 ata, sonra 6-7 ata genişlet.
+  2. Kalan bütçeyle 5 satırda olup kupona girmeyen atları ekle.
+  3. Bütçe kalırsa aynı riskli koşu tiplerini `CAP=8` sınırına kadar derinleştir.
+
+Teknik değişiklikler:
+
+- `motor/altili_kupon_v2.py`: `apply_test3_tip_genis_ortakli()` eklendi; Ortaklı üst bütçesi 2500 TL yapıldı.
+- `motor/altili_uretim.py`: kupon bacağına `race_type`, `race_subtype`, `bes_nos` taşınıyor.
+- `ganyan_master.py` ve `toplu_tahmin.py`: her koşu için 5 satır at numaraları ve koşu tipi `kosu_verileri` içine yazılıyor.
+- `motor/kupon_kacan_analiz.py`: tahmin arşivinden koşu tipi parse edilerek analiz evrenine taşınıyor.
+
+15.03.2026 ADANA notu: TJK resmi JSON sonucu `--force` ile yeniden çekildi; ADANA için yalnızca 2 koşu sonucu dönüyor, IZMIR için 9 koşu dönüyor. Bu yüzden `TahminSonuçları/2026-03-15.txt` dosyasında ADANA 2. koşudan sonra 5 satır karşılaştırma bloğu yok; tahmin dosyası eksik değil, sonuç kaynağı o şehir için 2 koşuda bitiyor. Mevcut `TahminSonuçları` klasöründe altılı sonuç satırında `?` kalan tek dosya `2026-03-15.txt`.
 
 ## 1. Projenin Amacı
 
@@ -943,9 +975,14 @@ Tahminleri (5 satır) JSON sonuçlarıyla karşılaştırır:
 - Her altılı: sonuç + 3 iç içe kupon (`build_nested_tiers` ile YENİDEN kurulur),
   ayak-ayak ✓/✗, kazanan `[parantez]`, ve "TAHMİNİMİZ N'TE KALDI / TUTTU (6/6)".
 - Sonuç kaynağı `load_results(prefer="json")`; tahmin kaynağı `parse_tahminler_dir`
-  (KO:/5SATIR:/ATNO: parse-edilebilir format = `toplu_tahmin.py` çıktısı).
-- NOT: erken Şubat-Mart tahminleri `ganyan_master` insan-okur formatında; karşılaştırma
-  için kullanıcı aralığı `toplu_tahmin.py` ile YENİDEN üretmeli (parse-edilebilir format).
+  (KO:/5SATIR:/ATNO: parse-edilebilir format).
+- `tahmin_sonuc_karsilastir.uret_aralik(baslangic, bitis, collect_results=True)`:
+  önce eksik TJK JSON sonuçlarını `tjk_sonuc_topla.collect_range` ile çekmeyi dener, sonra
+  mevcut şablonla `TahminSonuçları/YYYY-MM-DD.txt` üretir.
+- `ganyan_master.py` artık insan-okur tahminin yanında parse-edilebilir `KO:/EKURI:/5SATIR:/ATNO:`
+  gölge bloklarını da yazar; `toplu_tahmin.py` ile aynı karşılaştırma hattına girer.
+- `ganyan_master.py` ve `toplu_tahmin.py`, tahmin + altılı üretimi bittikten sonra otomatik
+  `uret_aralik(...)` çağırır. Sonuç varsa/çekilebiliyorsa `TahminSonuçları/` dosyası aynı akışta oluşur.
 
 ## 15. Kritik Hatırlatmalar
 
@@ -963,7 +1000,11 @@ Tahminleri (5 satır) JSON sonuçlarıyla karşılaştırır:
 - 12+ segment-kapılı galop SADECE n_at≥12'de açılır; global uygulanırsa İlk1/≤9 bozulur (§4.1).
 - 5-satır tabanı düzeltmesi tier'a göredir (`tier_policy`): Ortaklı'da KAPALI; bol bütçede zarar verir (§14.7).
 - Altılı kuponları İÇ İÇE kurulur (`build_nested_tiers`): Ortaklı ⊇ Harbi ⊇ Simitçi; banko ayağı tüm kademelerde sabit (§14.9).
-- TahminSonuçları karşılaştırması parse-edilebilir tahmin (KO:/5SATIR:/ATNO:) bekler; aralığı `toplu_tahmin.py` ile üret (§14.9-C).
+- TahminSonuçları otomatik üretim hattıdır: `ganyan_master.py` ve `toplu_tahmin.py` tahmin+altılıdan sonra
+  `tahmin_sonuc_karsilastir.uret_aralik(...)` çağırır; eksik TJK JSON sonuçlarını çekmeyi dener ve sonuç varsa
+  `TahminSonuçları/YYYY-MM-DD.txt` yazar (§14.9-C).
+- Karşılaştırma parser'ı `KO:/EKURI:/5SATIR:/ATNO:` bloklarını bekler; `ganyan_master.py` artık bu blokları
+  insan-okur tahminin yanında otomatik yazar.
 - `pegadrom_skorlar.json` SİLİNMEZ (galop ana skor + 12+ galop alt-alanlarını besler; yedeği yok).
 - SKILL.md güncellenirken `motor/_sync_skill.py` kullan (UTF-8 güvenli); PowerShell `Get-Content -Raw` Türkçe'yi bozar.
 - Sonuç kaynağı artık JSON+CSV birleşik (`load_results`). `Sonuclar JSON/` SİLİNMEZ (Şubat-Mart'ın tek sonuç kaynağı).
@@ -1031,3 +1072,15 @@ Tahminleri (5 satır) JSON sonuçlarıyla karşılaştırır:
    JSON sonuçları, ✅/✓/✗ işaretli karşılaştırma. Kullanıcı aralığı `toplu_tahmin.py` ile
    yeniden üretince tam çalışır.
 
+### 01.06.2026 (Codex — otomatik TahminSonuçları entegrasyonu)
+
+1. **`motor/tahmin_sonuc_karsilastir.py` içine `uret_aralik(...)` eklendi:** tarih/aralık alır,
+   eksik sonuç JSON'u için TJK feed'i çağırır, sonra mevcut şablonla `TahminSonuçları/<YYYY-MM-DD>.txt`
+   üretir. Argümanlı CLI kullanımı da aynı hattı çalıştırır.
+2. **`ganyan_master.py` ve `toplu_tahmin.py` otomatik karşılaştırmaya bağlandı:** tahmin ve altılı
+   dosyaları üretildikten sonra sonuç varsa/çekilebiliyorsa karşılaştırma TXT'si aynı çalıştırmada yazılır.
+3. **`ganyan_master.py` parse-edilebilir hale getirildi:** insan-okur rapor korunurken her koşu için
+   `KO:/EKURI:/5SATIR:/ATNO:` gölge blokları eklendi; böylece tekli tahminler de `TahminSonuçları`
+   parser'ına girer.
+4. **Doğrulama:** `python -m py_compile ganyan_master.py toplu_tahmin.py motor\tahmin_sonuc_karsilastir.py`
+   başarılı. `python motor\tahmin_sonuc_karsilastir.py 2026-05-21 2026-05-21` bir günlük karşılaştırma dosyasını yazdı.

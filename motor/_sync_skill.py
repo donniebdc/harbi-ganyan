@@ -8,7 +8,7 @@ SKILL_PATHS = [
     os.path.join(BASE, ".claude", "skills", "harbi_ganyan", "SKILL.md"),
     os.path.join(BASE, ".agents", "skills", "harbi_ganyan", "SKILL.md"),
 ]
-OZET = os.path.join(BASE, "HARBI_GANYAN_PROJE_OZETI.md")
+OZET = os.path.join(BASE, "Belgeler", "HARBI_GANYAN_PROJE_OZETI.md")
 
 FRONTMATTER = (
     "name: harbi-ganyan\n"

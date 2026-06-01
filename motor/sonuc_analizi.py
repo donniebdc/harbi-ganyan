@@ -23,7 +23,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 BASE = "D:/Ganyan Gemini"
 CSV_DIRS = [os.path.join(BASE, "CSV Sonuçlar/NİSAN"), os.path.join(BASE, "CSV Sonuçlar/MAYIS")]
-RAPOR = os.path.join(BASE, "sonuc_analizi_raporu.txt")
+RAPOR = os.path.join(BASE, "Raporlar", "sonuc_analizi_raporu.txt")
 
 HIP_NORM = {
     "İSTANBUL":"ISTANBUL","ISTANBUL":"ISTANBUL","İZMİR":"IZMIR","IZMIR":"IZMIR","BURSA":"BURSA",

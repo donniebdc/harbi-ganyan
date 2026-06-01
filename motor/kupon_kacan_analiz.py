@@ -24,7 +24,7 @@ from altili_lib import (BASE, norm_hip, load_all_csv, load_results, winning_set,
 from altili_kupon_v2 import build_tier, KUPON_TIERS, load_cal
 
 ANALIZ = os.path.join(BASE, "Harbi_Ganyan_Analiz")
-OUT = os.path.join(BASE, "kupon_kacan_analiz_raporu.md")
+OUT = os.path.join(BASE, "Raporlar", "kupon_kacan_analiz_raporu.md")
 LINE_LABELS = ["FAV", "SUR", "YAZ", "BOM", "HAR"]
 
 
@@ -85,7 +85,9 @@ def _parse_one(path, races):
                 kno = int(p[0]); iso = datetime.strptime(p[2], "%d.%m.%Y").strftime("%Y-%m-%d")
             except Exception:
                 cur = None; continue
-            cur = {"kno": kno, "hip": norm_hip(p[1]), "iso": iso, "atlar": [], "ekuri": []}
+            cur = {"kno": kno, "hip": norm_hip(p[1]), "iso": iso, "atlar": [], "ekuri": [],
+                   "race_type": (p[3] if len(p) > 3 else "").strip().lower(),
+                   "race_subtype": (p[4] if len(p) > 4 else "").strip().lower()}
             bes_names = None; name_to_no = {}
         elif cur is not None and ln.startswith("EKURI:"):
             cur["ekuri"] = ekuri_parse(ln[6:].strip())
@@ -128,6 +130,9 @@ def _finish(cur, bes_names, name_to_no, races):
 def leg_from_race(r):
     return {"kno": r["kno"], "n_at": r["n_at"], "fark": r["fark"],
             "ekuri": r.get("ekuri") or [],
+            "race_type": r.get("race_type", ""),
+            "race_subtype": r.get("race_subtype", ""),
+            "bes_nos": r.get("bes_nos") or [],
             "atlar": [{"at_no": a["at_no"], "at": a["at"], "ana": a["ana"],
                        "agf": a["agf"], "flow_rank": a["flow_rank"]} for a in r["atlar"]]}
 

@@ -62,6 +62,9 @@ def _legs_from_kosu_verileri(ayaklar, kosu_verileri):
                  for a in kv["atlar_sirali"]]
         legs.append({"kno": kno, "atlar": atlar,
                      "n_at": kv["n_at"], "fark": kv["fark"],
+                     "race_type": kv.get("race_type", kv.get("ag", "")),
+                     "race_subtype": kv.get("race_subtype", kv.get("alt", "")),
+                     "bes_nos": kv.get("bes_nos") or [],
                      "ekuri": kv.get("ekuri") or []})
     return legs, eksik
 

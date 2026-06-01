@@ -19,13 +19,15 @@ Kullanım:
 """
 from __future__ import annotations
 import os, sys, glob, json
-from datetime import datetime
+from datetime import datetime, timedelta
+from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from altili_lib import BASE, birim_fiyat, winning_set, load_results
 from altili_kupon_v2 import build_nested_tiers, load_cal, KUPON_TIERS
 from kupon_kacan_analiz import parse_tahminler_dir, derive_altililar, leg_from_race
 from sonuc_txt_uret import fmt_kalem, fmt_tutar, is_big
+from tjk_sonuc_topla import collect_range as collect_tjk_results, DEFAULT_DELAY as TJK_DELAY
 
 JSON_DIR = os.path.join(BASE, "Sonuclar JSON")
 OUT_DIR = os.path.join(BASE, "TahminSonuçları")
@@ -40,6 +42,50 @@ def _raw_gun(iso):
     if not os.path.exists(p):
         return None
     return json.load(open(p, encoding="utf-8"))
+
+
+def parse_any_date(value: str) -> datetime:
+    """YYYY-MM-DD, YYYYMMDD, GG.AA.YYYY veya GG-AA-YYYY tarihini datetime'a çevirir."""
+    value = (value or "").strip()
+    for fmt in ("%Y-%m-%d", "%Y%m%d", "%d.%m.%Y", "%d-%m-%Y"):
+        try:
+            return datetime.strptime(value, fmt)
+        except ValueError:
+            pass
+    raise ValueError(f"Tarih formatı desteklenmiyor: {value}")
+
+
+def ensure_results(start_dt: datetime, end_dt: datetime, force: bool = False) -> None:
+    """Eksik TJK sonuç JSON'larını çekmeyi dener; mevcut dosyaları varsayılan olarak atlar."""
+    collect_tjk_results(start_dt, end_dt, Path(JSON_DIR), TJK_DELAY, force)
+
+
+def uret_aralik(baslangic, bitis=None, collect_results: bool = True, force_results: bool = False):
+    """Tarih aralığı için TahminSonuçları karşılaştırma dosyalarını üretir.
+
+    Sonuç JSON'u yoksa önce TJK feed'den çekmeyi dener. Sonuç yoksa ilgili gün atlanır.
+    Dönüş: yazılan dosya path listesi.
+    """
+    bas_dt = parse_any_date(baslangic) if isinstance(baslangic, str) else baslangic
+    bit_dt = parse_any_date(bitis) if isinstance(bitis, str) else (bitis or bas_dt)
+    if bit_dt < bas_dt:
+        raise ValueError("Bitiş başlangıçtan önce olamaz.")
+
+    if collect_results:
+        ensure_results(bas_dt, bit_dt, force_results)
+
+    races = parse_tahminler_dir()
+    results = load_results(prefer="json")
+    cal = load_cal()
+    yazilan = []
+    cur = bas_dt
+    while cur <= bit_dt:
+        iso = cur.strftime("%Y-%m-%d")
+        p = uret_gun(iso, races, results, cal)
+        if p:
+            yazilan.append(p)
+        cur += timedelta(days=1)
+    return yazilan
 
 
 def _kazanan_satiri(kv):
@@ -186,21 +232,23 @@ def _altili_from_json(kosular):
 def main():
     args = sys.argv[1:]
     print("Tahminler ve sonuçlar yükleniyor...")
-    races = parse_tahminler_dir()
-    results = load_results(prefer="json")
-    cal = load_cal()
-    files = sorted(glob.glob(os.path.join(JSON_DIR, "*.json")))
     if args:
-        bas = args[0]; bit = args[1] if len(args) > 1 else bas
-        files = [f for f in files if bas <= os.path.basename(f)[:-5] <= bit]
-    yazilan = 0
-    for f in files:
-        iso = os.path.basename(f)[:-5]
-        p = uret_gun(iso, races, results, cal)
-        if p:
-            yazilan += 1
-            print(f"yazıldı: {os.path.basename(p)}")
-    print(f"\nTamamlandı. {yazilan} gün -> {OUT_DIR}")
+        bas = args[0]
+        bit = args[1] if len(args) > 1 else bas
+        yazilan = uret_aralik(bas, bit, collect_results=True)
+    else:
+        races = parse_tahminler_dir()
+        results = load_results(prefer="json")
+        cal = load_cal()
+        yazilan = []
+        for f in sorted(glob.glob(os.path.join(JSON_DIR, "*.json"))):
+            iso = os.path.basename(f)[:-5]
+            p = uret_gun(iso, races, results, cal)
+            if p:
+                yazilan.append(p)
+    for p in yazilan:
+        print(f"yazıldı: {os.path.basename(p)}")
+    print(f"\nTamamlandı. {len(yazilan)} gün -> {OUT_DIR}")
 
 
 if __name__ == "__main__":

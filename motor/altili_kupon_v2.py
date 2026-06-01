@@ -31,7 +31,7 @@ CAP = 8
 KUPON_TIERS = [
     ("Simitçi 6'lısı",       400,  600),
     ("Harbi Ganyan 6'lısı", 1000, 1600),
-    ("Ortaklı 6'lı",        1600, 2200),
+    ("Ortaklı 6'lı",        1600, 2500),
 ]
 
 # 5-SATIR TABANI tier politikası (220 altılı testi, kupon_fix_test_raporu.md):
@@ -283,8 +283,185 @@ def build_tier(legs, tier, birim, cal=None, banko_esik=0.50, **kw):
                               banko_esik=banko_esik, **kw)
     return ad, lo, hi, plan, komb
 
+def _komb_from_widths(widths):
+    out = 1
+    for w in widths:
+        out *= max(1, int(w))
+    return out
+
+def _race_type_norm(lg):
+    text = f"{lg.get('race_type', '')} {lg.get('race_subtype', '')}".lower()
+    tr = str.maketrans({
+        "ç": "c", "Ç": "c", "ğ": "g", "Ğ": "g", "ı": "i", "İ": "i",
+        "ö": "o", "Ö": "o", "ş": "s", "Ş": "s", "ü": "u", "Ü": "u",
+    })
+    return text.translate(tr)
+
+def _tip_genis_race(lg):
+    t = _race_type_norm(lg)
+    return ("handikap" in t) or ("maiden" in t) or ("sart" in t)
+
+def _candidate_order_for_leg(lg):
+    """5-satir sirasi oncelikli, sonra ANA sirasi."""
+    at_by_no = {a["at_no"]: a for a in lg.get("atlar", [])}
+    out = []
+    seen = set()
+    for no in lg.get("bes_nos") or []:
+        if no in at_by_no and no not in seen:
+            out.append(at_by_no[no])
+            seen.add(no)
+    for a in lg.get("atlar", []):
+        no = a["at_no"]
+        if no not in seen:
+            out.append(a)
+            seen.add(no)
+    return out
+
+def _plan_from_selected_sets(legs, old_plan, selected_sets):
+    plan = []
+    for i, lg in enumerate(legs):
+        old = old_plan[i]
+        sec_set = selected_sets[i]
+        ordered = [a for a in _candidate_order_for_leg(lg) if a["at_no"] in sec_set]
+        if not ordered:
+            ordered = old.get("secilen", [])[:1]
+        w = len(ordered)
+        is_banko = (w == 1)
+        is_lider = bool(old.get("banko_lider"))
+        if is_lider and w >= 2:
+            etiket = "CAPA (yari-banko)"
+        elif is_lider:
+            etiket = "BANKO LIDER"
+        elif is_banko:
+            etiket = "banko"
+        elif w >= 6:
+            etiket = "SURPRIZE ACIK"
+        elif w >= 4:
+            etiket = "acik"
+        elif w == 3:
+            etiket = "standart"
+        else:
+            etiket = "yari banko"
+        lg_ekuri = lg.get("ekuri") or []
+        plan.append({
+            "kno": old.get("kno", lg.get("kno")),
+            "width": w,
+            "banko": is_banko,
+            "banko_lider": is_lider,
+            "secilen": ordered,
+            "guven": old.get("guven", 0),
+            "etiket": etiket,
+            "ekuri": lg_ekuri,
+            "ekuri_isim": {a["at_no"]: a["at"] for a in lg.get("atlar", [])
+                           if any(a["at_no"] in g for g in lg_ekuri)},
+        })
+    return plan
+
+def apply_test3_tip_genis_ortakli(legs, plan, max_komb):
+    """Test 3 uretim kuralı.
+
+    Ortakli katmaninda Harbi/Simitci superset yapisini bozmadan:
+      1) handikap/maiden/sartli ayaklari once 5, sonra 6-7 ata genisletir,
+      2) kalan butceyle 5-satirda olup kupona girmeyen atlari ekler,
+      3) butce kalirsa ayni riskli tip ayaklari CAP'e kadar doldurur.
+    """
+    if not legs or not plan:
+        return plan, _komb_from_widths([p.get("width", 1) for p in plan])
+
+    selected = [{a["at_no"] for a in p.get("secilen", [])} for p in plan]
+
+    def can_add(i):
+        return _komb_from_widths([len(selected[j]) + (1 if j == i else 0)
+                                  for j in range(len(selected))]) <= max_komb
+
+    def add_next(i, only_bes=False):
+        if not can_add(i):
+            return False
+        bes = set(legs[i].get("bes_nos") or [])
+        for a in _candidate_order_for_leg(legs[i]):
+            no = a["at_no"]
+            if no in selected[i]:
+                continue
+            if only_bes and no not in bes:
+                continue
+            selected[i].add(no)
+            return True
+        return False
+
+    risk_idx = [i for i, lg in enumerate(legs) if _tip_genis_race(lg)]
+    risk_idx.sort(key=lambda i: (-legs[i].get("n_at", 0), legs[i].get("fark", 999)))
+
+    for target in (5, 6, 7):
+        changed = True
+        while changed:
+            changed = False
+            for i in risk_idx:
+                if len(selected[i]) < min(target, len(legs[i].get("atlar", []))):
+                    changed = add_next(i) or changed
+
+    changed = True
+    while changed:
+        changed = False
+        for i in sorted(range(len(legs)), key=lambda x: len(selected[x])):
+            changed = add_next(i, only_bes=True) or changed
+
+    changed = True
+    while changed:
+        changed = False
+        for i in risk_idx:
+            if len(selected[i]) < min(CAP, len(legs[i].get("atlar", []))):
+                changed = add_next(i) or changed
+
+    out_plan = _plan_from_selected_sets(legs, plan, selected)
+    return out_plan, _komb_from_widths([p["width"] for p in out_plan])
+
+def _sadece_ekle_bes(legs, base_plan, max_komb, profile=None, risk_mult=0.5):
+    """Mevcut (greedy nested) Ortaklı planını BOZMADAN, bütçe içinde eksik 5-satır
+    atlarını ekler (asla çıkarmaz → base_plan ⊆ sonuç, nesting korunur).
+    Eklenecek aday: ayağın bes_nos slotunda olup henüz seçilmemiş at; öncelik
+    slot-profili + risk skoru / maliyet-oranı (skor/maliyet greedy)."""
+    prof = profile or [4.0, 6.0, 9.0, 11.0, 11.5]   # FAV..HAR ağırlığı (sürpriz-ağır)
+    sel = [{a["at_no"] for a in p.get("secilen", [])} for p in base_plan]
+    at_by_no = [{a["at_no"]: a for a in lg.get("atlar", [])} for lg in legs]
+
+    def komb(ws):
+        p = 1
+        for w in ws:
+            p *= max(1, w)
+        return p
+
+    def risk_of(lg):
+        n = lg.get("n_at", 0); fark = lg.get("fark", 999); s = 0.0
+        s += 35 if n >= 14 else (25 if n >= 12 else (15 if n >= 10 else 0))
+        s += 25 if fark < 8 else (18 if fark < 15 else (10 if fark < 25 else 0))
+        return s
+
+    while True:
+        cur_w = [len(s) for s in sel]
+        cur_k = komb(cur_w)
+        best = None
+        for i, lg in enumerate(legs):
+            if cur_w[i] >= lg.get("n_at", 0):
+                continue
+            for slot_idx, no in enumerate(lg.get("bes_nos") or []):
+                if no is None or no in sel[i] or no not in at_by_no[i]:
+                    continue
+                yeni_k = komb([cur_w[j] + (1 if j == i else 0) for j in range(len(legs))])
+                if yeni_k > max_komb:
+                    continue
+                slot_base = prof[slot_idx] if slot_idx < len(prof) else prof[-1]
+                score = (slot_base + risk_mult * risk_of(lg) / 10.0) / (yeni_k / max(cur_k, 1))
+                if best is None or score > best[0]:
+                    best = (score, i, no)
+        if best is None:
+            break
+        sel[best[1]].add(best[2])
+    out_plan = _plan_from_selected_sets(legs, base_plan, sel)
+    return out_plan, _komb_from_widths([p["width"] for p in out_plan])
+
+
 def build_nested_tiers(legs, tiers=None, birim=BIRIM_TL, cal=None, banko_esik=0.50,
-                       policies=None):
+                       policies=None, ortakli_mode="test3", ortakli_profile=None):
     """İÇ İÇE (SUPERSET) KADEMELER — kullanıcı direktifi (ŞABLON ÖRNEKLEM):
       Harbi ⊇ Simitçi, Ortaklı ⊇ Harbi  (her ayakta, at bazında).
     Her üst kademe alt kademenin ayak genişliklerini TABAN alır ve yalnızca genişler;
@@ -301,6 +478,7 @@ def build_nested_tiers(legs, tiers=None, birim=BIRIM_TL, cal=None, banko_esik=0.
         policies = TIER_POLICY
     out = []
     prev_w = None
+    prev_plan = None
     banko_idx = None
     for tier in tiers:
         ad, lo, hi = tier
@@ -309,9 +487,22 @@ def build_nested_tiers(legs, tiers=None, birim=BIRIM_TL, cal=None, banko_esik=0.
         plan, komb = build_coupon(legs, max_komb, cal, force_banko=True,
                                   banko_esik=banko_esik, min_width=prev_w,
                                   fixed_banko=banko_idx, **kw)
+        if ad == "Ortaklı 6'lı":
+            if ortakli_mode == "test3":
+                plan, komb = apply_test3_tip_genis_ortakli(legs, prev_plan or plan, max_komb)
+            elif ortakli_mode == "sadece_ekle":
+                # greedy nested Ortaklı planını koru, bütçe içinde eksik 5-satır atı ekle (+N/-0)
+                plan, komb = _sadece_ekle_bes(legs, plan, max_komb, ortakli_profile)
+            elif ortakli_mode == "test3_ekle":
+                # ÖNERİLEN: test3 tip-genişletme + sadece-ekle bes (ikisi de yalnız EKLER →
+                # mevcut test3'e göre +N/-0, her iki kazanç kaynağını birleştirir).
+                plan, komb = apply_test3_tip_genis_ortakli(legs, prev_plan or plan, max_komb)
+                plan, komb = _sadece_ekle_bes(legs, plan, max_komb, ortakli_profile)
+            # "baseline"/"none": saf greedy nested plan (ekleme yok)
         if banko_idx is None:
             banko_idx = next((i for i, p in enumerate(plan) if p["banko_lider"]), None)
         prev_w = [p["width"] for p in plan]
+        prev_plan = plan
         out.append((ad, lo, hi, plan, komb))
     return out
 

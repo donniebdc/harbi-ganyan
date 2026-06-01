@@ -17,7 +17,7 @@ from altili_lib import BASE, norm_hip, load_all_csv, load_results, winning_set, 
 from datetime import datetime
 
 def newest_bulk():
-    c = sorted(glob.glob(os.path.join(BASE, "v5_tahmin_*.txt")), key=os.path.getmtime)
+    c = sorted(glob.glob(os.path.join(BASE, "Toplu Tahminler", "v5_tahmin_*.txt")), key=os.path.getmtime)
     return c[-1]
 
 def parse_bulk(path):

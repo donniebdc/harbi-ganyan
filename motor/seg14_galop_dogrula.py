@@ -20,7 +20,7 @@ import pegadrom_json_ai_genis_test as T
 from altili_lib import load_all_csv, winning_set, birim_fiyat
 from altili_kupon_v2 import build_tier, KUPON_TIERS
 
-OUT = Path(T.BASE) / "seg14_galop_dogrula_raporu.md"
+OUT = Path(T.BASE) / "Raporlar" / "seg14_galop_dogrula_raporu.md"
 
 # --- segment-kapılı variant desteği: T.variant_score'u sarmalayalım ---
 _orig_variant_score = T.variant_score

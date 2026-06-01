@@ -12,6 +12,7 @@ from pegadrom_ai_features import load_ai_txt_root
 from pegadrom_ai_txt_topla import DEFAULT_DELAY, DEFAULT_OUT, collect_range
 from altili_uretim import altili_ayaklari, hipodrom_altili_bloku, analiz_dosyalari_yaz, bes_satir_ekuri_notu
 from altili_lib import ekuri_gruplari
+from tahmin_sonuc_karsilastir import uret_aralik as tahmin_sonuc_uret
 
 # ── Türkiye hipodromları ──────────────────────────────────────────────────────
 TURKIYE_HIPODROMS = {
@@ -78,7 +79,8 @@ class GanyanMasterEngine:
         return {a['key']:(a.get(kriter,0)-mn)/(mx-mn)*100 for a in atlar}
 
     def load_pegadrom(self):
-        for fp in [os.path.join(self.data_path, "pegadrom_skorlar.json"), "pegadrom_skorlar.json"]:
+        for fp in [os.path.join(os.path.dirname(os.path.abspath(__file__)), "motor", "pegadrom_skorlar.json"),
+                   os.path.join(self.data_path, "pegadrom_skorlar.json"), "pegadrom_skorlar.json"]:
             try:
                 if os.path.exists(fp):
                     with open(fp, encoding="utf-8") as f:
@@ -500,6 +502,27 @@ class GanyanMasterEngine:
                         bes_secim,sirali_atlar,gruplar,no_key='at_no',isim_key='raw_at')
 
                     # ── ÇIKTI (sade şablon) ──
+                    self.report_lines.append(
+                        f"KO:{kno}|{sad}|{target_date}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}")
+                    if gruplar:
+                        from altili_lib import ekuri_serialize
+                        self.report_lines.append("EKURI:" + ekuri_serialize(gruplar))
+                    def _atad(x):
+                        return x.get('at', '') if x else "-"
+                    self.report_lines.append(
+                        f"5SATIR:FAV={_atad(secim.get('favori'))}|SUR={_atad(secim.get('surpriz_degil'))}|"
+                        f"YAZ={_atad(secim.get('yazilabilir'))}|BOM={_atad(secim.get('bomba'))}|"
+                        f"HAR={_atad(secim.get('harbi'))}")
+                    for a in sorted(atlar, key=lambda x:x['ana_skor'], reverse=True):
+                        self.report_lines.append(
+                            f"ATNO:{a['at_no']}|AT:{a['at']}|ANA:{a['ana_skor']:.1f}|"
+                            f"PEGGLP:{a.get('peg_galop_skor',0):.0f}|PEGMOD:{a.get('peg_model',0):.0f}|"
+                            f"AKIS:{a.get('peg_flow_rank',0)}|AKS:{a.get('peg_flow_score',0):.1f}|"
+                            f"G:{a['genel']:.0f}|Gn:{a['guncel']:.0f}|S:{a['saatli']:.0f}|"
+                            f"AGF:{a['agf']:.1f}|GSP:0.0|GGN:99|GEF:|GSY:0|"
+                            f"JOK:{a['jokey_skoru']:.3f}")
+                    self.report_lines.append("")
+
                     # 14+ atli sahalar yapisal olarak dusuk isabetli (5 satir ~%79 vs ~%95);
                     # kullaniciya guven uyarisi verilir, kupon o ayakta genisletilir.
                     dusuk_guven=" | ⚠️ DÜŞÜK GÜVEN (kalabalık saha)" if len(atlar)>=14 else ""
@@ -546,6 +569,9 @@ class GanyanMasterEngine:
                             'atlar_sirali':sirali,
                             'n_at':len(atlar),
                             'fark':fark,
+                            'race_type':ag,
+                            'race_subtype':alt,
+                            'bes_nos':[x['at_no'] for x in bes_secim if x],
                             'alt':alt,
                             'ekuri':gruplar,
                         }
@@ -573,6 +599,14 @@ class GanyanMasterEngine:
             print(f"🏆 TAMAMLANDI | 📅 {target_date}")
             print(f"   💾 Tahminler: {tahmin_yol}")
             print(f"   💾 Altılı   : {altili_yol}")
+            try:
+                yazilan = tahmin_sonuc_uret(target_date, collect_results=True)
+                if yazilan:
+                    print(f"   📊 TahminSonuçları: {yazilan[0]}")
+                else:
+                    print("   📊 TahminSonuçları: sonuç bulunamadı/henüz oluşmadı.")
+            except Exception as ex:
+                print(f"   ⚠️ TahminSonuçları üretilemedi: {ex}")
             print("═"*60)
         except Exception as e:
             import traceback

@@ -20,7 +20,7 @@ import pegadrom_json_ai_genis_test as T
 from altili_lib import load_all_csv, winning_set, birim_fiyat
 from altili_kupon_v2 import build_tier, KUPON_TIERS
 
-OUT = Path(T.BASE) / "grid7_altili_dogrula_raporu.md"
+OUT = Path(T.BASE) / "Raporlar" / "grid7_altili_dogrula_raporu.md"
 
 # grid7 = pegadrom_json_ai_genis_test_raporu.md "Ağırlık Grid" tablosu 7. satır
 GRID7 = {

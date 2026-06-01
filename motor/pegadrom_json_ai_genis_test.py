@@ -32,8 +32,8 @@ from altili_kupon_v2 import build_tier, KUPON_TIERS
 
 ROOT = Path(BASE)
 ANALIZ_ROOT = ROOT / "Harbi_Ganyan_Analiz"
-PEG_JSON = ROOT / "pegadrom_skorlar.json"
-OUT = ROOT / "pegadrom_json_ai_genis_test_raporu.md"
+PEG_JSON = ROOT / "motor" / "pegadrom_skorlar.json"
+OUT = ROOT / "Raporlar" / "pegadrom_json_ai_genis_test_raporu.md"
 
 START = "2026-04-01"
 TRAIN_END = "2026-05-15"

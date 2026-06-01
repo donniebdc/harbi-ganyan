@@ -19,7 +19,7 @@ from altili_lib import BASE, load_all_csv, winning_set, birim_fiyat
 from altili_kupon_v2 import build_tier, KUPON_TIERS, load_cal
 import kupon_kacan_analiz as KK   # parse + leg yardımcıları
 
-OUT = os.path.join(BASE, "kupon_fix_test_raporu.md")
+OUT = os.path.join(BASE, "Raporlar", "kupon_fix_test_raporu.md")
 
 VARIANTS = [
     ("baseline", {}),

@@ -14,8 +14,8 @@ from altili_lib import BASE, MOTOR, parse_tahmin_arsiv, load_all_csv, winning_se
 import glob
 
 def _newest_bulk():
-    cands = sorted(glob.glob(os.path.join(BASE, "v5_tahmin_*.txt")), key=os.path.getmtime)
-    return cands[-1] if cands else os.path.join(BASE, "v5_tahmin_01042026-30052026.txt")
+    cands = sorted(glob.glob(os.path.join(BASE, "Toplu Tahminler", "v5_tahmin_*.txt")), key=os.path.getmtime)
+    return cands[-1] if cands else os.path.join(BASE, "Toplu Tahminler", "v5_tahmin_01042026-30052026.txt")
 
 TAHMIN = _newest_bulk()
 
