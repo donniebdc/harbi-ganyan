@@ -6,6 +6,11 @@ __pycache__/
 # Editör
 .vscode/
 
+# Claude Code araçları/skill kurulumları (yeniden kurulabilir; harbi_ganyan skill'i
+# motor/_sync_skill.py ile PROJE_OZETI'den yeniden üretilir)
+.agents/
+.claude/
+
 # Geçici / sonda dosyaları
 _probe_*.html
 _probe_*.json
