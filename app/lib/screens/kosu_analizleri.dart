@@ -8,6 +8,7 @@ import '../state/auth.dart';
 import '../state/content.dart';
 import '../state/nav.dart';
 import '../theme.dart';
+import '../util.dart';
 import '../widgets/durumlar.dart';
 import '../widgets/tarih_seridi.dart';
 import 'auth_sheet.dart';
@@ -77,28 +78,35 @@ class _KosuAnalizleriState extends ConsumerState<KosuAnalizleri>
       loading: () => const Yukleniyor(),
       error: (e, _) => HataKutu(onTekrar: () => ref.invalidate(gunlerProvider)),
       data: (gunler) {
-        final list = gunler.where((g) => g.aktif || g.yakinda).toList()
-          ..sort((a, b) => a.date.compareTo(b.date));
+        // Geçmiş + bugün + (yayınlanmışsa) yarın — hepsi gösterilir ki geçmiş
+        // günlerin alt-bahis analizleri de incelenebilsin. Provider desc sıralı gelir.
+        final list = [...gunler]..sort((a, b) => b.date.compareTo(a.date));
         if (list.isEmpty) {
           return const BosKutu('Henüz analiz yayınlanmadı.', ikon: Icons.event_busy);
         }
-        final bugun = list.first.date;
+        final bugunIso = _bugunIso();
+        final yarinIso = _yarinIso();
+        // Varsayılan seçim: bugün listede ise bugün, değilse en yeni gün.
+        final varsayilan =
+            list.any((g) => g.date == bugunIso) ? bugunIso : list.first.date;
         final secili = (_secili != null && list.any((g) => g.date == _secili))
             ? _secili!
-            : bugun;
+            : varsayilan;
         final secGun = list.firstWhere((g) => g.date == secili);
-        final canli = (secili == bugun && !secGun.yakinda);
+        // Canlı yenileme yalnız bugün (aktif, yakında değil).
+        final canli = secili == bugunIso && secGun.aktif && !secGun.yakinda;
         WidgetsBinding.instance
             .addPostFrameCallback((_) => _timerAyarla(canli ? secili : null));
 
         return Column(children: [
-          if (list.length > 1)
-            TarihSeridi(
-              gunler: list,
-              secili: secili,
-              onSec: (d) => setState(() => _secili = d),
-              ustEtiket: (g) => g.date == bugun ? 'BUGÜN' : 'YARIN',
-            ),
+          TarihSeridi(
+            gunler: list,
+            secili: secili,
+            onSec: (d) => setState(() => _secili = d),
+            ustEtiket: (g) => g.date == bugunIso
+                ? 'BUGÜN'
+                : (g.date == yarinIso ? 'YARIN' : gunAdi(g.date)),
+          ),
           Expanded(child: _icerik(auth, secGun)),
         ]);
       },
@@ -445,6 +453,17 @@ class _Bilgi extends StatelessWidget {
           ]),
         ),
       );
+}
+
+String _iki(int n) => n.toString().padLeft(2, '0');
+String _bugunIso() {
+  final n = DateTime.now();
+  return '${n.year}-${_iki(n.month)}-${_iki(n.day)}';
+}
+
+String _yarinIso() {
+  final n = DateTime.now().add(const Duration(days: 1));
+  return '${n.year}-${_iki(n.month)}-${_iki(n.day)}';
 }
 
 String _para(double x) {
