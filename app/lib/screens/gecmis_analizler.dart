@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../api/models.dart';
 import '../state/content.dart';
-import '../theme.dart';
 import '../util.dart';
 import '../widgets/durumlar.dart';
+import '../widgets/tarih_seridi.dart';
 import 'gun_icerik.dart';
 
 class GecmisAnalizler extends ConsumerStatefulWidget {
@@ -23,70 +23,25 @@ class _GecmisState extends ConsumerState<GecmisAnalizler> {
       loading: () => const Yukleniyor(),
       error: (e, _) => HataKutu(onTekrar: () => ref.invalidate(gunlerProvider)),
       data: (gunler) {
-        // Geçmiş = günün analizi dışındaki (yayınlanmış) günler.
-        final gecmis = gunler.where((g) => !g.gununAnalizi).toList();
+        // Geçmiş = aktif olmayan (yayınlanmış geçmiş) günler.
+        final gecmis = gunler.where((g) => !g.aktif).toList();
         if (gecmis.isEmpty) {
           return const BosKutu('Geçmiş analiz bulunamadı.', ikon: Icons.history);
         }
-        final secili = _secili ?? gecmis.first.date;
+        final secili =
+            (_secili != null && gecmis.any((g) => g.date == _secili))
+                ? _secili!
+                : gecmis.first.date;
         return Column(children: [
-          _TarihSeridi(
+          TarihSeridi(
             gunler: gecmis,
             secili: secili,
             onSec: (d) => setState(() => _secili = d),
+            ustEtiket: (g) => gunAdi(g.date),
           ),
           Expanded(child: _Detay(secili)),
         ]);
       },
-    );
-  }
-}
-
-class _TarihSeridi extends StatelessWidget {
-  final List<GunOzet> gunler;
-  final String secili;
-  final void Function(String) onSec;
-  const _TarihSeridi(
-      {required this.gunler, required this.secili, required this.onSec});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 72,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-        itemCount: gunler.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 8),
-        itemBuilder: (_, i) {
-          final g = gunler[i];
-          final aktif = g.date == secili;
-          return InkWell(
-            onTap: () => onSec(g.date),
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              width: 64,
-              decoration: BoxDecoration(
-                color: aktif ? HG.altin : HG.kart,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: aktif ? HG.altin : HG.kart2),
-              ),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Text(gunAdi(g.date),
-                    style: TextStyle(
-                        fontSize: 11,
-                        color: aktif ? Colors.black54 : HG.metinSoluk)),
-                const SizedBox(height: 2),
-                Text(tarihKisa(g.date),
-                    style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w800,
-                        color: aktif ? Colors.black : HG.metin)),
-              ]),
-            ),
-          );
-        },
-      ),
     );
   }
 }

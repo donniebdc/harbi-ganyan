@@ -151,6 +151,34 @@ def run_live():
     export_import([iso])
 
 
+def run_yayin_bildirim():
+    """TR 18:00: yarının analizleri yayınlandıysa kullanıcılara bildirim oluşturur
+    (uygulama-içi; FCM push Firebase hazır olunca eklenecek). Idempotent."""
+    from datetime import datetime as _dt
+    from app.models import Gun, Kullanici, Bildirim
+    now_tr = _dt.utcnow() + timedelta(hours=3)
+    yarin = now_tr.date() + timedelta(days=1)
+    yarin_str = yarin.strftime("%d.%m.%Y")
+    db = SessionLocal()
+    try:
+        if db.query(Gun).filter(Gun.date == yarin).first() is None:
+            print(f"[yayin] {yarin}: analiz yok, bildirim atlandı.")
+            return
+        baslik = "Yeni Analizler Yayında!"
+        mesaj = f"{yarin_str} günü için 5 satır ve 6'lı analizleri eklendi."
+        if db.query(Bildirim).filter(Bildirim.mesaj == mesaj).first() is not None:
+            print(f"[yayin] {yarin}: bildirim zaten gönderilmiş, atlandı.")
+            return
+        users = db.query(Kullanici).filter_by(aktif=True).all()
+        for u in users:
+            db.add(Bildirim(kullanici_id=u.id, baslik=baslik, mesaj=mesaj))
+        db.commit()
+        print(f"[yayin] {yarin}: {len(users)} kullanıcıya bildirim oluşturuldu.")
+        # TODO(FCM): Firebase hazır olunca buradan push gönder.
+    finally:
+        db.close()
+
+
 def main():
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -166,6 +194,8 @@ def main():
         s = datetime.strptime(start, "%Y-%m-%d").date()
         e = datetime.strptime(end, "%Y-%m-%d").date()
         export_import([_iso(s + timedelta(days=i)) for i in range((e - s).days + 1)])
+    elif "--yayin-bildirim" in flags:
+        run_yayin_bildirim()
     elif "--live" in flags:
         run_live()
     elif "--results-only" in flags:

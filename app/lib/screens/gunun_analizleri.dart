@@ -9,14 +9,24 @@ import '../theme.dart';
 import '../util.dart';
 import '../widgets/durumlar.dart';
 import '../widgets/paywall.dart';
+import '../widgets/tarih_seridi.dart';
 import 'auth_sheet.dart';
 import 'gun_icerik.dart';
 
-class GununAnalizleri extends ConsumerWidget {
+/// Aktif analizler (bugün + yayınlanmışsa yarın). 5 satır / 6'lı sekmeleri bunu kullanır.
+/// Üstte tarih şeridi (BUGÜN / YARIN), içerik premium-kilitli.
+class GununAnalizleri extends ConsumerStatefulWidget {
   final GunIcerikModu mod;
   const GununAnalizleri({this.mod = GunIcerikModu.tumu, super.key});
 
-  void _paywallAksiyon(BuildContext context, WidgetRef ref, bool girisli) {
+  @override
+  ConsumerState<GununAnalizleri> createState() => _GununState();
+}
+
+class _GununState extends ConsumerState<GununAnalizleri> {
+  String? _secili;
+
+  void _paywallAksiyon(bool girisli) {
     if (!girisli) {
       authSheetGoster(context);
     } else {
@@ -25,7 +35,7 @@ class GununAnalizleri extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final auth = ref.watch(authProvider);
     final gunlerAsync = ref.watch(gunlerProvider);
 
@@ -33,59 +43,72 @@ class GununAnalizleri extends ConsumerWidget {
       loading: () => const Yukleniyor(),
       error: (e, _) => HataKutu(onTekrar: () => ref.invalidate(gunlerProvider)),
       data: (gunler) {
-        GunOzet? gunun;
-        for (final g in gunler) {
-          if (g.gununAnalizi) {
-            gunun = g;
-            break;
-          }
+        // Aktif günler = bugün + (yayınlanmışsa) yarın; artan sırada (bugün ilk).
+        final aktifler = gunler.where((g) => g.aktif).toList()
+          ..sort((a, b) => a.date.compareTo(b.date));
+        if (aktifler.isEmpty) {
+          return const BosKutu('Henüz analiz yayınlanmadı.', ikon: Icons.event_busy);
         }
-        gunun ??= gunler.isNotEmpty ? gunler.first : null;
-        if (gunun == null) {
-          return const BosKutu('Henuz analiz yayinlanmadi.', ikon: Icons.event_busy);
-        }
-        if (gunun.kilit) {
-          return PaywallKart(
-              girisli: auth.girisli,
-              onAksiyon: () => _paywallAksiyon(context, ref, auth.girisli));
-        }
-        final date = gunun.date;
-        final detay = ref.watch(gunDetayProvider(date));
+        final bugun = aktifler.first.date; // en küçük aktif tarih = bugün
+        // Seçili gün hâlâ aktif mi? değilse bugüne dön.
+        final secili =
+            (_secili != null && aktifler.any((g) => g.date == _secili))
+                ? _secili!
+                : bugun;
+        final secGun = aktifler.firstWhere((g) => g.date == secili);
+
         return Column(children: [
-          _Baslik(date),
-          Expanded(
-            child: detay.when(
-              loading: () => const Yukleniyor(),
-              error: (e, _) {
-                if (e is KilitliHata) {
-                  return PaywallKart(
-                      girisli: auth.girisli,
-                      onAksiyon: () => _paywallAksiyon(context, ref, auth.girisli));
-                }
-                return HataKutu(onTekrar: () => ref.invalidate(gunDetayProvider(date)));
-              },
-              data: (d) => RefreshIndicator(
-                color: HG.altin,
-                onRefresh: () async => ref.invalidate(gunDetayProvider(date)),
-                child: GunIcerik(d, mod: mod),
-              ),
+          if (aktifler.length > 1)
+            TarihSeridi(
+              gunler: aktifler,
+              secili: secili,
+              onSec: (d) => setState(() => _secili = d),
+              ustEtiket: (g) => g.date == bugun ? 'BUGÜN' : 'YARIN',
             ),
-          ),
+          _Baslik(date: secili, bugun: secili == bugun),
+          Expanded(child: _icerik(auth, secGun)),
         ]);
       },
+    );
+  }
+
+  Widget _icerik(AuthState auth, GunOzet secGun) {
+    if (secGun.kilit) {
+      return PaywallKart(
+          girisli: auth.girisli,
+          onAksiyon: () => _paywallAksiyon(auth.girisli));
+    }
+    final detay = ref.watch(gunDetayProvider(secGun.date));
+    return detay.when(
+      loading: () => const Yukleniyor(),
+      error: (e, _) {
+        if (e is KilitliHata) {
+          return PaywallKart(
+              girisli: auth.girisli,
+              onAksiyon: () => _paywallAksiyon(auth.girisli));
+        }
+        return HataKutu(
+            onTekrar: () => ref.invalidate(gunDetayProvider(secGun.date)));
+      },
+      data: (d) => RefreshIndicator(
+        color: HG.altin,
+        onRefresh: () async => ref.invalidate(gunDetayProvider(secGun.date)),
+        child: GunIcerik(d, mod: widget.mod),
+      ),
     );
   }
 }
 
 class _Baslik extends StatelessWidget {
   final String date;
-  const _Baslik(this.date);
+  final bool bugun;
+  const _Baslik({required this.date, required this.bugun});
   @override
   Widget build(BuildContext context) => Container(
         width: double.infinity,
-        padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
         child: Row(children: [
-          const Icon(Icons.today, color: HG.altin, size: 18),
+          Icon(bugun ? Icons.today : Icons.event, color: HG.altin, size: 18),
           const SizedBox(width: 8),
           Text(tarihUzun(date),
               style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15)),
@@ -95,8 +118,8 @@ class _Baslik extends StatelessWidget {
             decoration: BoxDecoration(
                 color: HG.altin.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(6)),
-            child: const Text('CANLI',
-                style: TextStyle(
+            child: Text(bugun ? 'CANLI' : 'YARIN',
+                style: const TextStyle(
                     color: HG.altin, fontSize: 10, fontWeight: FontWeight.w800)),
           ),
         ]),

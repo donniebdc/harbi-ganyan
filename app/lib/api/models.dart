@@ -7,6 +7,7 @@ class GunOzet {
   final List<HipOzet> hipodromlar;
   final bool sonuclandi;
   final bool gununAnalizi;
+  final bool aktif;
   final bool kilit;
 
   GunOzet.fromJson(Map<String, dynamic> j)
@@ -16,6 +17,7 @@ class GunOzet {
             .toList(),
         sonuclandi = j['sonuclandi'] as bool? ?? false,
         gununAnalizi = j['gunun_analizi'] as bool? ?? false,
+        aktif = j['aktif'] as bool? ?? (j['gunun_analizi'] as bool? ?? false),
         kilit = j['kilit'] as bool? ?? false;
 }
 
