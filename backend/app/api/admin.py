@@ -13,6 +13,7 @@ from ..db import get_db
 from ..deps import require_admin
 from ..models import Bildirim, Kullanici, Uyelik
 from ..security import hash_sifre
+from .. import fcm
 
 router = APIRouter(prefix="/admin/api", tags=["admin"])
 
@@ -250,17 +251,19 @@ def bildirim_gonder(req: BildirimReq, _: Kullanici = Depends(require_admin),
         raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
     if req.kullanici_id is None and req.hedef_tier is None:
         targets = db.query(Kullanici).filter_by(aktif=True).all()
+        hedef_idler = [u.id for u in targets]
         for user in targets:
             db.add(Bildirim(kullanici_id=user.id, baslik=req.baslik, mesaj=req.mesaj))
-        adet = len(targets)
     elif req.kullanici_id is not None:
+        hedef_idler = [req.kullanici_id]
         db.add(Bildirim(kullanici_id=req.kullanici_id, baslik=req.baslik, mesaj=req.mesaj))
-        adet = 1
     else:
         targets = db.query(Kullanici).filter_by(aktif=True, tier=req.hedef_tier).all()
+        hedef_idler = [u.id for u in targets]
         for user in targets:
             db.add(Bildirim(kullanici_id=user.id, baslik=req.baslik, mesaj=req.mesaj,
                             hedef_tier=req.hedef_tier))
-        adet = len(targets)
     db.commit()
-    return {"durum": "gonderildi", "adet": adet}
+    # Uygulama-içi bildirim oluşturuldu; ayrıca FCM push (yapılandırılmışsa)
+    push_adet = fcm.kullanicilara_push(db, hedef_idler, req.baslik, req.mesaj, {"tip": "admin"})
+    return {"durum": "gonderildi", "adet": len(hedef_idler), "push": push_adet}

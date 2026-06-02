@@ -147,6 +147,8 @@ class Kullanici(Base):
         back_populates="kullanici", cascade="all, delete-orphan")
     bildirimler: Mapped[list["Bildirim"]] = relationship(
         back_populates="kullanici", cascade="all, delete-orphan")
+    cihaz_tokenlari: Mapped[list["DeviceToken"]] = relationship(
+        back_populates="kullanici", cascade="all, delete-orphan")
 
 
 class Uyelik(Base):
@@ -185,3 +187,15 @@ class Bildirim(Base):
     okundu: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
     kullanici: Mapped[Kullanici | None] = relationship(back_populates="bildirimler")
+
+
+class DeviceToken(Base):
+    """FCM push için cihaz kayıt token'ı (kullanıcı başına 0..n cihaz)."""
+    __tablename__ = "device_token"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    kullanici_id: Mapped[int] = mapped_column(
+        ForeignKey("kullanici.id", ondelete="CASCADE"), index=True)
+    token: Mapped[str] = mapped_column(String(255), unique=True, index=True)
+    platform: Mapped[str] = mapped_column(String(10), default="android")
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    kullanici: Mapped[Kullanici] = relationship(back_populates="cihaz_tokenlari")

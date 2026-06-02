@@ -170,11 +170,13 @@ def run_yayin_bildirim():
             print(f"[yayin] {yarin}: bildirim zaten gönderilmiş, atlandı.")
             return
         users = db.query(Kullanici).filter_by(aktif=True).all()
+        hedef_idler = [u.id for u in users]
         for u in users:
             db.add(Bildirim(kullanici_id=u.id, baslik=baslik, mesaj=mesaj))
         db.commit()
-        print(f"[yayin] {yarin}: {len(users)} kullanıcıya bildirim oluşturuldu.")
-        # TODO(FCM): Firebase hazır olunca buradan push gönder.
+        from app import fcm
+        push_adet = fcm.kullanicilara_push(db, hedef_idler, baslik, mesaj, {"tip": "yayin"})
+        print(f"[yayin] {yarin}: {len(users)} in-app, {push_adet} push gönderildi.")
     finally:
         db.close()
 

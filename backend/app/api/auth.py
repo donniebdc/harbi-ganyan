@@ -9,7 +9,7 @@ from pydantic import BaseModel, field_validator
 from sqlalchemy.orm import Session
 
 from ..db import get_db
-from ..models import Bildirim, DogrulamaKodu, Kullanici
+from ..models import Bildirim, DeviceToken, DogrulamaKodu, Kullanici
 from ..security import dogrula_sifre, hash_sifre, jwt_olustur, kod_uret
 from ..mail import kod_gonder
 from ..deps import require_user
@@ -152,3 +152,30 @@ def bildirim_okundu(bildirim_id: int, user: Kullanici = Depends(require_user),
     row.okundu = True
     db.commit()
     return {"durum": "okundu"}
+
+
+class FcmTokenReq(BaseModel):
+    token: str
+    platform: str = "android"
+
+    @field_validator("token")
+    @classmethod
+    def _token(cls, v: str) -> str:
+        v = v.strip()
+        if not v or len(v) > 255:
+            raise ValueError("Gecersiz token.")
+        return v
+
+
+@router.post("/fcm-token")
+def fcm_token_kaydet(req: FcmTokenReq, user: Kullanici = Depends(require_user),
+                     db: Session = Depends(get_db)):
+    """Cihazın FCM push token'ını kaydeder/günceller (push bildirimleri için)."""
+    existing = db.query(DeviceToken).filter_by(token=req.token).one_or_none()
+    if existing is not None:
+        existing.kullanici_id = user.id
+        existing.platform = req.platform
+    else:
+        db.add(DeviceToken(kullanici_id=user.id, token=req.token, platform=req.platform))
+    db.commit()
+    return {"durum": "kaydedildi"}

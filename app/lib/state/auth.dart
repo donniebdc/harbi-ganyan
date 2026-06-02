@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../api/client.dart';
+import '../fcm_setup.dart';
 
 final apiClientProvider = Provider<ApiClient>((ref) => ApiClient());
 
@@ -39,8 +40,19 @@ class AuthController extends Notifier<AuthState> {
         email: me['email'] as String?,
         isAdmin: me['is_admin'] as bool? ?? false,
       );
+      _pushTokenKaydet();
     } catch (_) {
       await cikis();
+    }
+  }
+
+  /// Cihazın FCM token'ını backend'e kaydeder (giriş yapılmışsa). Hata sessiz.
+  Future<void> _pushTokenKaydet() async {
+    try {
+      final t = await cihazFcmToken();
+      if (t != null) await _api.fcmTokenKaydet(t);
+    } catch (_) {
+      // push kaydı başarısızsa uygulama akışı etkilenmesin
     }
   }
 
@@ -54,6 +66,7 @@ class AuthController extends Notifier<AuthState> {
       email: me['email'] as String? ?? email,
       isAdmin: me['is_admin'] as bool? ?? false,
     );
+    _pushTokenKaydet();
   }
 
   Future<void> kayit(String email, String sifre) => _api.kayit(email, sifre);

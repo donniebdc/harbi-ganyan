@@ -30,5 +30,9 @@ class Settings(BaseSettings):
     # İçerik
     gecmis_gun: int = 30  # "Geçmiş Analizler" penceresi
 
+    # FCM push (Firebase). firebase_sa = service-account JSON yolu (gizli, git'e girmez).
+    firebase_sa: str = ""
+    firebase_project: str = "harbi-ganyan"
+
 
 settings = Settings()
