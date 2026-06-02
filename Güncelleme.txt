@@ -1,0 +1,13 @@
+Benim önerdiğim ve sonrasında codex'n yazdığı mobil ui'de hatalar var.
+App klasörüne erişimin var. Buradan okuyup build edebilirsin. 
+Geçmiş bloğunda sonuçlanmış altılı ganyanların ikramiye bedelleri mutlaka olmalı. Tutturduysak ne kadar tutturduk bunu görmemiz lazım. 
+Bildirimler çalışmıyor, bildirim sistemini tekrar gözden geçirip nerede hata var onu bulmalısın. 
+Admin panelinden test bildirimi yolladım ama çalışmadı. Telefonda kontrol ettiğimde bildirimleri aktif etme menüsünde uygulama ismi görünmüyor. Ayrıca uygulamanın adı HarbiGanyan olmalı. Şu an mobil'de harbi_ganyan görünüyor. 
+
+Uygulamanın logolarını değiştireceğim. Değiştirdiğimde logoları sana atarım ve tekrar build edersin. Bana sadece logoların çözünürlüklerini yazman yeterli. 
+
+6'lı ganyan analiz bloğunda codex at isimlerini de eklemiş, buna gerek yok. zaten 5 satırda isimleri veriyoruz orası çok kalabalıklaşmış. 
+Ayrıca Sistemin şu mantığı entegre etmeliyiz. Sistem her koşu için koşu saatlerini görebiliyor. Bu sebeple koşulardaki anlık sonuçları alabilmek adına her koşu saatinden 6 dakika ve 10 dakika sonrasına istek atması ve koşuyu kimin kazandığını sisteme eklemesi gerekiyor. 
+İki aralıklı istek atılmasının sebebi, gayrıresmi sonuç sonrasını da görebilmek. Bazen tjk'nın bunu işlemesi uzun sürebiliyor. Hatta şöyle de yapabiliriz. Sistem koşu saatinden 7 dakika sonrasına koşunun sonucunu görmek için istek atsın, eğer gayrıresmi yazıyorsa, 2 dakika sonra tekrar istek atsın, ta ki o koşunun ganyan sonucu verilene kadar. böylece koşu günlerinde eş zamanlı canlı takip yapabiliriz. 
+Ayrıca 6'lı ganyan koşularının da hangiler olduğu belli, örneği 1. altılı ganyan 1-6 koşuları arasında ise, 6. koşudan sonra 6'lı ganyan ikramiyesini görebilmek adına yine tjk'ya ya da atyarisi.com'a istek atarak 6'lı ganyan ikramiyesini çekmeliyiz. eğer gelmemişse 3 dakika arayla gelene kadar tekrar denemeliyiz. 5 satırlı tahminer sayfasında, sonuçlar geldikçe, kazanan atın yanına thick ya da kupa işareti koyup o koşu satırının altına da kazanan atın ismini, numarasını ve ganyanını eklemeliyiz. 
+Aynı zamanda 6'lı kuponlarında da, canlı olarak kazanan atı çekmeli, eğer verdiğimiz kuponda o at varsa o atın numarasını [] parantezine almalı ve ganyan bilgisini de o koşunun yanına detay olarak vermeliyiz. Codex'e attığım örnek şablonları sana da atıyorum. Bu yazdıklarım ışığında gerekli güncellemeleri yap, apk'yı oluştur. apk'yı ben flutter ile telefona atacağım. Ayrıca şu ana kadar yaptıklarımızı da github'a eklemeliyiz. Github bilgileri sende var. Eğer erişemezsen bana komutları yaz ben göndereyim. 
