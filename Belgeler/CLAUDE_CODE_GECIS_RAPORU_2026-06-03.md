@@ -148,6 +148,33 @@ export/import bahisleri grade'liyor → `run_live` VIP'lere bahis bildirimi gön
 
 ---
 
+## 8b. Oturum Sonu Düzeltmeleri (deploy sonrası)
+
+Manuel üretim testinden sonra fark edilen ve giderilen sorunlar:
+
+1. **Mobil — geçmiş günler görünmüyordu (DÜZELTİLDİ).**
+   `KosuAnalizleri` ekranı tarih şeridinde yalnız `aktif || yakinda` (bugün+yarın)
+   günleri gösteriyordu; geçmiş günler filtreleniyordu. Artık **tüm günler**
+   (geçmiş + bugün + yarın) şeritte; varsayılan seçim bugün, geçmiş günlerde
+   auto-refresh kapalı. (`app/lib/screens/kosu_analizleri.dart`)
+   - Backend zaten doğruydu: manuel üretilen 26/27/28.05 → 88/60/102 bahis kaydı DB'de.
+
+2. **Bugün (06-03) bahissizdi (DÜZELTİLDİ).** Cron bugünü deploy'dan ÖNCE (bets'siz
+   engine ile) üretmişti. `--uret 2026-06-03` ile yeniden üretildi → **82 bahis**.
+   - Genel kural: deploy gününden önce üretilmiş günleri görmek için
+     "Manuel Üretim" ile yeniden üret.
+
+3. **APK yeniden derlendi** (mobil düzeltme dahil) — `app-release.apk` ~51 MB.
+
+4. **GitHub:** `analiz/altili-aktarim-optim` → son commit `4f247d7`
+   (önceki: `7cc1481` ana özellik commit'i, `e724256` taban).
+
+**Doğrulama özeti (CANLI):** 24/26/27/28/30.05 ve 06-03 günlerinde kosu_bahis
+kayıtları mevcut; grading TJK resmi ödemeleriyle birebir; VIP endpoint anonim=403,
+VIP=200. `gecmis_gun=30` (son 30 gün şeritte görünür).
+
+---
+
 ## 9. Hızlı Komut Hatırlatıcı
 
 ```bash
