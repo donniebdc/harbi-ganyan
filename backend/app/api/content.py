@@ -19,8 +19,8 @@ from sqlalchemy.orm import Session
 from ..db import get_db
 from ..config import settings
 from ..models import (Gun, GunHipodrom, Kosu, KosuSonuc, Altili, AltiliSonuc,
-                      Kullanici)
-from ..serialize import gun_payload, gun_summary
+                      KosuBahis, Kullanici)
+from ..serialize import gun_payload, gun_summary, gh_bahis_payload
 from ..deps import current_user, has_tier
 
 router = APIRouter(tags=["icerik"])
@@ -34,14 +34,21 @@ def _now_tr() -> datetime:
 
 
 def _siniflandir(d: date, now_tr: datetime) -> str:
-    """Bir günü 'aktif' / 'gecmis' / 'gizli' olarak sınıflandırır."""
+    """Bir günü 'aktif' / 'yakinda' / 'gecmis' / 'gizli' olarak sınıflandırır.
+
+    - aktif   : bugün VEYA (yarın ve saat >= 18:00). İçerik açık (premium kilidiyle).
+    - yakinda : yarın ama saat < 18:00. Tarih şeridinde GÖRÜNÜR ama içerik
+                18:00'e kadar kilitli ("Analizler 18:00 itibariyle aktif olacaktır").
+    - gecmis  : bugünden önce. Herkese açık.
+    - gizli   : 2+ gün sonrası. Listelenmez.
+    """
     today = now_tr.date()
     if d < today:
         return "gecmis"
     if d == today:
         return "aktif"
-    if d == today + timedelta(days=1) and now_tr.hour >= YAYIN_SAATI:
-        return "aktif"
+    if d == today + timedelta(days=1):
+        return "aktif" if now_tr.hour >= YAYIN_SAATI else "yakinda"
     return "gizli"
 
 
@@ -59,7 +66,9 @@ def gunler(
     yarin_yayinda = now_tr.hour >= YAYIN_SAATI
     premium = has_tier(user, "premium")
 
-    upper = today + timedelta(days=1) if yarin_yayinda else today
+    # Yarın "yakında" olsa bile (henüz 18:00 olmadı) tarih şeridinde görünmeli;
+    # bu yüzden üst sınır her zaman yarını kapsar (içerik yine de kilitli kalır).
+    upper = today + timedelta(days=1)
     if gun_to is None or gun_to > upper:
         gun_to = upper
     if gun_from is None:
@@ -73,13 +82,18 @@ def gunler(
             continue
         s = gun_summary(g)
         aktif = sinif == "aktif"
+        yakinda = sinif == "yakinda"
         s["aktif"] = aktif
+        s["yakinda"] = yakinda
+        s["yayin_saati"] = YAYIN_SAATI
         s["gunun_analizi"] = aktif  # geriye uyum (eski istemciler)
-        s["kilit"] = aktif and not premium
+        # Aktif günde premium değilse paywall; yakında günde herkese kilit (saat kilidi).
+        s["kilit"] = (aktif and not premium) or yakinda
         out.append(s)
     return {
         "bugun_date": today.isoformat(),
         "yarin_yayinda": yarin_yayinda,
+        "yayin_saati": YAYIN_SAATI,
         "tier": (user.tier if user else "standart"),
         "gunler": out,
     }
@@ -94,6 +108,12 @@ def gun_detay(gun_date: date, db: Session = Depends(get_db),
     sinif = _siniflandir(gun_date, now_tr)
     if sinif == "gizli":
         raise HTTPException(status_code=404, detail="Bu analiz henüz yayınlanmadı.")
+    if sinif == "yakinda":
+        # Yarının analizi DB'de hazır olsa da 18:00'e kadar içerik verilmez.
+        raise HTTPException(status_code=403, detail={
+            "mesaj": f"Analizler {YAYIN_SAATI:02d}:00 itibariyle aktif olacaktır.",
+            "kilit": True, "yakinda": True, "yayin_saati": YAYIN_SAATI,
+        })
     gun = db.query(Gun).filter_by(date=gun_date).one_or_none()
     if gun is None:
         raise HTTPException(status_code=404, detail="Bu güne ait analiz bulunamadı.")
@@ -103,6 +123,35 @@ def gun_detay(gun_date: date, db: Session = Depends(get_db),
             "kilit": True, "gereken_tier": "premium",
         })
     return gun_payload(gun)
+
+
+@router.get("/gun/{gun_date}/bahisler")
+def gun_bahisler(gun_date: date, db: Session = Depends(get_db),
+                 user: Kullanici | None = Depends(current_user)):
+    """Koşu Analizleri (alt-bahisler) — VIP üyelere açık. Aktif günlerde içerik
+    yayın saatine ve VIP kademesine tabidir; geçmiş günler VIP'e açık."""
+    now_tr = _now_tr()
+    sinif = _siniflandir(gun_date, now_tr)
+    if sinif == "gizli":
+        raise HTTPException(status_code=404, detail="Bu analiz henüz yayınlanmadı.")
+    if sinif == "yakinda":
+        raise HTTPException(status_code=403, detail={
+            "mesaj": f"Analizler {YAYIN_SAATI:02d}:00 itibariyle aktif olacaktır.",
+            "kilit": True, "yakinda": True, "yayin_saati": YAYIN_SAATI,
+        })
+    if not has_tier(user, "vip"):
+        raise HTTPException(status_code=403, detail={
+            "mesaj": "Koşu Analizleri VIP üyelere açıktır.",
+            "kilit": True, "gereken_tier": "vip",
+        })
+    gun = db.query(Gun).filter_by(date=gun_date).one_or_none()
+    if gun is None:
+        raise HTTPException(status_code=404, detail="Bu güne ait analiz bulunamadı.")
+    return {
+        "date": gun.date.isoformat(),
+        "hipodromlar": [gh_bahis_payload(gh)
+                        for gh in sorted(gun.hipodromlar, key=lambda x: x.hipodrom)],
+    }
 
 
 _TIER_KEYS = ["simitci", "harbi", "ortakli"]
@@ -177,3 +226,60 @@ def istatistik(db: Session = Depends(get_db)):
     hafta = _donem_istatistik(db, today - timedelta(days=7), today)
     ay = _donem_istatistik(db, today - timedelta(days=30), today)
     return {"bugun": today.isoformat(), "hafta": hafta, "ay": ay}
+
+
+# Bahis türü görünüm sırası + adları (serialize._BET_SIRA ile aynı)
+_BAHIS_SIRA = ["PLASE", "IKILI", "SIRALI_IKILI", "PLASE_IKILI", "SIRALI_UCLU",
+               "TABELA", "SIRALI_BESLI", "CIFTE", "UCLU_GANYAN", "DORTLU_GANYAN",
+               "BESLI_GANYAN", "YEDILI_GANYAN", "YEDILI_PLASE"]
+
+
+def _bahis_istatistik(db: Session, start: date, end: date) -> list[dict]:
+    """Bahis türü bazında: kaç analiz, kaç tuttu, toplam kupon parası (misli dahil),
+    toplam kazanç ve net. Yalnız sonuçlanmış (tuttu != None) bahisler sayılır."""
+    agg = {c: {"toplam": 0, "tuttu": 0, "maliyet": 0.0, "kazanc": 0.0} for c in _BAHIS_SIRA}
+    adlar = {}
+    rows = (db.query(KosuBahis)
+            .join(GunHipodrom, KosuBahis.gh_id == GunHipodrom.id)
+            .join(Gun, GunHipodrom.gun_id == Gun.id)
+            .filter(Gun.date >= start, Gun.date <= end,
+                    KosuBahis.tuttu.isnot(None)).all())
+    for b in rows:
+        a = agg.get(b.tip)
+        if a is None:
+            continue
+        adlar[b.tip] = b.ad
+        a["toplam"] += 1
+        a["maliyet"] += (b.kupon_bedeli or 0.0) * (b.misli or 1)
+        if b.tuttu:
+            a["tuttu"] += 1
+            a["kazanc"] += (b.net or 0.0)
+    out = []
+    for c in _BAHIS_SIRA:
+        a = agg[c]
+        if a["toplam"] == 0:
+            continue
+        out.append({
+            "tip": c, "ad": adlar.get(c, c),
+            "toplam": a["toplam"], "tuttu": a["tuttu"],
+            "yuzde": _yuzde(a["tuttu"], a["toplam"]),
+            "maliyet": round(a["maliyet"], 2),
+            "kazanc": round(a["kazanc"], 2),
+            "net": round(a["kazanc"] - a["maliyet"], 2),
+        })
+    return out
+
+
+@router.get("/istatistik/bahis")
+def istatistik_bahis(db: Session = Depends(get_db),
+                     user: Kullanici | None = Depends(current_user)):
+    """Koşu Analizleri bahis türü istatistikleri (VIP). Haftalık + aylık."""
+    if not has_tier(user, "vip"):
+        raise HTTPException(status_code=403, detail={
+            "mesaj": "Bahis istatistikleri VIP üyelere açıktır.", "gereken_tier": "vip"})
+    today = _now_tr().date()
+    return {
+        "bugun": today.isoformat(),
+        "hafta": _bahis_istatistik(db, today - timedelta(days=7), today),
+        "ay": _bahis_istatistik(db, today - timedelta(days=30), today),
+    }

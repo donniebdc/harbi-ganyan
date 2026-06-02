@@ -45,6 +45,23 @@ class ApiClient {
     }
   }
 
+  /// Koşu Analizleri (alt-bahisler) — VIP. 403'te KilitliHata('vip').
+  Future<GunBahisler> gunBahisler(String date) async {
+    try {
+      final r = await _dio.get('/gun/$date/bahisler', options: _opt);
+      return GunBahisler.fromJson(r.data as Map<String, dynamic>);
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 403) {
+        final d = e.response?.data;
+        final tier = (d is Map && d['detail'] is Map)
+            ? (d['detail']['gereken_tier'] as String? ?? 'vip')
+            : 'vip';
+        throw KilitliHata(tier);
+      }
+      rethrow;
+    }
+  }
+
   // ---- Auth ----
   Future<void> kayit(String email, String sifre) =>
       _dio.post('/auth/kayit', data: {'email': email, 'sifre': sifre});

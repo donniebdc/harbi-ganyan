@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Admin API: kullanici, uyelik, gelir ozeti ve bildirim yonetimi."""
+"""Admin API: kullanici, uyelik, gelir ozeti, bildirim ve manuel uretim."""
 from __future__ import annotations
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date as date_t
+import os
 import re
+import subprocess
+import sys
+import threading
+from pathlib import Path
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from pydantic import BaseModel, field_validator
@@ -16,6 +21,22 @@ from ..security import hash_sifre
 from .. import fcm
 
 router = APIRouter(prefix="/admin/api", tags=["admin"])
+
+# ─── Manuel üretim (tarih/aralık için engine+export+import) ───
+_BACKEND_DIR = Path(os.environ.get("HG_BACKEND_DIR") or
+                    Path(__file__).resolve().parents[2])
+_ENGINE_ROOT = os.environ.get("HG_ENGINE_ROOT") or "/opt/harbi_ganyan_engine"
+_LOG_DIR = _BACKEND_DIR / "logs"
+_URET_MAX_GUN = 31  # tek seferde en fazla 31 gün
+
+# Tek aktif iş; uvicorn tek worker varsayımıyla modül-global durum.
+_uret_lock = threading.Lock()
+_uret_job: dict = {"proc": None, "log": None, "aralik": None, "baslangic": None}
+
+
+class UretReq(BaseModel):
+    start: date_t
+    end: date_t | None = None
 
 TIER_PRICE_WEEKLY = {"standart": 0, "premium": 150, "vip": 250}
 VALID_TIERS = set(TIER_PRICE_WEEKLY)
@@ -242,6 +263,78 @@ def kullanici_sil(user_id: int, admin: Kullanici = Depends(require_admin),
         raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
     db.delete(user)
     db.commit()
+
+
+def _uret_calisiyor() -> bool:
+    p = _uret_job.get("proc")
+    return p is not None and p.poll() is None
+
+
+def _log_tail(path: str | None, n: int = 60) -> list[str]:
+    if not path or not os.path.exists(path):
+        return []
+    try:
+        with open(path, encoding="utf-8", errors="replace") as f:
+            return [ln.rstrip("\n") for ln in f.readlines()[-n:]]
+    except Exception:
+        return []
+
+
+@router.post("/uret", status_code=202)
+def uret_baslat(req: UretReq, _: Kullanici = Depends(require_admin)):
+    """Bir tarih (veya aralık) için tahmin motorunu yeniden çalıştırır:
+    engine + export + import. Geçmiş günlerin alt-bahis analizlerini doldurmak için.
+    Arka planda çalışır; durum /admin/api/uret/durum ile izlenir."""
+    start = req.start
+    end = req.end or start
+    if end < start:
+        raise HTTPException(status_code=400, detail="Bitiş, başlangıçtan önce olamaz.")
+    span = (end - start).days + 1
+    if span > _URET_MAX_GUN:
+        raise HTTPException(status_code=400,
+                            detail=f"En fazla {_URET_MAX_GUN} gün üretilebilir (istek: {span}).")
+    with _uret_lock:
+        if _uret_calisiyor():
+            raise HTTPException(status_code=409, detail={
+                "mesaj": "Zaten süren bir üretim var.",
+                "aralik": _uret_job.get("aralik")})
+        _LOG_DIR.mkdir(parents=True, exist_ok=True)
+        ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+        log_path = str(_LOG_DIR / f"uret_{ts}.log")
+        env = dict(os.environ)
+        env["HG_ENGINE_ROOT"] = _ENGINE_ROOT
+        env["HG_BACKEND_DIR"] = str(_BACKEND_DIR)
+        env["PYTHONIOENCODING"] = "utf-8"
+        logf = open(log_path, "w", encoding="utf-8")
+        # cwd = engine kökü: motorun cwd-bağıl çıktı klasörleri (ör. "Pegadrom AI
+        # Analiz TXT") servis kullanıcısının (harbiganyan) yazabildiği yere düşsün.
+        # daily_pipeline ve export import'ları __file__'a göre çözülür, cwd'den bağımsız.
+        proc = subprocess.Popen(
+            [sys.executable, str(_BACKEND_DIR / "cron" / "daily_pipeline.py"),
+             "--uret", start.isoformat(), end.isoformat()],
+            cwd=_ENGINE_ROOT, env=env, stdout=logf,
+            stderr=subprocess.STDOUT, start_new_session=True)
+        _uret_job.update({"proc": proc, "log": log_path,
+                          "aralik": f"{start.isoformat()} → {end.isoformat()}",
+                          "baslangic": datetime.utcnow().isoformat()})
+    return {"durum": "baslatildi", "aralik": _uret_job["aralik"], "gun_sayisi": span}
+
+
+@router.get("/uret/durum")
+def uret_durum(_: Kullanici = Depends(require_admin)):
+    """Manuel üretim işinin durumu + son log satırları."""
+    p = _uret_job.get("proc")
+    calisiyor = _uret_calisiyor()
+    bitis_kodu = None
+    if p is not None and not calisiyor:
+        bitis_kodu = p.returncode
+    return {
+        "calisiyor": calisiyor,
+        "aralik": _uret_job.get("aralik"),
+        "baslangic": _uret_job.get("baslangic"),
+        "bitis_kodu": bitis_kodu,  # None=hiç çalışmadı/sürüyor, 0=başarılı, !=0 hata
+        "son_satirlar": _log_tail(_uret_job.get("log")),
+    }
 
 
 @router.post("/bildirimler", status_code=201)

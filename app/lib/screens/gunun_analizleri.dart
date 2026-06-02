@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../api/client.dart';
@@ -23,8 +25,58 @@ class GununAnalizleri extends ConsumerStatefulWidget {
   ConsumerState<GununAnalizleri> createState() => _GununState();
 }
 
-class _GununState extends ConsumerState<GununAnalizleri> {
+class _GununState extends ConsumerState<GununAnalizleri>
+    with WidgetsBindingObserver {
   String? _secili;
+
+  /// Canlı (bugün) günde otomatik yenileme zamanlayıcısı.
+  Timer? _canliTimer;
+
+  /// Şu an ekranda gösterilen ve canlı yenilenmesi gereken günün tarihi.
+  /// null ise yenilenecek canlı gün yok (yarın/yakında/geçmiş seçili).
+  String? _canliDate;
+
+  static const _yenilemeAralik = Duration(seconds: 60);
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    _canliTimer?.cancel();
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Uygulama ön plana dönünce 1 kez tazele (canlı gün varsa).
+    if (state == AppLifecycleState.resumed) {
+      _yenile();
+    }
+  }
+
+  /// Canlı günün verisini sessizce tazeler. skipLoadingOnReload sayesinde
+  /// liste yeniden inşa edilmez; kullanıcının scroll konumu korunur.
+  void _yenile() {
+    final d = _canliDate;
+    if (d == null) return;
+    ref.invalidate(gunDetayProvider(d));
+    ref.invalidate(gunlerProvider); // aktif/sonuç durumları da güncellensin
+  }
+
+  /// Seçili gün canlı (bugün) ise timer'ı kurar; değilse durdurur.
+  void _timerAyarla(String? canliDate) {
+    if (canliDate == _canliDate) return; // değişiklik yok
+    _canliDate = canliDate;
+    _canliTimer?.cancel();
+    if (canliDate != null) {
+      _canliTimer = Timer.periodic(_yenilemeAralik, (_) => _yenile());
+    }
+  }
 
   void _paywallAksiyon(bool girisli) {
     if (!girisli) {
@@ -40,27 +92,35 @@ class _GununState extends ConsumerState<GununAnalizleri> {
     final gunlerAsync = ref.watch(gunlerProvider);
 
     return gunlerAsync.when(
+      // Arka plan yenilemesinde tüm ekranı loading'e düşürme (scroll korunur).
+      skipLoadingOnReload: true,
       loading: () => const Yukleniyor(),
       error: (e, _) => HataKutu(onTekrar: () => ref.invalidate(gunlerProvider)),
       data: (gunler) {
-        // Aktif günler = bugün + (yayınlanmışsa) yarın; artan sırada (bugün ilk).
-        final aktifler = gunler.where((g) => g.aktif).toList()
+        // Gösterilecek günler = bugün (aktif) + yarın (aktif VEYA yakında).
+        // Yakında günü şeritte görünür ama içeriği 18:00'e kadar kilitli.
+        final gosterilecekler = gunler.where((g) => g.aktif || g.yakinda).toList()
           ..sort((a, b) => a.date.compareTo(b.date));
-        if (aktifler.isEmpty) {
+        if (gosterilecekler.isEmpty) {
           return const BosKutu('Henüz analiz yayınlanmadı.', ikon: Icons.event_busy);
         }
-        final bugun = aktifler.first.date; // en küçük aktif tarih = bugün
-        // Seçili gün hâlâ aktif mi? değilse bugüne dön.
+        final bugun = gosterilecekler.first.date; // en küçük tarih = bugün
+        // Seçili gün hâlâ listede mi? değilse bugüne dön.
         final secili =
-            (_secili != null && aktifler.any((g) => g.date == _secili))
+            (_secili != null && gosterilecekler.any((g) => g.date == _secili))
                 ? _secili!
                 : bugun;
-        final secGun = aktifler.firstWhere((g) => g.date == secili);
+        final secGun = gosterilecekler.firstWhere((g) => g.date == secili);
+
+        // Canlı yenileme yalnızca BUGÜN + içeriği açık (yakında/kilit değil) günde.
+        final canli = (secili == bugun && !secGun.yakinda && !secGun.kilit);
+        WidgetsBinding.instance.addPostFrameCallback(
+            (_) => _timerAyarla(canli ? secili : null));
 
         return Column(children: [
-          if (aktifler.length > 1)
+          if (gosterilecekler.length > 1)
             TarihSeridi(
-              gunler: aktifler,
+              gunler: gosterilecekler,
               secili: secili,
               onSec: (d) => setState(() => _secili = d),
               ustEtiket: (g) => g.date == bugun ? 'BUGÜN' : 'YARIN',
@@ -73,6 +133,10 @@ class _GununState extends ConsumerState<GununAnalizleri> {
   }
 
   Widget _icerik(AuthState auth, GunOzet secGun) {
+    // Yarının analizi DB'de hazır olsa da 18:00'e kadar içerik kilitli (madde 1).
+    if (secGun.yakinda) {
+      return _YakindaKart(yayinSaati: secGun.yayinSaati);
+    }
     if (secGun.kilit) {
       return PaywallKart(
           girisli: auth.girisli,
@@ -80,6 +144,9 @@ class _GununState extends ConsumerState<GununAnalizleri> {
     }
     final detay = ref.watch(gunDetayProvider(secGun.date));
     return detay.when(
+      // Arka plan yenilemelerinde (timer/foreground) yükleme ekranı gösterme;
+      // önceki veriyi koru ki kullanıcının scroll konumu kaybolmasın.
+      skipLoadingOnReload: true,
       loading: () => const Yukleniyor(),
       error: (e, _) {
         if (e is KilitliHata) {
@@ -94,6 +161,41 @@ class _GununState extends ConsumerState<GununAnalizleri> {
         color: HG.altin,
         onRefresh: () async => ref.invalidate(gunDetayProvider(secGun.date)),
         child: GunIcerik(d, mod: widget.mod),
+      ),
+    );
+  }
+}
+
+/// Yarının analizleri henüz yayınlanmadığında (saat < 18:00) gösterilen kart.
+class _YakindaKart extends StatelessWidget {
+  final int yayinSaati;
+  const _YakindaKart({required this.yayinSaati});
+  @override
+  Widget build(BuildContext context) {
+    final saat = '${yayinSaati.toString().padLeft(2, '0')}:00';
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.schedule, color: HG.altin, size: 56),
+            const SizedBox(height: 20),
+            Text(
+              'Analizler $saat itibariyle aktif olacaktır',
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 16, fontWeight: FontWeight.w700, color: HG.metin),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              'Yarının 5 satır ve 6\'lı ganyan analizleri hazırlanıyor. '
+              'Yayınlandığında bildirim alacaksınız.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 13, color: HG.metinSoluk),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -15,8 +15,25 @@ final gunDetayProvider =
   return ref.watch(apiClientProvider).gun(date);
 });
 
+/// Koşu Analizleri (alt-bahisler) — VIP. KilitliHata fırlatabilir.
+final gunBahislerProvider =
+    FutureProvider.autoDispose.family<GunBahisler, String>((ref, date) {
+  ref.watch(authProvider);
+  return ref.watch(apiClientProvider).gunBahisler(date);
+});
+
 /// Haftalık + aylık istatistik (tutturma + kâr-zarar).
 final istatistikProvider = FutureProvider.autoDispose<Istatistik>((ref) {
   ref.watch(authProvider);
   return ref.watch(apiClientProvider).istatistik();
+});
+
+/// Kullanıcının bildirimleri (en yeni -> en eski, sunucu max 30 döner).
+final bildirimlerProvider = FutureProvider.autoDispose<List<BildirimOzet>>((ref) async {
+  ref.watch(authProvider);
+  final data = await ref.watch(apiClientProvider).bildirimler();
+  final rows = (data['bildirimler'] as List? ?? []);
+  return rows
+      .map((e) => BildirimOzet.fromJson(e as Map<String, dynamic>))
+      .toList();
 });

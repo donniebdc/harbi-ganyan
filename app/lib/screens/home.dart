@@ -4,12 +4,20 @@ import '../state/auth.dart';
 import '../state/nav.dart';
 import '../theme.dart';
 import 'auth_sheet.dart';
+import 'bildirimler.dart';
 import 'gunun_analizleri.dart';
 import 'gun_icerik.dart';
 import 'gecmis_analizler.dart';
 import 'istatistik.dart';
+import 'kosu_analizleri.dart';
 import 'uyelik.dart';
 import 'placeholder.dart';
+
+/// Bildirimler sayfasını açar (çan ikonu + push deep-link ortak girişi).
+void bildirimlerSayfasiniAc(BuildContext context) {
+  Navigator.of(context).push(
+      MaterialPageRoute(builder: (_) => const BildirimlerEkrani()));
+}
 
 class HomeEkrani extends ConsumerWidget {
   const HomeEkrani({super.key});
@@ -19,12 +27,7 @@ class HomeEkrani extends ConsumerWidget {
     GununAnalizleri(mod: GunIcerikModu.altili),
     GecmisAnalizler(),
     IstatistikEkrani(),
-    BlokPlaceholder(
-        baslik: 'Kosu Analizleri',
-        ikon: Icons.insights,
-        rozet: 'VIP',
-        aciklama:
-            'Ikili, sirali ikili, 3lu, 4lu ve 5li ganyan analizleri yakinda eklenecek.'),
+    KosuAnalizleri(),
     UyelikEkrani(),
   ];
 
@@ -36,6 +39,7 @@ class HomeEkrani extends ConsumerWidget {
         title: const Text('HARBI GANYAN',
             style: TextStyle(color: HG.altin, letterSpacing: 1.5)),
         actions: [
+          const _BildirimCan(),
           IconButton(
             icon: const Icon(Icons.info_outline),
             tooltip: 'Hakkinda',
@@ -85,6 +89,21 @@ class HomeEkrani extends ConsumerWidget {
   }
 }
 
+/// AppBar çan ikonu — yalnızca giriş yapan kullanıcıda görünür.
+class _BildirimCan extends ConsumerWidget {
+  const _BildirimCan();
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final auth = ref.watch(authProvider);
+    if (!auth.girisli) return const SizedBox.shrink();
+    return IconButton(
+      icon: const Icon(Icons.notifications_none, color: HG.altin),
+      tooltip: 'Bildirimler',
+      onPressed: () => bildirimlerSayfasiniAc(context),
+    );
+  }
+}
+
 class _ProfilButon extends ConsumerWidget {
   const _ProfilButon();
 
@@ -102,7 +121,7 @@ class _ProfilButon extends ConsumerWidget {
       icon: const Icon(Icons.account_circle, color: HG.altin),
       color: HG.kart2,
       onSelected: (v) {
-        if (v == 'bildirimler') _bildirimleriGoster(context, ref);
+        if (v == 'bildirimler') bildirimlerSayfasiniAc(context);
         if (v == 'profil') ref.read(navIndexProvider.notifier).sec(profilSekme);
         if (v == 'cikis') ref.read(authProvider.notifier).cikis();
       },
@@ -118,50 +137,5 @@ class _ProfilButon extends ConsumerWidget {
         const PopupMenuItem(value: 'cikis', child: Text('Cikis Yap')),
       ],
     );
-  }
-
-  Future<void> _bildirimleriGoster(BuildContext context, WidgetRef ref) async {
-    final api = ref.read(apiClientProvider);
-    try {
-      final data = await api.bildirimler();
-      final rows = data['bildirimler'] as List? ?? [];
-      if (!context.mounted) return;
-      showDialog<void>(
-        context: context,
-        builder: (_) => AlertDialog(
-          backgroundColor: HG.kart,
-          title: const Text('Bildirimler'),
-          content: SizedBox(
-            width: 420,
-            child: rows.isEmpty
-                ? const Text('Henuz bildiriminiz yok.')
-                : ListView.separated(
-                    shrinkWrap: true,
-                    itemBuilder: (_, i) {
-                      final b = rows[i] as Map<String, dynamic>;
-                      return ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text(b['baslik'] as String? ?? ''),
-                        subtitle: Text(b['mesaj'] as String? ?? ''),
-                      );
-                    },
-                    separatorBuilder: (_, _) => const Divider(color: HG.kart2),
-                    itemCount: rows.length,
-                  ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Kapat'),
-            ),
-          ],
-        ),
-      );
-    } catch (_) {
-      if (!context.mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Bildirimler alinamadi.'),
-      ));
-    }
   }
 }

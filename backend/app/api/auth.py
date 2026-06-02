@@ -132,7 +132,7 @@ def bildirimler(user: Kullanici = Depends(require_user), db: Session = Depends(g
     rows = (db.query(Bildirim)
             .filter_by(kullanici_id=user.id)
             .order_by(Bildirim.id.desc())
-            .limit(50)
+            .limit(30)  # Güncelleme v3: ekranda en fazla 30 bildirim (en yeni -> en eski)
             .all())
     return {"bildirimler": [{
         "id": b.id,

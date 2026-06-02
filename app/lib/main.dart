@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'fcm_setup.dart';
+import 'nav_key.dart';
 import 'theme.dart';
 import 'screens/home.dart';
 
@@ -20,6 +21,7 @@ class HarbiGanyanApp extends StatelessWidget {
     return MaterialApp(
       title: 'Harbi Ganyan',
       debugShowCheckedModeBanner: false,
+      navigatorKey: navigatorKey,
       theme: HG.tema(),
       home: const HomeEkrani(),
     );

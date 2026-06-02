@@ -24,7 +24,7 @@ sys.path.insert(0, str(BACKEND_DIR))
 from app.db import engine, SessionLocal, Base  # noqa: E402
 from app.models import (  # noqa: E402
     Gun, GunHipodrom, Kosu, KosuBes, KosuSonuc,
-    Altili, AltiliKademe, AltiliAyak, AltiliSonuc,
+    Altili, AltiliKademe, AltiliAyak, AltiliSonuc, KosuBahis,
 )
 
 OUT_DIR = BACKEND_DIR / "export" / "out"
@@ -71,6 +71,7 @@ def import_payload(db, payload: dict) -> int:
             s = k.get("sonuc")
             if s:
                 db.add(KosuSonuc(kosu_id=kosu.id, kazanan=s.get("kazanan"),
+                                 kazanan_ad=s.get("kazanan_ad", "") or "",
                                  ganyan=s.get("ganyan"), bes_hit=s.get("bes_hit")))
 
         for a in hp.get("altililar", []):
@@ -92,6 +93,18 @@ def import_payload(db, payload: dict) -> int:
                 db.add(AltiliSonuc(altili_id=alt.id, winners=s["winners"],
                                    ikramiye=s.get("ikramiye"), tier_hits=s["tier_hits"]))
             n_alt += 1
+
+        # --- Koşu Analizleri (alt-bahisler) ---
+        for b in hp.get("bahisler", []):
+            s = b.get("sonuc") or {}
+            db.add(KosuBahis(
+                gh_id=gh.id, bas_kosu=b["bas_kosu"], tip=b["tip"], aile=b["aile"],
+                ad=b["ad"], legs=b["legs"], kolonlar=b["kolonlar"],
+                secim_atlar=b["secim_atlar"], kombinasyon=b["kombinasyon"],
+                birim=b["birim"], kupon_bedeli=b["kupon_bedeli"], misli=b["misli"],
+                max_butce=b["max_butce"],
+                tuttu=s.get("tuttu"), ganyan=s.get("ganyan"),
+                net=s.get("net"), kazanan=s.get("kazanan")))
     return n_alt
 
 

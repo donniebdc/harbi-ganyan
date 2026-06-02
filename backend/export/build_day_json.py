@@ -34,6 +34,10 @@ from altili_kupon_v2 import build_nested_tiers, KUPON_TIERS, load_cal  # noqa: E
 from kupon_kacan_analiz import derive_altililar, leg_from_race, _parse_one  # noqa: E402
 from tahmin_sonuc_karsilastir import _raw_gun  # noqa: E402
 
+# Koşu Analizleri (alt-bahis) üretimi + grading — backend/export içinde
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bahis_uretim as bahis  # noqa: E402
+
 ANALIZ = os.path.join(BASE, "Harbi_Ganyan_Analiz")
 EXPORT_DIR = Path(__file__).resolve().parent / "out"
 SLOT_LABELS = ["FAV", "SUR", "YAZ", "BOM", "HAR"]
@@ -72,6 +76,7 @@ def parse_day_races(iso: str):
                 "mesafe": (p[6] if len(p) > 6 else "").strip(),
                 "saat": (p[7] if len(p) > 7 else "").strip(),
                 "kaynak": (p[8] if len(p) > 8 else "").strip(),
+                "bets": (p[9] if len(p) > 9 else "").strip(),  # Koşu Analizleri
             }
     # yalnız bu güne ait kayıtlar (parse_one iso'yu KO date'inden alır; teyit)
     races = {k: v for k, v in races.items() if k[0] == iso}
@@ -100,6 +105,92 @@ def _ikramiye_for_last(raw_gun, hip_disp, last_kno):
         if "6'LI GANYAN" in b.get("tip", ""):
             return b.get("tutar")
     return None
+
+
+def _kalemler_map(raw_gun, hip_disp):
+    """Sonuç JSON'undan {kno:int -> kalemler[list]} (resmi bahis ödemeleri)."""
+    out = {}
+    hd = (raw_gun.get("hipodromlar") or {}).get(hip_disp) or {}
+    for kno_s, kv in (hd.get("kosular") or {}).items():
+        try:
+            kno = int(kno_s)
+        except (ValueError, TypeError):
+            continue
+        out[kno] = (kv.get("bahisler") or {}).get("kalemler") or []
+    return out
+
+
+def _bahis_sonuc(g: dict, idx: dict) -> dict | None:
+    """grade() çıktısını payload 'sonuc' formatına çevirir."""
+    r = bahis.grade(g, idx)
+    if r is None:
+        return None
+    return {"tuttu": r["tuttu"], "ganyan": r["ganyan"], "net": r["net"],
+            "kazanan": r.get("kazanan_kombo")}
+
+
+def build_bahisler(iso, hip, knos, races, meta, kalemler_by_kno, finished):
+    """Bir hipodromun Koşu Analizleri bloğu (tek-koşu + çok-ayak bahisleri).
+    Döner: [bet payload...] (bas_kosu'ya göre sıralı)."""
+    out = []
+    knoset = set(knos)
+    # ANA sıralı at listesi sağlayıcı (race atlar zaten ana-desc sıralı)
+    def atlar_of(kno):
+        r = races.get((iso, hip, kno))
+        if not r or not r.get("atlar"):
+            return None
+        return [{"at_no": a["at_no"], "at": a.get("at", ""), "ana": a.get("ana", 0)}
+                for a in r["atlar"]]
+
+    for kno in sorted(knos):
+        m = meta.get((hip, kno), {})
+        bets_str = m.get("bets", "")
+        if not bets_str:
+            continue
+        atlar = atlar_of(kno)
+        # --- Tek-koşu bahisleri ---
+        for code in bahis.tek_kosu_bahisleri(bets_str):
+            if not atlar:
+                continue
+            g = bahis.uret_tek(code, atlar)
+            if not g:
+                continue
+            sonuc = None
+            if kno in finished:
+                sonuc = _bahis_sonuc(g, bahis.kalemler_index(kalemler_by_kno.get(kno, [])))
+            out.append({
+                "tip": g["tip"], "ad": g["ad"], "aile": "tek", "bas_kosu": kno,
+                "legs": [kno], "kolonlar": g["kolonlar"], "secim_atlar": g["secim_atlar"],
+                "kombinasyon": g["kombinasyon"], "birim": g["birim"],
+                "kupon_bedeli": g["kupon_bedeli"], "misli": g["misli"],
+                "max_butce": g["max_butce"], "sonuc": sonuc,
+            })
+        # --- Çok-ayak bahisleri (bu koşuda başlayan) ---
+        for code in bahis.ayak_baslangic(bets_str):
+            L = bahis.AYAK_UZUNLUK[code]
+            legs_kno = list(range(kno, kno + L))
+            if any(k not in knoset for k in legs_kno):
+                continue  # ayaklar günde tam değil
+            legs_atlar = [atlar_of(k) for k in legs_kno]
+            if any(la is None for la in legs_atlar):
+                continue
+            g = bahis.uret_ayak(code, legs_atlar)
+            if not g:
+                continue
+            last = legs_kno[-1]
+            sonuc = None
+            if all(k in finished for k in legs_kno):
+                sonuc = _bahis_sonuc(g, bahis.kalemler_index(kalemler_by_kno.get(last, [])))
+            out.append({
+                "tip": g["tip"], "ad": g["ad"], "aile": "ayak", "bas_kosu": kno,
+                "legs": legs_kno, "kolonlar": g["kolonlar"], "secim_atlar": g["secim_atlar"],
+                "kombinasyon": g["kombinasyon"], "birim": g["birim"],
+                "kupon_bedeli": g["kupon_bedeli"], "misli": g["misli"],
+                "max_butce": g["max_butce"], "sonuc": sonuc,
+            })
+    out.sort(key=lambda b: (b["bas_kosu"], bahis.BET_SIRA.index(b["tip"])
+                            if b["tip"] in bahis.BET_SIRA else 99))
+    return out
 
 
 def _hip_disp_map(raw_gun):
@@ -156,8 +247,10 @@ def build_day(iso: str, ctx: dict) -> dict:
             sonuc = None
             if kno in finished:
                 bes_nos = {b["at_no"] for b in bes}
+                kazanan_ad = no2.get(kazanan, {}).get("at", "") if kazanan is not None else ""
                 sonuc = {
                     "kazanan": kazanan,
+                    "kazanan_ad": kazanan_ad,
                     "ganyan": ganyan.get(kno),
                     "bes_hit": (kazanan in bes_nos) if kazanan is not None else None,
                 }
@@ -215,8 +308,13 @@ def build_day(iso: str, ctx: dict) -> dict:
             alt_list.append({"idx": alt["idx"], "legs": legs_kno, "kademeler": kademeler,
                              "sonuc": sonuc})
 
+        # --- Koşu Analizleri (alt-bahisler) ---
+        kalemler_by_kno = _kalemler_map(raw_gun, hip_disp)
+        bahisler = build_bahisler(iso, hip, knos, races, meta, kalemler_by_kno, finished)
+
         hip_payloads.append({"hipodrom": hip, "birim": birim,
-                             "kosular": kosu_list, "altililar": alt_list})
+                             "kosular": kosu_list, "altililar": alt_list,
+                             "bahisler": bahisler})
 
     return {"date": iso, "hipodromlar": hip_payloads}
 

@@ -9,6 +9,8 @@ class GunOzet {
   final bool gununAnalizi;
   final bool aktif;
   final bool kilit;
+  final bool yakinda; // yarın ama henüz 18:00 olmadı (içerik kilitli, şeritte görünür)
+  final int yayinSaati;
 
   GunOzet.fromJson(Map<String, dynamic> j)
       : date = j['date'] as String,
@@ -18,7 +20,9 @@ class GunOzet {
         sonuclandi = j['sonuclandi'] as bool? ?? false,
         gununAnalizi = j['gunun_analizi'] as bool? ?? false,
         aktif = j['aktif'] as bool? ?? (j['gunun_analizi'] as bool? ?? false),
-        kilit = j['kilit'] as bool? ?? false;
+        kilit = j['kilit'] as bool? ?? false,
+        yakinda = j['yakinda'] as bool? ?? false,
+        yayinSaati = j['yayin_saati'] as int? ?? 18;
 }
 
 class HipOzet {
@@ -92,10 +96,12 @@ class Bes {
 
 class KosuSonuc {
   final int? kazanan;
+  final String kazananAd;
   final double? ganyan;
   final bool? besHit;
   KosuSonuc.fromJson(Map<String, dynamic> j)
       : kazanan = j['kazanan'] as int?,
+        kazananAd = j['kazanan_ad'] as String? ?? '',
         ganyan = _d(j['ganyan']),
         besHit = j['bes_hit'] as bool?;
 }
@@ -201,4 +207,87 @@ class Istatistik {
   Istatistik.fromJson(Map<String, dynamic> j)
       : hafta = IstatistikDonem.fromJson(j['hafta'] as Map<String, dynamic>),
         ay = IstatistikDonem.fromJson(j['ay'] as Map<String, dynamic>);
+}
+
+// ---- Koşu Analizleri (alt-bahisler) ----
+
+class GunBahisler {
+  final String date;
+  final List<BahisHip> hipodromlar;
+  GunBahisler.fromJson(Map<String, dynamic> j)
+      : date = j['date'] as String,
+        hipodromlar = (j['hipodromlar'] as List)
+            .map((e) => BahisHip.fromJson(e as Map<String, dynamic>))
+            .toList();
+}
+
+class BahisHip {
+  final String hipodrom;
+  final List<BahisAnaliz> bahisler;
+  BahisHip.fromJson(Map<String, dynamic> j)
+      : hipodrom = j['hipodrom'] as String,
+        bahisler = (j['bahisler'] as List)
+            .map((e) => BahisAnaliz.fromJson(e as Map<String, dynamic>))
+            .toList();
+}
+
+class BahisAnaliz {
+  final String tip, ad, aile;
+  final int basKosu;
+  final List<int> legs;
+  final List<List<int>> kolonlar;
+  final List<dynamic> secimAtlar; // tek: [{at_no,at}] ; ayak: [[{at_no,at}],...]
+  final int kombinasyon, misli, maxButce;
+  final double birim, kuponBedeli;
+  final BahisSonuc? sonuc;
+  BahisAnaliz.fromJson(Map<String, dynamic> j)
+      : tip = j['tip'] as String,
+        ad = j['ad'] as String,
+        aile = j['aile'] as String? ?? 'tek',
+        basKosu = j['bas_kosu'] as int,
+        legs = (j['legs'] as List).map((e) => e as int).toList(),
+        kolonlar = (j['kolonlar'] as List)
+            .map((c) => (c as List).map((e) => e as int).toList())
+            .toList(),
+        secimAtlar = j['secim_atlar'] as List? ?? [],
+        kombinasyon = j['kombinasyon'] as int,
+        misli = j['misli'] as int,
+        maxButce = j['max_butce'] as int,
+        birim = (j['birim'] as num).toDouble(),
+        kuponBedeli = (j['kupon_bedeli'] as num).toDouble(),
+        sonuc = j['sonuc'] == null
+            ? null
+            : BahisSonuc.fromJson(j['sonuc'] as Map<String, dynamic>);
+}
+
+class BahisSonuc {
+  final bool tuttu;
+  final double? ganyan, net;
+  final List<List<int>> kazanan;
+  BahisSonuc.fromJson(Map<String, dynamic> j)
+      : tuttu = j['tuttu'] as bool? ?? false,
+        ganyan = _d(j['ganyan']),
+        net = _d(j['net']),
+        kazanan = ((j['kazanan'] as List?) ?? [])
+            .map((c) => c is List
+                ? c.map((e) => e as int).toList()
+                : <int>[c as int])
+            .toList();
+}
+
+// ---- Bildirimler ----
+
+class BildirimOzet {
+  final int id;
+  final String baslik, mesaj;
+  final bool okundu;
+  final DateTime? createdAt;
+  BildirimOzet.fromJson(Map<String, dynamic> j)
+      : id = j['id'] as int,
+        baslik = j['baslik'] as String? ?? '',
+        mesaj = j['mesaj'] as String? ?? '',
+        okundu = j['okundu'] as bool? ?? false,
+        createdAt = j['created_at'] == null
+            ? null
+            : DateTime.tryParse(j['created_at'].toString());
 }

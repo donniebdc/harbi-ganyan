@@ -118,16 +118,16 @@ def _bekleyen_var(iso: str) -> bool:
         for k in kosular:
             rt = _saat_dt(k.saat)
             kno_saat.setdefault(k.gh_id, {})[k.kno] = rt
-            if rt is not None and now_tr >= rt + timedelta(minutes=6):
+            if rt is not None and now_tr >= rt + timedelta(minutes=2):
                 son = db.query(KosuSonuc).filter_by(kosu_id=k.id).one_or_none()
                 if son is None or son.ganyan is None:
                     return True
-        # Altılı: son ayak koşusu saat+8dk geçti ama ikramiye yok -> bekleyen
+        # Altılı: son ayak koşusu saat+3dk geçti ama ikramiye yok -> bekleyen
         for a in db.query(Altili).filter(Altili.gh_id.in_(gh_ids)).all():
             if not a.legs:
                 continue
             rt = kno_saat.get(a.gh_id, {}).get(a.legs[-1])
-            if rt is not None and now_tr >= rt + timedelta(minutes=8):
+            if rt is not None and now_tr >= rt + timedelta(minutes=3):
                 son = db.query(AltiliSonuc).filter_by(altili_id=a.id).one_or_none()
                 if son is None or son.ikramiye is None:
                     return True
@@ -149,15 +149,25 @@ def run_live():
     from tahmin_sonuc_karsilastir import uret_aralik as tahmin_sonuc_uret
     tahmin_sonuc_uret(iso, iso, collect_results=True, force_results=True)
     export_import([iso])
+    # Yeni sonuçlanan koşu/altılılar için canlı bildirim (madde 3-4). İdempotent.
+    from app import bildirim_servis
+    db = SessionLocal()
+    try:
+        n = bildirim_servis.bildir_gun_sonuclari(db, iso)
+        print(f"[live] {iso}: {n} yeni bildirim gönderildi.")
+    finally:
+        db.close()
 
 
 def run_yayin_bildirim():
-    """TR 18:00: yarının analizleri yayınlandıysa kullanıcılara bildirim oluşturur
-    (uygulama-içi; FCM push Firebase hazır olunca eklenecek). Idempotent."""
+    """TR 18:00: yarının analizleri yayınlandıysa kullanıcılara bildirim gönderir
+    (in-app + FCM push). Idempotent (GonderilenBildirim anahtarı: '<iso>|yayin')."""
     from datetime import datetime as _dt
-    from app.models import Gun, Kullanici, Bildirim
+    from app.models import Gun
+    from app import bildirim_servis
     now_tr = _dt.utcnow() + timedelta(hours=3)
     yarin = now_tr.date() + timedelta(days=1)
+    iso = yarin.strftime("%Y-%m-%d")
     yarin_str = yarin.strftime("%d.%m.%Y")
     db = SessionLocal()
     try:
@@ -165,18 +175,12 @@ def run_yayin_bildirim():
             print(f"[yayin] {yarin}: analiz yok, bildirim atlandı.")
             return
         baslik = "Yeni Analizler Yayında!"
-        mesaj = f"{yarin_str} günü için 5 satır ve 6'lı analizleri eklendi."
-        if db.query(Bildirim).filter(Bildirim.mesaj == mesaj).first() is not None:
-            print(f"[yayin] {yarin}: bildirim zaten gönderilmiş, atlandı.")
-            return
-        users = db.query(Kullanici).filter_by(aktif=True).all()
-        hedef_idler = [u.id for u in users]
-        for u in users:
-            db.add(Bildirim(kullanici_id=u.id, baslik=baslik, mesaj=mesaj))
-        db.commit()
-        from app import fcm
-        push_adet = fcm.kullanicilara_push(db, hedef_idler, baslik, mesaj, {"tip": "yayin"})
-        print(f"[yayin] {yarin}: {len(users)} in-app, {push_adet} push gönderildi.")
+        mesaj = f"{yarin_str} tarihine dair analizler uygulamaya eklenmiştir."
+        if bildirim_servis.gonder(db, f"{iso}|yayin", mesaj,
+                                  {"tip": "yayin", "tarih": iso}, baslik=baslik):
+            print(f"[yayin] {yarin}: bildirim gönderildi.")
+        else:
+            print(f"[yayin] {yarin}: zaten gönderilmiş, atlandı.")
     finally:
         db.close()
 
@@ -196,6 +200,18 @@ def main():
         s = datetime.strptime(start, "%Y-%m-%d").date()
         e = datetime.strptime(end, "%Y-%m-%d").date()
         export_import([_iso(s + timedelta(days=i)) for i in range((e - s).days + 1)])
+    elif "--uret" in flags:
+        # Manuel (admin paneli) tam üretim: tarih VEYA tarih aralığı için
+        # engine + export + import. Geçmiş günlerin alt-bahislerini de doldurur.
+        start = args[0]
+        end = args[1] if len(args) > 1 else start
+        s = datetime.strptime(start, "%Y-%m-%d").date()
+        e = datetime.strptime(end, "%Y-%m-%d").date()
+        gunler = [s + timedelta(days=i) for i in range((e - s).days + 1)]
+        print(f"[uret] {start}..{end} ({len(gunler)} gün) manuel üretim başlıyor...")
+        for d in gunler:
+            run_full(_iso(d))
+        print(f"[uret] TAMAMLANDI: {len(gunler)} gün üretildi.")
     elif "--yayin-bildirim" in flags:
         run_yayin_bildirim()
     elif "--live" in flags:

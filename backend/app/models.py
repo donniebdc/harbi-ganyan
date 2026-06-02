@@ -38,6 +38,8 @@ class GunHipodrom(Base):
         back_populates="gh", cascade="all, delete-orphan")
     altililar: Mapped[list["Altili"]] = relationship(
         back_populates="gh", cascade="all, delete-orphan")
+    bahisler: Mapped[list["KosuBahis"]] = relationship(
+        back_populates="gh", cascade="all, delete-orphan")
 
 
 class Kosu(Base):
@@ -77,6 +79,7 @@ class KosuSonuc(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     kosu_id: Mapped[int] = mapped_column(ForeignKey("kosu.id", ondelete="CASCADE"), unique=True)
     kazanan: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    kazanan_ad: Mapped[str] = mapped_column(String(60), default="")  # kazanan at adı (bildirim metni)
     ganyan: Mapped[float | None] = mapped_column(Float, nullable=True)
     bes_hit: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
     kosu: Mapped[Kosu] = relationship(back_populates="sonuc")
@@ -129,6 +132,33 @@ class AltiliSonuc(Base):
     ikramiye: Mapped[float | None] = mapped_column(Float, nullable=True)
     tier_hits: Mapped[dict] = mapped_column(JSON)       # {simitci:6, harbi:6, ortakli:6}
     altili: Mapped[Altili] = relationship(back_populates="sonuc")
+
+
+class KosuBahis(Base):
+    """Koşu Analizleri — bir hipodrom gününün alt-bahis analizleri (13 tür).
+    Tek-koşu bahisleri (legs=[kno]) ve çok-ayak bahisleri (legs=[k..k+L-1]) ortak tablo.
+    Grading alanları (tuttu/ganyan/net/kazanan) sonuç gelince doldurulur."""
+    __tablename__ = "kosu_bahis"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    gh_id: Mapped[int] = mapped_column(ForeignKey("gun_hipodrom.id", ondelete="CASCADE"), index=True)
+    bas_kosu: Mapped[int] = mapped_column(Integer, index=True)  # başlangıç koşu no
+    tip: Mapped[str] = mapped_column(String(20))               # PLASE, IKILI, CIFTE...
+    aile: Mapped[str] = mapped_column(String(6))               # tek / ayak
+    ad: Mapped[str] = mapped_column(String(40))                # görünen ad
+    legs: Mapped[list] = mapped_column(JSON)                   # [kno...]
+    kolonlar: Mapped[list] = mapped_column(JSON)               # [[at_no...]...]
+    secim_atlar: Mapped[list] = mapped_column(JSON)            # tek:[{at_no,at}] ayak:[[...]]
+    kombinasyon: Mapped[int] = mapped_column(Integer)
+    birim: Mapped[float] = mapped_column(Float)
+    kupon_bedeli: Mapped[float] = mapped_column(Float)
+    misli: Mapped[int] = mapped_column(Integer)
+    max_butce: Mapped[int] = mapped_column(Integer)
+    # --- grading (sonuç) ---
+    tuttu: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
+    ganyan: Mapped[float | None] = mapped_column(Float, nullable=True)
+    net: Mapped[float | None] = mapped_column(Float, nullable=True)
+    kazanan: Mapped[list | None] = mapped_column(JSON, nullable=True)  # gerçek kazanan kombo
+    gh: Mapped[GunHipodrom] = relationship(back_populates="bahisler")
 
 
 # ---------------- Kullanıcı / Üyelik ----------------
@@ -187,6 +217,26 @@ class Bildirim(Base):
     okundu: Mapped[bool] = mapped_column(Boolean, default=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
     kullanici: Mapped[Kullanici | None] = relationship(back_populates="bildirimler")
+
+
+class GonderilenBildirim(Base):
+    """Canlı bildirim idempotency kaydı (reimport'tan BAĞIMSIZ).
+
+    Sonuç tabloları (kosu_sonuc/altili_sonuc) her reimport'ta cascade silinip
+    yeniden yazıldığından, "bu bildirimi gönderdim mi?" durumu orada tutulamaz.
+    Bu tablo doğal anahtarla (tarih+hipodrom+tip+no+aşama) gönderimi izler.
+
+    anahtar örnekleri:
+      "2026-06-02|ANKARA|kosu|1|gayriresmi"
+      "2026-06-02|ANKARA|kosu|1|resmi"
+      "2026-06-02|ANKARA|altili|0|ayak"
+      "2026-06-02|ANKARA|altili|0|tam"
+      "2026-06-03|yayin"
+    """
+    __tablename__ = "gonderilen_bildirim"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    anahtar: Mapped[str] = mapped_column(String(120), unique=True, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
 
 
 class DeviceToken(Base):

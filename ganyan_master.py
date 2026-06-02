@@ -444,8 +444,12 @@ class GanyanMasterEngine:
                         bes_secim,sirali_atlar,gruplar,no_key='at_no',isim_key='raw_at')
 
                     # ── ÇIKTI (sade şablon) ──
+                    # bets alanı (Koşu Analizleri için) KO satırının SONUNA eklenir;
+                    # mevcut parser'lar p[0..8] kullandığından geriye dönük güvenlidir.
+                    _bets_raw = bets_by_kosu.get(kno, "") if isinstance(kno, int) else ""
+                    _bets_clean = (_bets_raw or "").replace("|", " ").replace("\n", " ").strip()
                     self.report_lines.append(
-                        f"KO:{kno}|{sad}|{target_date}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}")
+                        f"KO:{kno}|{sad}|{target_date}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}|{_bets_clean}")
                     if gruplar:
                         from altili_lib import ekuri_serialize
                         self.report_lines.append("EKURI:" + ekuri_serialize(gruplar))

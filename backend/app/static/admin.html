@@ -105,6 +105,20 @@
           </div>
         </div>
       </section>
+
+      <section class="panel">
+        <h3>Manuel Üretim (Tahmin Motoru)</h3>
+        <p class="muted">Bir tarih veya tarih aralığı için motoru yeniden çalıştırır
+          (engine + export + import). Geçmiş günlerin alt-bahis analizlerini doldurmak
+          için kullanın. 5 satır ve 6'lı motoru aynı kalır. En fazla 31 gün.</p>
+        <div class="row">
+          <label class="muted">Başlangıç <input id="uretStart" type="date"></label>
+          <label class="muted">Bitiş (ops.) <input id="uretEnd" type="date"></label>
+          <button class="primary" id="uretBtn" onclick="uretBaslat()">Üretimi Başlat</button>
+          <span id="uretInfo" class="muted"></span>
+        </div>
+        <pre id="uretLog" style="margin-top:12px;max-height:300px;overflow:auto;background:#0c0f11;border:1px solid var(--line);border-radius:6px;padding:10px;font-size:12px;white-space:pre-wrap;display:none;"></pre>
+      </section>
     </main>
   </section>
 
@@ -170,7 +184,40 @@
       const r = await api('/admin/api/bildirimler', {method:'POST', body:JSON.stringify(body)});
       alert(`${r.adet} kullanıcıya gönderildi.`);
     }
-    (async()=>{ if(token){ try{ const me=await api('/auth/ben'); if(me.is_admin){ showApp(me); await loadAll(); } }catch(e){ localStorage.removeItem('hg_admin_token'); } } })();
+    // ── Manuel Üretim ──
+    let uretTimer = null;
+    async function uretBaslat(){
+      const start = $('uretStart').value;
+      if (!start) { alert('Başlangıç tarihi seçin.'); return; }
+      const body = {start}; if ($('uretEnd').value) body.end = $('uretEnd').value;
+      try {
+        const r = await api('/admin/api/uret', {method:'POST', body:JSON.stringify(body)});
+        $('uretInfo').textContent = `Başlatıldı: ${r.aralik} (${r.gun_sayisi} gün)`;
+        $('uretLog').style.display = 'block';
+        uretPollBasla();
+      } catch(e){ $('uretInfo').textContent = 'Hata: ' + e.message; }
+    }
+    function uretPollBasla(){ if (uretTimer) clearInterval(uretTimer); uretDurum(); uretTimer = setInterval(uretDurum, 4000); }
+    async function uretDurum(){
+      try {
+        const d = await api('/admin/api/uret/durum');
+        $('uretLog').textContent = (d.son_satirlar||[]).join('\n');
+        $('uretLog').scrollTop = $('uretLog').scrollHeight;
+        $('uretBtn').disabled = d.calisiyor;
+        if (d.calisiyor) {
+          $('uretInfo').textContent = `Sürüyor: ${d.aralik}`;
+        } else {
+          if (uretTimer) { clearInterval(uretTimer); uretTimer = null; }
+          if (d.bitis_kodu !== null && d.aralik) {
+            $('uretInfo').innerHTML = d.bitis_kodu === 0
+              ? `<span class="ok">Tamamlandı: ${d.aralik}</span>`
+              : `<span class="bad">Hata (kod ${d.bitis_kodu}): ${d.aralik}</span>`;
+          }
+        }
+      } catch(e){ /* yetki/oturum */ }
+    }
+
+    (async()=>{ if(token){ try{ const me=await api('/auth/ben'); if(me.is_admin){ showApp(me); await loadAll(); uretDurum(); } }catch(e){ localStorage.removeItem('hg_admin_token'); } } })();
   </script>
 </body>
 </html>
