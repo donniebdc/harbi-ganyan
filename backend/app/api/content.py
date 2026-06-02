@@ -18,7 +18,8 @@ from sqlalchemy.orm import Session
 
 from ..db import get_db
 from ..config import settings
-from ..models import Gun, Kullanici
+from ..models import (Gun, GunHipodrom, Kosu, KosuSonuc, Altili, AltiliSonuc,
+                      Kullanici)
 from ..serialize import gun_payload, gun_summary
 from ..deps import current_user, has_tier
 
@@ -102,3 +103,77 @@ def gun_detay(gun_date: date, db: Session = Depends(get_db),
             "kilit": True, "gereken_tier": "premium",
         })
     return gun_payload(gun)
+
+
+_TIER_KEYS = ["simitci", "harbi", "ortakli"]
+_TIER_AD = {"simitci": "Simitçi 6'lısı", "harbi": "Harbi Ganyan 6'lısı",
+            "ortakli": "Ortak Bonkör 6'lı"}
+
+
+def _yuzde(pay: int, payda: int) -> float:
+    return round(100.0 * pay / payda, 1) if payda else 0.0
+
+
+def _donem_istatistik(db: Session, start: date, end: date) -> dict:
+    """Verilen tarih aralığında (sonuçlanmış) 5-satır + 3 kademe tutturma ve
+    kâr-zarar. Kâr-zarar = kullanıcı o kademenin TÜM kuponlarını oynasaydı:
+    maliyet=Σbedel, ikramiye=Σ(6/6 tutan kuponların ikramiyesi), net=ikramiye-maliyet."""
+    # 5 satır (yalnız sonucu olan koşular)
+    bes_top = 0
+    bes_isabet = 0
+    for _, son in (db.query(Kosu, KosuSonuc)
+                   .join(GunHipodrom, Kosu.gh_id == GunHipodrom.id)
+                   .join(Gun, GunHipodrom.gun_id == Gun.id)
+                   .join(KosuSonuc, KosuSonuc.kosu_id == Kosu.id)
+                   .filter(Gun.date >= start, Gun.date <= end)):
+        bes_top += 1
+        if son.bes_hit:
+            bes_isabet += 1
+
+    tier = {k: {"toplam": 0, "tuttu": 0, "maliyet": 0.0, "ikramiye": 0.0}
+            for k in _TIER_KEYS}
+    altililar = (db.query(Altili)
+                 .join(GunHipodrom, Altili.gh_id == GunHipodrom.id)
+                 .join(Gun, GunHipodrom.gun_id == Gun.id)
+                 .filter(Gun.date >= start, Gun.date <= end).all())
+    for a in altililar:
+        if a.sonuc is None:
+            continue
+        hits = a.sonuc.tier_hits or {}
+        ik = a.sonuc.ikramiye or 0.0
+        bedel = {kd.key: kd.bedel for kd in a.kademeler}
+        for k in _TIER_KEYS:
+            if k not in bedel:
+                continue
+            tier[k]["toplam"] += 1
+            tier[k]["maliyet"] += bedel[k]
+            if hits.get(k) == 6:
+                tier[k]["tuttu"] += 1
+                tier[k]["ikramiye"] += ik
+
+    tier_out = {}
+    for k in _TIER_KEYS:
+        t = tier[k]
+        tier_out[k] = {
+            "ad": _TIER_AD[k],
+            "toplam": t["toplam"],
+            "tuttu": t["tuttu"],
+            "yuzde": _yuzde(t["tuttu"], t["toplam"]),
+            "maliyet": round(t["maliyet"], 2),
+            "ikramiye": round(t["ikramiye"], 2),
+            "net": round(t["ikramiye"] - t["maliyet"], 2),
+        }
+    return {
+        "bes": {"toplam": bes_top, "isabet": bes_isabet,
+                "yuzde": _yuzde(bes_isabet, bes_top)},
+        "tierler": tier_out,
+    }
+
+
+@router.get("/istatistik")
+def istatistik(db: Session = Depends(get_db)):
+    """Haftalık ve aylık tutturma + kâr-zarar istatistikleri (herkese açık)."""
+    today = _now_tr().date()
+    hafta = _donem_istatistik(db, today - timedelta(days=7), today)
+    ay = _donem_istatistik(db, today - timedelta(days=30), today)
+    return {"bugun": today.isoformat(), "hafta": hafta, "ay": ay}

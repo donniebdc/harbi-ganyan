@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     jwt_secret: str = "dev-secret-change-me"
     jwt_alg: str = "HS256"
     cors_origins: str = "*"
-    jwt_expire_min: int = 60 * 24 * 7  # 7 gün
+    jwt_expire_min: int = 60 * 24 * 90  # 90 gün (her güncellemede yeniden giriş istememesi için)
 
     # SMTP (doğrulama kodu) — MVP'de boşsa kod konsola yazılır
     smtp_host: str = ""

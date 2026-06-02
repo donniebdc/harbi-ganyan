@@ -14,3 +14,9 @@ final gunDetayProvider =
   ref.watch(authProvider);
   return ref.watch(apiClientProvider).gun(date);
 });
+
+/// Haftalık + aylık istatistik (tutturma + kâr-zarar).
+final istatistikProvider = FutureProvider.autoDispose<Istatistik>((ref) {
+  ref.watch(authProvider);
+  return ref.watch(apiClientProvider).istatistik();
+});

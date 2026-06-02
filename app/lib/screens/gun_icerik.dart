@@ -55,9 +55,15 @@ class _HipodromBolum extends StatelessWidget {
           children: [
             if (mod != GunIcerikModu.besli && h.altililar.isNotEmpty) ...[
               const _AltBaslik('6\'LI GANYAN KUPONLARI'),
-              ...h.altililar.map((a) => AltiliKarti(a, ganyanByKno: {
-                    for (final k in h.kosular) k.kno: k.sonuc?.ganyan,
-                  })),
+              ...h.altililar.map((a) => AltiliKarti(
+                    a,
+                    winnerByKno: {
+                      for (final k in h.kosular) k.kno: k.sonuc?.kazanan,
+                    },
+                    ganyanByKno: {
+                      for (final k in h.kosular) k.kno: k.sonuc?.ganyan,
+                    },
+                  )),
             ],
             if (mod != GunIcerikModu.altili) ...[
               const _AltBaslik('5 SATIR TAHMINLER'),

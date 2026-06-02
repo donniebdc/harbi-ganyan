@@ -74,4 +74,9 @@ class ApiClient {
 
   Future<void> fcmTokenKaydet(String token) => _dio.post('/auth/fcm-token',
       data: {'token': token, 'platform': 'android'}, options: _opt);
+
+  Future<Istatistik> istatistik() async {
+    final r = await _dio.get('/istatistik', options: _opt);
+    return Istatistik.fromJson(r.data as Map<String, dynamic>);
+  }
 }

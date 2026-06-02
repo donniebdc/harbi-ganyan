@@ -7,6 +7,7 @@ import 'auth_sheet.dart';
 import 'gunun_analizleri.dart';
 import 'gun_icerik.dart';
 import 'gecmis_analizler.dart';
+import 'istatistik.dart';
 import 'uyelik.dart';
 import 'placeholder.dart';
 
@@ -17,11 +18,7 @@ class HomeEkrani extends ConsumerWidget {
     GununAnalizleri(mod: GunIcerikModu.besli),
     GununAnalizleri(mod: GunIcerikModu.altili),
     GecmisAnalizler(),
-    BlokPlaceholder(
-        baslik: 'Istatistik',
-        ikon: Icons.bar_chart,
-        aciklama:
-            'Tutturma oranlari ve net kar-zarar simulasyonu yakinda.\n5 satir, Simitci, Harbi ve Ortak Bonkor basari yuzdeleri burada olacak.'),
+    IstatistikEkrani(),
     BlokPlaceholder(
         baslik: 'Kosu Analizleri',
         ikon: Icons.insights,

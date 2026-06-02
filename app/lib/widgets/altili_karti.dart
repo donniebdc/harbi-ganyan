@@ -6,9 +6,23 @@ import 'rozet.dart';
 class AltiliKarti extends StatelessWidget {
   final Altili altili;
 
-  /// koşu no -> kazananın ganyanı (sonuç geldiyse). Ayak satırında detay göstermek için.
+  /// koşu no -> kazanan at_no (CANLI; koşu sonucundan, altılı tam bitmese de).
+  final Map<int, int?> winnerByKno;
+
+  /// koşu no -> kazananın ganyanı.
   final Map<int, double?> ganyanByKno;
-  const AltiliKarti(this.altili, {this.ganyanByKno = const {}, super.key});
+
+  const AltiliKarti(this.altili,
+      {this.winnerByKno = const {}, this.ganyanByKno = const {}, super.key});
+
+  int _kademeHits(Kademe k) {
+    var h = 0;
+    for (final ayak in k.ayaklar) {
+      final w = winnerByKno[ayak.kno];
+      if (w != null && ayak.secilen.contains(w)) h++;
+    }
+    return h;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +30,13 @@ class AltiliKarti extends StatelessWidget {
     final aralik = altili.legs.isEmpty
         ? ''
         : '${altili.legs.first}-${altili.legs.last}. KOSU';
-
-    // Ayak (koşu no) -> kazanan at_no eşlemesi (sonuç geldiyse).
-    final winnerByKno = <int, int>{};
-    if (s != null) {
-      for (var i = 0; i < altili.legs.length && i < s.winners.length; i++) {
-        final w = s.winners[i];
-        if (w != null) winnerByKno[altili.legs[i]] = w;
-      }
-    }
-    // En az bir kademe 6/6 tutturduysa kupon kazanmış demektir.
-    final tuttu = s != null && s.tierHits.values.any((h) => h == 6);
+    final tumSonuc =
+        altili.legs.isNotEmpty && altili.legs.every((l) => winnerByKno[l] != null);
+    final herhangiSonuc = altili.legs.any((l) => winnerByKno[l] != null);
+    final ikramiye = s?.ikramiye;
+    // KAZANDIK: tüm ayaklar bitti + en az bir kademe 6/6.
+    final tuttu = tumSonuc &&
+        altili.kademeler.any((k) => _kademeHits(k) == altili.legs.length);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
@@ -54,10 +64,10 @@ class AltiliKarti extends StatelessWidget {
             Text(aralik,
                 style: const TextStyle(
                     color: HG.yesil, fontWeight: FontWeight.w700, fontSize: 12)),
-            if (s != null && s.ikramiye != null)
+            if (ikramiye != null)
               Padding(
                 padding: const EdgeInsets.only(top: 2),
-                child: Text(paraFmt(s.ikramiye),
+                child: Text(paraFmt(ikramiye),
                     style: const TextStyle(
                         color: HG.altin,
                         fontWeight: FontWeight.w800,
@@ -67,8 +77,9 @@ class AltiliKarti extends StatelessWidget {
         ]),
         const SizedBox(height: 10),
         for (final k in altili.kademeler)
-          _KademeBlok(k, s, winnerByKno, ganyanByKno),
-        if (s != null) _SonucBlok(s, tuttu),
+          _KademeBlok(k, winnerByKno, ganyanByKno, tumSonuc, _kademeHits(k)),
+        if (herhangiSonuc)
+          _SonucBlok(altili.legs, winnerByKno, tuttu, ikramiye),
       ]),
     );
   }
@@ -76,14 +87,15 @@ class AltiliKarti extends StatelessWidget {
 
 class _KademeBlok extends StatelessWidget {
   final Kademe kademe;
-  final AltiliSonuc? sonuc;
-  final Map<int, int> winnerByKno;
+  final Map<int, int?> winnerByKno;
   final Map<int, double?> ganyanByKno;
-  const _KademeBlok(this.kademe, this.sonuc, this.winnerByKno, this.ganyanByKno);
+  final bool tumSonuc;
+  final int hits;
+  const _KademeBlok(
+      this.kademe, this.winnerByKno, this.ganyanByKno, this.tumSonuc, this.hits);
 
   @override
   Widget build(BuildContext context) {
-    final hits = sonuc?.tierHits[kademe.key];
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -107,7 +119,8 @@ class _KademeBlok extends StatelessWidget {
               ),
             ),
           ),
-          if (sonuc != null) TutturmaRozet(hits),
+          // Tutturma rozeti yalnız tüm ayaklar sonuçlanınca anlamlı.
+          if (tumSonuc) TutturmaRozet(hits),
         ]),
         const SizedBox(height: 6),
         for (final ayak in kademe.ayaklar)
@@ -123,13 +136,37 @@ class _KademeBlok extends StatelessWidget {
 
 class _AyakSatiri extends StatelessWidget {
   final Ayak ayak;
-  final int? winner; // bu ayağın kazananı (at_no) — sonuç geldiyse
-  final double? ganyan; // kazananın ganyanı
+  final int? winner; // bu ayağın kazananı (at_no) — canlı, koşu sonucundan
+  final double? ganyan;
   const _AyakSatiri(this.ayak, {this.winner, this.ganyan});
+
+  List<InlineSpan> _spanlar() {
+    final spans = <InlineSpan>[];
+    for (var i = 0; i < ayak.secilen.length; i++) {
+      if (i > 0) spans.add(const TextSpan(text: ' / '));
+      final n = ayak.secilen[i];
+      final kazandi = winner != null && n == winner;
+      spans.add(TextSpan(
+        text: kazandi ? '[$n]' : '$n',
+        style: TextStyle(
+          color: kazandi ? HG.yesil : HG.metin,
+          fontWeight: kazandi ? FontWeight.w800 : FontWeight.w400,
+        ),
+      ));
+    }
+    // Kaçırdık: kazanan bizim seçimimizde yok -> kırmızı |n|
+    if (winner != null && !ayak.secilen.contains(winner)) {
+      spans.add(const TextSpan(text: '    '));
+      spans.add(TextSpan(
+        text: '|$winner|',
+        style: const TextStyle(color: HG.kirmizi, fontWeight: FontWeight.w800),
+      ));
+    }
+    return spans;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final w = winner;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 1),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -142,12 +179,11 @@ class _AyakSatiri extends StatelessWidget {
         Expanded(
           child: RichText(
             text: TextSpan(
-              style: const TextStyle(fontSize: 13, height: 1.25),
-              children: _numaralar(),
-            ),
+                style: const TextStyle(fontSize: 13, height: 1.3),
+                children: _spanlar()),
           ),
         ),
-        if (w != null && ganyan != null)
+        if (winner != null && ganyan != null)
           Padding(
             padding: const EdgeInsets.only(left: 6),
             child: Text('G ${ganyan!.toStringAsFixed(2)}',
@@ -159,54 +195,36 @@ class _AyakSatiri extends StatelessWidget {
       ]),
     );
   }
-
-  List<InlineSpan> _numaralar() {
-    final nums = ayak.secilen;
-    final spans = <InlineSpan>[];
-    for (var i = 0; i < nums.length; i++) {
-      if (i > 0) spans.add(const TextSpan(text: ' / '));
-      final n = nums[i];
-      final kazandi = winner != null && n == winner;
-      spans.add(TextSpan(
-        text: kazandi ? '[$n]' : '$n',
-        style: TextStyle(
-          color: kazandi ? HG.yesil : HG.metin,
-          fontWeight: kazandi ? FontWeight.w800 : FontWeight.w400,
-        ),
-      ));
-    }
-    return spans;
-  }
 }
 
 class _SonucBlok extends StatelessWidget {
-  final AltiliSonuc sonuc;
+  final List<int> legs;
+  final Map<int, int?> winnerByKno;
   final bool tuttu;
-  const _SonucBlok(this.sonuc, this.tuttu);
+  final double? ikramiye;
+  const _SonucBlok(this.legs, this.winnerByKno, this.tuttu, this.ikramiye);
 
   @override
   Widget build(BuildContext context) {
-    final winners = sonuc.winners.map((w) => w?.toString() ?? '?').join(' / ');
+    final winners =
+        legs.map((l) => winnerByKno[l]?.toString() ?? '?').join('  /  ');
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const Divider(height: 14, thickness: 3, color: HG.altin),
-      Row(children: [
-        const Text('SONUÇLAR',
-            style: TextStyle(
-                color: HG.metin, fontSize: 15, fontWeight: FontWeight.w800)),
-        const Spacer(),
-        Flexible(
-          child: Text(winners,
-              textAlign: TextAlign.right,
-              style: const TextStyle(color: HG.metin, fontSize: 15)),
-        ),
-      ]),
-      if (tuttu && sonuc.ikramiye != null)
+      const Text('SONUÇLAR',
+          style: TextStyle(
+              color: HG.metin, fontSize: 15, fontWeight: FontWeight.w800)),
+      const SizedBox(height: 4),
+      // Çift satır: numaralar SONUÇLAR'ın altında, tam genişlik (taşma yok).
+      Text(winners,
+          style: const TextStyle(
+              color: HG.altinAcik, fontSize: 15, fontWeight: FontWeight.w700)),
+      if (tuttu && ikramiye != null)
         Padding(
           padding: const EdgeInsets.only(top: 6),
           child: Row(children: [
             const Icon(Icons.emoji_events, size: 18, color: HG.yesil),
             const SizedBox(width: 6),
-            Text('KAZANDIK · ${paraFmt(sonuc.ikramiye)}',
+            Text('KAZANDIK · ${paraFmt(ikramiye)}',
                 style: const TextStyle(
                     color: HG.yesil, fontSize: 14, fontWeight: FontWeight.w800)),
           ]),

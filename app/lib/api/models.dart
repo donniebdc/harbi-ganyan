@@ -164,3 +164,41 @@ class AltiliSonuc {
         tierHits = (j['tier_hits'] as Map).map(
             (k, v) => MapEntry(k as String, v as int?));
 }
+
+// ---- İstatistik ----
+
+class TierIstat {
+  final String ad;
+  final int toplam, tuttu;
+  final double yuzde, maliyet, ikramiye, net;
+  TierIstat.fromJson(Map<String, dynamic> j)
+      : ad = j['ad'] as String,
+        toplam = j['toplam'] as int,
+        tuttu = j['tuttu'] as int,
+        yuzde = (j['yuzde'] as num).toDouble(),
+        maliyet = (j['maliyet'] as num).toDouble(),
+        ikramiye = (j['ikramiye'] as num).toDouble(),
+        net = (j['net'] as num).toDouble();
+}
+
+class IstatistikDonem {
+  final int besToplam, besIsabet;
+  final double besYuzde;
+  final List<TierIstat> tierler;
+  IstatistikDonem.fromJson(Map<String, dynamic> j)
+      : besToplam = j['bes']['toplam'] as int,
+        besIsabet = j['bes']['isabet'] as int,
+        besYuzde = (j['bes']['yuzde'] as num).toDouble(),
+        tierler = [
+          for (final k in const ['simitci', 'harbi', 'ortakli'])
+            TierIstat.fromJson(
+                (j['tierler'] as Map)[k] as Map<String, dynamic>)
+        ];
+}
+
+class Istatistik {
+  final IstatistikDonem hafta, ay;
+  Istatistik.fromJson(Map<String, dynamic> j)
+      : hafta = IstatistikDonem.fromJson(j['hafta'] as Map<String, dynamic>),
+        ay = IstatistikDonem.fromJson(j['ay'] as Map<String, dynamic>);
+}

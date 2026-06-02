@@ -41,8 +41,8 @@ class AdminUserCreate(BaseModel):
     @field_validator("sifre")
     @classmethod
     def _sifre(cls, v: str) -> str:
-        if len(v) < 10:
-            raise ValueError("Sifre en az 10 karakter olmali.")
+        if len(v) < 6:
+            raise ValueError("Sifre en az 6 karakter olmali.")
         return v
 
     @field_validator("tier")
