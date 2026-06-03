@@ -342,39 +342,35 @@ class _BahisKart extends StatelessWidget {
     );
   }
 
-  /// KAZANAN / İKRAMİYE / KAZANÇ satırları (sarı).
+  /// KAZANAN (sarı) / İKRAMİYE (sarı) / KAZANÇ (yeşil, ayrı satır) satırları.
   List<Widget> _sonucSatirlari(BahisSonuc s) {
     final out = <Widget>[];
-    // KAZANAN: gerçek kazanan no'lar (Plase'de ad ile)
+    // KAZANAN: gerçekleşen kazanan no'lar (yalnız numara).
     final flat = <int>[for (final c in s.kazanan) ...c];
     if (flat.isNotEmpty) {
-      final parcalar = flat.map((no) {
-        final ad = _plase ? (s.adlar[no] ?? '') : '';
-        return ad.isEmpty ? '$no' : '$no - "$ad"';
-      }).join(' / ');
-      out.add(_sonucSatir('KAZANAN', parcalar));
+      out.add(_sonucSatir('KAZANAN', flat.map((no) => '$no').join(' / ')));
     }
-    // İKRAMİYE: tutarsa her zaman; tutmadıysa Plase hariç (resmi ödeme biliniyorsa)
+    // İKRAMİYE: tutarsa her zaman; tutmadıysa Plase hariç (resmi ödeme biliniyorsa).
     final ikr = s.ikramiye;
     if (ikr != null && (s.tuttu || !_plase)) {
+      out.add(_sonucSatir('İKRAMİYE', _para(ikr)));
       if (s.tuttu) {
-        out.add(_sonucSatir('İKRAMİYE',
-            '${_para(ikr)} / KAZANÇ : ${_para(ikr)} * ${b.misli} = '
-            '${_para(s.net ?? ikr * b.misli)}'));
-      } else {
-        out.add(_sonucSatir('İKRAMİYE', _para(ikr)));
+        // KAZANÇ ayrı satır + yeşil
+        out.add(_sonucSatir(
+            'KAZANÇ', '${_para(ikr)} * ${b.misli} = ${_para(s.net ?? ikr * b.misli)}',
+            renk: HG.yesil));
       }
     }
     return out;
   }
 
-  Widget _sonucSatir(String etiket, String deger) {
+  Widget _sonucSatir(String etiket, String deger, {Color renk = HG.altin}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 3),
       child: RichText(
         text: TextSpan(
-          style: const TextStyle(
-              color: HG.altin, fontSize: 12.5, fontWeight: FontWeight.w700),
+          style: TextStyle(
+              color: renk, fontSize: 12.5, fontWeight: FontWeight.w700),
           children: [
             TextSpan(text: '$etiket : '),
             TextSpan(
