@@ -120,13 +120,22 @@ def _kalemler_map(raw_gun, hip_disp):
     return out
 
 
-def _bahis_sonuc(g: dict, idx: dict) -> dict | None:
-    """grade() çıktısını payload 'sonuc' formatına çevirir."""
+def _bahis_sonuc(g: dict, idx: dict, no2ad: dict | None = None) -> dict | None:
+    """grade() çıktısını payload 'sonuc' formatına çevirir.
+    no2ad verilirse (yalnız PLASE) kazanan at_no -> ad eşlemesi 'adlar'a yazılır."""
     r = bahis.grade(g, idx)
     if r is None:
         return None
-    return {"tuttu": r["tuttu"], "ganyan": r["ganyan"], "net": r["net"],
-            "kazanan": r.get("kazanan_kombo")}
+    kombo = r.get("kazanan_kombo") or []
+    adlar = {}
+    if no2ad:
+        for col in kombo:
+            for no in col:
+                ad = no2ad.get(no)
+                if ad:
+                    adlar[str(no)] = ad
+    return {"tuttu": r["tuttu"], "ikramiye": r.get("ikramiye"), "net": r["net"],
+            "kazanan": kombo, "adlar": adlar}
 
 
 def build_bahisler(iso, hip, knos, races, meta, kalemler_by_kno, finished):
@@ -157,7 +166,11 @@ def build_bahisler(iso, hip, knos, races, meta, kalemler_by_kno, finished):
                 continue
             sonuc = None
             if kno in finished:
-                sonuc = _bahis_sonuc(g, bahis.kalemler_index(kalemler_by_kno.get(kno, [])))
+                # PLASE kazanan atın adı gösterilir; diğer tek bahisler yalnız no.
+                no2ad = ({a["at_no"]: a["at"] for a in atlar}
+                         if code == "PLASE" else None)
+                sonuc = _bahis_sonuc(g, bahis.kalemler_index(kalemler_by_kno.get(kno, [])),
+                                     no2ad)
             out.append({
                 "tip": g["tip"], "ad": g["ad"], "aile": "tek", "bas_kosu": kno,
                 "legs": [kno], "kolonlar": g["kolonlar"], "secim_atlar": g["secim_atlar"],

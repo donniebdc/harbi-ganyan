@@ -94,9 +94,9 @@ def bahis_metni(tarih: date, hip: str, b: KosuBahis) -> str:
         yer = f"Koşu {b.bas_kosu}"
     bas = f"{_ddmmyyyy(tarih)} | {_hip_ad(hip)} | {yer} | {b.ad}"
     if b.tuttu:
-        return (f"{bas} | ✓ Tuttu | Ganyan {_tr_para(b.ganyan or 0)} × {b.misli} misli "
-                f"= {_tr_para(b.net or 0)} TL")
-    return f"{bas} | ✗ Tutmadı"
+        return (f"{bas} | ✓ Analiz Başarılı | İkramiye {_tr_para(b.ganyan or 0)} × "
+                f"{b.misli} misli = {_tr_para(b.net or 0)} TL")
+    return f"{bas} | ✗ Analiz Başarısız"
 
 
 # ---------------- Gönderim ----------------

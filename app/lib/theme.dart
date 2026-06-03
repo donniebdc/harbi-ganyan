@@ -9,6 +9,7 @@ class HG {
   static const Color altinAcik = Color(0xFFF4D480);
   static const Color yesil = Color(0xFF35C77A);
   static const Color kirmizi = Color(0xFFE5544B);
+  static const Color camgobegi = Color(0xFF35D0D6); // misli | TL satırı
   static const Color metin = Color(0xFFF2F4F8);
   static const Color metinSoluk = Color(0xFF98A2B3);
 

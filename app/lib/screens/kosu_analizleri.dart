@@ -181,8 +181,12 @@ class _HipBolum extends StatelessWidget {
           leading: const Icon(Icons.stadium, color: HG.altin),
           title: Text(h.hipodrom,
               style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 16)),
-          subtitle: Text('${h.bahisler.length} bahis analizi',
-              style: const TextStyle(color: HG.metinSoluk, fontSize: 12)),
+          subtitle: const Text('TJK RESMİ ALT OYUNLARI',
+              style: TextStyle(
+                  color: HG.altin,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.3)),
           childrenPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
           children: [for (final k in knos) _KosuGrup(k, gruplar[k]!)],
         ),
@@ -213,8 +217,12 @@ class _KosuGrup extends StatelessWidget {
           tilePadding: const EdgeInsets.symmetric(horizontal: 12),
           title: Text('$kno. Koşu',
               style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)),
-          subtitle: Text('${bahisler.length} bahis türü',
-              style: const TextStyle(color: HG.metinSoluk, fontSize: 11)),
+          subtitle: Text('${bahisler.length} ALT OYUN',
+              style: const TextStyle(
+                  color: HG.altin,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.3)),
           childrenPadding: const EdgeInsets.fromLTRB(10, 0, 10, 10),
           children: [for (final b in bahisler) _BahisKart(b)],
         ),
@@ -226,6 +234,15 @@ class _KosuGrup extends StatelessWidget {
 class _BahisKart extends StatelessWidget {
   final BahisAnaliz b;
   const _BahisKart(this.b);
+
+  bool get _plase => b.tip == 'PLASE';
+
+  /// Kolon i için gerçek kazanan at_no kümesi (yeşil [ ] işareti).
+  Set<int> _winset(int i) {
+    final s = b.sonuc;
+    if (s == null || i >= s.kazanan.length) return const {};
+    return s.kazanan[i].toSet();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -241,146 +258,146 @@ class _BahisKart extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(children: [
+          // Başlık + ANALİZ BAŞARILI/BAŞARISIZ rozeti
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Expanded(
-              child: Text(
-                b.aile == 'ayak' && b.legs.length > 1
-                    ? '${b.ad}  (${b.legs.first}-${b.legs.last}. koşu)'
-                    : b.ad,
-                style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14),
-              ),
+              child: Text(b.ad,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w800, fontSize: 14)),
             ),
-            if (sonuc != null) _SonucRozet(sonuc),
+            if (sonuc != null) _AnalizRozet(sonuc.tuttu),
           ]),
           const SizedBox(height: 8),
-          ..._kolonlar(),
+          ..._kolonSatirlari(),
           const SizedBox(height: 8),
-          _kuponBilgi(),
-          if (sonuc != null && sonuc.tuttu) ...[
-            const SizedBox(height: 6),
-            _netSatir(sonuc),
+          // N MİSLİ | TL (camgöbeği)
+          Text('${b.misli} MİSLİ | ${_para(b.kuponBedeli * b.misli)} TL',
+              style: const TextStyle(
+                  color: HG.camgobegi,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 13)),
+          if (sonuc != null) ...[
+            const SizedBox(height: 8),
+            const Divider(height: 1, color: HG.kart2),
+            const SizedBox(height: 8),
+            ..._sonucSatirlari(sonuc),
           ],
         ],
       ),
     );
   }
 
-  /// Kazanan at_no kümeleri (kolon bazında). Tek bahiste hepsi tek havuzda.
-  List<Set<int>> _kazananlar() {
-    final s = b.sonuc;
-    if (s == null) return [];
-    return s.kazanan.map((c) => c.toSet()).toList();
-  }
-
-  List<Widget> _kolonlar() {
-    final kaz = _kazananlar();
-    if (b.aile == 'tek') {
-      // tek havuz; kazanan = tüm kazanan kolonların birleşimi
-      final winset = <int>{for (final c in kaz) ...c};
-      final atlar = (b.secimAtlar)
-          .map((e) => e as Map<String, dynamic>)
-          .toList();
-      return [_atSatiri('Seçilen', atlar, winset)];
-    }
-    // çok-ayak: her ayak ayrı satır
+  /// Kolon satırları: "1. KOLON   2 / [4] / 8" (kazanan yeşil). Plase tek atı
+  /// etiketsiz gösterir; çok-ayakta koşu no etiketi.
+  List<Widget> _kolonSatirlari() {
     final out = <Widget>[];
-    for (var i = 0; i < b.secimAtlar.length; i++) {
-      final atlar = (b.secimAtlar[i] as List)
-          .map((e) => e as Map<String, dynamic>)
-          .toList();
-      final winset = (i < kaz.length) ? kaz[i] : <int>{};
-      final etiket = (i < b.legs.length) ? '${b.legs[i]}. koşu' : 'Ayak ${i + 1}';
-      out.add(_atSatiri(etiket, atlar, winset));
+    final tekKolon = b.kolonlar.length <= 1;
+    for (var i = 0; i < b.kolonlar.length; i++) {
+      final nos = b.kolonlar[i];
+      final win = _winset(i);
+      String? etiket;
+      if (b.aile == 'ayak') {
+        etiket = (i < b.legs.length) ? '${b.legs[i]}. KOŞU' : 'AYAK ${i + 1}';
+      } else if (!tekKolon) {
+        etiket = '${i + 1}. KOLON';
+      }
+      out.add(Padding(
+        padding: const EdgeInsets.only(bottom: 3),
+        child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          if (etiket != null)
+            SizedBox(
+              width: 74,
+              child: Text(etiket,
+                  style: const TextStyle(
+                      color: HG.metinSoluk,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700)),
+            ),
+          Expanded(child: _kolonNumaralar(nos, win)),
+        ]),
+      ));
     }
     return out;
   }
 
-  Widget _atSatiri(String etiket, List<Map<String, dynamic>> atlar, Set<int> win) {
+  /// "2 / [4] / 8" — kazananlar yeşil köşeli parantez.
+  Widget _kolonNumaralar(List<int> nos, Set<int> win) {
+    final spans = <InlineSpan>[];
+    for (var i = 0; i < nos.length; i++) {
+      if (i > 0) {
+        spans.add(const TextSpan(
+            text: ' / ', style: TextStyle(color: HG.metinSoluk)));
+      }
+      final no = nos[i];
+      final kazanan = win.contains(no);
+      spans.add(TextSpan(
+        text: kazanan ? '[$no]' : '$no',
+        style: TextStyle(
+            color: kazanan ? HG.yesil : HG.metin,
+            fontWeight: kazanan ? FontWeight.w800 : FontWeight.w600),
+      ));
+    }
+    return RichText(
+      text: TextSpan(style: const TextStyle(fontSize: 13.5), children: spans),
+    );
+  }
+
+  /// KAZANAN / İKRAMİYE / KAZANÇ satırları (sarı).
+  List<Widget> _sonucSatirlari(BahisSonuc s) {
+    final out = <Widget>[];
+    // KAZANAN: gerçek kazanan no'lar (Plase'de ad ile)
+    final flat = <int>[for (final c in s.kazanan) ...c];
+    if (flat.isNotEmpty) {
+      final parcalar = flat.map((no) {
+        final ad = _plase ? (s.adlar[no] ?? '') : '';
+        return ad.isEmpty ? '$no' : '$no - "$ad"';
+      }).join(' / ');
+      out.add(_sonucSatir('KAZANAN', parcalar));
+    }
+    // İKRAMİYE: tutarsa her zaman; tutmadıysa Plase hariç (resmi ödeme biliniyorsa)
+    final ikr = s.ikramiye;
+    if (ikr != null && (s.tuttu || !_plase)) {
+      if (s.tuttu) {
+        out.add(_sonucSatir('İKRAMİYE',
+            '${_para(ikr)} / KAZANÇ : ${_para(ikr)} * ${b.misli} = '
+            '${_para(s.net ?? ikr * b.misli)}'));
+      } else {
+        out.add(_sonucSatir('İKRAMİYE', _para(ikr)));
+      }
+    }
+    return out;
+  }
+
+  Widget _sonucSatir(String etiket, String deger) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 4),
-      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        SizedBox(
-          width: 64,
-          child: Text(etiket,
-              style: const TextStyle(color: HG.metinSoluk, fontSize: 11)),
+      padding: const EdgeInsets.only(bottom: 3),
+      child: RichText(
+        text: TextSpan(
+          style: const TextStyle(
+              color: HG.altin, fontSize: 12.5, fontWeight: FontWeight.w700),
+          children: [
+            TextSpan(text: '$etiket : '),
+            TextSpan(
+                text: deger, style: const TextStyle(fontWeight: FontWeight.w600)),
+          ],
         ),
-        Expanded(
-          child: Wrap(
-            spacing: 6,
-            runSpacing: 6,
-            children: [
-              for (final a in atlar)
-                _atCip(a['at_no'] as int, a['at'] as String? ?? '',
-                    win.contains(a['at_no'])),
-            ],
-          ),
-        ),
-      ]),
-    );
-  }
-
-  Widget _atCip(int no, String ad, bool kazanan) {
-    final metin = ad.isEmpty ? '$no' : '$no $ad';
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(
-        color: kazanan ? HG.yesil.withValues(alpha: 0.18) : HG.kart2,
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(
-            color: kazanan ? HG.yesil : Colors.transparent, width: 1),
-      ),
-      child: Text(kazanan ? '[ $metin ]' : metin,
-          style: TextStyle(
-              fontSize: 12,
-              fontWeight: kazanan ? FontWeight.w800 : FontWeight.w500,
-              color: kazanan ? HG.yesil : HG.metin)),
-    );
-  }
-
-  Widget _kuponBilgi() {
-    return Text(
-      '${b.kombinasyon} kombinasyon × ${b.misli} misli  ·  '
-      'Kupon ${_para(b.kuponBedeli * b.misli)} TL',
-      style: const TextStyle(color: HG.metinSoluk, fontSize: 11.5),
-    );
-  }
-
-  Widget _netSatir(BahisSonuc s) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      decoration: BoxDecoration(
-        color: HG.yesil.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Text(
-        'Ganyan ${_para(s.ganyan ?? 0)} × ${b.misli} misli = '
-        '${_para(s.net ?? 0)} TL',
-        style: const TextStyle(
-            color: HG.yesil, fontWeight: FontWeight.w800, fontSize: 13),
       ),
     );
   }
 }
 
-class _SonucRozet extends StatelessWidget {
-  final BahisSonuc s;
-  const _SonucRozet(this.s);
+/// ANALİZ BAŞARILI / BAŞARISIZ rozeti (kartın sağ üstü).
+class _AnalizRozet extends StatelessWidget {
+  final bool basarili;
+  const _AnalizRozet(this.basarili);
   @override
   Widget build(BuildContext context) {
-    final tuttu = s.tuttu;
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(
-        color: (tuttu ? HG.yesil : HG.kirmizi).withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      child: Text(tuttu ? '✓ TUTTU' : '✗ TUTMADI',
-          style: TextStyle(
-              color: tuttu ? HG.yesil : HG.kirmizi,
-              fontSize: 10,
-              fontWeight: FontWeight.w800)),
-    );
+    return Text(basarili ? 'ANALİZ BAŞARILI' : 'ANALİZ BAŞARISIZ',
+        style: TextStyle(
+            color: basarili ? HG.yesil : HG.kirmizi,
+            fontSize: 10,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 0.2));
   }
 }
 

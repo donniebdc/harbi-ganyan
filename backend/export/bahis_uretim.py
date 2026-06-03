@@ -179,6 +179,23 @@ def _ayak_kombinasyon(widths: list[int]) -> int:
     return r
 
 
+def _sirali_komb(cols: list[list[int]]) -> int:
+    """Sıralı (pozisyonlu) bahiste, her pozisyon i'nin atı cols[i] kümesinden ve
+    tüm atlar BİRBİRİNDEN FARKLI olacak şekilde geçerli sıralı kombinasyon sayısı.
+    (TJK aynı atı iki pozisyona yazan kombinasyonları bedele saymaz.)"""
+    def rec(i: int, used: set) -> int:
+        if i == len(cols):
+            return 1
+        total = 0
+        for x in cols[i]:
+            if x not in used:
+                used.add(x)
+                total += rec(i + 1, used)
+                used.discard(x)
+        return total
+    return rec(0, set())
+
+
 def _misli(kombinasyon: int, birim: float, max_butce: float) -> int:
     bedel = kombinasyon * birim
     if bedel <= 0:
@@ -198,32 +215,67 @@ def _atlar_ozet(atlar_sirali: list[dict], nos: list[int]) -> list[dict]:
 def uret_tek(code: str, atlar_sirali: list[dict]) -> dict | None:
     """Tek-koşu bahsi için ANA sıralı atlardan seçim üretir.
     atlar_sirali: [{at_no, at, ana}, ...] ANA'ya göre azalan.
-    Döner: {tip, ad, kolonlar:[[no...]], secim_atlar, kombinasyon, birim, kupon_bedeli, misli}
+
+    Kolon stratejisi (Güncelleme.txt):
+      • PLASE: tek at (yüksek misli mantığı).
+      • Sırasız (İkili, Plase İkili, Tabela): box — tek havuz, görünümde N kolon.
+      • Sıralı (Sıralı İkili/Üçlü/Beşli): GENİŞLEYEN İÇ İÇE (nested) — 1. kolon
+        en dar (öne çıkanlar/banko), sonraki her kolon bir at daha geniş.
+
+    Döner: {tip, ad, kolonlar:[[no...]...], secim_atlar:[[{at_no,at}]...],
+            kombinasyon, birim, kupon_bedeli, misli, max_butce}
     """
     spec = BET[code]
     nos = [a["at_no"] for a in atlar_sirali]
-    if len(nos) < spec["positions"]:
+    p = spec["positions"]
+    if len(nos) < p:
         return None
-    w = min(spec["width"], len(nos))
-    # bütçeye sığacak şekilde gerekiyorsa genişliği kıs
-    while w >= spec["positions"]:
-        komb = _tek_kombinasyon(spec, w)
-        if komb > 0 and komb * spec["birim"] <= spec["max_butce"]:
-            break
-        w -= 1
-    if w < spec["positions"]:
-        w = spec["positions"]
-    sec_nos = nos[:w]
-    komb = _tek_kombinasyon(spec, w)
+
+    if spec.get("place") and p == 1:
+        # PLASE: tek at, tek kolon
+        cols = [nos[:1]]
+        komb = 1
+    elif spec["ordered"]:
+        # Sıralı: genişleyen iç içe. base = positions; bütçeye sığana dek küçült.
+        base = p
+        cols = _nested_cols(nos, p, base)
+        komb = _sirali_komb(cols)
+        while base > 1 and komb * spec["birim"] > spec["max_butce"]:
+            base -= 1
+            cols = _nested_cols(nos, p, base)
+            komb = _sirali_komb(cols)
+    else:
+        # Sırasız: box (tek havuz). Görünümde N kolon olarak tekrarlanır.
+        w = min(spec["width"], len(nos))
+        while w >= p:
+            komb = _tek_kombinasyon(spec, w)
+            if komb > 0 and komb * spec["birim"] <= spec["max_butce"]:
+                break
+            w -= 1
+        if w < p:
+            w = p
+            komb = _tek_kombinasyon(spec, w)
+        pool = nos[:w]
+        cols = [list(pool) for _ in range(p)]
+
     misli = _misli(komb, spec["birim"], spec["max_butce"])
     return {
         "tip": code, "ad": spec["ad"],
-        "kolonlar": [sec_nos],            # tek koşu: tek havuz (görünüm)
-        "secim_atlar": _atlar_ozet(atlar_sirali, sec_nos),
+        "kolonlar": cols,
+        "secim_atlar": [_atlar_ozet(atlar_sirali, c) for c in cols],
         "kombinasyon": komb, "birim": spec["birim"],
         "kupon_bedeli": round(komb * spec["birim"], 2),
         "misli": misli, "max_butce": spec["max_butce"],
     }
+
+
+def _nested_cols(nos: list[int], positions: int, base: int) -> list[list[int]]:
+    """Genişleyen iç içe kolonlar: kolon i = ilk (base+i) ANA atı (üst küme)."""
+    cols = []
+    for i in range(positions):
+        w = min(max(base + i, 1), len(nos))
+        cols.append(nos[:w])
+    return cols
 
 
 def uret_ayak(code: str, legs_atlar: list[list[dict]]) -> dict | None:
@@ -332,16 +384,25 @@ def kalemler_index(kalemler: list[dict]) -> dict:
     return idx
 
 
-def _kapsiyor_sirali(secim_kolon: list[int], gercek_kolonlar: list[list[int]],
+def _kapsiyor_sirali(kolonlar: list[list[int]], gercek_kolonlar: list[list[int]],
                      positions: int) -> bool:
-    """Sıralı tek-koşu: her pozisyon i'deki gerçek at, seçimimizde olmalı.
-    (Box seçim: tüm kolonlar aynı havuz secim_kolon.)"""
-    if len(gercek_kolonlar) < positions:
+    """Sıralı tek-koşu: her pozisyon i'deki gerçek at, O KOLONDA (kolonlar[i])
+    seçilmiş olmalı (genişleyen iç içe kolonları destekler)."""
+    if len(gercek_kolonlar) < positions or len(kolonlar) < positions:
         return False
     for i in range(positions):
-        if not any(no in secim_kolon for no in gercek_kolonlar[i]):
+        if not any(no in kolonlar[i] for no in gercek_kolonlar[i]):
             return False
     return True
+
+
+def _norm_kombo(gercek: list[list[int]], positions: int, ordered: bool) -> list[list[int]]:
+    """Gerçekleşen kazanan kombinasyonu kolon-bazlı [[w0],[w1],...] biçimine getirir
+    (mobil yeşil [ ] işareti kolon başına yapılır)."""
+    if ordered:
+        return [gercek[i] if i < len(gercek) else [] for i in range(positions)]
+    flat = [no for col in (gercek or []) for no in col]
+    return [[no] for no in flat[:positions]]
 
 
 def _kapsiyor_sirasiz(secim_kolon: list[int], gercek_kolonlar: list[list[int]],
@@ -357,45 +418,53 @@ def _kapsiyor_sirasiz(secim_kolon: list[int], gercek_kolonlar: list[list[int]],
 
 def grade(bahis: dict, idx: dict) -> dict | None:
     """Bir üretilmiş bahsi resmi kalemlerle değerlendirir.
-    Döner: {tuttu, ganyan, net, kazanan_kombo} | None (sonuç yok)."""
+    Döner: {tuttu, ikramiye, net, kazanan_kombo} | None (sonuç yok).
+      • ikramiye: gerçekleşen kombinasyonun RESMİ ödemesi — TUTSA DA TUTMASA DA
+        doldurulur (mobilde 'İKRAMİYE' satırı). PLASE'de yalnız tutarsa.
+      • net: tutarsa ikramiye*misli, aksi halde 0.
+      • kazanan_kombo: gerçekleşen kazanan kombinasyon (kolon-bazlı)."""
     code = bahis["tip"]
     kalem_list = idx.get(code)
     if not kalem_list:
         return None
     spec = BET[code]
     misli = bahis.get("misli", 1)
+    kolonlar = bahis["kolonlar"]
     if spec["family"] == "tek":
-        secim = bahis["kolonlar"][0]
         if spec.get("place") and code == "PLASE":
             # her placing at ayrı kalem; seçtiğimiz atlardan dereceye girenler kazanır
+            secim = set(kolonlar[0])
             kazanan = 0.0
             kombos = []
             for kl in kalem_list:
                 gno = kl["kombo"][0][0] if kl["kombo"] and kl["kombo"][0] else None
+                if gno is None:
+                    continue
+                kombos.append([gno])
                 if gno in secim and kl["tutar"]:
                     kazanan += kl["tutar"]
-                    kombos.append(gno)
             tuttu = kazanan > 0
-            return {"tuttu": tuttu, "ganyan": round(kazanan, 2) if tuttu else None,
+            return {"tuttu": tuttu,
+                    "ikramiye": round(kazanan, 2) if tuttu else None,
                     "net": round(kazanan * misli, 2) if tuttu else 0.0,
                     "kazanan_kombo": kombos}
         # tek kalem (en yüksek tutarlı) — normalde tek olur
         kl = max(kalem_list, key=lambda x: x["tutar"] or 0)
         if spec["ordered"]:
-            ok = _kapsiyor_sirali(secim, kl["kombo"], spec["positions"])
+            ok = _kapsiyor_sirali(kolonlar, kl["kombo"], spec["positions"])
         else:
-            ok = _kapsiyor_sirasiz(secim, kl["kombo"], spec["positions"])
-        return {"tuttu": ok, "ganyan": kl["tutar"] if ok else None,
+            ok = _kapsiyor_sirasiz(kolonlar[0], kl["kombo"], spec["positions"])
+        return {"tuttu": ok, "ikramiye": kl["tutar"],
                 "net": round((kl["tutar"] or 0) * misli, 2) if ok else 0.0,
-                "kazanan_kombo": kl["kombo"]}
+                "kazanan_kombo": _norm_kombo(kl["kombo"], spec["positions"], spec["ordered"])}
     else:
         # çok ayak: her ayakta gerçek kazanan(lar)dan biri bizim kolonda olmalı
         kl = max(kalem_list, key=lambda x: x["tutar"] or 0)
         gercek = kl["kombo"]
-        kolonlar = bahis["kolonlar"]
         if len(gercek) < len(kolonlar):
-            return {"tuttu": False, "ganyan": None, "net": 0.0, "kazanan_kombo": gercek}
+            return {"tuttu": False, "ikramiye": kl["tutar"], "net": 0.0,
+                    "kazanan_kombo": gercek}
         ok = all(any(no in kolonlar[i] for no in gercek[i]) for i in range(len(kolonlar)))
-        return {"tuttu": ok, "ganyan": kl["tutar"] if ok else None,
+        return {"tuttu": ok, "ikramiye": kl["tutar"],
                 "net": round((kl["tutar"] or 0) * misli, 2) if ok else 0.0,
                 "kazanan_kombo": gercek}

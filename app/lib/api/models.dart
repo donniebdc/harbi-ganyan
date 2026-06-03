@@ -262,17 +262,20 @@ class BahisAnaliz {
 
 class BahisSonuc {
   final bool tuttu;
-  final double? ganyan, net;
-  final List<List<int>> kazanan;
+  final double? ikramiye, net;
+  final List<List<int>> kazanan; // kolon-bazlı gerçek kazanan at_no'lar
+  final Map<int, String> adlar; // yalnız Plase: at_no -> ad
   BahisSonuc.fromJson(Map<String, dynamic> j)
       : tuttu = j['tuttu'] as bool? ?? false,
-        ganyan = _d(j['ganyan']),
+        ikramiye = _d(j['ikramiye']),
         net = _d(j['net']),
         kazanan = ((j['kazanan'] as List?) ?? [])
             .map((c) => c is List
                 ? c.map((e) => e as int).toList()
                 : <int>[c as int])
-            .toList();
+            .toList(),
+        adlar = ((j['adlar'] as Map?) ?? {}).map(
+            (k, v) => MapEntry(int.parse(k.toString()), v as String? ?? ''));
 }
 
 // ---- Bildirimler ----

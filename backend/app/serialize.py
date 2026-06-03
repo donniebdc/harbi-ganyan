@@ -39,14 +39,25 @@ def altili_payload(a: Altili) -> dict:
     }
 
 
+def _bahis_kazanan(raw) -> tuple[list, dict]:
+    """kazanan alanı yeni {kombo, adlar} sözlüğü VEYA eski düz liste olabilir."""
+    if isinstance(raw, dict):
+        return (raw.get("kombo") or []), (raw.get("adlar") or {})
+    if isinstance(raw, list):
+        return raw, {}
+    return [], {}
+
+
 def bahis_payload(b: KosuBahis) -> dict:
+    kombo, adlar = _bahis_kazanan(b.kazanan)
     return {
         "tip": b.tip, "ad": b.ad, "aile": b.aile, "bas_kosu": b.bas_kosu,
         "legs": b.legs, "kolonlar": b.kolonlar, "secim_atlar": b.secim_atlar,
         "kombinasyon": b.kombinasyon, "birim": b.birim, "kupon_bedeli": b.kupon_bedeli,
         "misli": b.misli, "max_butce": b.max_butce,
-        "sonuc": ({"tuttu": b.tuttu, "ganyan": b.ganyan, "net": b.net,
-                   "kazanan": b.kazanan} if b.tuttu is not None else None),
+        # ganyan kolonu artık resmi ikramiye (kayıpta da dolu) -> 'ikramiye'
+        "sonuc": ({"tuttu": b.tuttu, "ikramiye": b.ganyan, "net": b.net,
+                   "kazanan": kombo, "adlar": adlar} if b.tuttu is not None else None),
     }
 
 

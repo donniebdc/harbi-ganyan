@@ -103,8 +103,11 @@ def import_payload(db, payload: dict) -> int:
                 secim_atlar=b["secim_atlar"], kombinasyon=b["kombinasyon"],
                 birim=b["birim"], kupon_bedeli=b["kupon_bedeli"], misli=b["misli"],
                 max_butce=b["max_butce"],
-                tuttu=s.get("tuttu"), ganyan=s.get("ganyan"),
-                net=s.get("net"), kazanan=s.get("kazanan")))
+                tuttu=s.get("tuttu"),
+                ganyan=s.get("ikramiye"),  # ganyan kolonu = resmi ikramiye (kayıpta da)
+                net=s.get("net"),
+                kazanan=({"kombo": s.get("kazanan"), "adlar": s.get("adlar") or {}}
+                         if s else None)))
     return n_alt
 
 
