@@ -16,3 +16,13 @@ _probe_*.html
 _probe_*.json
 _*_log.txt
 *.tmp
+
+# Firebase gizli anahtarları (ASLA commit etme)
+*firebase-adminsdk*.json
+google-services.json
+app/android/app/google-services.json
+
+# Sistem yedekleri (büyük arşivler — git'e girmez)
+Yedek/
+*.tar.gz
+*.rar
