@@ -318,7 +318,12 @@ def build_txt(html: str, url: str, date_iso: str, hip: str, kosu_no: int) -> str
     return "\n".join(lines).rstrip() + "\n"
 
 
-def collect_range(start: datetime, end: datetime, out_dir: Path, delay: float, force: bool) -> None:
+def collect_range(start: datetime, end: datetime, out_dir: Path, delay: float, force: bool,
+                  skip: set | None = None) -> None:
+    """skip: {(HIP_KODU_UPPER, kosu_no)} — force=True olsa bile bu koşuların MEVCUT
+    TXT'si KORUNUR (yeniden indirilmez). Canlı yeniden-üretimde BAŞLAMIŞ koşuların
+    koşu-sonrası Pegadrom verisinin motora sızmasını engeller (look-ahead koruması)."""
+    skip = skip or set()
     session = requests.Session()
     session.headers.update(HEADERS)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -356,9 +361,12 @@ def collect_range(start: datetime, end: datetime, out_dir: Path, delay: float, f
             index_lines.append(f"{hip}: {kosu_sayisi} kosu")
             for kosu_no in range(1, kosu_sayisi + 1):
                 txt_path = hip_dir / f"kosu_{kosu_no:02d}_ai_analiz.txt"
-                if txt_path.exists() and not force:
+                # force olsa bile: dosya varsa ve (a) force kapalı VEYA (b) bu koşu
+                # 'skip' (başlamış) ise -> mevcut TXT korunur.
+                if txt_path.exists() and (not force or (hip.upper(), kosu_no) in skip):
                     skipped += 1
-                    print(f"  {hip} {kosu_no}. kosu: var, atlandi")
+                    etiket = "donduruldu (basladi)" if force else "var, atlandi"
+                    print(f"  {hip} {kosu_no}. kosu: {etiket}")
                     continue
                 url = f"{BASE_URL}/ai-analiz?tarih={date_iso}&hip={hip}&kosu={kosu_no}"
                 try:

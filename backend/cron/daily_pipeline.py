@@ -48,8 +48,13 @@ def _ddmmyyyy(iso: str) -> str:
     return f"{dd}.{m}.{y}"
 
 
-def export_import(isos: list[str]):
-    """Verilen günleri yapısal JSON'a çevirip DB'ye yazar (scraping yok)."""
+def export_import(isos: list[str], freeze: bool = True):
+    """Verilen günleri yapısal JSON'a çevirip DB'ye yazar (scraping yok).
+
+    freeze=True (varsayılan, CANLI-GÜVENLİ): import_payload zaman-bazlı dondurma uygular —
+      başlamış/kilitli koşuların analizi korunur, yalnız sonuç güncellenir. Gün-içi
+      yeniden-üretimin (canlı takip) geçmiş koşuları yeniden üretmesini engeller.
+    freeze=False: bilinçli replay (manuel --uret / --export-only) — tam yeniden-yazım."""
     ensure_schema()
     ctx = load_context()
     EXPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -59,7 +64,7 @@ def export_import(isos: list[str]):
             payload = build_day(iso, ctx)
             (EXPORT_DIR / f"{iso}.json").write_text(
                 json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-            n = import_payload(db, payload)
+            n = import_payload(db, payload, freeze=freeze)
             db.commit()
             print(f"  export+import {iso}: {len(payload['hipodromlar'])} hipodrom, {n} altılı")
     except Exception:
@@ -88,24 +93,54 @@ def _son_analiz_yaz(iso: str, sebep: str):
         db.close()
 
 
-def run_full(iso: str, taze_pegadrom: bool = False, sebep: str = "Üretildi"):
+def _baslamis_kosu_skip(iso: str) -> set:
+    """DB'den BAŞLAMIŞ koşuları {(HIP_KODU_UPPER, kno)} olarak döner (Pegadrom force
+    indirmede atlanacaklar). Hipodrom adı Pegadrom kodu için ASCII-upper'a katlanır
+    (Elazığ->ELAZIG, İstanbul->ISTANBUL)."""
+    from pegadrom_ai_txt_topla import fold
+    from app.models import Gun, GunHipodrom, Kosu
+    d = date.fromisoformat(iso)
+    now_tr = _now_tr()
+    skip = set()
+    db = SessionLocal()
+    try:
+        gun = db.query(Gun).filter(Gun.date == d).one_or_none()
+        if gun is None:
+            return skip
+        for gh in db.query(GunHipodrom).filter_by(gun_id=gun.id).all():
+            kod = fold(gh.hipodrom).upper()
+            for k in db.query(Kosu).filter_by(gh_id=gh.id).all():
+                rt = _saat_dt(k.saat, now_tr)
+                if rt is not None and now_tr >= rt:  # koşu başladı/bitti
+                    skip.add((kod, k.kno))
+        return skip
+    finally:
+        db.close()
+
+
+def run_full(iso: str, taze_pegadrom: bool = False, sebep: str = "Üretildi",
+             freeze: bool = True):
     """Tam pipeline: tahmin üret (scraping) + TahminSonuçları + export + import.
-    taze_pegadrom=True ise engine'den ÖNCE o günün Pegadrom akışını force=True ile
-    yeniden indirir (yarış günü bayat akış yerine güncel akış kullanılsın diye)."""
+
+    taze_pegadrom=True ise engine'den ÖNCE o günün Pegadrom akışını force ile yeniden
+    indirir — ANCAK başlamış koşuların TXT'si KORUNUR (koşu-sonrası akış look-ahead'i
+    engeli). freeze=True ise import'ta zaman-bazlı dondurma uygulanır (başlamış/kilitli
+    koşuların analizi korunur). freeze=False = bilinçli replay (tam yeniden-yazım)."""
     from ganyan_master import GanyanMasterEngine
     if taze_pegadrom:
         try:
             from pegadrom_ai_txt_topla import collect_range, DEFAULT_OUT, DEFAULT_DELAY
             dt = datetime.strptime(iso, "%Y-%m-%d")
             out_dir = REPO_ROOT / DEFAULT_OUT
-            print(f"[full] {iso} Pegadrom akışı tazeleniyor (force)...")
-            collect_range(dt, dt, out_dir, DEFAULT_DELAY, force=True)
+            skip = _baslamis_kosu_skip(iso)
+            print(f"[full] {iso} Pegadrom akışı tazeleniyor (force, {len(skip)} başlamış koşu donduruldu)...")
+            collect_range(dt, dt, out_dir, DEFAULT_DELAY, force=True, skip=skip)
         except Exception as e:
             print(f"[full] {iso} Pegadrom tazeleme hatası (devam): {e}")
     print(f"[full] {iso} analizleri üretiliyor...")
     GanyanMasterEngine().run(_ddmmyyyy(iso))
     print(f"[full] {iso} DB'ye yazılıyor...")
-    export_import([iso])
+    export_import([iso], freeze=freeze)
     _son_analiz_yaz(iso, sebep)
     # Üretim anındaki giriş tablosunu snapshot'la (canlı takip diff referansı).
     try:
@@ -303,8 +338,9 @@ def run_canli_takip():
                 k = f"{iso}|{hip}|scan|{slot}"
                 if not bildirim_servis.marker_var(db, k):
                     scan_due.setdefault(hip, set()).add(k)
-            # Gün-seviyesi son tarama: ilk koşu-10dk civarı (bir kez)
-            if R - DK(15) <= now_tr <= R - DK(10):
+            # Gün-seviyesi (5-satır/6'lı) SON tarama: ilk koşu-30dk civarı (bir kez).
+            # Bu noktadan sonra 5-satır/6'lı analizi DONAR — bir daha üretilmez.
+            if R - DK(35) <= now_tr <= R - DK(30):
                 k = f"{iso}|{hip}|scan_final"
                 if not bildirim_servis.marker_var(db, k):
                     scan_due.setdefault(hip, set()).add(k)
@@ -349,8 +385,9 @@ def run_canli_takip():
         if not ds:
             continue
         R = min(saatler[hip].values())
-        # Gün-seviyesi (premium): yalnız ilk koşu-10dk penceresi henüz GEÇMEDİYSE.
-        if now_tr <= R - DK(10):
+        # Gün-seviyesi (premium, 5-satır/6'lı): YALNIZ ilk koşu-30dk'dan ÖNCE.
+        # -30dk'dan sonra gün-seviyesi analizi DONUK; yeniden üretilmez/bildirilmez.
+        if now_tr <= R - DK(30):
             sebep = "; ".join(sorted({d["sebep"] for d in ds}))
             premium_bildirim.append(
                 (hip, f"Koşular öncesi analizler yenilendi | Sebep: {sebep}",
@@ -400,7 +437,9 @@ def main():
         end = args[1] if len(args) > 1 else start
         s = datetime.strptime(start, "%Y-%m-%d").date()
         e = datetime.strptime(end, "%Y-%m-%d").date()
-        export_import([_iso(s + timedelta(days=i)) for i in range((e - s).days + 1)])
+        # Manuel re-export = bilinçli replay -> tam yeniden-yazım (dondurma yok).
+        export_import([_iso(s + timedelta(days=i)) for i in range((e - s).days + 1)],
+                      freeze=False)
     elif "--uret" in flags:
         # Manuel (admin paneli) tam üretim: tarih VEYA tarih aralığı için
         # engine + export + import. Geçmiş günlerin alt-bahislerini de doldurur.
@@ -411,7 +450,7 @@ def main():
         gunler = [s + timedelta(days=i) for i in range((e - s).days + 1)]
         print(f"[uret] {start}..{end} ({len(gunler)} gün) manuel üretim başlıyor...")
         for d in gunler:
-            run_full(_iso(d))
+            run_full(_iso(d), freeze=False)  # bilinçli replay: tam yeniden-yazım
         print(f"[uret] TAMAMLANDI: {len(gunler)} gün üretildi.")
     elif "--yayin-bildirim" in flags:
         run_yayin_bildirim()
