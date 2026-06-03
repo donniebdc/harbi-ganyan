@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state/auth.dart';
+import '../state/content.dart';
 import '../state/nav.dart';
 import '../theme.dart';
 import 'auth_sheet.dart';
@@ -96,8 +97,11 @@ class _BildirimCan extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth = ref.watch(authProvider);
     if (!auth.girisli) return const SizedBox.shrink();
+    final okunmamis = ref.watch(okunmamisBildirimProvider) > 0;
+    // Okunmamış varsa turkuaz + dolu çan; sayfaya girince (okundu) beyaza döner.
     return IconButton(
-      icon: const Icon(Icons.notifications_none, color: HG.altin),
+      icon: Icon(okunmamis ? Icons.notifications_active : Icons.notifications_none,
+          color: okunmamis ? HG.camgobegi : HG.metin),
       tooltip: 'Bildirimler',
       onPressed: () => bildirimlerSayfasiniAc(context),
     );

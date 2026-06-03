@@ -154,6 +154,17 @@ def bildirim_okundu(bildirim_id: int, user: Kullanici = Depends(require_user),
     return {"durum": "okundu"}
 
 
+@router.post("/bildirimler/okundu-hepsi")
+def bildirimler_okundu_hepsi(user: Kullanici = Depends(require_user),
+                             db: Session = Depends(get_db)):
+    """Kullanıcının tüm okunmamış bildirimlerini okundu işaretler (çan rozeti sıfırlama)."""
+    n = (db.query(Bildirim)
+         .filter_by(kullanici_id=user.id, okundu=False)
+         .update({Bildirim.okundu: True}, synchronize_session=False))
+    db.commit()
+    return {"durum": "okundu", "adet": n}
+
+
 class FcmTokenReq(BaseModel):
     token: str
     platform: str = "android"

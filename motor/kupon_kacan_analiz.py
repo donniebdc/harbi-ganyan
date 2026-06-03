@@ -105,7 +105,8 @@ def _parse_one(path, races):
             try:
                 a = {"at_no": int(d.get("ATNO", 0)), "at": d.get("AT", ""),
                      "ana": float(d.get("ANA", 0) or 0), "agf": float(d.get("AGF", 0) or 0),
-                     "flow_rank": int(float(d.get("AKIS", 0) or 0))}
+                     "flow_rank": int(float(d.get("AKIS", 0) or 0)),
+                     "jokey": d.get("JAD", ""), "apranti": (d.get("JAP", "0") == "1")}
             except Exception:
                 continue
             cur["atlar"].append(a)

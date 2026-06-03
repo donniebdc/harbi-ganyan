@@ -44,6 +44,9 @@ def _ensure_columns():
     eklenecek = [
         ("gun", "son_analiz", "TIMESTAMP"),
         ("gun", "son_analiz_sebep", "VARCHAR(200)"),
+        ("kosu", "ktip", "VARCHAR(40)"),          # koşu tipi (görünüm)
+        ("kosu_bes", "jokey", "VARCHAR(40)"),     # kısa jokey adı
+        ("kosu_bes", "apranti", "BOOLEAN"),       # apranti bayrağı
     ]
     for tablo, sutun, tip in eklenecek:
         try:
@@ -94,12 +97,13 @@ def _add_kosu(db, gh_id: int, k: dict):
     kosu = Kosu(gh_id=gh_id, kno=k["kno"], pist=k.get("pist", ""),
                 mesafe=str(k.get("mesafe", "")), saat=k.get("saat", ""),
                 n_at=k.get("n_at"), race_type=k.get("race_type", ""),
-                race_subtype=k.get("race_subtype", ""))
+                race_subtype=k.get("race_subtype", ""), ktip=k.get("ktip", ""))
     db.add(kosu)
     db.flush()
     for i, b in enumerate(k.get("bes", [])):
         db.add(KosuBes(kosu_id=kosu.id, sira=i, slot=b["slot"], at_no=b["at_no"],
-                       at=b.get("at", ""), ana=b.get("ana", 0.0)))
+                       at=b.get("at", ""), ana=b.get("ana", 0.0),
+                       jokey=b.get("jokey", ""), apranti=bool(b.get("apranti"))))
     _set_kosu_sonuc(db, kosu, k.get("sonuc"))
     return kosu
 
@@ -211,9 +215,11 @@ def _merge_hip_frozen(db, gh: GunHipodrom, hp: dict, d: date, now_tr: datetime) 
             ek.pist = k.get("pist", ""); ek.mesafe = str(k.get("mesafe", ""))
             ek.saat = k.get("saat", ""); ek.n_at = k.get("n_at")
             ek.race_type = k.get("race_type", ""); ek.race_subtype = k.get("race_subtype", "")
+            ek.ktip = k.get("ktip", "")
             for i, b in enumerate(k.get("bes", [])):
                 db.add(KosuBes(kosu_id=ek.id, sira=i, slot=b["slot"], at_no=b["at_no"],
-                               at=b.get("at", ""), ana=b.get("ana", 0.0)))
+                               at=b.get("at", ""), ana=b.get("ana", 0.0),
+                               jokey=b.get("jokey", ""), apranti=bool(b.get("apranti"))))
         # sonuç her durumda güncellenir (kilitli koşuda da: yalnız sonuç akar)
         _set_kosu_sonuc(db, ek, k.get("sonuc"))
 

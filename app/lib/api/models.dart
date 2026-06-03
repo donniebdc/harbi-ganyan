@@ -69,7 +69,7 @@ class Hipodrom {
 
 class Kosu {
   final int kno;
-  final String pist, mesafe, saat, raceType, raceSubtype;
+  final String pist, mesafe, saat, raceType, raceSubtype, ktip;
   final int? nAt;
   final List<Bes> bes;
   final KosuSonuc? sonuc;
@@ -80,6 +80,7 @@ class Kosu {
         saat = j['saat'] as String? ?? '',
         raceType = j['race_type'] as String? ?? '',
         raceSubtype = j['race_subtype'] as String? ?? '',
+        ktip = j['ktip'] as String? ?? '',
         nAt = j['n_at'] as int?,
         bes = (j['bes'] as List)
             .map((e) => Bes.fromJson(e as Map<String, dynamic>))
@@ -90,14 +91,17 @@ class Kosu {
 }
 
 class Bes {
-  final String slot, at;
+  final String slot, at, jokey;
   final int atNo;
   final double ana;
+  final bool apranti;
   Bes.fromJson(Map<String, dynamic> j)
       : slot = j['slot'] as String,
         atNo = j['at_no'] as int,
         at = j['at'] as String? ?? '',
-        ana = (j['ana'] as num).toDouble();
+        ana = (j['ana'] as num).toDouble(),
+        jokey = j['jokey'] as String? ?? '',
+        apranti = j['apranti'] as bool? ?? false;
 }
 
 class KosuSonuc {

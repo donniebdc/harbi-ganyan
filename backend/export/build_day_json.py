@@ -76,7 +76,8 @@ def parse_day_races(iso: str):
                 "mesafe": (p[6] if len(p) > 6 else "").strip(),
                 "saat": (p[7] if len(p) > 7 else "").strip(),
                 "kaynak": (p[8] if len(p) > 8 else "").strip(),
-                "bets": (p[9] if len(p) > 9 else "").strip(),  # Koşu Analizleri
+                "bets": (p[9] if len(p) > 9 else "").strip(),   # Koşu Analizleri
+                "ktip": (p[10] if len(p) > 10 else "").strip(),  # koşu tipi (görünüm)
             }
     # yalnız bu güne ait kayıtlar (parse_one iso'yu KO date'inden alır; teyit)
     races = {k: v for k, v in races.items() if k[0] == iso}
@@ -250,7 +251,8 @@ def build_day(iso: str, ctx: dict) -> dict:
                     continue
                 a = no2.get(no, {})
                 bes.append({"slot": SLOT_LABELS[i], "at_no": no,
-                            "at": a.get("at", ""), "ana": round(a.get("ana", 0), 1)})
+                            "at": a.get("at", ""), "ana": round(a.get("ana", 0), 1),
+                            "jokey": a.get("jokey", ""), "apranti": bool(a.get("apranti"))})
             kazanan = None
             if res:
                 ws = winning_set(res, kno)
@@ -271,6 +273,7 @@ def build_day(iso: str, ctx: dict) -> dict:
                 "kno": kno, "pist": m.get("pist", ""), "mesafe": m.get("mesafe", ""),
                 "saat": m.get("saat", ""), "n_at": r.get("n_at"),
                 "race_type": r.get("race_type", ""), "race_subtype": r.get("race_subtype", ""),
+                "ktip": m.get("ktip", ""),  # koşu tipi (görünüm: "Şartlı 4/DHÖW" vb.)
                 "bes": bes, "sonuc": sonuc,
             })
 

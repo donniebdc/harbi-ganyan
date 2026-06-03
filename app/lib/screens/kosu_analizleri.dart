@@ -353,7 +353,8 @@ class _BahisKart extends StatelessWidget {
     // İKRAMİYE: tutarsa her zaman; tutmadıysa Plase hariç (resmi ödeme biliniyorsa).
     final ikr = s.ikramiye;
     if (ikr != null && (s.tuttu || !_plase)) {
-      out.add(_sonucSatir('İKRAMİYE', _para(ikr)));
+      // Sonucu açıklanmış ikramiye -> turkuaz (farkındalık).
+      out.add(_sonucSatir('İKRAMİYE', _para(ikr), renk: HG.camgobegi));
       if (s.tuttu) {
         // KAZANÇ ayrı satır + yeşil
         out.add(_sonucSatir(

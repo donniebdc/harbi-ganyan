@@ -67,9 +67,10 @@ class AltiliKarti extends StatelessWidget {
             if (ikramiye != null)
               Padding(
                 padding: const EdgeInsets.only(top: 2),
+                // Sonucu açıklanmış ikramiye -> turkuaz (farkındalık).
                 child: Text(paraFmt(ikramiye),
                     style: const TextStyle(
-                        color: HG.altin,
+                        color: HG.camgobegi,
                         fontWeight: FontWeight.w800,
                         fontSize: 14)),
               ),
@@ -172,7 +173,7 @@ class _AyakSatiri extends StatelessWidget {
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
         SizedBox(
           width: 64,
-          child: Text('${ayak.kno}. AYAK',
+          child: Text('${ayak.kno}. KOŞU',
               style: const TextStyle(
                   color: HG.metin, fontWeight: FontWeight.w800, fontSize: 13)),
         ),
@@ -215,9 +216,11 @@ class _SonucBlok extends StatelessWidget {
               color: HG.metin, fontSize: 15, fontWeight: FontWeight.w800)),
       const SizedBox(height: 4),
       // Çift satır: numaralar SONUÇLAR'ın altında, tam genişlik (taşma yok).
+      // Küçük font: ekürili sistemde çok numara gelse de taşmasın.
       Text(winners,
+          softWrap: true,
           style: const TextStyle(
-              color: HG.altinAcik, fontSize: 15, fontWeight: FontWeight.w700)),
+              color: HG.altinAcik, fontSize: 12, fontWeight: FontWeight.w700)),
       if (tuttu && ikramiye != null)
         Padding(
           padding: const EdgeInsets.only(top: 6),

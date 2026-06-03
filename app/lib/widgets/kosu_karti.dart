@@ -12,6 +12,7 @@ class KosuKarti extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = kosu.sonuc;
     final bilgi = [
+      if (kosu.ktip.isNotEmpty) kosu.ktip,
       if (kosu.pist.isNotEmpty) kosu.pist,
       if (kosu.mesafe.isNotEmpty) '${kosu.mesafe}m',
       if (kosu.nAt != null) '${kosu.nAt} at',
@@ -88,13 +89,28 @@ class KosuKarti extends StatelessWidget {
         ),
         const SizedBox(width: 8),
         Expanded(
-          child: Text(b.at,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: kazandi ? FontWeight.w800 : FontWeight.w400,
-                  color: kazandi ? HG.yesil : HG.metin)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(b.at,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: kazandi ? FontWeight.w800 : FontWeight.w400,
+                      color: kazandi ? HG.yesil : HG.metin)),
+              if (b.jokey.isNotEmpty)
+                Text(b.apranti ? '${b.jokey} (ap)' : b.jokey,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        fontSize: 10.5,
+                        color: b.apranti ? HG.camgobegi : HG.metinSoluk,
+                        fontWeight:
+                            b.apranti ? FontWeight.w700 : FontWeight.w400)),
+            ],
+          ),
         ),
         if (kazandi) const Icon(Icons.emoji_events, size: 16, color: HG.altin),
       ]),

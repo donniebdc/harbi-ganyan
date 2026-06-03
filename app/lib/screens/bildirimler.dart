@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../api/models.dart';
+import '../state/auth.dart';
 import '../state/content.dart';
 import '../theme.dart';
 import '../util.dart';
@@ -8,12 +9,29 @@ import '../widgets/durumlar.dart';
 
 /// Bildirimler sayfası (Güncelleme v3): gelen tüm bildirimler en yeniden en
 /// eskiye, her birinde zaman bilgisi. Sunucu en fazla 30 kayıt döner.
-/// Push'a tıklanınca (deep-link) buraya gelinir.
-class BildirimlerEkrani extends ConsumerWidget {
+/// Push'a tıklanınca (deep-link) buraya gelinir. Sayfa açılınca tüm bildirimler
+/// okundu işaretlenir (çan rozeti turkuazdan beyaza döner).
+class BildirimlerEkrani extends ConsumerStatefulWidget {
   const BildirimlerEkrani({super.key});
+  @override
+  ConsumerState<BildirimlerEkrani> createState() => _BildirimlerEkraniState();
+}
+
+class _BildirimlerEkraniState extends ConsumerState<BildirimlerEkrani> {
+  @override
+  void initState() {
+    super.initState();
+    // İlk kareden sonra: sunucuda tümünü okundu işaretle, sonra listeyi tazele.
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      try {
+        await ref.read(apiClientProvider).bildirimleriOkunduHepsi();
+      } catch (_) {}
+      if (mounted) ref.invalidate(bildirimlerProvider);
+    });
+  }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final async = ref.watch(bildirimlerProvider);
     return Scaffold(
       appBar: AppBar(

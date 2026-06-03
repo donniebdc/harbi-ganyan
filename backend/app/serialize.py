@@ -16,7 +16,10 @@ def kosu_payload(k: Kosu) -> dict:
     return {
         "kno": k.kno, "pist": k.pist, "mesafe": k.mesafe, "saat": k.saat,
         "n_at": k.n_at, "race_type": k.race_type, "race_subtype": k.race_subtype,
-        "bes": [{"slot": b.slot, "at_no": b.at_no, "at": b.at, "ana": b.ana} for b in k.bes],
+        "ktip": getattr(k, "ktip", "") or "",
+        "bes": [{"slot": b.slot, "at_no": b.at_no, "at": b.at, "ana": b.ana,
+                 "jokey": getattr(b, "jokey", "") or "",
+                 "apranti": bool(getattr(b, "apranti", False))} for b in k.bes],
         "sonuc": ({"kazanan": k.sonuc.kazanan, "kazanan_ad": k.sonuc.kazanan_ad,
                    "ganyan": k.sonuc.ganyan, "bes_hit": k.sonuc.bes_hit}
                   if k.sonuc else None),

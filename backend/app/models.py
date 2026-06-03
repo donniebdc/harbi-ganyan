@@ -58,6 +58,7 @@ class Kosu(Base):
     n_at: Mapped[int | None] = mapped_column(Integer, nullable=True)
     race_type: Mapped[str] = mapped_column(String(30), default="")
     race_subtype: Mapped[str] = mapped_column(String(30), default="")
+    ktip: Mapped[str] = mapped_column(String(40), default="")  # koşu tipi (görünüm)
     gh: Mapped[GunHipodrom] = relationship(back_populates="kosular")
     bes: Mapped[list["KosuBes"]] = relationship(
         back_populates="kosu", cascade="all, delete-orphan", order_by="KosuBes.sira")
@@ -75,6 +76,8 @@ class KosuBes(Base):
     at_no: Mapped[int] = mapped_column(Integer)
     at: Mapped[str] = mapped_column(String(60), default="")
     ana: Mapped[float] = mapped_column(Float, default=0.0)
+    jokey: Mapped[str] = mapped_column(String(40), default="")    # kısa jokey adı (görünüm)
+    apranti: Mapped[bool] = mapped_column(Boolean, default=False)  # apranti jokey mi
     kosu: Mapped[Kosu] = relationship(back_populates="bes")
 
 

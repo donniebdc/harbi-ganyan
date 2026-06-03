@@ -37,3 +37,12 @@ final bildirimlerProvider = FutureProvider.autoDispose<List<BildirimOzet>>((ref)
       .map((e) => BildirimOzet.fromJson(e as Map<String, dynamic>))
       .toList();
 });
+
+/// Okunmamış bildirim sayısı (çan rozeti turkuaza döner > 0 ise).
+final okunmamisBildirimProvider = Provider.autoDispose<int>((ref) {
+  final a = ref.watch(bildirimlerProvider);
+  return a.maybeWhen(
+    data: (rows) => rows.where((b) => !b.okundu).length,
+    orElse: () => 0,
+  );
+});

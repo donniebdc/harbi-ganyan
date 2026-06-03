@@ -99,10 +99,11 @@ class _IstatistikState extends ConsumerState<IstatistikEkrani> {
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text('5 Satır Tahmin',
                 style: TextStyle(
-                    color: HG.metin, fontWeight: FontWeight.w800, fontSize: 16)),
+                    color: HG.camgobegi, fontWeight: FontWeight.w800, fontSize: 16)),
             const SizedBox(height: 2),
             Text('${d.besIsabet} / ${d.besToplam} koşu isabet',
-                style: const TextStyle(color: HG.metinSoluk, fontSize: 13)),
+                style: const TextStyle(
+                    color: HG.altin, fontSize: 13, fontWeight: FontWeight.w700)),
           ]),
         ),
         Text('%${d.besYuzde.toStringAsFixed(1)}',

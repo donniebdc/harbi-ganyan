@@ -89,6 +89,9 @@ class ApiClient {
   Future<void> bildirimOkundu(int id) =>
       _dio.post('/auth/bildirimler/$id/okundu', options: _opt);
 
+  Future<void> bildirimleriOkunduHepsi() =>
+      _dio.post('/auth/bildirimler/okundu-hepsi', options: _opt);
+
   Future<void> fcmTokenKaydet(String token) => _dio.post('/auth/fcm-token',
       data: {'token': token, 'platform': 'android'}, options: _opt);
 

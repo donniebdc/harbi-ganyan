@@ -394,6 +394,9 @@ class GanyanMasterEngine:
                             ano=int(h.get('number') or 0)
                             jobj=h.get('jockey',{}) or {}
                             jok=normalize_jokey(jobj.get('name') or jobj.get('jockeyLongName') or 'JOKEY')
+                            # Görünüm için kısa jokey adı (ör. "A.H.BAYAR") + apranti bayrağı
+                            jok_kisa=(jobj.get('name') or jobj.get('jockeyLongName') or '').strip().replace('|',' ')
+                            apranti=bool(jobj.get('apprentice'))
 
                             ar=h.get('agf',[])
                             if isinstance(ar,list) and ar:
@@ -429,6 +432,7 @@ class GanyanMasterEngine:
                                 "peg_flow_type":peg_ai.get('peg_flow_type',''),
                                 "owner":owner,"stablemate":stablemate,
                                 "ana_not":a.get('not',''),
+                                "jokey_kisa":jok_kisa,"apranti":apranti,
                             })
                         except: continue
 
@@ -450,8 +454,10 @@ class GanyanMasterEngine:
                     # mevcut parser'lar p[0..8] kullandığından geriye dönük güvenlidir.
                     _bets_raw = bets_by_kosu.get(kno, "") if isinstance(kno, int) else ""
                     _bets_clean = (_bets_raw or "").replace("|", " ").replace("\n", " ").strip()
+                    # Koşu tipi (görünüm): ör. "ŞARTLI 4/DHÖW", "HANDİKAP 17". p[10] (geriye uyumlu).
+                    _ktip = (race.get('typeDescription') or rtitle or "").replace("|", " ").replace("\n", " ").strip()
                     self.report_lines.append(
-                        f"KO:{kno}|{sad}|{target_date}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}|{_bets_clean}")
+                        f"KO:{kno}|{sad}|{target_date}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}|{_bets_clean}|{_ktip}")
                     if gruplar:
                         from altili_lib import ekuri_serialize
                         self.report_lines.append("EKURI:" + ekuri_serialize(gruplar))
@@ -468,7 +474,8 @@ class GanyanMasterEngine:
                             f"AKIS:{a.get('peg_flow_rank',0)}|AKS:{a.get('peg_flow_score',0):.1f}|"
                             f"G:{a['genel']:.0f}|Gn:{a['guncel']:.0f}|S:{a['saatli']:.0f}|"
                             f"AGF:{a['agf']:.1f}|GSP:0.0|GGN:99|GEF:|GSY:0|"
-                            f"JOK:{a['jokey_skoru']:.3f}")
+                            f"JOK:{a['jokey_skoru']:.3f}|"
+                            f"JAD:{a.get('jokey_kisa','')}|JAP:{1 if a.get('apranti') else 0}")
                     self.report_lines.append("")
 
                     # 14+ atli sahalar yapisal olarak dusuk isabetli (5 satir ~%79 vs ~%95);
