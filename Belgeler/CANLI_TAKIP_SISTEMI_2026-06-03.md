@@ -130,10 +130,52 @@ kök `toplu_tahmin.py`, `ganyan_master.py`.
 
 ---
 
-## 6. Açık işler / notlar
+## 6. APK dağıtımı + oturum-koruyan kurulum (2026-06-03)
+
+**Re-login kök nedeni (çözüldü):** `flutter install` uygulamayı silip kuruyor →
+`flutter_secure_storage` token'ı gidiyor → her güncellemede login. İmza sorunu DEĞİL
+(kurulu APK release-imzalı, CN=Harbi Ganyan). Çözüm: **`adb install -r`** (yerinde
+güncelleme, aynı imza, oturum KORUNUR — canlı kanıtlandı: install -r sonrası giriş kaldı).
+
+**Kural:** ASLA `flutter install` kullanma. Her zaman `adb install -r app-release.apk`.
+
+**Dağıtım otomasyonu:**
+- `app/yayinla.ps1` (yeni): build → yerel kopya (`APK/harbi_ganyan_<ver>.apk`) →
+  Google Drive yükleme (rclone) → `adb install -r` (oturum-koruyan). Bayraklar
+  `-SkipBuild`, `-NoInstall`.
+- **Google Drive:** rclone v1.74.2 kuruldu + Drive OAuth yetkilendirildi. `gdrive:`
+  remote'u hedef klasöre (`root_folder_id=14TkmH…`) bağlı. Token `%APPDATA%\rclone\
+  rclone.conf`'ta (repo dışı; `refresh_token` ile otomatik yenilenir).
+- `.gitignore`: `APK/` + `*.apk` eklendi (52MB binary git'e girmez).
+- Bu sürüm yüklendi: `harbi_ganyan_1.0.11+12.apk` (Drive + yerel).
+
+**Komutlar:**
+- Tam akış: `powershell -ExecutionPolicy Bypass -File app\yayinla.ps1`
+- Sadece kurulum: `adb install -r "…\app\build\app\outputs\flutter-apk\app-release.apk"`
+
+## 7. Admin panel: şifre yönetimi + üyelik aralıkları (2026-06-03)
+
+**Şifre yönetimi (admin.html + admin.py):**
+- Kullanıcı satırına **"Şifre"** butonu eklendi → yeni şifre belirleme/üretme.
+- Yeni uç: `POST /admin/api/kullanicilar/{id}/sifre` (`SifreResetReq`). `sifre`
+  verilirse (min 6) onunla, verilmezse 12 karakter rastgele geçici şifre üretilir;
+  yanıt yeni şifreyi BİR KEZ düz metin döner (admin kullanıcıya iletir).
+- **GÜVENLİK NOTU:** Şifreler bcrypt ile hash'li (`sifre_hash`); mevcut şifre düz
+  metin **GÖRÜNTÜLENEMEZ** (hash geri çevrilemez). "Görebilme" yerine güvenli
+  karşılığı olan **reset/değiştir** akışı uygulandı; düz-metin şifre saklanmaz/sızdırılmaz.
+
+**Üyelik uzatma aralıkları (admin.html):**
+- Kullanıcı satırındaki `+7g` / `+30g` yanına **`+14g`** ve **`+60g`** eklendi
+  (`extendUser(id, days)` → `uzat_gun`). Sıra: +7g +14g +30g +60g.
+
+Değişen dosyalar: `backend/app/api/admin.py`, `backend/app/static/admin.html`.
+
+## 8. Açık işler / notlar
 - **Flutter APK** yeniden derlenip kurulmalı (sürüm 1.0.11+12) — "Son analiz zamanı"
-  şeridi yeni build'de görünür.
+  şeridi yeni build'de görünür. `app/yayinla.ps1` ile dağıt (Drive + yerel + adb -r).
 - canli.timer her 10 dk çalışıp bugünden itibaren değişiklik tarıyor; gerçek bir
   jokey/koşmaz değişiminde canlı regen + bildirim gözlemlenebilir.
 - Pegadrom force-tazeleme yarış günü bayat-akış sorununu (bkz. §2-A) yapısal olarak çözer.
 - betsignal (port 8000) ve sonuç-takibi (live/results) timer'larına dokunulmadı.
+- **Admin panel değişiklikleri VPS'e deploy edilmeli** (admin.py + admin.html + backend
+  restart) — canlı admin panelinde görünmesi için.

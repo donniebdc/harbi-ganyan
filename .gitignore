@@ -32,3 +32,7 @@ Yedek/
 *.keystore
 key.properties
 app/android/key.properties
+
+# APK çıktıları (büyük binary — git'e girmez; Drive + yerel APK/ klasöründe tutulur)
+APK/
+*.apk

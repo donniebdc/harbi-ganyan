@@ -167,11 +167,21 @@
           <td><select onchange="updateUser(${u.id},{tier:this.value})"><option ${u.tier==='standart'?'selected':''} value="standart">Standart</option><option ${u.tier==='premium'?'selected':''} value="premium">Premium</option><option ${u.tier==='vip'?'selected':''} value="vip">VIP</option></select></td>
           <td><button onclick="updateUser(${u.id},{aktif:${!u.aktif}})" class="${u.aktif?'':'danger'}">${u.aktif?'Aktif':'Pasif'}</button></td>
           <td>${dt(u.uyelik_bitis)}</td><td>${money(u.haftalik_tutar)}</td>
-          <td class="row"><button onclick="extendUser(${u.id},7)">+7g</button><button onclick="extendUser(${u.id},30)">+30g</button><button class="danger" onclick="deleteUser(${u.id})">Sil</button></td>
+          <td class="row"><button onclick="extendUser(${u.id},7)">+7g</button><button onclick="extendUser(${u.id},14)">+14g</button><button onclick="extendUser(${u.id},30)">+30g</button><button onclick="extendUser(${u.id},60)">+60g</button><button onclick="resetPass(${u.id},'${u.email.replace(/'/g,"\\'")}')" title="Şifre hash'li saklanır; mevcut şifre görüntülenemez. Bu buton yeni şifre belirler/üretir.">Şifre</button><button class="danger" onclick="deleteUser(${u.id})">Sil</button></td>
         </tr>`).join('');
     }
     async function updateUser(id, patch){ await api(`/admin/api/kullanicilar/${id}`, {method:'PATCH', body:JSON.stringify(patch)}); await loadAll(); }
     async function extendUser(id, days){ await updateUser(id, {uzat_gun:days}); }
+    async function resetPass(id, email){
+      // Şifreler bcrypt-hash'li; mevcut şifre PLAINTEXT görüntülenemez. Yeni şifre belirlenir.
+      const inp = prompt(`"${email}" için yeni şifre girin (en az 6 karakter).\n\nBoş bırakıp Tamam'a basarsanız rastgele geçici şifre üretilir.`, '');
+      if (inp === null) return; // iptal
+      const v = inp.trim();
+      if (v && v.length < 6){ alert('Şifre en az 6 karakter olmalı.'); return; }
+      const body = v ? {sifre:v} : {};
+      const r = await api(`/admin/api/kullanicilar/${id}/sifre`, {method:'POST', body:JSON.stringify(body)});
+      alert(`Şifre güncellendi.\n\nKullanıcı: ${r.email}\nYeni şifre: ${r.sifre}\n${r.gecici?'(rastgele üretildi)':'(elle belirlendi)'}\n\nNOT: Bu şifre tekrar GÖSTERİLMEZ. Kopyalayıp kullanıcıya iletin.`);
+    }
     async function deleteUser(id){ if(confirm('Kullanıcı silinsin mi?')){ await api(`/admin/api/kullanicilar/${id}`, {method:'DELETE'}); await loadAll(); } }
     async function createUser(){
       await api('/admin/api/kullanicilar', {method:'POST', body:JSON.stringify({email:$('newEmail').value, sifre:$('newPass').value, tier:$('newTier').value, uyelik_bitis:toIso($('newEnd').value), is_admin:$('newAdmin').checked})});

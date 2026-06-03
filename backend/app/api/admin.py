@@ -253,6 +253,43 @@ def kullanici_guncelle(user_id: int, req: AdminUserUpdate,
     return _user_payload(user)
 
 
+class SifreResetReq(BaseModel):
+    sifre: str | None = None  # None -> rastgele geçici şifre üretilir
+
+    @field_validator("sifre")
+    @classmethod
+    def _sifre(cls, v: str | None) -> str | None:
+        if v is not None:
+            v = v.strip()
+            if len(v) < 6:
+                raise ValueError("Sifre en az 6 karakter olmali.")
+        return v
+
+
+@router.post("/kullanicilar/{user_id}/sifre")
+def kullanici_sifre_reset(user_id: int, req: SifreResetReq,
+                          _: Kullanici = Depends(require_admin),
+                          db: Session = Depends(get_db)):
+    """Kullanıcı şifresini değiştirir/sıfırlar. `sifre` verilmezse rastgele geçici
+    şifre üretilir. Yeni şifre yanıtta BİR KEZ düz metin döner (admin kullanıcıya
+    iletir). NOT: Şifreler bcrypt ile hash'li saklanır; MEVCUT şifre düz metin
+    GÖRÜNTÜLENEMEZ (hash geri çevrilemez) — güvenli karşılığı bu reset akışıdır."""
+    import secrets
+    import string
+    user = db.get(Kullanici, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
+    gecici = req.sifre is None
+    if gecici:
+        alfabe = string.ascii_letters + string.digits
+        yeni = "".join(secrets.choice(alfabe) for _ in range(12))
+    else:
+        yeni = req.sifre
+    user.sifre_hash = hash_sifre(yeni)
+    db.commit()
+    return {"id": user.id, "email": user.email, "sifre": yeni, "gecici": gecici}
+
+
 @router.delete("/kullanicilar/{user_id}", status_code=204)
 def kullanici_sil(user_id: int, admin: Kullanici = Depends(require_admin),
                   db: Session = Depends(get_db)):
