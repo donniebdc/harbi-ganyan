@@ -180,9 +180,12 @@ def bildir_gun_sonuclari(db: Session, iso: str) -> int:
                       {"tip": "altili", "tarih": iso, "hipodrom": hip, "idx": a.idx}):
                 n += 1
         # --- Koşu Analizleri bahis sonuçları (VIP) ---
+        # Yalnız BAŞARILI (tuttu) analizler bildirilir; başarısızlar VIP'i
+        # spam'lemesin. Takip her koşu için yapılır (grading run_live'da olur),
+        # ama bildirim sadece tutan alt oyunlar için gider.
         for b in gh.bahisler:
-            if b.tuttu is None:
-                continue  # henüz sonuçlanmadı
+            if not b.tuttu:
+                continue  # None (sonuçlanmadı) veya False (başarısız) -> atla
             anahtar = f"{iso}|{hip}|bahis|{b.bas_kosu}|{b.tip}"
             if gonder(db, anahtar, bahis_metni(d, hip, b),
                       {"tip": "bahis", "tarih": iso, "hipodrom": hip,
@@ -190,3 +193,21 @@ def bildir_gun_sonuclari(db: Session, iso: str) -> int:
                       min_tier="vip"):
                 n += 1
     return n
+
+
+def bildir_kosu_analiz_yayin(db: Session, iso: str) -> bool:
+    """Gün yayınlanınca VIP'e TEK 'Koşu Analizleri Yayınlandı' bildirimi gönderir
+    (alt oyunlar için toplu yayın duyurusu — tek tek bahis değil). İdempotent:
+    anahtar '<iso>|kosu_analiz_yayin'. Döner: gönderildi mi."""
+    d = date.fromisoformat(iso)
+    gun = db.query(Gun).filter(Gun.date == d).one_or_none()
+    if gun is None:
+        return False
+    if not any(gh.bahisler for gh in gun.hipodromlar):
+        return False  # o günde koşu analizi (alt oyun) yoksa duyuru gönderme
+    baslik = "Koşu Analizleri Yayınlandı"
+    mesaj = (f"{_ddmmyyyy(d)} | Koşu Analizleri yayınlandı. İkili, sıralı, tabela, "
+             f"çoklu ganyan ve daha fazlası VIP panelinizde. Bol şans!")
+    return gonder(db, f"{iso}|kosu_analiz_yayin", mesaj,
+                  {"tip": "kosu_analiz_yayin", "tarih": iso}, baslik=baslik,
+                  min_tier="vip")

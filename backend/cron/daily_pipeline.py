@@ -181,6 +181,11 @@ def run_yayin_bildirim():
             print(f"[yayin] {yarin}: bildirim gönderildi.")
         else:
             print(f"[yayin] {yarin}: zaten gönderilmiş, atlandı.")
+        # VIP'e ayrıca koşu analizleri (alt oyunlar) yayın duyurusu — tek bildirim.
+        if bildirim_servis.bildir_kosu_analiz_yayin(db, iso):
+            print(f"[yayin] {yarin}: VIP koşu analizleri bildirimi gönderildi.")
+        else:
+            print(f"[yayin] {yarin}: VIP koşu analizleri bildirimi atlandı.")
     finally:
         db.close()
 
