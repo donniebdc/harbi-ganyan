@@ -22,6 +22,10 @@ class Gun(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     date: Mapped[date_t] = mapped_column(Date, unique=True, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    # Canlı takip: en son ne zaman / hangi sebeple analiz (yeniden) üretildi.
+    # reimport'ta Gun satırı silinmediği için (import_to_db._get_or_create_gun) korunur.
+    son_analiz: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    son_analiz_sebep: Mapped[str | None] = mapped_column(String(200), nullable=True)
     hipodromlar: Mapped[list["GunHipodrom"]] = relationship(
         back_populates="gun", cascade="all, delete-orphan")
 

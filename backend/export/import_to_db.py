@@ -32,6 +32,29 @@ OUT_DIR = BACKEND_DIR / "export" / "out"
 
 def ensure_schema():
     Base.metadata.create_all(engine)
+    _ensure_columns()
+
+
+def _ensure_columns():
+    """create_all mevcut tabloya sütun EKLEMEZ; yeni sütunları idempotent ALTER ile ekle.
+    Postgres + SQLite uyumlu (inspector ile var/yok kontrolü)."""
+    from sqlalchemy import inspect, text
+    insp = inspect(engine)
+    # (tablo, sütun, SQL tip) — yeni eklenen nullable sütunlar
+    eklenecek = [
+        ("gun", "son_analiz", "TIMESTAMP"),
+        ("gun", "son_analiz_sebep", "VARCHAR(200)"),
+    ]
+    for tablo, sutun, tip in eklenecek:
+        try:
+            mevcut = {c["name"] for c in insp.get_columns(tablo)}
+        except Exception:
+            continue  # tablo henüz yok (create_all yarattı sayılır)
+        if sutun in mevcut:
+            continue
+        with engine.begin() as conn:
+            conn.execute(text(f'ALTER TABLE {tablo} ADD COLUMN {sutun} {tip}'))
+        print(f"[schema] {tablo}.{sutun} sütunu eklendi.")
 
 
 def _get_or_create_gun(db, d: date) -> Gun:

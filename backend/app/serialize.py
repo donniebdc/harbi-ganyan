@@ -79,6 +79,8 @@ def gh_payload(gh: GunHipodrom) -> dict:
 def gun_payload(gun: Gun) -> dict:
     return {
         "date": gun.date.isoformat(),
+        "son_analiz": gun.son_analiz.isoformat() if gun.son_analiz else None,
+        "son_analiz_sebep": gun.son_analiz_sebep,
         "hipodromlar": [gh_payload(gh) for gh in sorted(gun.hipodromlar, key=lambda x: x.hipodrom)],
     }
 

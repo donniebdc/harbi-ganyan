@@ -19,8 +19,53 @@ class GunIcerik extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 24),
       children: [
+        if (gun.sonAnaliz != null) _SonAnalizBilgi(gun.sonAnaliz!, gun.sonAnalizSebep),
         for (final h in gun.hipodromlar) _HipodromBolum(h, mod),
       ],
+    );
+  }
+}
+
+/// "Son analiz zamanı 04.06.2026 | 11:45" bilgi şeridi (canlı takip geri bildirimi).
+class _SonAnalizBilgi extends StatelessWidget {
+  final DateTime zaman;
+  final String? sebep;
+  const _SonAnalizBilgi(this.zaman, this.sebep);
+
+  String _ik(int n) => n.toString().padLeft(2, '0');
+
+  @override
+  Widget build(BuildContext context) {
+    final t = '${_ik(zaman.day)}.${_ik(zaman.month)}.${zaman.year} | '
+        '${_ik(zaman.hour)}:${_ik(zaman.minute)}';
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: HG.kart,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: HG.camgobegi.withValues(alpha: 0.35)),
+      ),
+      child: Row(children: [
+        const Icon(Icons.update, size: 16, color: HG.camgobegi),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('Son analiz zamanı  $t',
+                  style: const TextStyle(
+                      fontSize: 12.5, fontWeight: FontWeight.w700, color: HG.metin)),
+              if (sebep != null && sebep!.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(top: 2),
+                  child: Text(sebep!,
+                      style: const TextStyle(fontSize: 11, color: HG.metinSoluk)),
+                ),
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }

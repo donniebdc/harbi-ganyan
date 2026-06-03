@@ -37,9 +37,15 @@ class HipOzet {
 
 class GunDetay {
   final String date;
+  final DateTime? sonAnaliz; // en son (yeniden) üretim zamanı (TR)
+  final String? sonAnalizSebep;
   final List<Hipodrom> hipodromlar;
   GunDetay.fromJson(Map<String, dynamic> j)
       : date = j['date'] as String,
+        sonAnaliz = (j['son_analiz'] as String?) != null
+            ? DateTime.tryParse(j['son_analiz'] as String)
+            : null,
+        sonAnalizSebep = j['son_analiz_sebep'] as String?,
         hipodromlar = (j['hipodromlar'] as List)
             .map((e) => Hipodrom.fromJson(e as Map<String, dynamic>))
             .toList();

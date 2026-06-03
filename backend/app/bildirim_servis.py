@@ -114,6 +114,24 @@ def _gonderildi_mi(db: Session, anahtar: str) -> bool:
     return db.query(GonderilenBildirim.id).filter_by(anahtar=anahtar).first() is not None
 
 
+# ---------------- Orkestrasyon markerları (bildirimden bağımsız) ----------------
+# Canlı takip "bu işi bir kez yaptım mı?" durumunu (T-3h regen, tarama slotu) izler.
+# Bildirim gönderilmese bile (örn. premium kullanıcı yoksa) marker yazılmalı ki
+# tetik tekrar tekrar ateşlenip aynı işi yeniden yapmasın.
+
+def marker_var(db: Session, anahtar: str) -> bool:
+    return _gonderildi_mi(db, anahtar)
+
+
+def marker_yaz(db: Session, anahtar: str) -> bool:
+    """Marker'ı idempotent yaz. Döner: yeni mi yazıldı (False=zaten vardı)."""
+    if _gonderildi_mi(db, anahtar):
+        return False
+    db.add(GonderilenBildirim(anahtar=anahtar))
+    db.commit()
+    return True
+
+
 def gonder(db: Session, anahtar: str, mesaj: str, data: dict,
            baslik: str | None = None, min_tier: str | None = None) -> bool:
     """İdempotent gönderim: anahtar daha önce gönderildiyse atla.
@@ -211,3 +229,19 @@ def bildir_kosu_analiz_yayin(db: Session, iso: str) -> bool:
     return gonder(db, f"{iso}|kosu_analiz_yayin", mesaj,
                   {"tip": "kosu_analiz_yayin", "tarih": iso}, baslik=baslik,
                   min_tier="vip")
+
+
+def bildir_revize(db: Session, iso: str, hip: str, sebep: str, *,
+                  anahtar_eki: str, min_tier: str = "premium",
+                  baslik: str = "Analizler Güncellendi") -> bool:
+    """Canlı takip revize bildirimi (yarış öncesi yeniden üretim).
+    sebep örnekleri:
+      "Koşular öncesi analizler tekrar gözden geçirildi"  (T-3h)
+      "Koşular öncesi analizler yenilendi | Sebep: 3. koşuda 4 numara çıkarıldı"
+      "Koşu Analizleri yenilendi | Sebep: 4. koşuda 3 numara koşmaz"  (alt-bahis, VIP)
+    İdempotent anahtar: '<iso>|<hip>|revize|<anahtar_eki>'. Döner: gönderildi mi."""
+    d = date.fromisoformat(iso)
+    mesaj = f"{_ddmmyyyy(d)} | {_hip_ad(hip)} | {sebep}"
+    return gonder(db, f"{iso}|{hip}|revize|{anahtar_eki}", mesaj,
+                  {"tip": "revize", "tarih": iso, "hipodrom": hip},
+                  baslik=baslik, min_tier=min_tier)
