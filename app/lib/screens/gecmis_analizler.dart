@@ -23,8 +23,11 @@ class _GecmisState extends ConsumerState<GecmisAnalizler> {
       loading: () => const Yukleniyor(),
       error: (e, _) => HataKutu(onTekrar: () => ref.invalidate(gunlerProvider)),
       data: (gunler) {
-        // Geçmiş = aktif olmayan (yayınlanmış geçmiş) günler.
-        final gecmis = gunler.where((g) => !g.aktif).toList();
+        // Geçmiş = yalnızca GERÇEKTEN geçmiş günler (bugünden önce).
+        // "aktif" (bugün/yayınlanmış yarın) VE "yakında" (yarın, henüz 18:00 değil)
+        // günler hariç tutulur — yarın/yakında günü Geçmiş'e sızmamalı.
+        final gecmis =
+            gunler.where((g) => !g.aktif && !g.yakinda).toList();
         if (gecmis.isEmpty) {
           return const BosKutu('Geçmiş analiz bulunamadı.', ikon: Icons.history);
         }
