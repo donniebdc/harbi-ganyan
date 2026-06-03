@@ -26,3 +26,9 @@ app/android/app/google-services.json
 Yedek/
 *.tar.gz
 *.rar
+
+# Android release imzalama anahtarı + parolaları (ASLA commit etme; ayrıca yedekle!)
+*.jks
+*.keystore
+key.properties
+app/android/key.properties
