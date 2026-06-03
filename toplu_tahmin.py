@@ -13,6 +13,8 @@ from pegadrom_ai_txt_topla import DEFAULT_DELAY, DEFAULT_OUT, collect_range
 from altili_uretim import altili_ayaklari, hipodrom_altili_bloku, analiz_dosyalari_yaz
 from altili_lib import ekuri_gruplari, ekuri_serialize
 from tahmin_sonuc_karsilastir import uret_aralik as tahmin_sonuc_uret
+# Alt oyunlar (Koşu Analizleri) → TahminSonuçları/<iso>_alt_tahmin.txt
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "backend", "export"))
 
 TURKIYE_HIPODROMS = {
     "ANKARA","İSTANBUL","ISTANBUL","İZMİR","IZMIR","BURSA","ADANA",
@@ -335,8 +337,13 @@ class TopluTahminV5:
                 gruplar=ekuri_gruplari(atlar)   # eküri (stablemate+sahip)
 
                 # Parse-edilebilir çıktı (Tahminler dosyası + bulk rapor)
+                # Koşu Analizleri (alt oyunlar) için bets alanı KO satırının SONUNA
+                # eklenir (ganyan_master ile senkron; eski parser'lar p[0..8] kullandığı
+                # için geriye dönük güvenli).
+                _bets_raw = bets_by_kosu.get(kno, "") if isinstance(kno, int) else ""
+                _bets_clean = (_bets_raw or "").replace("|", " ").replace("\n", " ").strip()
                 date_tahmin.append(
-                    f"KO:{kno}|{sad.upper()}|{td}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}")
+                    f"KO:{kno}|{sad.upper()}|{td}|{ag}|{alt}|{pist}|{mesafe}|{saat}|{kaynak}|{_bets_clean}")
                 if gruplar:
                     date_tahmin.append(f"EKURI:{ekuri_serialize(gruplar)}")
                 def atad(s): return s['raw_at'] if s else "-"
@@ -413,6 +420,13 @@ class TopluTahminV5:
                 print("📊 TahminSonuçları: aralıkta sonuç bulunamadı/henüz oluşmadı.")
         except Exception as ex:
             print(f"⚠️ TahminSonuçları üretilemedi: {ex}")
+        # Alt oyunlar (Koşu Analizleri) → TahminSonuçları/<iso>_alt_tahmin.txt (her gün)
+        try:
+            from alt_tahmin_yaz import yaz_aralik
+            alt_yaz = yaz_aralik(b.strftime("%Y-%m-%d"), e.strftime("%Y-%m-%d"))
+            print(f"🎲 Alt tahminler üretildi: {len(alt_yaz)} gün → TahminSonuçları/<gün>_alt_tahmin.txt")
+        except Exception as ex:
+            print(f"⚠️ Alt tahminler üretilemedi: {ex}")
 
 
 if __name__=="__main__":

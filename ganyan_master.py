@@ -13,6 +13,8 @@ from pegadrom_ai_txt_topla import DEFAULT_DELAY, DEFAULT_OUT, collect_range
 from altili_uretim import altili_ayaklari, hipodrom_altili_bloku, analiz_dosyalari_yaz, bes_satir_ekuri_notu
 from altili_lib import ekuri_gruplari
 from tahmin_sonuc_karsilastir import uret_aralik as tahmin_sonuc_uret
+# Alt oyunlar (Koşu Analizleri) → TahminSonuçları/<iso>_alt_tahmin.txt
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "backend", "export"))
 
 # ── Türkiye hipodromları ──────────────────────────────────────────────────────
 TURKIYE_HIPODROMS = {
@@ -553,6 +555,13 @@ class GanyanMasterEngine:
                     print("   📊 TahminSonuçları: sonuç bulunamadı/henüz oluşmadı.")
             except Exception as ex:
                 print(f"   ⚠️ TahminSonuçları üretilemedi: {ex}")
+            # Alt oyunlar (Koşu Analizleri) → TahminSonuçları/<iso>_alt_tahmin.txt
+            try:
+                from alt_tahmin_yaz import yaz_alt_tahmin
+                alt_yol = yaz_alt_tahmin(fd)
+                print(f"   🎲 Alt tahminler: {alt_yol}")
+            except Exception as ex:
+                print(f"   ⚠️ Alt tahminler üretilemedi: {ex}")
             print("═"*60)
         except Exception as e:
             import traceback
