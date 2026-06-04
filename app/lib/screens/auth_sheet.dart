@@ -22,6 +22,7 @@ class _AuthSheet extends ConsumerStatefulWidget {
 }
 
 class _AuthSheetState extends ConsumerState<_AuthSheet> {
+  static const int _minSifre = 10; // backend KayitReq ile aynı (auth.py)
   bool _kayitMi = false;
   bool _kodAdimi = false;
   bool _yukleniyor = false;
@@ -40,8 +41,27 @@ class _AuthSheetState extends ConsumerState<_AuthSheet> {
 
   String _hataMetni(Object e) {
     if (e is DioException) {
+      // Bağlantı/zaman aşımı
+      if (e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout ||
+          e.type == DioExceptionType.sendTimeout ||
+          e.type == DioExceptionType.connectionError) {
+        return 'Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edin.';
+      }
       final d = e.response?.data;
-      if (d is Map && d['detail'] is String) return d['detail'] as String;
+      if (d is Map) {
+        final detail = d['detail'];
+        // 400/401/409 → düz metin
+        if (detail is String) return detail;
+        // 422 (Pydantic doğrulama) → liste; ilk hatanın msg'ini göster
+        if (detail is List && detail.isNotEmpty) {
+          final first = detail.first;
+          if (first is Map && first['msg'] is String) {
+            return (first['msg'] as String)
+                .replaceFirst(RegExp(r'^Value error,\s*'), '');
+          }
+        }
+      }
       return 'Sunucu hatası (${e.response?.statusCode ?? '?'}).';
     }
     return 'Bir hata oluştu.';
@@ -64,8 +84,18 @@ class _AuthSheetState extends ConsumerState<_AuthSheet> {
   Future<void> _gonder() async {
     final auth = ref.read(authProvider.notifier);
     if (_kayitMi && !_kodAdimi) {
+      // İstemci-tarafı doğrulama: sunucuya gitmeden net mesaj göster.
+      final email = _email.text.trim();
+      if (!email.contains('@') || !email.contains('.')) {
+        setState(() => _hata = 'Geçerli bir e-posta adresi girin.');
+        return;
+      }
+      if (_sifre.text.length < _minSifre) {
+        setState(() => _hata = 'Şifreniz en az $_minSifre karakter olmalıdır.');
+        return;
+      }
       await _calistir(() async {
-        await auth.kayit(_email.text.trim(), _sifre.text);
+        await auth.kayit(email, _sifre.text);
         setState(() => _kodAdimi = true);
       });
     } else if (_kayitMi && _kodAdimi) {
@@ -83,9 +113,12 @@ class _AuthSheetState extends ConsumerState<_AuthSheet> {
 
   @override
   Widget build(BuildContext context) {
-    final alt = MediaQuery.of(context).viewInsets.bottom;
+    final media = MediaQuery.of(context);
+    final alt = media.viewInsets.bottom;        // klavye yüksekliği
+    final navBar = media.viewPadding.bottom;    // sistem navigasyon çubuğu
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 18, 20, 20 + alt),
+      // Klavye kapalıyken nav-bar boşluğu eklenir ki "Kayıt ol" çubuğun altında kalmasın.
+      padding: EdgeInsets.fromLTRB(20, 18, 20, 20 + alt + (alt > 0 ? 0.0 : navBar)),
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         Container(
             width: 40,
@@ -99,7 +132,8 @@ class _AuthSheetState extends ConsumerState<_AuthSheet> {
         if (!_kodAdimi) ...[
           _alan(_email, 'Email', Icons.mail_outline, klavye: TextInputType.emailAddress),
           const SizedBox(height: 10),
-          _alan(_sifre, 'Şifre', Icons.lock_outline, gizli: true),
+          _alan(_sifre, _kayitMi ? 'Şifre (en az $_minSifre karakter)' : 'Şifre',
+              Icons.lock_outline, gizli: true),
         ] else ...[
           Text('${_email.text.trim()} adresine gönderilen 6 haneli kodu girin.',
               style: const TextStyle(color: HG.metinSoluk, fontSize: 13)),
