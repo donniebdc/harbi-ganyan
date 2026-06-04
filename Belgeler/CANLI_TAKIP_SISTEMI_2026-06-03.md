@@ -211,3 +211,27 @@ Brevo'da bu başlık kapatılabilir; işlevi etkilemez.
 - betsignal (port 8000) ve sonuç-takibi (live/results) timer'larına dokunulmadı.
 - **Admin panel değişiklikleri VPS'e deploy edilmeli** (admin.py + admin.html + backend
   restart) — canlı admin panelinde görünmesi için.
+
+## 10. Admin panel v2 + Admin WebView APK (2026-06-04)
+
+**Web admin (deploy + canlı):**
+- **Abonelik tarihi:** `_user_payload`'a `uyelik_baslangic` eklendi; tabloda **"Abone"**
+  sütunu (kullanıcının abone olduğu tarih).
+- **Bitiş tarih/saat seçici:** §7'deki otomatik `+7/+14/+30/+60g` butonları **KALDIRILDI**;
+  yerine bitiş hücresinde **`datetime-local` takvim+saat seçici** (`onchange → setBitis →
+  PATCH uyelik_bitis`). `toLocalInput` (UTC→yerel) + `setBitis` yardımcıları. Admin tarihi
+  VE saati doğrudan ayarlar. (`uyelik_baslangic` korunur; yalnız `bitis` güncellenir.)
+- `Kullanıcı Ekle` şifre placeholder `min 10 → min 6` (auth ile tutarlı).
+
+**Admin APK (`admin_app/` — yeni ayrı Flutter projesi):**
+- Yönetici-özel **WebView sarmalayıcı** → `https://api.harbiganyan.com/admin`. Web'de
+  yapılan her şey (4 blok: kullanıcı ekle / manuel üretim / bildirim / üyelik listesi)
+  telefonda. **Tek kaynak:** web güncellenince app da güncel (ayrı UI bakımı yok).
+- `app.harbiganyan.harbi_ganyan_admin` (ana app'ten farklı package → yan yana durur).
+  webview_flutter; geri tuşu history; yenile FAB; bağlantı-hata kaplaması; INTERNET izni.
+- Ana uygulamanın **release keystore'u** ile imzalı (jks/key.properties gitignore'da).
+- APK: `harbi_ganyan_ADMIN_1.0.0.apk` (Drive + yerel `APK/`). Kurulum: Drive'dan indir ya
+  da `adb install -r`.
+
+Değişen/eklenen: `backend/app/api/admin.py`, `backend/app/static/admin.html`, `admin_app/*`.
+Şifre min 6: `backend/app/api/auth.py` + `app/lib/screens/auth_sheet.dart`.
