@@ -235,3 +235,41 @@ Brevo'da bu başlık kapatılabilir; işlevi etkilemez.
 
 Değişen/eklenen: `backend/app/api/admin.py`, `backend/app/static/admin.html`, `admin_app/*`.
 Şifre min 6: `backend/app/api/auth.py` + `app/lib/screens/auth_sheet.dart`.
+
+## 11. Altılı grading hatası — donmuş tier_hits (2026-06-04) — ÇÖZÜLDÜ
+
+**Belirti:** Ankara 04.06 1. 6'lı Ganyan (idx=1, 1-6. koşu) tüm kademelerde **5/6**
+(3. koşu kazananı 5; hiçbir kademe seçmemiş → kayıp). Uygulama bloğu doğru gösterdi ama:
+- Bildirim **tutmayan kuponu "Ortak Bonkör ✓ | 1 Tahmin Başarılı | İkramiye 871,37"**
+  diye gönderdi.
+- Bildirim kuponu **"2. 6'lı Ganyan"** diye numaraladı (uygulama "1." gösterirken).
+
+**Kök neden — iki ayrı hata:**
+
+1. **GRADING (kritik) — `import_to_db._merge_hip_frozen`:** Hipodrom kilitliyken
+   (analiz donmuş) altılının **eski donmuş ayak seçimleri** korunur, ama `_set_altili_sonuc`
+   `tier_hits`'i **payload'tan** (taze Pegadrom sonrası YENİ plana göre hesaplanmış) yazardı.
+   Yeni plan ≠ donmuş ayaklar olunca `tier_hits` ekrandaki seçimlerle uyuşmadı. DB'de
+   Ankara idx=1: saklanan `{simitci:4, harbi:5, ortakli:6}` (ortakli yanlış 6/6), donmuş
+   seçimlerden gerçek `{5,5,5}`. Flutter rozeti `_kademeHits` ile **bağımsız** hesapladığı
+   için ekran 5/6 doğru; bildirim ise DB `tier_hits`'i kullandığı için yanlış ✓.
+   - **Düzeltme:** yeni `_frozen_tier_hits(alt, kazanan)` → `tier_hits`'i **DB'de saklanan
+     (donmuş) `ayak.secilen`** + gerçek kazananlardan yeniden hesaplar. `winners`/`ikramiye`
+     sonuç-türevli olduğu için payload'tan alınır. Kilitli merge bu override'ı kullanır.
+
+2. **BİLDİRİM ETİKETİ — `bildirim_servis.altili_metni`:** `{idx+1}. 6'lı Ganyan`
+   kullanıyordu; idx 1-tabanlı (engine idx=1 ilk kupon) ve uygulama bloğu `{idx}` gösterir
+   → bildirim 1 kayıyordu. `{idx+1}` → `{idx}`.
+
+**Tetiklenme koşulu:** (a) hipodrom kilitli (freeze) + (b) gün-içi taze-Pegadrom yeniden
+üretimi divergent plan üretmiş. Yalnız yeni canlı-takip+freeze rejiminde olur.
+
+**Düzeltme + doğrulama:**
+- Kod deploy + `export_import(["2026-06-04"], freeze=True)` ile yeniden grade → Ankara
+  idx=1 ortakli **6→5** (3 kademe de 5/6, ekranla birebir).
+- **Tüm arşiv denetimi:** 454 sonuçlanmış altılının **tamamı tutarlı (0 uyumsuzluk)** —
+  hata yalnız 04.06'da tetiklenmişti, başka gün etkilenmedi.
+- Flutter değişikliği gerekmedi (rozet zaten bağımsız/doğru). Önceden gönderilen yanlış
+  bildirim geçmişte kalır (geri çekilemez); veri/istatistik artık doğru.
+
+Değişen: `backend/export/import_to_db.py`, `backend/app/bildirim_servis.py` (commit `c78a199`).
