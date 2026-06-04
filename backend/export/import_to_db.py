@@ -138,14 +138,40 @@ def _add_altili(db, gh_id: int, a: dict):
     return alt
 
 
-def _set_altili_sonuc(db, alt: Altili, s: dict | None):
+def _set_altili_sonuc(db, alt: Altili, s: dict | None, tier_hits: dict | None = None):
+    """AltiliSonuc'u yazar. tier_hits verilirse payload yerine ONU kullanır
+    (donmuş kuponun SAKLANAN seçimlerinden hesaplanmış değer; bkz. _frozen_tier_hits)."""
     if not s:
         return
     if alt.sonuc is not None:
         db.delete(alt.sonuc)
         db.flush()
     db.add(AltiliSonuc(altili_id=alt.id, winners=s["winners"],
-                       ikramiye=s.get("ikramiye"), tier_hits=s["tier_hits"]))
+                       ikramiye=s.get("ikramiye"),
+                       tier_hits=tier_hits if tier_hits is not None else s["tier_hits"]))
+
+
+def _frozen_tier_hits(alt: Altili, kazanan: dict) -> dict:
+    """Donmuş altılının DB'de SAKLANAN ayak seçimlerinden tier_hits'i yeniden hesaplar.
+
+    kazanan: {kno: kazanan_at_no}. Bir ayak, kazananı kendi seçilenlerinde tutuyorsa
+    isabet. Bir kademenin tüm ayakları sonuçlanmadıysa o kademe None (build_day ile aynı).
+
+    GEREKÇE: hipodrom kilitliyken (analiz donmuş) yeniden-üretimin payload'undaki tier_hits
+    TAZE plana göre hesaplanır; donmuş ayaklarla uyuşmayabilir → yanlış 6/6/'tuttu'. Bu
+    yüzden tier_hits her zaman EKRANDA GÖSTERİLEN (donmuş) seçimlerden türetilmeli."""
+    out = {}
+    for kd in alt.kademeler:
+        hits = fin = toplam = 0
+        for ay in kd.ayaklar:
+            toplam += 1
+            kz = kazanan.get(ay.kno)
+            if kz is not None:
+                fin += 1
+                if kz in (ay.secilen or []):
+                    hits += 1
+        out[kd.key] = hits if (toplam > 0 and fin == toplam) else None
+    return out
 
 
 def _add_bahis(db, gh_id: int, b: dict):
@@ -231,7 +257,14 @@ def _merge_hip_frozen(db, gh: GunHipodrom, hp: dict, d: date, now_tr: datetime) 
             if ea is None:
                 _add_altili(db, gh.id, a)
             else:
-                _set_altili_sonuc(db, ea, a.get("sonuc"))
+                # Analiz DONUK: tier_hits'i payload'tan DEĞİL, donmuş seçimlerden hesapla
+                # (taze plan ≠ donmuş ayaklar → yanlış tuttu/6'6 olmasın). winners/ikramiye
+                # sonuç-türevli olduğu için payload'tan alınır.
+                s = a.get("sonuc")
+                if s:
+                    kazanan = {kn: w for kn, w in zip(a["legs"], s.get("winners") or [])
+                               if w is not None}
+                    _set_altili_sonuc(db, ea, s, tier_hits=_frozen_tier_hits(ea, kazanan))
     else:
         for a in list(gh.altililar):
             db.delete(a)

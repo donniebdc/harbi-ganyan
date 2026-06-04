@@ -76,7 +76,9 @@ def altili_metni(tarih: date, hip: str, idx: int, son: AltiliSonuc) -> str:
             parcalar.append(f"{_TIER_AD[k]} ❌ ({h}/6)")
         else:
             parcalar.append(f"{_TIER_AD[k]} ❌")
-    bas = (f"{_ddmmyyyy(tarih)} | {_hip_ad(hip)} | {idx + 1}. 6'lı Ganyan | "
+    # NOT: idx 1-tabanlı (engine idx=1 ilk kupon) ve uygulama bloğu da '{idx}. 6'lı
+    # Ganyan' gösterir → bildirim de idx (idx+1 DEĞİL) kullanmalı; aksi halde 1 kayar.
+    bas = (f"{_ddmmyyyy(tarih)} | {_hip_ad(hip)} | {idx}. 6'lı Ganyan | "
            + " | ".join(parcalar))
     if tutan > 0:
         bas += f" | Analizini verdiğimiz {tutan} Tahmin Başarılı oldu."
