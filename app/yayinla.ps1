@@ -21,6 +21,8 @@ $ver = (Select-String -Path "$App\pubspec.yaml" -Pattern '^\s*version:\s*(.+)$')
 Write-Host "Surum: $ver" -ForegroundColor Cyan
 
 # 2) Build (release - sabit imza, oturum korunur)
+# flutter build proje kökünden (app/) çalışmalı; script nereden çağrılırsa çağrılsın.
+Set-Location $App
 if (-not $SkipBuild) {
   Write-Host "Release APK build ediliyor..." -ForegroundColor Cyan
   & $Flutter build apk --release
