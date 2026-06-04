@@ -163,6 +163,7 @@ def _user_payload(user: Kullanici) -> dict:
         "is_admin": user.is_admin,
         "email_dogrulandi": user.email_dogrulandi,
         "created_at": user.created_at,
+        "uyelik_baslangic": uyelik.baslangic if uyelik else None,
         "uyelik_bitis": uyelik.bitis if uyelik else None,
         "uyelik_kaynak": uyelik.kaynak if uyelik else None,
         "haftalik_tutar": TIER_PRICE_WEEKLY.get(user.tier, 0) if user.aktif else 0,

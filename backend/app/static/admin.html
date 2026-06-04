@@ -75,7 +75,7 @@
           <button class="primary" onclick="loadAll()">Yenile</button>
         </div>
         <table>
-          <thead><tr><th>ID</th><th>Email</th><th>Tier</th><th>Durum</th><th>Bitiş</th><th>Haftalık</th><th>İşlem</th></tr></thead>
+          <thead><tr><th>ID</th><th>Email</th><th>Tier</th><th>Durum</th><th>Abone</th><th>Bitiş (tarih/saat)</th><th>Haftalık</th><th>İşlem</th></tr></thead>
           <tbody id="users"></tbody>
         </table>
       </section>
@@ -85,7 +85,7 @@
           <h3>Kullanıcı Ekle</h3>
           <div class="grid">
             <input id="newEmail" placeholder="Email">
-            <input id="newPass" placeholder="Geçici şifre (min 10)" type="password">
+            <input id="newPass" placeholder="Geçici şifre (min 6)" type="password">
             <select id="newTier"><option value="standart">Standart</option><option value="premium">Premium</option><option value="vip">VIP</option></select>
             <input id="newEnd" type="datetime-local">
             <label class="muted"><input id="newAdmin" type="checkbox"> Admin yetkisi ver</label>
@@ -135,6 +135,12 @@
     const dt = v => v ? new Date(v).toLocaleString('tr-TR') : '-';
     const money = v => `${v || 0} TL`;
     const toIso = v => v ? new Date(v).toISOString() : null;
+    // UTC ISO -> datetime-local input değeri (yerel saat, YYYY-MM-DDTHH:MM)
+    const toLocalInput = v => {
+      if (!v) return '';
+      const d = new Date(v), p = n => String(n).padStart(2, '0');
+      return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}`;
+    };
 
     async function login(){
       $('loginMsg').textContent = '';
@@ -166,12 +172,18 @@
           <td>${u.id}</td><td>${u.email}${u.is_admin ? ' <span class="pill">admin</span>' : ''}</td>
           <td><select onchange="updateUser(${u.id},{tier:this.value})"><option ${u.tier==='standart'?'selected':''} value="standart">Standart</option><option ${u.tier==='premium'?'selected':''} value="premium">Premium</option><option ${u.tier==='vip'?'selected':''} value="vip">VIP</option></select></td>
           <td><button onclick="updateUser(${u.id},{aktif:${!u.aktif}})" class="${u.aktif?'':'danger'}">${u.aktif?'Aktif':'Pasif'}</button></td>
-          <td>${dt(u.uyelik_bitis)}</td><td>${money(u.haftalik_tutar)}</td>
-          <td class="row"><button onclick="extendUser(${u.id},7)">+7g</button><button onclick="extendUser(${u.id},14)">+14g</button><button onclick="extendUser(${u.id},30)">+30g</button><button onclick="extendUser(${u.id},60)">+60g</button><button onclick="resetPass(${u.id},'${u.email.replace(/'/g,"\\'")}')" title="Şifre hash'li saklanır; mevcut şifre görüntülenemez. Bu buton yeni şifre belirler/üretir.">Şifre</button><button class="danger" onclick="deleteUser(${u.id})">Sil</button></td>
+          <td>${dt(u.uyelik_baslangic)}</td>
+          <td><input type="datetime-local" value="${toLocalInput(u.uyelik_bitis)}" onchange="setBitis(${u.id}, this.value)" title="Üyelik bitiş tarih ve saatini ayarla"></td>
+          <td>${money(u.haftalik_tutar)}</td>
+          <td class="row"><button onclick="resetPass(${u.id},'${u.email.replace(/'/g,"\\'")}')" title="Şifre hash'li saklanır; mevcut şifre görüntülenemez. Bu buton yeni şifre belirler/üretir.">Şifre</button><button class="danger" onclick="deleteUser(${u.id})">Sil</button></td>
         </tr>`).join('');
     }
     async function updateUser(id, patch){ await api(`/admin/api/kullanicilar/${id}`, {method:'PATCH', body:JSON.stringify(patch)}); await loadAll(); }
-    async function extendUser(id, days){ await updateUser(id, {uzat_gun:days}); }
+    // Bitiş tarih/saatini doğrudan ayarla (takvim seçici). Boşsa işlem yapma.
+    async function setBitis(id, v){
+      if (!v) return;
+      await updateUser(id, {uyelik_bitis: toIso(v)});
+    }
     async function resetPass(id, email){
       // Şifreler bcrypt-hash'li; mevcut şifre PLAINTEXT görüntülenemez. Yeni şifre belirlenir.
       const inp = prompt(`"${email}" için yeni şifre girin (en az 6 karakter).\n\nBoş bırakıp Tamam'a basarsanız rastgele geçici şifre üretilir.`, '');
