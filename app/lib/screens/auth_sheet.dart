@@ -22,7 +22,7 @@ class _AuthSheet extends ConsumerStatefulWidget {
 }
 
 class _AuthSheetState extends ConsumerState<_AuthSheet> {
-  static const int _minSifre = 10; // backend KayitReq ile aynı (auth.py)
+  static const int _minSifre = 6; // backend KayitReq ile aynı (auth.py)
   bool _kayitMi = false;
   bool _kodAdimi = false;
   bool _yukleniyor = false;
