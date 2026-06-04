@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_pass: str = ""
-    smtp_from: str = "Harbi Ganyan <no-reply@harbiganyan.app>"
+    smtp_from: str = "Harbi Ganyan <no-reply@harbiganyan.com>"
 
     # İçerik
     gecmis_gun: int = 30  # "Geçmiş Analizler" penceresi

@@ -170,7 +170,39 @@ güncelleme, aynı imza, oturum KORUNUR — canlı kanıtlandı: install -r sonr
 
 Değişen dosyalar: `backend/app/api/admin.py`, `backend/app/static/admin.html`.
 
-## 8. Açık işler / notlar
+## 8. SMTP doğrulama maili — Brevo relay (2026-06-03) — ÇALIŞIYOR
+
+**Karar:** Kendi mail sunucusu (Postfix) KURULMADI — VPS rDNS jenerik
+(`wsysdg.depenhat.com`) → Gmail spam riski. ProtonMail elendi (ücretsiz SMTP yok;
+Bridge ücretli+masaüstü). Gmail "Send mail as" denendi ama yeni Gmail açılışı telefon
+limitine takıldı + DKIM hizalaması zayıf. **Sonuç: Brevo relay + `harbiganyan.com`
+domain DKIM** (en kurumsal + ücretsiz 300/gün).
+
+**Port analizi (VPS'te kanıtlandı):** Dışarı 25/465/587 hepsi AÇIK. Kullanılan: **587**
+(STARTTLS). Hosting'den ek mail servisi GEREKMEDİ.
+
+**Altyapı:** `backend/app/mail.py` zaten SMTP/STARTTLS'e göre yazılı (smtp_host boşsa
+kod konsola düşer — dev). Kod değişikliği gerekmedi; sadece config:
+- VPS `.env`: `HG_SMTP_HOST=smtp-relay.brevo.com`, `HG_SMTP_PORT=587`,
+  `HG_SMTP_USER=<brevo smtp login @smtp-brevo.com>`, `HG_SMTP_PASS=<brevo SMTP key>`,
+  `HG_SMTP_FROM=Harbi Ganyan <no-reply@harbiganyan.com>`. (Sırlar yalnız .env'de.)
+- `config.py` varsayılan `smtp_from` `.app → .com` düzeltildi.
+
+**Domain:** Brevo'da `harbiganyan.com` **Authenticated** (Brevo-code TXT + DKIM1/DKIM2
+CNAME + DMARC `p=none` TXT). DKIM `harbiganyan.com` adına imzalı → From tam hizalı.
+
+**KRİTİK kurulum notu — Brevo Authorized IPs:** Brevo'da "SMTP keys IP blocking"
+**Activated**. VPS IP **`141.98.115.217`** Brevo → Security → Authorized IPs'e
+**eklenmeli** yoksa SMTP bloklanır. (Eklendi.) Yeni sunucu/IP değişiminde tekrar gerekir.
+
+**Doğrulama:** `ovuncz@protonmail.com`'a canlı test → **inbox** (spam değil),
+**From: no-reply@harbiganyan.com**, içerik "doğrulama kodunuz: 123456". ✓
+
+**Küçük iyileştirme (opsiyonel):** Proton "posta listesinden gönderilmiş" notu gösterdi
+(Brevo `List-Unsubscribe` başlığı). İşlemsel (transactional) doğrulama maili için
+Brevo'da bu başlık kapatılabilir; işlevi etkilemez.
+
+## 9. Açık işler / notlar
 - **Flutter APK** yeniden derlenip kurulmalı (sürüm 1.0.11+12) — "Son analiz zamanı"
   şeridi yeni build'de görünür. `app/yayinla.ps1` ile dağıt (Drive + yerel + adb -r).
 - canli.timer her 10 dk çalışıp bugünden itibaren değişiklik tarıyor; gerçek bir
