@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "60510831261",
+    "project_id": "harbi-ganyan",
+    "storage_bucket": "harbi-ganyan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60510831261:android:9b20942ffd8a50d4e20a74",
+        "android_client_info": {
+          "package_name": "app.harbiganyan.harbi_ganyan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrQGhdJM9YquZxsHGSMVIQEu2FRTmNYlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

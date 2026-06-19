@@ -1,0 +1,39 @@
+# IDE and local machine files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+*.log
+*.tmp
+
+# Flutter / Android generated files
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.pub-cache/
+app/.pub/
+app/build/
+app/coverage/
+app/android/.gradle/
+app/android/local.properties
+app/android/app/debug/
+app/android/app/profile/
+app/android/app/release/
+
+# Release signing secrets
+app/android/key.properties
+app/android/*.jks
+app/android/*.keystore
+
+# Backend local runtime files
+backend/.env
+backend/.venv/
+backend/__pycache__/
+backend/**/*.pyc
+backend/*.db
+backend/logs/
+backend/export/out/
+
+# Local APK/archive outputs
+APK/
