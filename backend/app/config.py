@@ -34,11 +34,14 @@ class Settings(BaseSettings):
     smtp_from: str = "Harbi Ganyan <no-reply@harbiganyan.app>"
 
     # İçerik
-    gecmis_gun: int = 30  # "Geçmiş Analizler" penceresi
+    gecmis_gun: int = 60  # "Gecmis Analizler" penceresi
 
     # FCM push (Firebase). firebase_sa = service-account JSON yolu (gizli, git'e girmez).
     firebase_sa: str = ""
     firebase_project: str = "harbi-ganyan"
+
+    google_play_package: str = "app.harbiganyan.harbi_ganyan"
+    google_play_sa: str = ""
 
     @property
     def production(self) -> bool:

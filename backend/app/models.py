@@ -200,6 +200,9 @@ class Uyelik(Base):
     bitis: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     kaynak: Mapped[str] = mapped_column(String(20), default="mock")  # mock/google_play
     aktif: Mapped[bool] = mapped_column(Boolean, default=True)
+    purchase_token: Mapped[str | None] = mapped_column(String(500), nullable=True, unique=True)
+    google_product_id: Mapped[str | None] = mapped_column(String(50), nullable=True)
+    expires_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     kullanici: Mapped[Kullanici] = relationship(back_populates="uyelikler")
 
 

@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from .api import admin, auth, content
+from .api import admin, auth, content, uyelik
 from .config import settings
 from .db import Base, engine
 
@@ -43,6 +43,7 @@ def saglik():
 app.include_router(content.router)
 app.include_router(auth.router)
 app.include_router(admin.router)
+app.include_router(uyelik.router)
 app.mount("/admin-static", StaticFiles(directory=APP_DIR / "static"), name="admin-static")
 
 
