@@ -1,73 +1,159 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
+import '../services/billing_service.dart';
 import '../state/auth.dart';
 import '../theme.dart';
 import 'auth_sheet.dart';
 
 class _Paket {
-  final String key, ad, fiyat;
-  final List<String> ozellikler;
-  const _Paket(this.key, this.ad, this.fiyat, this.ozellikler);
+  final String productId, ad, fiyat, aciklama;
+  const _Paket(this.productId, this.ad, this.fiyat, this.aciklama);
 }
 
-/// Kademe sirasi: yalniz UST pakete talep edilebilir (standart<vip).
-const _rank = {'standart': 0, 'vip': 1};
-
 const _paketler = [
-  _Paket('standart', 'Standart', 'Ucretsiz', [
-    'Gecmis Analizler',
-    'Istatistikler',
-    'Uygulamayi kesfet',
-  ]),
-  _Paket('vip', 'VIP', 'Haftalik 250 TL', [
-    'Standart paketindeki her sey',
-    'Gunluk Tahminler (5 Satir)',
-    '6 li Ganyan Tahminleri',
-    'Sonuc bildirimleri',
-    'Oncelikli destek',
-  ]),
+  _Paket('vip_haftalik', 'VIP Haftalik', '249,99 TL/hafta',
+      'Her hafta otomatik yenilenir'),
+  _Paket('vip_aylik', 'VIP Aylik', '899,99 TL/ay',
+      'En avantajli secim — ayda yalnizca ~225 TL/hafta'),
 ];
 
-class UyelikEkrani extends ConsumerWidget {
+class UyelikEkrani extends ConsumerStatefulWidget {
   const UyelikEkrani({super.key});
+  @override
+  ConsumerState<UyelikEkrani> createState() => _UyelikEkraniState();
+}
 
-  Future<void> _sec(BuildContext context, WidgetRef ref, _Paket p) async {
+class _UyelikEkraniState extends ConsumerState<UyelikEkrani> {
+  final _billing = BillingService();
+  List<ProductDetails> _urunler = [];
+  bool _yukleniyor = false;
+  String? _hata;
+
+  @override
+  void initState() {
+    super.initState();
+    _baslat();
+  }
+
+  Future<void> _baslat() async {
+    await _billing.baslat();
+    _billing.satinAlmalar.listen(_satinAlmaGeldi);
+    final urunler = await _billing.urunleriGetir();
+    if (mounted) setState(() => _urunler = urunler);
+  }
+
+  Future<void> _satinAlmaGeldi(PurchaseDetails p) async {
+    if (p.status == PurchaseStatus.purchased ||
+        p.status == PurchaseStatus.restored) {
+      _billing.tamamla(p);
+      await _dogrula(p);
+    } else if (p.status == PurchaseStatus.error) {
+      if (mounted) {
+        setState(() {
+          _hata = p.error?.message ?? 'Satin alma basarisiz.';
+          _yukleniyor = false;
+        });
+      }
+    } else if (p.status == PurchaseStatus.canceled) {
+      if (mounted) setState(() => _yukleniyor = false);
+    }
+  }
+
+  Future<void> _dogrula(PurchaseDetails p) async {
+    try {
+      await ref
+          .read(apiClientProvider)
+          .uyelikDogrula(p.purchaseID ?? '', p.productID);
+      await ref.read(authProvider.notifier).tierYenile();
+      if (mounted) {
+        setState(() => _yukleniyor = false);
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          backgroundColor: HG.yesil,
+          content: Text('VIP uyeliginiz aktiflestirildi!'),
+        ));
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _hata = e.toString();
+          _yukleniyor = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _sec(String productId) async {
     final auth = ref.read(authProvider);
-    if (p.key == 'standart') return;
     if (!auth.girisli) {
       await authSheetGoster(context);
       return;
     }
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        backgroundColor: HG.kart2,
-        content: Text('${p.ad} uyelik talebiniz alindi. Admin/odeme onayi sonrasi aktiflesir.'),
-      ));
+    final urun = _urunler.where((u) => u.id == productId).firstOrNull;
+    if (urun == null) {
+      setState(() => _hata = 'Urun yuklenemedi. Lutfen tekrar deneyin.');
+      return;
     }
+    setState(() {
+      _yukleniyor = true;
+      _hata = null;
+    });
+    await _billing.satinAl(urun);
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final auth = ref.watch(authProvider);
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        Text('Uyelik Paketleri',
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w800)),
+        Text('VIP Uyelik',
+            style: Theme.of(context)
+                .textTheme
+                .titleLarge
+                ?.copyWith(fontWeight: FontWeight.w800)),
         const SizedBox(height: 4),
-        Text('Mevcut: ${auth.tier.toUpperCase()}${auth.email != null ? " · ${auth.email}" : " · anonim"}',
+        Text(
+            'Mevcut: ${auth.tier.toUpperCase()}${auth.email != null ? " · ${auth.email}" : ""}',
             style: const TextStyle(color: HG.metinSoluk, fontSize: 12)),
         const SizedBox(height: 16),
-        ..._paketler.map((p) => _PaketKarti(
-              paket: p,
-              aktif: auth.tier == p.key,
-              talepEdilebilir:
-                  (_rank[p.key] ?? 0) > (_rank[auth.tier] ?? 0),
-              onSec: () => _sec(context, ref, p),
-            )),
+        if (auth.vip)
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+                color: HG.yesil.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: HG.yesil)),
+            child: const Row(children: [
+              Icon(Icons.workspace_premium, color: HG.yesil),
+              SizedBox(width: 12),
+              Text('VIP uyeliginiz aktif.',
+                  style: TextStyle(
+                      color: HG.yesil, fontWeight: FontWeight.w700)),
+            ]),
+          )
+        else ...[
+          const Text(
+              'VIP uyelik ile gunluk 5 satir tahmin ve analiz puanlarina erisin.',
+              style: TextStyle(color: HG.metinSoluk, fontSize: 13)),
+          const SizedBox(height: 16),
+          if (_hata != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: Text(_hata!,
+                  style:
+                      const TextStyle(color: Colors.redAccent, fontSize: 13)),
+            ),
+          ..._paketler.map((p) => _PaketKarti(
+                paket: p,
+                onerilen: p.productId == 'vip_aylik',
+                yukleniyor: _yukleniyor,
+                onSec: () => _sec(p.productId),
+              )),
+        ],
         const SizedBox(height: 8),
         const Text(
-            'Uyelik aktivasyonu admin panelinden veya odeme entegrasyonu tamamlandiginda otomatik yapilir.',
+            'Abonelikler Google Play uzerinden yonetilir. Iptal: Google Play → Abonelikler.',
             style: TextStyle(color: HG.metinSoluk, fontSize: 11)),
       ],
     );
@@ -76,18 +162,18 @@ class UyelikEkrani extends ConsumerWidget {
 
 class _PaketKarti extends StatelessWidget {
   final _Paket paket;
-  final bool aktif;
-  final bool talepEdilebilir;
+  final bool onerilen;
+  final bool yukleniyor;
   final VoidCallback onSec;
+
   const _PaketKarti(
       {required this.paket,
-      required this.aktif,
-      required this.talepEdilebilir,
+      required this.onerilen,
+      required this.yukleniyor,
       required this.onSec});
 
   @override
   Widget build(BuildContext context) {
-    final vip = paket.key == 'vip';
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
       padding: const EdgeInsets.all(16),
@@ -95,53 +181,58 @@ class _PaketKarti extends StatelessWidget {
         color: HG.kart,
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-            color: aktif ? HG.altin : (vip ? HG.altin.withValues(alpha: 0.4) : HG.kart2),
-            width: aktif ? 2 : 1),
+            color: onerilen ? HG.altin : HG.kart2, width: onerilen ? 2 : 1),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
           Text(paket.ad,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800)),
-          const SizedBox(width: 8),
-          if (aktif)
+              style:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.w800)),
+          if (onerilen) ...[
+            const SizedBox(width: 8),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
-                  color: HG.yesil.withValues(alpha: 0.15),
+                  color: HG.altin.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(6)),
-              child: const Text('AKTIF',
+              child: const Text('EN AVANTAJLI',
                   style: TextStyle(
-                      color: HG.yesil, fontSize: 10, fontWeight: FontWeight.w800)),
+                      color: HG.altin,
+                      fontSize: 9,
+                      fontWeight: FontWeight.w800)),
             ),
+          ],
           const Spacer(),
           Text(paket.fiyat,
               style: const TextStyle(
-                  color: HG.altinAcik, fontWeight: FontWeight.w700, fontSize: 14)),
+                  color: HG.altinAcik,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 13)),
         ]),
+        const SizedBox(height: 4),
+        Text(paket.aciklama,
+            style: const TextStyle(color: HG.metinSoluk, fontSize: 11)),
         const SizedBox(height: 12),
-        ...paket.ozellikler.map((o) => Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Row(children: [
-                const Icon(Icons.check, size: 16, color: HG.yesil),
-                const SizedBox(width: 8),
-                Expanded(child: Text(o, style: const TextStyle(fontSize: 13))),
-              ]),
-            )),
-        if (talepEdilebilir) ...[
-          const SizedBox(height: 8),
-          SizedBox(
-            width: double.infinity,
-            child: FilledButton(
-              style: FilledButton.styleFrom(
-                  backgroundColor: vip ? HG.altin : HG.kart2,
-                  foregroundColor: vip ? Colors.black : HG.metin,
-                  padding: const EdgeInsets.symmetric(vertical: 12)),
-              onPressed: onSec,
-              child: Text('${paket.ad} Talep Et',
-                  style: const TextStyle(fontWeight: FontWeight.w800)),
-            ),
+        SizedBox(
+          width: double.infinity,
+          child: FilledButton(
+            style: FilledButton.styleFrom(
+                backgroundColor: HG.altin,
+                foregroundColor: Colors.black,
+                padding: const EdgeInsets.symmetric(vertical: 12)),
+            onPressed: yukleniyor ? null : onSec,
+            child: yukleniyor
+                ? const SizedBox(
+                    height: 18,
+                    width: 18,
+                    child: CircularProgressIndicator(
+                        strokeWidth: 2, color: Colors.black))
+                : Text('${paket.ad} Satin Al',
+                    style:
+                        const TextStyle(fontWeight: FontWeight.w800)),
           ),
-        ],
+        ),
       ]),
     );
   }

@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import '../config.dart';
 import 'models.dart';
+
+typedef RefreshCallback = Future<String?> Function();
 
 /// 'Günün Analizleri' premium-kilitli olduğunda fırlatılır (HTTP 403).
 class KilitliHata implements Exception {
@@ -21,6 +25,8 @@ class AgHatasi implements Exception {
 class ApiClient {
   final Dio _dio;
   String? _token;
+  RefreshCallback? _refreshCallback;
+  Future<String?>? _pendingRefresh;
 
   ApiClient()
       : _dio = Dio(BaseOptions(
@@ -28,11 +34,36 @@ class ApiClient {
           connectTimeout: const Duration(seconds: 20),
           receiveTimeout: const Duration(seconds: 30),
         )) {
-    // Geçici ağ hatalarında (timeout / bağlantı kopması) GET isteklerini
-    // artan gecikmeyle 4 kez daha dene — ev bağlantısı / zayıf mobil ağlarda
-    // "Bağlantı hatası" ekranlarını azaltır.
     _dio.interceptors.add(InterceptorsWrapper(onError: (e, handler) async {
       final req = e.requestOptions;
+      final sc = e.response?.statusCode;
+
+      final isAuthEndpoint = req.path.contains('/auth/giris') ||
+          req.path.contains('/auth/yenile') ||
+          req.path.contains('/auth/kayit') ||
+          req.path.contains('/auth/dogrula');
+
+      if (sc == 401 &&
+          !isAuthEndpoint &&
+          _token != null &&
+          _refreshCallback != null &&
+          req.extra['refreshed'] != true) {
+        final newToken = await _doRefresh();
+        if (newToken != null) {
+          _token = newToken;
+          req.headers['Authorization'] = 'Bearer $newToken';
+          req.extra['refreshed'] = true;
+          try {
+            final r = await _dio.fetch(req);
+            return handler.resolve(r);
+          } on DioException catch (e2) {
+            return handler.next(e2);
+          }
+        } else {
+          return handler.next(e);
+        }
+      }
+
       final deneme = (req.extra['retry'] as int?) ?? 0;
       final gecici = e.type == DioExceptionType.connectionTimeout ||
           e.type == DioExceptionType.receiveTimeout ||
@@ -48,11 +79,19 @@ class ApiClient {
           return handler.next(e2);
         }
       }
+
       handler.next(e);
     }));
   }
 
+  Future<String?> _doRefresh() {
+    _pendingRefresh ??=
+        _refreshCallback!().whenComplete(() => _pendingRefresh = null);
+    return _pendingRefresh!;
+  }
+
   void setToken(String? t) => _token = t;
+  void setRefreshCallback(RefreshCallback? cb) => _refreshCallback = cb;
 
   Options get _opt => Options(
         headers: _token != null ? {'Authorization': 'Bearer $_token'} : null,
@@ -89,28 +128,6 @@ class ApiClient {
     }
   }
 
-  /// Koşu Analizleri (alt-bahisler) — VIP. 403'te KilitliHata('vip').
-  Future<GunBahisler> gunBahisler(String date) async {
-    try {
-      final r = await _dio.get('/gun/$date/bahisler', options: _opt);
-      return GunBahisler.fromJson(r.data as Map<String, dynamic>);
-    } on DioException catch (e) {
-      if (e.response?.statusCode == 403) {
-        final d = e.response?.data;
-        final tier = (d is Map && d['detail'] is Map)
-            ? (d['detail']['gereken_tier'] as String? ?? 'vip')
-            : 'vip';
-        throw KilitliHata(tier);
-      }
-      if (e.response?.statusCode == 404) {
-        throw AgHatasi('Bu güne ait bahis analizi henüz yüklenmedi.', statusCode: 404);
-      }
-      throw _agHatasi(e, '/gun/$date/bahisler');
-    } catch (e) {
-      throw AgHatasi('Beklenmeyen hata (/gun/$date/bahisler): $e');
-    }
-  }
-
   // ---- Auth ----
   Future<void> kayit(String email, String sifre) =>
       _dio.post('/auth/kayit', data: {'email': email, 'sifre': sifre});
@@ -120,8 +137,9 @@ class ApiClient {
     return r.data as Map<String, dynamic>;
   }
 
-  Future<Map<String, dynamic>> giris(String email, String sifre) async {
-    final r = await _dio.post('/auth/giris', data: {'email': email, 'sifre': sifre});
+  Future<Map<String, dynamic>> giris(String email, String sifre, String cihazId) async {
+    final r = await _dio.post('/auth/giris',
+        data: {'email': email, 'sifre': sifre, 'cihaz_id': cihazId});
     return r.data as Map<String, dynamic>;
   }
 
@@ -130,12 +148,24 @@ class ApiClient {
       final r = await _dio.get('/auth/ben', options: _opt);
       return r.data as Map<String, dynamic>;
     } on DioException catch (e) {
-      // 401/403: token geçersiz veya yetkisiz — olduğu gibi fırlat ki
-      // auth.dart _yukle() doğru şekilde cikis() yapabilsin.
       final sc = e.response?.statusCode;
       if (sc == 401 || sc == 403) rethrow;
       throw _agHatasi(e, '/auth/ben');
     }
+  }
+
+  Future<Map<String, dynamic>> yenile(String refreshToken) async {
+    final r = await _dio.post('/auth/yenile',
+        data: {'refresh_token': refreshToken});
+    return r.data as Map<String, dynamic>;
+  }
+
+  Future<void> cikis(String? refreshToken) async {
+    try {
+      await _dio.post('/auth/cikis',
+          data: refreshToken != null ? {'refresh_token': refreshToken} : {},
+          options: _opt);
+    } catch (_) {}
   }
 
   Future<Map<String, dynamic>> bildirimler() async {
@@ -155,6 +185,22 @@ class ApiClient {
 
   Future<void> fcmTokenKaydet(String token) => _dio.post('/auth/fcm-token',
       data: {'token': token, 'platform': 'android'}, options: _opt);
+
+  Future<Map<String, dynamic>> uyelikDogrula(
+      String purchaseToken, String productId) async {
+    try {
+      final r = await _dio.post(
+        '/api/uyelik/dogrula',
+        data: {'purchase_token': purchaseToken, 'product_id': productId},
+        options: _opt,
+      );
+      return r.data as Map<String, dynamic>;
+    } on DioException catch (e) {
+      final mesaj =
+          e.response?.data?['detail'] as String? ?? 'Satın alma doğrulanamadı.';
+      throw AgHatasi(mesaj, statusCode: e.response?.statusCode);
+    }
+  }
 
   Future<Istatistik> istatistik() async {
     try {
