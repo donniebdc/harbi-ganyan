@@ -16,9 +16,10 @@ from sqlalchemy.orm import Session
 
 from ..db import get_db
 from ..deps import require_admin
-from ..models import Bildirim, Kullanici, Uyelik
+from ..models import Bildirim, GonderilenBildirim, Kullanici, Uyelik
 from ..security import hash_sifre
 from .. import fcm
+from .. import uyelik_servis
 
 router = APIRouter(prefix="/admin/api", tags=["admin"])
 
@@ -153,9 +154,9 @@ def _sync_membership(db: Session, user: Kullanici, bitis: datetime | None = None
         current.bitis = bitis
 
 
-def _user_payload(user: Kullanici) -> dict:
+def _user_payload(user: Kullanici, db: Session | None = None) -> dict:
     uyelik = _aktif_uyelik(user)
-    return {
+    out = {
         "id": user.id,
         "email": user.email,
         "tier": user.tier,
@@ -167,6 +168,14 @@ def _user_payload(user: Kullanici) -> dict:
         "uyelik_kaynak": uyelik.kaynak if uyelik else None,
         "haftalik_tutar": TIER_PRICE_WEEKLY.get(user.tier, 0) if user.aktif else 0,
     }
+    # Faz 1C — additive alanlar (mevcut anahtarlar korunur):
+    if db is not None:
+        erisim = uyelik_servis.erisim_coz(db, user)
+        out["is_vip"] = erisim.is_vip
+        out["vip_kaynak"] = erisim.source
+        out["vip_bitis"] = erisim.effective_until
+        out["suresi_doldu"] = erisim.expired_manual and not erisim.is_vip
+    return out
 
 
 @router.get("/ozet")
@@ -201,7 +210,7 @@ def kullanicilar(
         if tier not in VALID_TIERS:
             raise HTTPException(status_code=400, detail="Gecersiz tier.")
         query = query.filter(Kullanici.tier == tier)
-    return {"kullanicilar": [_user_payload(u) for u in query.order_by(Kullanici.id.desc()).all()]}
+    return {"kullanicilar": [_user_payload(u, db) for u in query.order_by(Kullanici.id.desc()).all()]}
 
 
 @router.post("/kullanicilar", status_code=201)
@@ -219,10 +228,17 @@ def kullanici_ekle(req: AdminUserCreate, _: Kullanici = Depends(require_admin),
     )
     db.add(user)
     db.flush()
-    _sync_membership(db, user, req.uyelik_bitis)
+    if req.tier == "vip":
+        # Manuel VIP: vip_until + uyelik.bitis birlikte yazılır (Faz 1C).
+        if req.uyelik_bitis is not None:
+            uyelik_servis.manuel_vip_tarih_belirle(db, user, req.uyelik_bitis)
+        else:
+            _sync_membership(db, user, None)  # süresiz admin ataması (mevcut davranış)
+    else:
+        _sync_membership(db, user, req.uyelik_bitis)
     db.commit()
     db.refresh(user)
-    return _user_payload(user)
+    return _user_payload(user, db)
 
 
 @router.patch("/kullanicilar/{user_id}")
@@ -242,15 +258,17 @@ def kullanici_guncelle(user_id: int, req: AdminUserUpdate,
         user.email_dogrulandi = req.email_dogrulandi
     if req.is_admin is not None:
         user.is_admin = req.is_admin
-    bitis = req.uyelik_bitis
     if req.uzat_gun is not None:
-        uyelik = _aktif_uyelik(user)
-        base = max(uyelik.bitis, datetime.utcnow()) if uyelik and uyelik.bitis else datetime.utcnow()
-        bitis = base + timedelta(days=req.uzat_gun)
-    _sync_membership(db, user, bitis)
+        # +7g/+14g/+30g/+60g — merkezi servis: aktif manuel bitiş varsa ONA ekler
+        # (kalan süre korunur), yoksa/geçmişse şimdiden başlatır (Faz 1C).
+        uyelik_servis.manuel_vip_gun_ekle(db, user, req.uzat_gun)
+    elif req.uyelik_bitis is not None:
+        uyelik_servis.manuel_vip_tarih_belirle(db, user, req.uyelik_bitis)
+    else:
+        _sync_membership(db, user, None)
     db.commit()
     db.refresh(user)
-    return _user_payload(user)
+    return _user_payload(user, db)
 
 
 class SifreResetReq(BaseModel):
@@ -397,3 +415,133 @@ def bildirim_gonder(req: BildirimReq, _: Kullanici = Depends(require_admin),
     # Uygulama-içi bildirim oluşturuldu; ayrıca FCM push (yapılandırılmışsa)
     push_adet = fcm.kullanicilara_push(db, hedef_idler, req.baslik, req.mesaj, {"tip": "admin"})
     return {"durum": "gonderildi", "adet": len(hedef_idler), "push": push_adet}
+
+
+# ─── Faz 1C: Manuel VIP yönetimi ─────────────────────────────────────────────
+
+_VIP_OPERATIONS = {"add_days", "set_until", "expire"}
+HEDIYE_VIP_GUN = 7
+HEDIYE_VIP_BASLIK = "1 Hafta Hediye Vip"
+HEDIYE_VIP_MESAJ = "1 Hafta Hediye Vip hesabınıza tanımlanmıştır."
+
+
+class VipOperationRequest(BaseModel):
+    operation: str
+    days: int | None = None
+    vip_until: datetime | None = None
+
+    @field_validator("operation")
+    @classmethod
+    def _op(cls, v: str) -> str:
+        if v not in _VIP_OPERATIONS:
+            raise ValueError("operation add_days/set_until/expire olmali.")
+        return v
+
+    @field_validator("days")
+    @classmethod
+    def _days(cls, v: int | None) -> int | None:
+        if v is not None and (v < 1 or v > 365):
+            raise ValueError("days 1-365 arasinda olmali.")
+        return v
+
+
+class HediyeVipRequest(BaseModel):
+    idempotency_key: str
+
+    @field_validator("idempotency_key")
+    @classmethod
+    def _key(cls, v: str) -> str:
+        v = v.strip()
+        if not v or len(v) > 64:
+            raise ValueError("Gecersiz idempotency_key.")
+        return v
+
+
+def _vip_response(db: Session, user: Kullanici, operation: str,
+                  eski, yeni) -> dict:
+    erisim = uyelik_servis.erisim_coz(db, user)
+    return {
+        "ok": True,
+        "user_id": user.id,
+        "email": user.email,
+        "operation": operation,
+        "old_vip_until": eski.isoformat() if eski else None,
+        "new_vip_until": yeni.isoformat() if yeni else None,
+        "is_vip": erisim.is_vip,
+        "vip_source": erisim.source,
+        "effective_until": erisim.effective_until.isoformat() if erisim.effective_until else None,
+        "google_play_active": erisim.google_play_active,
+    }
+
+
+@router.patch("/kullanicilar/{user_id}/vip")
+def kullanici_vip(user_id: int, req: VipOperationRequest,
+                  admin: Kullanici = Depends(require_admin),
+                  db: Session = Depends(get_db)):
+    """Manuel VIP yönetimi: add_days (1-365), set_until (ISO datetime), expire.
+    Aktif Google Play üyeliğine hiçbir işlem dokunmaz."""
+    user = db.get(Kullanici, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
+    if req.operation == "add_days":
+        if req.days is None:
+            raise HTTPException(status_code=422, detail="days zorunlu.")
+        eski, yeni = uyelik_servis.manuel_vip_gun_ekle(db, user, req.days)
+    elif req.operation == "set_until":
+        if req.vip_until is None:
+            raise HTTPException(status_code=422, detail="vip_until zorunlu.")
+        eski, yeni = uyelik_servis.manuel_vip_tarih_belirle(db, user, req.vip_until)
+    else:  # expire
+        eski, yeni = uyelik_servis.manuel_vip_bitir(db, user)
+    db.commit()
+    db.refresh(user)
+    print(f"[admin-vip] admin={admin.id} user={user.id} op={req.operation} "
+          f"eski={eski} yeni={yeni}", flush=True)
+    return _vip_response(db, user, req.operation, eski, yeni)
+
+
+@router.post("/kullanicilar/{user_id}/hediye-vip", status_code=201)
+def kullanici_hediye_vip(user_id: int, req: HediyeVipRequest,
+                         admin: Kullanici = Depends(require_admin),
+                         db: Session = Depends(get_db)):
+    """1 Hafta Hediye VIP: 7 gün manuel VIP + sabit metinli in-app bildirim + push.
+
+    İdempotency: GonderilenBildirim anahtarı (admin_hediye_vip|user|key) VIP süresi
+    ve bildirimle AYNI transaction'da yazılır; aynı anahtar ikinci kez gelirse süre
+    TEKRAR EKLENMEZ (mevcut durum döner). Push başarısızlığı işlemi geri almaz."""
+    user = db.get(Kullanici, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
+    anahtar = f"admin_hediye_vip|{user_id}|{req.idempotency_key}"
+    if db.query(GonderilenBildirim.id).filter_by(anahtar=anahtar).first() is not None:
+        erisim = uyelik_servis.erisim_coz(db, user)
+        return {
+            "ok": True, "user_id": user.id, "repeated": True,
+            "old_vip_until": None,
+            "new_vip_until": user.vip_until.isoformat() if user.vip_until else None,
+            "is_vip": erisim.is_vip, "notification_created": False, "push_sent": False,
+        }
+    eski, yeni = uyelik_servis.manuel_vip_gun_ekle(db, user, HEDIYE_VIP_GUN)
+    db.add(GonderilenBildirim(anahtar=anahtar))
+    db.add(Bildirim(kullanici_id=user.id, baslik=HEDIYE_VIP_BASLIK,
+                    mesaj=HEDIYE_VIP_MESAJ))
+    db.commit()
+    push_sent = False
+    try:
+        push_adet = fcm.kullanicilara_push(
+            db, [user.id], HEDIYE_VIP_BASLIK, HEDIYE_VIP_MESAJ, {"tip": "hediye_vip"})
+        push_sent = bool(push_adet)
+    except Exception as exc:
+        print(f"[admin-vip] hediye push hatasi user={user.id}: {exc}", flush=True)
+    print(f"[admin-vip] admin={admin.id} user={user.id} op=hediye_vip "
+          f"eski={eski} yeni={yeni} push={push_sent}", flush=True)
+    erisim = uyelik_servis.erisim_coz(db, user)
+    return {
+        "ok": True,
+        "user_id": user.id,
+        "old_vip_until": eski.isoformat() if eski else None,
+        "new_vip_until": yeni.isoformat() if yeni else None,
+        "is_vip": erisim.is_vip,
+        "notification_created": True,
+        "push_sent": push_sent,
+    }

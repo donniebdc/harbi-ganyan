@@ -31,11 +31,19 @@ def current_user(
     if user is None or not user.aktif:
         return None
 
-    # VIP süresi dolmuşsa düşür (DB'de güncelle)
-    if user.tier == "vip" and user.vip_until and user.vip_until < datetime.utcnow():
-        user.tier = "standart"
-        user.vip_until = None
-        db.commit()
+    # EFEKTİF VIP çözümü (Faz 1C): karar merkezi uyelik_servis.erisim_coz'da.
+    # Eski hata: vip_until NULL olan manuel VIP'ler süresiz VIP kalıyordu
+    # ("user.vip_until and ..." NULL'da kontrolü atlıyordu). Artık tier=='vip'
+    # olan her kullanıcı için kaynaklar (Google Play + manuel) istek anında
+    # değerlendirilir; efektif VIP değilse tier düşürülür (lazy TEK seferlik
+    # yazma — yalnız yanlış durumda commit edilir, her istekte yazılmaz).
+    # vip_until audit için NULL'lanmaz.
+    if user.tier == "vip":
+        from .uyelik_servis import erisim_coz
+        erisim = erisim_coz(db, user)
+        if not erisim.is_vip:
+            user.tier = "standart"
+            db.commit()
 
     # Cihaz revoke kontrolü
     if x_device_id:

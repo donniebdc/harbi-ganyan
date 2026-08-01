@@ -20,6 +20,7 @@
     .toolbar { display:flex; gap:10px; align-items:center; justify-content:space-between; margin-bottom:12px; flex-wrap:wrap; }
     input,select,textarea,button { border-radius:6px; border:1px solid var(--line); background:#101416; color:var(--text); padding:9px 10px; font:inherit; }
     button { cursor:pointer; background:#20282c; font-weight:700; }
+    button:disabled { opacity:.5; cursor:wait; }
     button.primary { background:var(--gold); color:#15110a; border-color:var(--gold); }
     button.danger { color:#fff; background:#4a2020; border-color:#743131; }
     table { width:100%; border-collapse:collapse; }
@@ -30,8 +31,14 @@
     .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
     .grow { flex:1 1 180px; }
     .pill { display:inline-block; padding:3px 7px; border-radius:999px; background:#232b2f; color:var(--muted); font-size:12px; }
+    .pill.gp { color:var(--green); }
+    .pill.man { color:var(--gold); }
     .ok { color:var(--green); }
     .bad { color:var(--red); }
+    .mini { width:74px; padding:6px 8px; font-size:12px; }
+    .dtl { padding:6px 8px; font-size:12px; }
+    .islem { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+    .islem button { padding:6px 8px; font-size:12px; }
     #login { max-width:420px; margin:80px auto; }
     #app { display:none; }
     @media (max-width:900px){ .metrics,.forms{grid-template-columns:1fr 1fr} th:nth-child(5),td:nth-child(5){display:none} }
@@ -68,12 +75,12 @@
             <select id="tierFilter" onchange="loadUsers()">
               <option value="">Tüm üyelikler</option>
               <option value="standart">Standart</option>
-              
               <option value="vip">VIP</option>
             </select>
           </div>
           <button class="primary" onclick="loadAll()">Yenile</button>
         </div>
+        <div id="userMsg" class="muted"></div>
         <table>
           <thead><tr><th>ID</th><th>Email</th><th>Tier</th><th>Durum</th><th>Bitiş</th><th>Haftalık</th><th>İşlem</th></tr></thead>
           <tbody id="users"></tbody>
@@ -89,7 +96,7 @@
             <select id="newTier"><option value="standart">Standart</option><option value="vip">VIP</option></select>
             <input id="newEnd" type="datetime-local">
             <label class="muted"><input id="newAdmin" type="checkbox"> Admin yetkisi ver</label>
-            <button class="primary" onclick="createUser()">Kullanıcı Oluştur</button>
+            <button class="primary" onclick="createUser(this)">Kullanıcı Oluştur</button>
           </div>
         </div>
         <div class="panel">
@@ -101,23 +108,20 @@
               <input id="notifUser" class="grow" placeholder="Tek kullanıcı ID (opsiyonel)">
               <select id="notifTier" class="grow"><option value="">Herkes</option><option value="standart">Standart</option><option value="vip">VIP</option></select>
             </div>
-            <button class="primary" onclick="sendNotif()">Gönder</button>
+            <button class="primary" onclick="sendNotif(this)">Gönder</button>
           </div>
         </div>
       </section>
 
       <section class="panel">
-        <h3>Manuel Üretim (Tahmin Motoru)</h3>
-        <p class="muted">Bir tarih veya tarih aralığı için motoru yeniden çalıştırır
-          (engine + export + import). Geçmiş günlerin alt-bahis analizlerini doldurmak
-          için kullanın. 5 satır ve 6'lı motoru aynı kalır. En fazla 31 gün.</p>
+        <h3>VIP Mesaj</h3>
+        <p class="muted">Kullanıcıya 1 hafta hediye VIP tanımlar ve sabit bildirimi gönderir:
+          "1 Hafta Hediye Vip — 1 Hafta Hediye Vip hesabınıza tanımlanmıştır."</p>
         <div class="row">
-          <label class="muted">Başlangıç <input id="uretStart" type="date"></label>
-          <label class="muted">Bitiş (ops.) <input id="uretEnd" type="date"></label>
-          <button class="primary" id="uretBtn" onclick="uretBaslat()">Üretimi Başlat</button>
-          <span id="uretInfo" class="muted"></span>
+          <input id="hediyeUserId" class="grow" type="number" min="1" step="1" placeholder="Kullanıcı ID">
+          <button class="primary" id="hediyeBtn" onclick="hediyeVip(this)">1 Hafta Hediye VIP Tanımla</button>
         </div>
-        <pre id="uretLog" style="margin-top:12px;max-height:300px;overflow:auto;background:#0c0f11;border:1px solid var(--line);border-radius:6px;padding:10px;font-size:12px;white-space:pre-wrap;display:none;"></pre>
+        <div id="hediyeMsg" class="muted" style="margin-top:8px;"></div>
       </section>
     </main>
   </section>
@@ -129,105 +133,207 @@
       ...opts,
       headers: {'Content-Type':'application/json', ...(token ? {Authorization:`Bearer ${token}`} : {}), ...(opts.headers||{})}
     }).then(async r => {
-      if (!r.ok) throw new Error((await r.json().catch(()=>({detail:r.statusText}))).detail || r.statusText);
+      if (!r.ok) {
+        const body = await r.json().catch(()=>({detail:r.statusText}));
+        const d = body.detail;
+        throw new Error(typeof d === 'string' ? d : JSON.stringify(d));
+      }
       return r.status === 204 ? null : r.json();
     });
     const dt = v => v ? new Date(v).toLocaleString('tr-TR') : '-';
     const money = v => `${v || 0} TL`;
     const toIso = v => v ? new Date(v).toISOString() : null;
+    // Guvenli metin yazimi: kullanici kaynakli TUM degerler textContent ile basilir.
+    const el = (tag, cls, text) => {
+      const e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text !== undefined && text !== null) e.textContent = String(text);
+      return e;
+    };
+    const setMsg = (id, text, isOk) => {
+      const m = $(id); m.textContent = text || '';
+      m.className = isOk === undefined ? 'muted' : (isOk ? 'muted ok' : 'muted bad');
+    };
+    const uuid = () => (crypto.randomUUID ? crypto.randomUUID()
+      : String(Date.now()) + '-' + Math.random().toString(16).slice(2));
 
     async function login(){
-      $('loginMsg').textContent = '';
+      setMsg('loginMsg','');
       try {
         const r = await api('/auth/giris', {method:'POST', body:JSON.stringify({email:$('loginEmail').value, sifre:$('loginPass').value})});
         token = r.token; localStorage.setItem('hg_admin_token', token);
         const me = await api('/auth/ben');
         if (!me.is_admin) throw new Error('Bu hesap admin değil.');
         showApp(me); await loadAll();
-      } catch(e) { $('loginMsg').textContent = e.message; localStorage.removeItem('hg_admin_token'); token = null; }
+      } catch(e) { setMsg('loginMsg', e.message, false); localStorage.removeItem('hg_admin_token'); token = null; }
     }
     function logout(){ localStorage.removeItem('hg_admin_token'); location.reload(); }
-    function showApp(me){ $('login').style.display='none'; $('app').style.display='block'; $('adminEmail').textContent=me.email; }
+    function showApp(me){ $('login').style.display='none'; $('app').style.display='block'; $('adminEmail').textContent = me.email; }
     async function loadAll(){ await Promise.all([loadSummary(), loadUsers()]); }
+
     async function loadSummary(){
       const o = await api('/admin/api/ozet');
-      $('metrics').innerHTML = [
-        ['Toplam', o.toplam_kullanici], ['Aktif', o.aktif_kullanici], ['Standart', o.standart],
-        ['VIP', o.vip], ['VIP', o.vip], ['Haftalık Gelir', money(o.haftalik_gelir_tl)]
-      ].map(x=>`<div class="metric"><span class="muted">${x[0]}</span><b>${x[1]}</b></div>`).join('');
+      const box = $('metrics'); box.replaceChildren();
+      [['Toplam', o.toplam_kullanici], ['Aktif', o.aktif_kullanici], ['Standart', o.standart],
+       ['VIP', o.vip], ['Haftalık Gelir', money(o.haftalik_gelir_tl)]].forEach(([ad, deger]) => {
+        const m = el('div','metric');
+        m.appendChild(el('span','muted', ad));
+        m.appendChild(el('b', null, deger));
+        box.appendChild(m);
+      });
     }
+
+    async function vipOp(userId, body, btn){
+      if (btn) btn.disabled = true;
+      try {
+        const r = await api(`/admin/api/kullanicilar/${userId}/vip`, {method:'PATCH', body:JSON.stringify(body)});
+        setMsg('userMsg', `#${r.user_id} ${body.operation}: yeni bitiş ${dt(r.new_vip_until)} — VIP: ${r.is_vip ? 'EVET' : 'HAYIR'}` +
+          (r.google_play_active ? ' (Google Play aktif)' : ''), true);
+        await loadAll();
+      } catch(e) { setMsg('userMsg', 'Hata: ' + e.message, false); }
+      finally { if (btn) btn.disabled = false; }
+    }
+
+    function bitisHucre(u){
+      const td = el('td');
+      const tarih = u.vip_bitis || u.uyelik_bitis;
+      td.appendChild(el('span', null, tarih ? dt(tarih) : '-'));
+      if (u.suresi_doldu) td.appendChild(el('span','pill bad',' Süresi doldu'));
+      if (u.is_vip && u.vip_kaynak === 'GOOGLE_PLAY') td.appendChild(el('span','pill gp','Google Play'));
+      else if (u.is_vip && u.vip_kaynak === 'MANUAL') td.appendChild(el('span','pill man','Manuel'));
+      return td;
+    }
+
+    function islemHucre(u){
+      const td = el('td'); const kutu = el('div','islem');
+      [7,14,30,60].forEach(g => {
+        const b = el('button', null, `+${g}g`);
+        b.addEventListener('click', () => vipOp(u.id, {operation:'add_days', days:g}, b));
+        kutu.appendChild(b);
+      });
+      const gunInp = el('input','mini'); gunInp.type='number'; gunInp.min='1'; gunInp.max='365'; gunInp.placeholder='gün';
+      const gunBtn = el('button', null, 'Gün Ekle');
+      gunBtn.addEventListener('click', () => {
+        const n = parseInt(gunInp.value, 10);
+        if (!n || n < 1 || n > 365) { setMsg('userMsg','Gün 1-365 arasında olmalı.', false); return; }
+        vipOp(u.id, {operation:'add_days', days:n}, gunBtn);
+      });
+      kutu.appendChild(gunInp); kutu.appendChild(gunBtn);
+      const dtInp = el('input','dtl'); dtInp.type='datetime-local';
+      const dtBtn = el('button', null, 'Tarih Belirle');
+      dtBtn.addEventListener('click', () => {
+        if (!dtInp.value) { setMsg('userMsg','Tarih seçin.', false); return; }
+        vipOp(u.id, {operation:'set_until', vip_until: toIso(dtInp.value)}, dtBtn);
+      });
+      kutu.appendChild(dtInp); kutu.appendChild(dtBtn);
+      const bitirBtn = el('button','danger','VIP Bitir');
+      bitirBtn.addEventListener('click', () => {
+        if (confirm(`#${u.id} kullanıcısının manuel VIP üyeliği sonlandırılsın mı?\n(Aktif Google Play aboneliği varsa etkilenmez.)`))
+          vipOp(u.id, {operation:'expire'}, bitirBtn);
+      });
+      kutu.appendChild(bitirBtn);
+      const sifreBtn = el('button', null, 'Şifre');
+      sifreBtn.title = "Şifre hash'li saklanır; mevcut şifre görüntülenemez. Bu buton yeni şifre belirler/üretir.";
+      sifreBtn.addEventListener('click', () => resetPass(u.id, u.email));
+      kutu.appendChild(sifreBtn);
+      const silBtn = el('button','danger','Sil');
+      silBtn.addEventListener('click', () => deleteUser(u.id));
+      kutu.appendChild(silBtn);
+      td.appendChild(kutu);
+      return td;
+    }
+
     async function loadUsers(){
       const p = new URLSearchParams();
       if ($('search').value) p.set('q', $('search').value);
       if ($('tierFilter').value) p.set('tier', $('tierFilter').value);
       const r = await api('/admin/api/kullanicilar?' + p.toString());
-      $('users').innerHTML = r.kullanicilar.map(u => `
-        <tr>
-          <td>${u.id}</td><td>${u.email}${u.is_admin ? ' <span class="pill">admin</span>' : ''}</td>
-          <td><select onchange="updateUser(${u.id},{tier:this.value})"><option ${u.tier==='standart'?'selected':''} value="standart">Standart</option><option ${u.tier==='vip'||u.tier==='premium'?'selected':''} value="vip">VIP</option></select></td>
-          <td><button onclick="updateUser(${u.id},{aktif:${!u.aktif}})" class="${u.aktif?'':'danger'}">${u.aktif?'Aktif':'Pasif'}</button></td>
-          <td>${dt(u.uyelik_bitis)}</td><td>${money(u.haftalik_tutar)}</td>
-          <td class="row"><button onclick="extendUser(${u.id},7)">+7g</button><button onclick="extendUser(${u.id},14)">+14g</button><button onclick="extendUser(${u.id},30)">+30g</button><button onclick="extendUser(${u.id},60)">+60g</button><button onclick="resetPass(${u.id},'${u.email.replace(/'/g,"\\'")}')" title="Şifre hash'li saklanır; mevcut şifre görüntülenemez. Bu buton yeni şifre belirler/üretir.">Şifre</button><button class="danger" onclick="deleteUser(${u.id})">Sil</button></td>
-        </tr>`).join('');
+      const tbody = $('users'); tbody.replaceChildren();
+      r.kullanicilar.forEach(u => {
+        const tr = el('tr');
+        tr.appendChild(el('td', null, u.id));
+        const emailTd = el('td', null, u.email);           // textContent — XSS guvenli
+        if (u.is_admin) emailTd.appendChild(el('span','pill',' admin'));
+        tr.appendChild(emailTd);
+        const tierTd = el('td');
+        const sel = el('select');
+        [['standart','Standart'], ['vip','VIP']].forEach(([v, ad]) => {
+          const o = el('option', null, ad); o.value = v;
+          if ((u.tier === 'premium' ? 'vip' : u.tier) === v) o.selected = true;
+          sel.appendChild(o);
+        });
+        sel.addEventListener('change', () => updateUser(u.id, {tier: sel.value}));
+        tierTd.appendChild(sel); tr.appendChild(tierTd);
+        const durumTd = el('td');
+        const durumBtn = el('button', u.aktif ? '' : 'danger', u.aktif ? 'Aktif' : 'Pasif');
+        durumBtn.addEventListener('click', () => updateUser(u.id, {aktif: !u.aktif}));
+        durumTd.appendChild(durumBtn); tr.appendChild(durumTd);
+        tr.appendChild(bitisHucre(u));
+        tr.appendChild(el('td', null, money(u.haftalik_tutar)));
+        tr.appendChild(islemHucre(u));
+        tbody.appendChild(tr);
+      });
     }
-    async function updateUser(id, patch){ await api(`/admin/api/kullanicilar/${id}`, {method:'PATCH', body:JSON.stringify(patch)}); await loadAll(); }
-    async function extendUser(id, days){ await updateUser(id, {uzat_gun:days}); }
+
+    async function updateUser(id, patch){
+      try { await api(`/admin/api/kullanicilar/${id}`, {method:'PATCH', body:JSON.stringify(patch)}); await loadAll(); }
+      catch(e){ setMsg('userMsg', 'Hata: ' + e.message, false); }
+    }
     async function resetPass(id, email){
-      // Şifreler bcrypt-hash'li; mevcut şifre PLAINTEXT görüntülenemez. Yeni şifre belirlenir.
       const inp = prompt(`"${email}" için yeni şifre girin (en az 6 karakter).\n\nBoş bırakıp Tamam'a basarsanız rastgele geçici şifre üretilir.`, '');
-      if (inp === null) return; // iptal
+      if (inp === null) return;
       const v = inp.trim();
       if (v && v.length < 6){ alert('Şifre en az 6 karakter olmalı.'); return; }
       const body = v ? {sifre:v} : {};
-      const r = await api(`/admin/api/kullanicilar/${id}/sifre`, {method:'POST', body:JSON.stringify(body)});
-      alert(`Şifre güncellendi.\n\nKullanıcı: ${r.email}\nYeni şifre: ${r.sifre}\n${r.gecici?'(rastgele üretildi)':'(elle belirlendi)'}\n\nNOT: Bu şifre tekrar GÖSTERİLMEZ. Kopyalayıp kullanıcıya iletin.`);
-    }
-    async function deleteUser(id){ if(confirm('Kullanıcı silinsin mi?')){ await api(`/admin/api/kullanicilar/${id}`, {method:'DELETE'}); await loadAll(); } }
-    async function createUser(){
-      await api('/admin/api/kullanicilar', {method:'POST', body:JSON.stringify({email:$('newEmail').value, sifre:$('newPass').value, tier:$('newTier').value, uyelik_bitis:toIso($('newEnd').value), is_admin:$('newAdmin').checked})});
-      ['newEmail','newPass','newEnd'].forEach(id=>$(id).value=''); $('newAdmin').checked=false; await loadAll();
-    }
-    async function sendNotif(){
-      const body = {baslik:$('notifTitle').value, mesaj:$('notifMsg').value};
-      if ($('notifUser').value) body.kullanici_id = Number($('notifUser').value);
-      else if ($('notifTier').value) body.hedef_tier = $('notifTier').value;
-      const r = await api('/admin/api/bildirimler', {method:'POST', body:JSON.stringify(body)});
-      alert(`${r.adet} kullanıcıya gönderildi.`);
-    }
-    // ── Manuel Üretim ──
-    let uretTimer = null;
-    async function uretBaslat(){
-      const start = $('uretStart').value;
-      if (!start) { alert('Başlangıç tarihi seçin.'); return; }
-      const body = {start}; if ($('uretEnd').value) body.end = $('uretEnd').value;
       try {
-        const r = await api('/admin/api/uret', {method:'POST', body:JSON.stringify(body)});
-        $('uretInfo').textContent = `Başlatıldı: ${r.aralik} (${r.gun_sayisi} gün)`;
-        $('uretLog').style.display = 'block';
-        uretPollBasla();
-      } catch(e){ $('uretInfo').textContent = 'Hata: ' + e.message; }
+        const r = await api(`/admin/api/kullanicilar/${id}/sifre`, {method:'POST', body:JSON.stringify(body)});
+        alert(`Şifre güncellendi.\n\nKullanıcı: ${r.email}\nYeni şifre: ${r.sifre}\n${r.gecici?'(rastgele üretildi)':'(elle belirlendi)'}\n\nNOT: Bu şifre tekrar GÖSTERİLMEZ. Kopyalayıp kullanıcıya iletin.`);
+      } catch(e){ setMsg('userMsg', 'Hata: ' + e.message, false); }
     }
-    function uretPollBasla(){ if (uretTimer) clearInterval(uretTimer); uretDurum(); uretTimer = setInterval(uretDurum, 4000); }
-    async function uretDurum(){
+    async function deleteUser(id){
+      if(!confirm('Kullanıcı silinsin mi?')) return;
+      try { await api(`/admin/api/kullanicilar/${id}`, {method:'DELETE'}); await loadAll(); }
+      catch(e){ setMsg('userMsg', 'Hata: ' + e.message, false); }
+    }
+    async function createUser(btn){
+      btn.disabled = true;
       try {
-        const d = await api('/admin/api/uret/durum');
-        $('uretLog').textContent = (d.son_satirlar||[]).join('\n');
-        $('uretLog').scrollTop = $('uretLog').scrollHeight;
-        $('uretBtn').disabled = d.calisiyor;
-        if (d.calisiyor) {
-          $('uretInfo').textContent = `Sürüyor: ${d.aralik}`;
-        } else {
-          if (uretTimer) { clearInterval(uretTimer); uretTimer = null; }
-          if (d.bitis_kodu !== null && d.aralik) {
-            $('uretInfo').innerHTML = d.bitis_kodu === 0
-              ? `<span class="ok">Tamamlandı: ${d.aralik}</span>`
-              : `<span class="bad">Hata (kod ${d.bitis_kodu}): ${d.aralik}</span>`;
-          }
-        }
-      } catch(e){ /* yetki/oturum */ }
+        await api('/admin/api/kullanicilar', {method:'POST', body:JSON.stringify({email:$('newEmail').value, sifre:$('newPass').value, tier:$('newTier').value, uyelik_bitis:toIso($('newEnd').value), is_admin:$('newAdmin').checked})});
+        ['newEmail','newPass','newEnd'].forEach(id=>$(id).value=''); $('newAdmin').checked=false; await loadAll();
+      } catch(e){ setMsg('userMsg', 'Hata: ' + e.message, false); }
+      finally { btn.disabled = false; }
+    }
+    async function sendNotif(btn){
+      btn.disabled = true;
+      try {
+        const body = {baslik:$('notifTitle').value, mesaj:$('notifMsg').value};
+        if ($('notifUser').value) body.kullanici_id = Number($('notifUser').value);
+        else if ($('notifTier').value) body.hedef_tier = $('notifTier').value;
+        const r = await api('/admin/api/bildirimler', {method:'POST', body:JSON.stringify(body)});
+        alert(`${r.adet} kullanıcıya gönderildi.`);
+      } catch(e){ alert('Hata: ' + e.message); }
+      finally { btn.disabled = false; }
     }
 
-    (async()=>{ if(token){ try{ const me=await api('/auth/ben'); if(me.is_admin){ showApp(me); await loadAll(); uretDurum(); } }catch(e){ localStorage.removeItem('hg_admin_token'); } } })();
+    // ── VIP Mesaj (1 Hafta Hediye VIP) ──
+    async function hediyeVip(btn){
+      const idv = parseInt($('hediyeUserId').value, 10);
+      if (!idv || idv < 1) { setMsg('hediyeMsg','Geçerli bir kullanıcı ID girin (pozitif sayı).', false); return; }
+      if (!confirm(`#${idv} kullanıcısına 1 hafta hediye VIP tanımlansın mı?`)) return;
+      btn.disabled = true;
+      try {
+        const r = await api(`/admin/api/kullanicilar/${idv}/hediye-vip`,
+          {method:'POST', body:JSON.stringify({idempotency_key: uuid()})});
+        setMsg('hediyeMsg',
+          `#${r.user_id}: eski bitiş ${dt(r.old_vip_until)} → yeni bitiş ${dt(r.new_vip_until)}` +
+          ` | bildirim: ${r.notification_created ? 'oluşturuldu' : '-'} | push: ${r.push_sent ? 'gönderildi' : 'gönderilemedi'}`, true);
+        $('hediyeUserId').value = '';
+        await loadAll();
+      } catch(e){ setMsg('hediyeMsg', 'Hata: ' + e.message, false); }
+      finally { btn.disabled = false; }
+    }
+
+    (async()=>{ if(token){ try{ const me=await api('/auth/ben'); if(me.is_admin){ showApp(me); await loadAll(); } }catch(e){ localStorage.removeItem('hg_admin_token'); } } })();
   </script>
 </body>
 </html>
