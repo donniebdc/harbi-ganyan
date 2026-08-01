@@ -12,7 +12,7 @@
 from __future__ import annotations
 from datetime import datetime, date as date_t
 from sqlalchemy import (String, Integer, Float, Boolean, ForeignKey, UniqueConstraint,
-                        Text, JSON, Date, DateTime, func)
+                        CheckConstraint, Index, Text, JSON, Date, DateTime, func, text)
 from sqlalchemy.dialects.postgresql import JSONB as PG_JSONB
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .db import Base
@@ -230,6 +230,11 @@ class Kullanici(Base):
     vip_until: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     vip_source: Mapped[str | None] = mapped_column(String(20), nullable=True)  # "google_play"
     is_admin: Mapped[bool] = mapped_column(Boolean, default=False)
+    # Rol: USER | EDITOR | ADMIN — yetkilendirme her istekte DB'den okunur.
+    # is_admin geriye uyumluluk icin korunur; senkron migration backfill'de yapilir
+    # (ORM event/otomatik senkron YOK).
+    rol: Mapped[str] = mapped_column(String(20), nullable=False, default="USER",
+                                     server_default="USER", index=True)
     aktif: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
     uyelikler: Mapped[list["Uyelik"]] = relationship(
@@ -240,6 +245,8 @@ class Kullanici(Base):
         back_populates="kullanici", cascade="all, delete-orphan")
     cihazlar: Mapped[list["UserDevice"]] = relationship(
         back_populates="kullanici", cascade="all, delete-orphan")
+    editor_profil: Mapped["EditorProfil | None"] = relationship(
+        back_populates="kullanici", cascade="all, delete-orphan", uselist=False)
 
 
 class Uyelik(Base):
@@ -343,3 +350,156 @@ class UserDevice(Base):
     revoked_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     revoke_reason: Mapped[str | None] = mapped_column(String(100), nullable=True)
     kullanici: Mapped[Kullanici] = relationship(back_populates="cihazlar")
+
+
+# ---------------- Editör Tahmin Sistemi (Faz 1) ----------------
+# Model tahminleri bu tablolara YAZILMAZ; MODEL kaynagi mevcut kosu tablolarindan
+# adapter ile okunur. Editor tahminleri kosu.id'ye FK ile BAGLANMAZ: --uret tam
+# yeniden yazimda kosu.id degistigi icin dogal anahtar (tarih, hipodrom, kno)
+# kullanilir — model pipeline'in delete/rewrite davranisi editor verisini etkileyemez.
+
+class TahminKaynak(Base):
+    """Tahmin kaynagi: MODEL (adapter, tek seed satiri) veya EDITOR (1:1 profil)."""
+    __tablename__ = "tahmin_kaynak"
+    __table_args__ = (
+        CheckConstraint("kaynak_tipi IN ('MODEL','EDITOR')",
+                        name="ck_tahmin_kaynak_tipi"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    kaynak_tipi: Mapped[str] = mapped_column(String(10))  # MODEL | EDITOR
+    kod: Mapped[str] = mapped_column(String(30), unique=True, index=True)
+    gorunen_ad: Mapped[str] = mapped_column(String(60))
+    aktif: Mapped[bool] = mapped_column(Boolean, default=True)
+    sira: Mapped[int] = mapped_column(Integer, default=0)
+    avatar_url: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    editor_profil: Mapped["EditorProfil | None"] = relationship(
+        back_populates="kaynak", uselist=False)
+    tahminler: Mapped[list["KosuTahmin"]] = relationship(back_populates="kaynak")
+
+
+class EditorProfil(Base):
+    """Editor kimligi — kullanici 1:1, kaynak 1:1."""
+    __tablename__ = "editor_profil"
+    id: Mapped[int] = mapped_column(primary_key=True)
+    kullanici_id: Mapped[int] = mapped_column(
+        ForeignKey("kullanici.id", ondelete="CASCADE"), unique=True)
+    kaynak_id: Mapped[int] = mapped_column(
+        ForeignKey("tahmin_kaynak.id", ondelete="RESTRICT"), unique=True)
+    public_ad: Mapped[str] = mapped_column(String(60))
+    bio: Mapped[str | None] = mapped_column(Text, nullable=True)
+    avatar_url: Mapped[str | None] = mapped_column(String(255), nullable=True)
+    aktif: Mapped[bool] = mapped_column(Boolean, default=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    kullanici: Mapped[Kullanici] = relationship(back_populates="editor_profil")
+    kaynak: Mapped[TahminKaynak] = relationship(back_populates="editor_profil")
+
+
+class KosuTahmin(Base):
+    """Editor tahmini (koşu basina). Kosu'ya FK YOK — dogal anahtar kullanilir.
+
+    Ayni (tarih, hipodrom, kno, kaynak) icin status != CANCELLED tek satir
+    (partial unique index). ana_at_no'nun secim listesinde olmasi API katmaninda
+    dogrulanir. version: optimistic locking."""
+    __tablename__ = "kosu_tahmin"
+    __table_args__ = (
+        CheckConstraint(
+            "status IN ('DRAFT','SUBMITTED','PUBLISHED','LOCKED','CANCELLED')",
+            name="ck_kosu_tahmin_status"),
+        Index("ix_kosu_tahmin_kaynak_status", "kaynak_id", "status"),
+        Index("ix_kosu_tahmin_dogal", "tarih", "hipodrom", "kno"),
+        Index("uq_kosu_tahmin_aktif", "tarih", "hipodrom", "kno", "kaynak_id",
+              unique=True,
+              postgresql_where=text("status <> 'CANCELLED'"),
+              sqlite_where=text("status <> 'CANCELLED'")),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    tarih: Mapped[date_t] = mapped_column(Date)
+    hipodrom: Mapped[str] = mapped_column(String(40))
+    kno: Mapped[int] = mapped_column(Integer)
+    kaynak_id: Mapped[int] = mapped_column(
+        ForeignKey("tahmin_kaynak.id", ondelete="RESTRICT"))
+    status: Mapped[str] = mapped_column(String(12), default="DRAFT")
+    ana_at_no: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    yorum: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    version: Mapped[int] = mapped_column(Integer, default=1)
+    created_by: Mapped[int] = mapped_column(
+        ForeignKey("kullanici.id", ondelete="RESTRICT"), index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    published_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True, index=True)
+    locked_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    content_hash: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    kaynak: Mapped[TahminKaynak] = relationship(back_populates="tahminler")
+    olusturan: Mapped[Kullanici] = relationship()
+    secimler: Mapped[list["KosuTahminSecim"]] = relationship(
+        back_populates="tahmin", cascade="all, delete-orphan",
+        order_by="KosuTahminSecim.sira")
+    revizyonlar: Mapped[list["KosuTahminRevizyon"]] = relationship(
+        back_populates="tahmin", cascade="all, delete-orphan")
+    sonuc: Mapped["KosuTahminSonuc | None"] = relationship(
+        back_populates="tahmin", cascade="all, delete-orphan", uselist=False)
+
+
+class KosuTahminSecim(Base):
+    """Tahmindeki at secimi (normalize satir)."""
+    __tablename__ = "kosu_tahmin_secim"
+    __table_args__ = (
+        UniqueConstraint("tahmin_id", "at_no"),
+        UniqueConstraint("tahmin_id", "sira"),
+        CheckConstraint("sira > 0", name="ck_kosu_tahmin_secim_sira"),
+        CheckConstraint("at_no > 0", name="ck_kosu_tahmin_secim_at_no"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    tahmin_id: Mapped[int] = mapped_column(
+        ForeignKey("kosu_tahmin.id", ondelete="CASCADE"), index=True)
+    at_no: Mapped[int] = mapped_column(Integer)
+    at_ad: Mapped[str] = mapped_column(String(60), default="")  # ad snapshot
+    sira: Mapped[int] = mapped_column(Integer)  # 1..n
+    ana_tercih: Mapped[bool] = mapped_column(Boolean, default=False)
+    etiket: Mapped[str | None] = mapped_column(String(20), nullable=True)  # TEK_TERCIH vb.
+    tahmin: Mapped[KosuTahmin] = relationship(back_populates="secimler")
+
+
+class KosuTahminRevizyon(Base):
+    """Yayin/degisiklik denetim izi (audit)."""
+    __tablename__ = "kosu_tahmin_revizyon"
+    __table_args__ = (
+        UniqueConstraint("tahmin_id", "version"),
+        CheckConstraint("version > 0", name="ck_kosu_tahmin_revizyon_version"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    tahmin_id: Mapped[int] = mapped_column(
+        ForeignKey("kosu_tahmin.id", ondelete="CASCADE"), index=True)
+    version: Mapped[int] = mapped_column(Integer)
+    snapshot: Mapped[dict] = mapped_column(JSON)  # {status, ana_at_no, yorum, secimler}
+    degistiren: Mapped[int] = mapped_column(
+        ForeignKey("kullanici.id", ondelete="RESTRICT"))
+    degisme_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    sebep: Mapped[str | None] = mapped_column(String(200), nullable=True)
+    tahmin: Mapped[KosuTahmin] = relationship(back_populates="revizyonlar")
+
+
+class KosuTahminSonuc(Base):
+    """Sonuc degerlendirmesi — kosu_sonuc'tan snapshot (reimport'tan bagimsiz)."""
+    __tablename__ = "kosu_tahmin_sonuc"
+    __table_args__ = (
+        CheckConstraint("kazanan_at_no > 0", name="ck_kosu_tahmin_sonuc_at_no"),
+        CheckConstraint("secim_adedi >= 0", name="ck_kosu_tahmin_sonuc_secim_adedi"),
+        CheckConstraint("kazanan_sira IS NULL OR kazanan_sira > 0",
+                        name="ck_kosu_tahmin_sonuc_kazanan_sira"),
+    )
+    id: Mapped[int] = mapped_column(primary_key=True)
+    tahmin_id: Mapped[int] = mapped_column(
+        ForeignKey("kosu_tahmin.id", ondelete="CASCADE"), unique=True)
+    kazanan_at_no: Mapped[int] = mapped_column(Integer)
+    kazanan_secimde: Mapped[bool] = mapped_column(Boolean)
+    ana_tercih_kazandi: Mapped[bool] = mapped_column(Boolean)
+    secim_adedi: Mapped[int] = mapped_column(Integer)
+    kazanan_sira: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    ganyan: Mapped[float | None] = mapped_column(Float, nullable=True)
+    evaluated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    updated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    tahmin: Mapped[KosuTahmin] = relationship(back_populates="sonuc")

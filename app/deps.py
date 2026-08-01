@@ -69,6 +69,14 @@ def require_admin(user: Kullanici = Depends(require_user)) -> Kullanici:
     return user
 
 
+def require_editor(user: Kullanici = Depends(require_user)) -> Kullanici:
+    """EDITOR veya ADMIN rolu gerekir. Rol her istekte DB'den okunur (token'daki
+    claim'e guvenilmez). is_admin=True geriye uyumluluk icin her zaman gecer."""
+    if getattr(user, "rol", None) not in ("EDITOR", "ADMIN") and not user.is_admin:
+        raise HTTPException(status_code=403, detail="Editör yetkisi gerekli.")
+    return user
+
+
 def tier_of(user: Kullanici | None) -> str:
     return user.tier if user else "standart"
 
