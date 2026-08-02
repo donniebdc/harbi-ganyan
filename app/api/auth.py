@@ -14,6 +14,7 @@ from ..models import Bildirim, DeviceToken, DogrulamaKodu, Kullanici, UserDevice
 from ..security import dogrula_sifre, hash_sifre, jwt_olustur, jwt_coz, kod_uret
 from ..mail import kod_gonder
 from ..deps import require_user
+from ..uyelik_servis import erisim_coz
 from ..telegram_notify import notify_new_user
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -127,6 +128,21 @@ class YenileReq(BaseModel):
     refresh_token: str
 
 
+class BenResponse(BaseModel):
+    # Mevcut alanlar — Android istemci uyumu (kırılmaz)
+    id: int
+    email: str
+    tier: str
+    vip_until: str | None
+    email_dogrulandi: bool
+    is_admin: bool
+    # Panel entegrasyonu için eklenen alanlar (Faz X2A)
+    rol: str
+    is_editor: bool
+    is_vip: bool
+    aktif: bool
+
+
 def _kod_olustur_gonder(db: Session, email: str) -> None:
     kod = kod_uret()
     db.add(DogrulamaKodu(
@@ -212,16 +228,21 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
     return _token_pair(user.id, user.tier)
 
 
-@router.get("/ben")
-def ben(user: Kullanici = Depends(require_user)):
-    return {
-        "id": user.id,
-        "email": user.email,
-        "tier": user.tier,
-        "vip_until": user.vip_until.isoformat() if user.vip_until else None,
-        "email_dogrulandi": user.email_dogrulandi,
-        "is_admin": user.is_admin,
-    }
+@router.get("/ben", response_model=BenResponse)
+def ben(user: Kullanici = Depends(require_user), db: Session = Depends(get_db)):
+    erisim = erisim_coz(db, user)
+    return BenResponse(
+        id=user.id,
+        email=user.email,
+        tier=user.tier,
+        vip_until=user.vip_until.isoformat() if user.vip_until else None,
+        email_dogrulandi=user.email_dogrulandi,
+        is_admin=user.is_admin,
+        rol=user.rol,
+        is_editor=user.rol in ("EDITOR", "ADMIN") or user.is_admin,
+        is_vip=erisim.is_vip,
+        aktif=user.aktif,
+    )
 
 
 @router.post("/cikis")
