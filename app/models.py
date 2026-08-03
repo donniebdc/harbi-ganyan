@@ -247,6 +247,8 @@ class Kullanici(Base):
         back_populates="kullanici", cascade="all, delete-orphan")
     editor_profil: Mapped["EditorProfil | None"] = relationship(
         back_populates="kullanici", cascade="all, delete-orphan", uselist=False)
+    auth_sessions: Mapped[list["AuthSession"]] = relationship(
+        back_populates="kullanici", cascade="all, delete-orphan")
 
 
 class Uyelik(Base):
@@ -503,3 +505,100 @@ class KosuTahminSonuc(Base):
     evaluated_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
     updated_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
     tahmin: Mapped[KosuTahmin] = relationship(back_populates="sonuc")
+
+
+# ─────────────────────────────────────────────────────────────────
+# FAZ X2F-1 — Stateful Refresh Session (altyapı, devreye alınmadı)
+# ─────────────────────────────────────────────────────────────────
+
+# İzin verilen client tipi değerleri
+AUTH_SESSION_CLIENT_TYPES = ("PANEL", "MOBILE", "API", "UNKNOWN")
+
+# İzin verilen revoke nedeni değerleri
+AUTH_SESSION_REVOKE_REASONS = (
+    "LOGOUT",
+    "ALL_DEVICES_LOGOUT",
+    "PASSWORD_CHANGED",
+    "USER_DISABLED",
+    "ROLE_CHANGED",
+    "TOKEN_REUSE",
+    "ADMIN_REVOKE",
+    "EXPIRED",
+    "SECURITY_EVENT",
+    "REPLACED",
+)
+
+
+class AuthSession(Base):
+    """Stateful refresh session — token rotation ve revoke altyapısı (Faz X2F-1).
+
+    UserDevice (fiziksel cihaz kimliği) ile karıştırılmamalı:
+    - UserDevice.device_id: mobil client'ın sağladığı string tanımlayıcı
+    - AuthSession.token_hash: server'ın ürettiği token'ın SHA-256 hash'i
+
+    Bu tablo X2F-2'de /auth/giris ve /auth/yenile entegrasyonuyla devreye girer.
+    Mevcut auth akışı bu fazda değiştirilmez.
+    """
+    __tablename__ = "auth_session"
+    __table_args__ = (
+        UniqueConstraint("jti", name="uq_auth_session_jti"),
+        UniqueConstraint("token_hash", name="uq_auth_session_token_hash"),
+        CheckConstraint(
+            "client_type IN ('PANEL','MOBILE','API','UNKNOWN')",
+            name="ck_auth_session_client_type",
+        ),
+        CheckConstraint(
+            "revoke_reason IN ("
+            "'LOGOUT','ALL_DEVICES_LOGOUT','PASSWORD_CHANGED','USER_DISABLED',"
+            "'ROLE_CHANGED','TOKEN_REUSE','ADMIN_REVOKE','EXPIRED',"
+            "'SECURITY_EVENT','REPLACED') OR revoke_reason IS NULL",
+            name="ck_auth_session_revoke_reason",
+        ),
+        Index("ix_auth_session_user_revoked", "user_id", "revoked_at"),
+        Index("ix_auth_session_family_revoked", "token_family_id", "revoked_at"),
+        Index("ix_auth_session_expires", "expires_at"),
+    )
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("kullanici.id", ondelete="CASCADE"), nullable=False, index=True)
+
+    # Token identity — ham token asla saklanmaz, yalnız SHA-256 hex hash
+    token_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    token_family_id: Mapped[str] = mapped_column(String(36), nullable=False, index=True)
+    jti: Mapped[str] = mapped_column(String(36), nullable=False)
+
+    # Yaşam döngüsü zaman damgaları (UTC-naive, proje standardı)
+    created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
+    expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    last_used_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    revoked_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+    # Revoke metadata
+    revoke_reason: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    # replaced_by_id: rotation zinciri — bu session'ı geçersiz kılan yeni session
+    replaced_by_id: Mapped[int | None] = mapped_column(
+        ForeignKey("auth_session.id", ondelete="SET NULL"), nullable=True)
+
+    # İstemci bağlamı — kişisel veri minimizasyonu: IP ve UA ham değil hash olarak saklanır
+    client_type: Mapped[str] = mapped_column(String(10), nullable=False, default="UNKNOWN")
+    device_name: Mapped[str | None] = mapped_column(String(100), nullable=True)
+    user_agent_hash: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    ip_hash: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    app_version: Mapped[str | None] = mapped_column(String(20), nullable=True)
+
+    # İlişkiler
+    kullanici: Mapped["Kullanici"] = relationship(back_populates="auth_sessions")
+    replaced_by: Mapped["AuthSession | None"] = relationship(
+        "AuthSession",
+        foreign_keys=[replaced_by_id],
+        primaryjoin="AuthSession.replaced_by_id == AuthSession.id",
+        uselist=False,
+    )
+
+    def __repr__(self) -> str:
+        return (
+            f"<AuthSession id={self.id} user_id={self.user_id} "
+            f"family={self.token_family_id[:8]}... revoked={self.revoked_at is not None}>"
+        )
+
