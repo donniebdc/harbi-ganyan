@@ -40,13 +40,71 @@ def jwt_olustur(kullanici_id: int, tier: str) -> str:
 
 
 def jwt_coz(token: str) -> dict | None | str:
-    """Geçerliyse payload dict, süresi dolmuşsa 'expired', geçersizse None döner."""
+    """Gecerliyse payload dict, suresi dolmussa 'expired', gecersizse None doner."""
     try:
         return jwt.decode(token, settings.jwt_secret, algorithms=[settings.jwt_alg])
     except jwt.ExpiredSignatureError:
         return "expired"
     except JWTError:
         return None
+
+
+# ---------------------------------------------------------------------------
+# Token V2 (Faz X2F-2) — kisa omurlu access JWT + ayri refresh opakligi
+# ---------------------------------------------------------------------------
+
+def jwt_olustur_v2_access(kullanici_id: int, tier: str) -> tuple[str, str, datetime]:
+    """V2 kisa omurlu access token uretir.
+
+    Returns:
+        (token_str, jti, expires_at_utc_naive) — UTC-naive datetime proje standarti.
+    Ham token loglanmaz; jti indexleme icin kullanilir.
+    """
+    now = datetime.now(timezone.utc)
+    exp = now + timedelta(minutes=settings.access_token_minutes)
+    jti = str(uuid.uuid4())
+    payload = {
+        "sub": str(kullanici_id),
+        "type": "access",
+        "tier": tier,
+        "jti": jti,
+        "iat": now,
+        "exp": exp,
+        "iss": settings.token_issuer,
+        "aud": settings.token_audience,
+    }
+    token = jwt.encode(payload, settings.jwt_secret, algorithm=settings.jwt_alg)
+    # UTC-naive: DB standarti ile tutarlilik
+    return token, jti, exp.replace(tzinfo=None)
+
+
+def jwt_coz_v2_access(token: str) -> dict | None | str:
+    """V2 access token dogrula. type=access claim zorunlu.
+
+    Returns:
+        payload dict | 'expired' | None
+    """
+    try:
+        payload = jwt.decode(
+            token, settings.jwt_secret, algorithms=[settings.jwt_alg],
+            audience=settings.token_audience,
+        )
+        if payload.get("type") != "access":
+            return None
+        return payload
+    except jwt.ExpiredSignatureError:
+        return "expired"
+    except JWTError:
+        return None
+
+
+def refresh_token_v2_olustur() -> str:
+    """Yuksek entropili opak refresh token (UUID4).
+
+    Ham token yalniz client'a gonderilir; DB'ye ASLA kaydedilmez.
+    DB'ye hash_token() sonucu yazilir.
+    """
+    return str(uuid.uuid4())
 
 
 def kod_uret() -> str:

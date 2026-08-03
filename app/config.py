@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Uygulama ayarları. Lokal geliştirme: SQLite. Üretim (VPS): PostgreSQL (HG_DATABASE_URL)."""
+"""Uygulama ayarlari. Lokal gelistirme: SQLite. Uretim (VPS): PostgreSQL (HG_DATABASE_URL)."""
 from __future__ import annotations
 from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -9,14 +9,13 @@ DEV_JWT_SECRET = "dev-secret-change-me"
 
 
 class Settings(BaseSettings):
-    # env_file MUTLAK yol: cron/manuel script'ler farklı cwd'den (ör. engine kökü)
-    # çalıştığında bile DAİMA backend/.env yüklensin. Göreli ".env" olursa cwd'de
-    # .env bulunmaz -> sessizce SQLite varsayılanına düşer (postgres yerine).
+    # env_file MUTLAK yol: cron/manuel script'ler farkli cwd'den (or. engine kokunden)
+    # calistiginda bile DAIMA backend/.env yuklenmesi icin.
     model_config = SettingsConfigDict(
         env_prefix="HG_", env_file=str(BACKEND_DIR / ".env"), extra="ignore")
 
-    # Lokal varsayılan: dosya tabanlı SQLite (sunucu gerektirmez).
-    # Üretim: HG_DATABASE_URL=postgresql+psycopg2://user:pass@host/db
+    # Lokal varsayilan: dosya tabanli SQLite (sunucu gerektirmez).
+    # Uretim: HG_DATABASE_URL=postgresql+psycopg2://user:pass@host/db
     database_url: str = f"sqlite:///{BACKEND_DIR / 'harbiganyan.db'}"
 
     # Auth / JWT
@@ -24,16 +23,24 @@ class Settings(BaseSettings):
     jwt_secret: str = DEV_JWT_SECRET
     jwt_alg: str = "HS256"
     cors_origins: str = "*"
-    jwt_expire_min: int = 60 * 24 * 90  # 90 gün (her güncellemede yeniden giriş istememesi için)
+    jwt_expire_min: int = 60 * 24 * 90  # 90 gun (her guncellemede yeniden giris istememesi icin)
 
-    # SMTP (doğrulama kodu) — MVP'de boşsa kod konsola yazılır
+    # Token V2 — feature flag ve TTL ayarlari (Faz X2F-2)
+    # HG_AUTH_TOKEN_V2_ENABLED=true ile etkinlestirilir; varsayilan KAPALI.
+    auth_token_v2_enabled: bool = False
+    access_token_minutes: int = 15        # V2 access token omru (dakika)
+    refresh_token_days: int = 30          # V2 refresh token omru (gun)
+    token_issuer: str = "harbiganyan"     # JWT iss claim
+    token_audience: str = "harbiganyan-app"  # JWT aud claim
+
+    # SMTP (dogrulama kodu) - MVP'de bossa kod konsola yazilir
     smtp_host: str = ""
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_pass: str = ""
     smtp_from: str = "Harbi Ganyan <no-reply@harbiganyan.app>"
 
-    # İçerik
+    # Icerik
     gecmis_gun: int = 60  # "Gecmis Analizler" penceresi
 
     # FCM push (Firebase). firebase_sa = service-account JSON yolu (gizli, git'e girmez).
@@ -61,6 +68,11 @@ class Settings(BaseSettings):
         origins = [o.strip() for o in self.cors_origins.split(",") if o.strip()]
         if not origins or "*" in origins:
             raise RuntimeError("HG_CORS_ORIGINS must not be '*' in production.")
+        # Token V2 TTL sanilik degerler reddedilir
+        if self.access_token_minutes <= 0:
+            raise RuntimeError("HG_ACCESS_TOKEN_MINUTES must be positive.")
+        if self.refresh_token_days <= 0:
+            raise RuntimeError("HG_REFRESH_TOKEN_DAYS must be positive.")
 
 
 settings = Settings()

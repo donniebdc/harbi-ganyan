@@ -5,17 +5,22 @@ import re
 from collections import defaultdict, deque
 from datetime import datetime, timedelta
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, field_validator
 from sqlalchemy.orm import Session
 
 from ..db import get_db
 from ..models import Bildirim, DeviceToken, DogrulamaKodu, Kullanici, UserDevice
-from ..security import dogrula_sifre, hash_sifre, jwt_olustur, jwt_coz, kod_uret
+from ..security import (
+    dogrula_sifre, hash_sifre, jwt_olustur, jwt_coz, kod_uret,
+    jwt_olustur_v2_access, refresh_token_v2_olustur,
+)
 from ..mail import kod_gonder
 from ..deps import require_user
 from ..uyelik_servis import erisim_coz
 from ..telegram_notify import notify_new_user
+from ..config import settings
+from .. import auth_session_service as session_svc
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 KOD_GECERLILIK_DK = 15
@@ -44,7 +49,7 @@ def _rate_limit(action: str, email: str, now: datetime | None = None) -> None:
 
 def _cihaz_kaydet(db: Session, user_id: int, cihaz_id: str | None,
                   platform: str = "android", app_version: str | None = None) -> None:
-    """Cihazı kaydet/güncelle. Aktif cihaz sayısı MAX_AKTIF_CIHAZ'ı geçerse en eskiyi revoke et."""
+    """Cihazi kaydet/guncelle. Aktif cihaz sayisi MAX_AKTIF_CIHAZ'i gecerse en eskiyi revoke et."""
     if not cihaz_id:
         return
     now = datetime.utcnow()
@@ -61,7 +66,6 @@ def _cihaz_kaydet(db: Session, user_id: int, cihaz_id: str | None,
         mevcut.app_version = app_version or mevcut.app_version
         mevcut.platform = platform
     else:
-        # Yeni cihaz: limit kontrolü
         aktif_cihazlar = (
             db.query(UserDevice)
             .filter_by(user_id=user_id, is_active=True)
@@ -69,7 +73,6 @@ def _cihaz_kaydet(db: Session, user_id: int, cihaz_id: str | None,
             .all()
         )
         if len(aktif_cihazlar) >= MAX_AKTIF_CIHAZ:
-            # En eski cihazı revoke et
             eski = aktif_cihazlar[0]
             eski.is_active = False
             eski.revoked_at = now
@@ -83,6 +86,16 @@ def _cihaz_kaydet(db: Session, user_id: int, cihaz_id: str | None,
             last_seen_at=now,
             is_active=True,
         ))
+
+
+def _detect_client_type(request: Request) -> str:
+    """User-Agent'tan client tipini tahmin et (metadata amacli, guvenlik karari degil)."""
+    ua = (request.headers.get("user-agent") or "").lower()
+    if "dart" in ua or "flutter" in ua or "harbi" in ua:
+        return "MOBILE"
+    if "axios" in ua or "next" in ua or "panel" in ua:
+        return "PANEL"
+    return "UNKNOWN"
 
 
 class KayitReq(BaseModel):
@@ -128,15 +141,19 @@ class YenileReq(BaseModel):
     refresh_token: str
 
 
+class CikisReq(BaseModel):
+    refresh_token: str | None = None
+
+
 class BenResponse(BaseModel):
-    # Mevcut alanlar — Android istemci uyumu (kırılmaz)
+    # Mevcut alanlar — Android istemci uyumu (kirilmaz)
     id: int
     email: str
     tier: str
     vip_until: str | None
     email_dogrulandi: bool
     is_admin: bool
-    # Panel entegrasyonu için eklenen alanlar (Faz X2A)
+    # Panel entegrasyonu icin eklenen alanlar (Faz X2A)
     rol: str
     is_editor: bool
     is_vip: bool
@@ -155,9 +172,50 @@ def _kod_olustur_gonder(db: Session, email: str) -> None:
 
 
 def _token_pair(user_id: int, tier: str) -> dict:
-    """Access token + refresh token (aynı JWT, 90 gün) döndür."""
+    """Legacy: Access token + refresh token (ayni JWT, 90 gun). V2 kapali."""
     token = jwt_olustur(user_id, tier)
     return {"token": token, "refresh_token": token, "tier": tier}
+
+
+def _token_pair_v2(user_id: int, tier: str, db: Session,
+                   client_type: str = "UNKNOWN",
+                   device_name: str | None = None,
+                   user_agent_hash: str | None = None,
+                   ip_hash: str | None = None,
+                   app_version: str | None = None) -> dict:
+    """V2: Kisa omurlu access JWT + ayri opak refresh token + stateful session."""
+    from datetime import datetime as _dt, timedelta as _td
+    import uuid as _uuid
+
+    access_token, _jti_a, _exp_a = jwt_olustur_v2_access(user_id, tier)
+    raw_refresh = refresh_token_v2_olustur()
+    refresh_jti = str(_uuid.uuid4())
+    token_family = str(_uuid.uuid4())
+    expires_at = _dt.utcnow() + _td(days=settings.refresh_token_days)
+
+    session_svc.create_refresh_session(
+        db,
+        user_id=user_id,
+        raw_token=raw_refresh,
+        jti=refresh_jti,
+        token_family_id=token_family,
+        expires_at=expires_at,
+        client_type=client_type,
+        device_name=device_name,
+        user_agent_hash=user_agent_hash,
+        ip_hash=ip_hash,
+        app_version=app_version,
+    )
+    db.commit()
+    return {
+        "token": access_token,
+        "access_token": access_token,
+        "refresh_token": raw_refresh,
+        "tier": tier,
+        "token_type": "bearer",
+        "expires_in": settings.access_token_minutes * 60,
+        "refresh_expires_in": settings.refresh_token_days * 86400,
+    }
 
 
 @router.post("/kayit")
@@ -198,7 +256,7 @@ def dogrula(req: DogrulaReq, db: Session = Depends(get_db)):
 
 
 @router.post("/giris")
-def giris(req: GirisReq, db: Session = Depends(get_db)):
+def giris(req: GirisReq, request: Request, db: Session = Depends(get_db)):
     email = req.email.strip().lower()
     _rate_limit("giris", email)
     u = db.query(Kullanici).filter_by(email=email).one_or_none()
@@ -210,22 +268,100 @@ def giris(req: GirisReq, db: Session = Depends(get_db)):
         raise HTTPException(status_code=403, detail="Hesap pasif.")
     _cihaz_kaydet(db, u.id, req.cihaz_id, app_version=req.app_version)
     db.commit()
+
+    if settings.auth_token_v2_enabled:
+        import hashlib as _hl
+        client_type = _detect_client_type(request)
+        raw_ip = request.client.host if request.client else ""
+        ip_h = _hl.sha256(raw_ip.encode()).hexdigest() if raw_ip else None
+        ua = request.headers.get("user-agent") or ""
+        ua_h = _hl.sha256(ua.encode()).hexdigest() if ua else None
+        return _token_pair_v2(
+            u.id, u.tier, db,
+            client_type=client_type,
+            device_name=req.device_name,
+            user_agent_hash=ua_h,
+            ip_hash=ip_h,
+            app_version=req.app_version,
+        )
     return _token_pair(u.id, u.tier)
 
 
 @router.post("/yenile")
 def yenile(req: YenileReq, db: Session = Depends(get_db)):
-    """Refresh token ile yeni access token al. Tier DB'den güncellenir."""
-    payload = jwt_coz(req.refresh_token)
-    if not payload:
-        raise HTTPException(status_code=401, detail="Gecersiz refresh token.")
-    try:
-        user = db.get(Kullanici, int(payload["sub"]))
-    except (TypeError, ValueError):
+    """Refresh token ile yeni token cifti al."""
+    if not settings.auth_token_v2_enabled:
+        # Legacy: JWT decode + yeni JWT (V2 kapali)
+        payload = jwt_coz(req.refresh_token)
+        if not payload:
+            raise HTTPException(status_code=401, detail="Gecersiz refresh token.")
+        try:
+            user = db.get(Kullanici, int(payload["sub"]))
+        except (TypeError, ValueError):
+            raise HTTPException(status_code=401, detail="Gecersiz token.")
+        if not user or not user.aktif:
+            raise HTTPException(status_code=401, detail="Kullanici bulunamadi.")
+        return _token_pair(user.id, user.tier)
+
+    # V2: Stateful rotation
+    # 1. Reuse detection: revoked token mu?
+    reuse_info = session_svc.detect_and_handle_reuse(db, req.refresh_token)
+    if reuse_info and reuse_info.get("reused"):
+        db.commit()
         raise HTTPException(status_code=401, detail="Gecersiz token.")
+
+    # 2. Aktif session bul
+    session = session_svc.get_session_by_token_hash(db, req.refresh_token)
+    if not session:
+        raise HTTPException(status_code=401, detail="Gecersiz token.")
+    if session.revoked_at is not None:
+        raise HTTPException(status_code=401, detail="Token iptal edilmis.")
+
+    from datetime import datetime as _dt
+    if session.expires_at < _dt.utcnow():
+        raise HTTPException(status_code=401, detail="Token suresi dolmus.")
+
+    # 3. Kullanici kontrolu
+    user = db.get(Kullanici, session.user_id)
     if not user or not user.aktif:
-        raise HTTPException(status_code=401, detail="Kullanici bulunamadi.")
-    return _token_pair(user.id, user.tier)
+        session_svc.revoke_session(db, session.id, reason="USER_DISABLED")
+        db.commit()
+        raise HTTPException(status_code=401, detail="Kullanici bulunamadi veya pasif.")
+
+    # 4. Yeni tokenlar uret
+    import uuid as _uuid
+    from datetime import timedelta as _td
+    new_raw_refresh = refresh_token_v2_olustur()
+    new_access_token, new_jti_a, new_exp_a = jwt_olustur_v2_access(user.id, user.tier)
+    new_refresh_jti = str(_uuid.uuid4())
+    new_expires_at = _dt.utcnow() + _td(days=settings.refresh_token_days)
+
+    # 5. Atomik rotation
+    result = session_svc.rotate_refresh_session(
+        db,
+        old_session_id=session.id,
+        new_raw_token=new_raw_refresh,
+        new_jti=new_refresh_jti,
+        new_expires_at=new_expires_at,
+        client_type=session.client_type,
+        device_name=session.device_name,
+        user_agent_hash=session.user_agent_hash,
+        ip_hash=session.ip_hash,
+        app_version=session.app_version,
+    )
+    if result is None:
+        raise HTTPException(status_code=409, detail="Rotation basarisiz. Tekrar giris gerekli.")
+    db.commit()
+
+    return {
+        "token": new_access_token,
+        "access_token": new_access_token,
+        "refresh_token": new_raw_refresh,
+        "tier": user.tier,
+        "token_type": "bearer",
+        "expires_in": settings.access_token_minutes * 60,
+        "refresh_expires_in": settings.refresh_token_days * 86400,
+    }
 
 
 @router.get("/ben", response_model=BenResponse)
@@ -246,15 +382,24 @@ def ben(user: Kullanici = Depends(require_user), db: Session = Depends(get_db)):
 
 
 @router.post("/cikis")
-def cikis(user: Kullanici = Depends(require_user)):
-    """Çıkış — server tarafında ek işlem yok (stateless JWT). Loglama amaçlı."""
+def cikis(
+    req: CikisReq = None,
+    user: Kullanici = Depends(require_user),
+    db: Session = Depends(get_db),
+):
+    """Cikis. V2 aktifse refresh session revoke edilir."""
+    if settings.auth_token_v2_enabled and req and req.refresh_token:
+        session = session_svc.get_session_by_token_hash(db, req.refresh_token)
+        if session and session.user_id == user.id and session.revoked_at is None:
+            session_svc.revoke_session(db, session.id, reason="LOGOUT")
+            db.commit()
     return {"durum": "cikis"}
 
 
 @router.post("/mock-yukselt")
 def mock_yukselt(req: YukseltReq, user: Kullanici = Depends(require_user),
                  db: Session = Depends(get_db)):
-    """Eski test endpoint'i. Uretimde kullanici kendi uyeligini yukseltemez."""
+    """Eski test endpointi. Uretimde kullanici kendi uyeligini yukseltemez."""
     raise HTTPException(status_code=410, detail="Uyelik islemleri admin panelinden yonetilir.")
 
 
