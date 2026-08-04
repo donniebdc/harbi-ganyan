@@ -306,7 +306,7 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
     # V2: Stateful rotation
     # 1. Reuse detection: revoked token mu?
     reuse_info = session_svc.detect_and_handle_reuse(db, req.refresh_token)
-    if reuse_info and reuse_info.get("reused"):
+    if reuse_info is not None:
         db.commit()
         raise HTTPException(status_code=401, detail="Gecersiz token.")
 

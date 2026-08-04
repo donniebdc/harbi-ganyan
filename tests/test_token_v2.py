@@ -582,3 +582,106 @@ class TestRegression:
         assert resp.status_code == 200
         data = resp.json()
         assert "token" in data
+
+
+class TestFamilyRevokeBugRegression:
+    """X2F-4: Family revoke commit bug fix.
+
+    Kök neden: detect_and_handle_reuse() dict'inde 'reused' anahtarı yoktu;
+    yenile endpoint'indeki reuse_info.get('reused') her zaman None donuyordu,
+    db.commit() calismiyor, transaction rollback ile family revoke kayboluyordu.
+
+    Duzeltme: if reuse_info is not None: db.commit(); raise 401
+    """
+
+    def test_family_revoke_commits_on_reuse(self, client, test_user):
+        """41. Reuse tespitinde token family revoke commit edilir."""
+        import pytest
+
+        # Sadece V2 modunda anlamlı — flag True ise çalış
+        from app.config import settings
+        if not settings.auth_token_v2_enabled:
+            pytest.skip("V2 flag kapalı")
+
+        # Login
+        r1 = client.post("/auth/giris", json={
+            "email": test_user.email,
+            "sifre": "testpassword123",
+            "cihaz_id": "reuse-test-a",
+        })
+        assert r1.status_code == 200
+        token1 = r1.json()["refresh_token"]
+
+        # İlk rotation — token1 → token2
+        r2 = client.post("/auth/yenile", json={"refresh_token": token1})
+        assert r2.status_code == 200
+        token2 = r2.json()["refresh_token"]
+
+        # Eski token1 yeniden kullanıldı → family revoke tetiklenir, commit edilir
+        r3 = client.post("/auth/yenile", json={"refresh_token": token1})
+        assert r3.status_code == 401, f"Reuse edilmiş token kabul edildi: {r3.json()}"
+
+        # token2 de artık revoke edilmiş olmalı (same family)
+        r4 = client.post("/auth/yenile", json={"refresh_token": token2})
+        assert r4.status_code == 401, f"Family revoke commit edilmedi — token2 hâlâ geçerli: {r4.json()}"
+
+    def test_family_revoke_does_not_affect_other_families(self, client, test_user):
+        """42. Family revoke başka kullanıcı/family'ye dokunmaz."""
+        import pytest
+        from app.config import settings
+        if not settings.auth_token_v2_enabled:
+            pytest.skip("V2 flag kapalı")
+
+        # Login 1 — family A
+        r_a = client.post("/auth/giris", json={
+            "email": test_user.email, "sifre": "testpassword123", "cihaz_id": "family-a"
+        })
+        assert r_a.status_code == 200
+        token_a1 = r_a.json()["refresh_token"]
+
+        # Login 2 (yeni oturum, yeni family) — family B
+        r_b = client.post("/auth/giris", json={
+            "email": test_user.email, "sifre": "testpassword123", "cihaz_id": "family-b"
+        })
+        assert r_b.status_code == 200
+        token_b1 = r_b.json()["refresh_token"]
+
+        # Family A'yı rotate et
+        r_a2 = client.post("/auth/yenile", json={"refresh_token": token_a1})
+        assert r_a2.status_code == 200
+        token_a2 = r_a2.json()["refresh_token"]
+
+        # Family A'da reuse tetikle (token_a1 tekrar kullan)
+        r_reuse = client.post("/auth/yenile", json={"refresh_token": token_a1})
+        assert r_reuse.status_code == 401
+
+        # token_a2 (family A) revoke olmalı
+        r_a2_check = client.post("/auth/yenile", json={"refresh_token": token_a2})
+        assert r_a2_check.status_code == 401, "Family A token_a2 revoke edilmedi"
+
+        # token_b1 (family B) hâlâ geçerli olmalı
+        r_b_check = client.post("/auth/yenile", json={"refresh_token": token_b1})
+        assert r_b_check.status_code == 200, f"Family B yanlışlıkla revoke edildi: {r_b_check.json()}"
+
+    def test_normal_rotation_not_affected(self, client, test_user):
+        """43. Normal rotation (reuse yok) family revoke tetiklememeli."""
+        import pytest
+        from app.config import settings
+        if not settings.auth_token_v2_enabled:
+            pytest.skip("V2 flag kapalı")
+
+        # Login
+        r1 = client.post("/auth/giris", json={
+            "email": test_user.email, "sifre": "testpassword123", "cihaz_id": "normal-rot"
+        })
+        assert r1.status_code == 200
+        token1 = r1.json()["refresh_token"]
+
+        # Normal rotation 1
+        r2 = client.post("/auth/yenile", json={"refresh_token": token1})
+        assert r2.status_code == 200
+        token2 = r2.json()["refresh_token"]
+
+        # Normal rotation 2
+        r3 = client.post("/auth/yenile", json={"refresh_token": token2})
+        assert r3.status_code == 200, f"Normal rotation bozuldu: {r3.json()}"
