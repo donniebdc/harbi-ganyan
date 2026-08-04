@@ -22,6 +22,15 @@ from ..telegram_notify import notify_new_user
 from ..config import settings
 from .. import auth_session_service as session_svc
 
+
+def is_token_v2_enabled_for_user(user_id) -> bool:
+    if settings.auth_token_v2_enabled:
+        return True
+    if user_id is None:
+        return False
+    return user_id in settings.token_v2_allowlist
+
+
 router = APIRouter(prefix="/auth", tags=["auth"])
 KOD_GECERLILIK_DK = 15
 _EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
@@ -269,7 +278,7 @@ def giris(req: GirisReq, request: Request, db: Session = Depends(get_db)):
     _cihaz_kaydet(db, u.id, req.cihaz_id, app_version=req.app_version)
     db.commit()
 
-    if settings.auth_token_v2_enabled:
+    if is_token_v2_enabled_for_user(u.id):
         import hashlib as _hl
         client_type = _detect_client_type(request)
         raw_ip = request.client.host if request.client else ""
@@ -289,9 +298,24 @@ def giris(req: GirisReq, request: Request, db: Session = Depends(get_db)):
 
 @router.post("/yenile")
 def yenile(req: YenileReq, db: Session = Depends(get_db)):
-    """Refresh token ile yeni token cifti al."""
-    if not settings.auth_token_v2_enabled:
-        # Legacy: JWT decode + yeni JWT (V2 kapali)
+    """Refresh token ile yeni token cifti al.
+
+    Session-first detection: V2 session varsa (hash lookup) V2 path; yoksa legacy JWT path.
+    Canary kullanicilari allowlist kararindan bagimsiz rotate edebilir.
+    """
+    # 1. Reuse detection (JWT tokenlar icin no-op — hash eslesmesi olmaz)
+    reuse_info = session_svc.detect_and_handle_reuse(db, req.refresh_token)
+    if reuse_info is not None:
+        db.commit()
+        raise HTTPException(status_code=401, detail="Gecersiz token.")
+
+    # 2. V2 session ara (tur bagımsız hash lookup)
+    session = session_svc.get_session_by_token_hash(db, req.refresh_token)
+
+    if session is None:
+        # V2 session yok: legacy JWT path
+        if settings.auth_token_v2_enabled:
+            raise HTTPException(status_code=401, detail="Gecersiz token.")
         payload = jwt_coz(req.refresh_token)
         if not payload:
             raise HTTPException(status_code=401, detail="Gecersiz refresh token.")
@@ -303,17 +327,7 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
             raise HTTPException(status_code=401, detail="Kullanici bulunamadi.")
         return _token_pair(user.id, user.tier)
 
-    # V2: Stateful rotation
-    # 1. Reuse detection: revoked token mu?
-    reuse_info = session_svc.detect_and_handle_reuse(db, req.refresh_token)
-    if reuse_info is not None:
-        db.commit()
-        raise HTTPException(status_code=401, detail="Gecersiz token.")
-
-    # 2. Aktif session bul
-    session = session_svc.get_session_by_token_hash(db, req.refresh_token)
-    if not session:
-        raise HTTPException(status_code=401, detail="Gecersiz token.")
+    # V2 path: aktif session bulundu
     if session.revoked_at is not None:
         raise HTTPException(status_code=401, detail="Token iptal edilmis.")
 
@@ -321,14 +335,12 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
     if session.expires_at < _dt.utcnow():
         raise HTTPException(status_code=401, detail="Token suresi dolmus.")
 
-    # 3. Kullanici kontrolu
     user = db.get(Kullanici, session.user_id)
     if not user or not user.aktif:
         session_svc.revoke_session(db, session.id, reason="USER_DISABLED")
         db.commit()
         raise HTTPException(status_code=401, detail="Kullanici bulunamadi veya pasif.")
 
-    # 4. Yeni tokenlar uret
     import uuid as _uuid
     from datetime import timedelta as _td
     new_raw_refresh = refresh_token_v2_olustur()
@@ -336,7 +348,6 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
     new_refresh_jti = str(_uuid.uuid4())
     new_expires_at = _dt.utcnow() + _td(days=settings.refresh_token_days)
 
-    # 5. Atomik rotation
     result = session_svc.rotate_refresh_session(
         db,
         old_session_id=session.id,
@@ -363,7 +374,6 @@ def yenile(req: YenileReq, db: Session = Depends(get_db)):
         "refresh_expires_in": settings.refresh_token_days * 86400,
     }
 
-
 @router.get("/ben", response_model=BenResponse)
 def ben(user: Kullanici = Depends(require_user), db: Session = Depends(get_db)):
     erisim = erisim_coz(db, user)
@@ -388,7 +398,8 @@ def cikis(
     db: Session = Depends(get_db),
 ):
     """Cikis. V2 aktifse refresh session revoke edilir."""
-    if settings.auth_token_v2_enabled and req and req.refresh_token:
+    # V2 session allowlist bagimsiz revoke edilir
+    if req and req.refresh_token:
         session = session_svc.get_session_by_token_hash(db, req.refresh_token)
         if session and session.user_id == user.id and session.revoked_at is None:
             session_svc.revoke_session(db, session.id, reason="LOGOUT")

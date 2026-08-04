@@ -28,6 +28,9 @@ class Settings(BaseSettings):
     # Token V2 — feature flag ve TTL ayarlari (Faz X2F-2)
     # HG_AUTH_TOKEN_V2_ENABLED=true ile etkinlestirilir; varsayilan KAPALI.
     auth_token_v2_enabled: bool = False
+    # Virgülle ayrilmis pozitif integer kullanici ID leri. Bos->canary kapali.
+    # Global flag false iken yalnizca bu IDler V2 alir. Fail-closed parser.
+    auth_token_v2_allowlist_user_ids: str = ""
     access_token_minutes: int = 15        # V2 access token omru (dakika)
     refresh_token_days: int = 30          # V2 refresh token omru (gun)
     token_issuer: str = "harbiganyan"     # JWT iss claim
@@ -55,6 +58,29 @@ class Settings(BaseSettings):
     telegram_bot_token: str = ""
     telegram_chat_id: str = ""
     telegram_env_label: str = "PRODUCTION"
+
+    @property
+    def token_v2_allowlist(self) -> frozenset:
+        import logging as _l
+        _log = _l.getLogger(__name__)
+        raw = self.auth_token_v2_allowlist_user_ids or ""
+        if not raw.strip():
+            return frozenset()
+        ids: set[int] = set()
+        for part in raw.split(","):
+            part = part.strip()
+            if not part:
+                continue
+            try:
+                uid = int(part)
+                if uid > 0:
+                    ids.add(uid)
+                else:
+                    _log.warning('Token V2 allowlist: gecersiz ID atlandı')
+            except (ValueError, TypeError):
+                _log.warning('Token V2 allowlist: gecersiz format atlandı')
+        _log.info('Token V2 allowlist: %d kullanici yuklendi', len(ids))
+        return frozenset(ids)
 
     @property
     def production(self) -> bool:
