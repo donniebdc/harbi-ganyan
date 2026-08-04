@@ -114,3 +114,72 @@ class BenResponseContractTests(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
+
+
+class AdminRoleContractFixTests(unittest.TestCase):
+    """X2F-4: is_admin=bool(user.is_admin) kaldırıldı — rol string kolonu öncelikli.
+
+    Regresyon: rol=ADMIN, legacy is_admin=False → is_admin=True olmali.
+    """
+
+    def _call_ben(self, user, is_vip=False):
+        from app.api.auth import ben
+        db = MagicMock()
+        with patch("app.api.auth.erisim_coz", return_value=_FakeErisim(is_vip)):
+            result = ben(user=user, db=db)
+        return result
+
+    def test_admin_rol_legacy_false_is_admin_true(self):
+        """Kök neden: rol=ADMIN ama legacy is_admin=False → is_admin=True olmalı."""
+        u = _make_user(rol="ADMIN", is_admin=False)
+        r = self._call_ben(u)
+        self.assertTrue(r.is_admin, "rol=ADMIN => is_admin=True (legacy bool irrelevant)")
+
+    def test_admin_rol_legacy_true_is_admin_true(self):
+        """Geriye uyumluluk: rol=ADMIN ve is_admin=True → is_admin=True (değişmez)."""
+        u = _make_user(rol="ADMIN", is_admin=True)
+        r = self._call_ben(u)
+        self.assertTrue(r.is_admin)
+
+    def test_editor_rol_is_admin_false(self):
+        """EDITOR rol → is_admin=False."""
+        u = _make_user(rol="EDITOR", is_admin=False)
+        r = self._call_ben(u)
+        self.assertFalse(r.is_admin)
+
+    def test_user_rol_is_admin_false(self):
+        """USER rol → is_admin=False."""
+        u = _make_user(rol="USER", is_admin=False)
+        r = self._call_ben(u)
+        self.assertFalse(r.is_admin)
+
+    def test_admin_rol_is_editor_true(self):
+        """ADMIN rol → is_editor=True (ADMIN editör yetkisi de içerir)."""
+        u = _make_user(rol="ADMIN", is_admin=False)
+        r = self._call_ben(u)
+        self.assertTrue(r.is_editor)
+
+    def test_editor_rol_is_editor_true(self):
+        u = _make_user(rol="EDITOR")
+        r = self._call_ben(u)
+        self.assertTrue(r.is_editor)
+        self.assertFalse(r.is_admin)
+
+    def test_user_rol_is_editor_false(self):
+        u = _make_user(rol="USER")
+        r = self._call_ben(u)
+        self.assertFalse(r.is_editor)
+        self.assertFalse(r.is_admin)
+
+    def test_admin_rol_korunur(self):
+        """rol alanı değişmeden döner."""
+        u = _make_user(rol="ADMIN", is_admin=False)
+        r = self._call_ben(u)
+        self.assertEqual(r.rol, "ADMIN")
+
+    def test_legacy_admin_bool_only_is_still_editor(self):
+        """Legacy: rol=USER ama is_admin=True → is_editor=True, is_admin=True (geriye uyumluluk)."""
+        u = _make_user(rol="USER", is_admin=True)
+        r = self._call_ben(u)
+        self.assertTrue(r.is_editor)
+        self.assertTrue(r.is_admin)

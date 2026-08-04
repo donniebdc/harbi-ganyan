@@ -373,7 +373,7 @@ def ben(user: Kullanici = Depends(require_user), db: Session = Depends(get_db)):
         tier=user.tier,
         vip_until=user.vip_until.isoformat() if user.vip_until else None,
         email_dogrulandi=user.email_dogrulandi,
-        is_admin=user.is_admin,
+        is_admin=(user.rol == "ADMIN") or bool(user.is_admin),
         rol=user.rol,
         is_editor=user.rol in ("EDITOR", "ADMIN") or user.is_admin,
         is_vip=erisim.is_vip,
