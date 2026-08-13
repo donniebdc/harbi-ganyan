@@ -1,0 +1,44 @@
+{
+  "A": {
+    "pct": 75.43969849246231,
+    "avg_at": 3.8165829145728645,
+    "toplam": 1592,
+    "isabetli": 1201,
+    "hata": 0,
+    "toplam_adet": 6076
+  },
+  "B": {
+    "pct": 86.49497487437185,
+    "avg_at": 5.086055276381909,
+    "toplam": 1592,
+    "isabetli": 1377,
+    "hata": 0,
+    "toplam_adet": 8097
+  },
+  "C": {
+    "pct": 83.66834170854271,
+    "avg_at": 4.750628140703518,
+    "toplam": 1592,
+    "isabetli": 1332,
+    "hata": 0,
+    "toplam_adet": 7563
+  },
+  "D": {
+    "pct": 72.8643216080402,
+    "avg_at": 3.4321608040201004,
+    "toplam": 1592,
+    "isabetli": 1160,
+    "hata": 0,
+    "toplam_adet": 5464
+  },
+  "D_vs_A": -2.575376884422109,
+  "D_vs_B": -13.630653266331649,
+  "D_vs_C": -10.804020100502509,
+  "surdirek_uyum": {
+    "toplam_sd": 67,
+    "d_tek_at": 0,
+    "d_tutarli": 66,
+    "isabetli_sd": 57,
+    "isabetli_d_teklek": 0
+  }
+}

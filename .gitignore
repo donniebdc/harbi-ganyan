@@ -1,0 +1,33 @@
+# Ham veri dosyaları (400M+)
+data/
+
+# Günlük model çıktıları (158M)
+models/
+
+# Loglar
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Yedek dosyalar
+*.bak
+*.bak_*
+*~
+
+# Gizli
+.env
+.env.*
+*.key
+*.pem
+
+# Tahminler çıktısı
+Tahminler/
+
+# Export çıktısı
+data/export_out/

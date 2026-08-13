@@ -1,0 +1,354 @@
+{
+  "P0": {
+    "isabet_pct": 49.2063492063492,
+    "toplam": 189,
+    "isabetli": 93,
+    "fallback": 4,
+    "surpriz_cakisan": 1,
+    "elendi": 0,
+    "hip": {
+      "ADANA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "ANTALYA": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "ELAZIG": {
+        "toplam": 17,
+        "isabetli": 9
+      },
+      "ISTANBUL": {
+        "toplam": 38,
+        "isabetli": 13
+      },
+      "IZMIR": {
+        "toplam": 26,
+        "isabetli": 15
+      },
+      "BURSA": {
+        "toplam": 23,
+        "isabetli": 14
+      },
+      "SANLIURFA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "KOCAELI": {
+        "toplam": 17,
+        "isabetli": 8
+      },
+      "ANKARA": {
+        "toplam": 33,
+        "isabetli": 18
+      },
+      "DIYARBAKIR": {
+        "toplam": 12,
+        "isabetli": 3
+      }
+    },
+    "bucket": {
+      "sartli": {
+        "toplam": 128,
+        "isabetli": 68
+      },
+      "maiden": {
+        "toplam": 13,
+        "isabetli": 4
+      },
+      "kv_grup": {
+        "toplam": 44,
+        "isabetli": 20
+      },
+      "other": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "grup": {
+        "toplam": 1,
+        "isabetli": 0
+      }
+    }
+  },
+  "P1": {
+    "isabet_pct": 49.735449735449734,
+    "toplam": 189,
+    "isabetli": 94,
+    "fallback": 4,
+    "surpriz_cakisan": 0,
+    "elendi": 0,
+    "hip": {
+      "ADANA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "ANTALYA": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "ELAZIG": {
+        "toplam": 17,
+        "isabetli": 9
+      },
+      "ISTANBUL": {
+        "toplam": 38,
+        "isabetli": 13
+      },
+      "IZMIR": {
+        "toplam": 26,
+        "isabetli": 15
+      },
+      "BURSA": {
+        "toplam": 23,
+        "isabetli": 14
+      },
+      "SANLIURFA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "KOCAELI": {
+        "toplam": 17,
+        "isabetli": 8
+      },
+      "ANKARA": {
+        "toplam": 33,
+        "isabetli": 19
+      },
+      "DIYARBAKIR": {
+        "toplam": 12,
+        "isabetli": 3
+      }
+    },
+    "bucket": {
+      "sartli": {
+        "toplam": 128,
+        "isabetli": 68
+      },
+      "maiden": {
+        "toplam": 14,
+        "isabetli": 5
+      },
+      "kv_grup": {
+        "toplam": 43,
+        "isabetli": 20
+      },
+      "other": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "grup": {
+        "toplam": 1,
+        "isabetli": 0
+      }
+    }
+  },
+  "P2": {
+    "isabet_pct": 43.91534391534391,
+    "toplam": 189,
+    "isabetli": 83,
+    "fallback": 4,
+    "surpriz_cakisan": 1,
+    "elendi": 0,
+    "hip": {
+      "ADANA": {
+        "toplam": 10,
+        "isabetli": 5
+      },
+      "ANTALYA": {
+        "toplam": 3,
+        "isabetli": 2
+      },
+      "ELAZIG": {
+        "toplam": 17,
+        "isabetli": 8
+      },
+      "ISTANBUL": {
+        "toplam": 38,
+        "isabetli": 16
+      },
+      "IZMIR": {
+        "toplam": 26,
+        "isabetli": 11
+      },
+      "BURSA": {
+        "toplam": 23,
+        "isabetli": 13
+      },
+      "SANLIURFA": {
+        "toplam": 10,
+        "isabetli": 7
+      },
+      "KOCAELI": {
+        "toplam": 17,
+        "isabetli": 5
+      },
+      "ANKARA": {
+        "toplam": 33,
+        "isabetli": 13
+      },
+      "DIYARBAKIR": {
+        "toplam": 12,
+        "isabetli": 3
+      }
+    },
+    "bucket": {
+      "sartli": {
+        "toplam": 130,
+        "isabetli": 62
+      },
+      "maiden": {
+        "toplam": 22,
+        "isabetli": 7
+      },
+      "kv_grup": {
+        "toplam": 35,
+        "isabetli": 13
+      },
+      "other": {
+        "toplam": 2,
+        "isabetli": 1
+      }
+    }
+  },
+  "P3": {
+    "isabet_pct": 49.2063492063492,
+    "toplam": 189,
+    "isabetli": 93,
+    "fallback": 4,
+    "surpriz_cakisan": 1,
+    "elendi": 0,
+    "hip": {
+      "ADANA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "ANTALYA": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "ELAZIG": {
+        "toplam": 17,
+        "isabetli": 9
+      },
+      "ISTANBUL": {
+        "toplam": 38,
+        "isabetli": 13
+      },
+      "IZMIR": {
+        "toplam": 26,
+        "isabetli": 15
+      },
+      "BURSA": {
+        "toplam": 23,
+        "isabetli": 14
+      },
+      "SANLIURFA": {
+        "toplam": 10,
+        "isabetli": 6
+      },
+      "KOCAELI": {
+        "toplam": 17,
+        "isabetli": 8
+      },
+      "ANKARA": {
+        "toplam": 33,
+        "isabetli": 18
+      },
+      "DIYARBAKIR": {
+        "toplam": 12,
+        "isabetli": 3
+      }
+    },
+    "bucket": {
+      "sartli": {
+        "toplam": 128,
+        "isabetli": 68
+      },
+      "maiden": {
+        "toplam": 13,
+        "isabetli": 4
+      },
+      "kv_grup": {
+        "toplam": 44,
+        "isabetli": 20
+      },
+      "other": {
+        "toplam": 3,
+        "isabetli": 1
+      },
+      "grup": {
+        "toplam": 1,
+        "isabetli": 0
+      }
+    }
+  },
+  "P4": {
+    "isabet_pct": 44.44444444444444,
+    "toplam": 189,
+    "isabetli": 84,
+    "fallback": 4,
+    "surpriz_cakisan": 0,
+    "elendi": 0,
+    "hip": {
+      "ADANA": {
+        "toplam": 10,
+        "isabetli": 5
+      },
+      "ANTALYA": {
+        "toplam": 3,
+        "isabetli": 2
+      },
+      "ELAZIG": {
+        "toplam": 17,
+        "isabetli": 8
+      },
+      "ISTANBUL": {
+        "toplam": 38,
+        "isabetli": 16
+      },
+      "IZMIR": {
+        "toplam": 26,
+        "isabetli": 11
+      },
+      "BURSA": {
+        "toplam": 23,
+        "isabetli": 13
+      },
+      "SANLIURFA": {
+        "toplam": 10,
+        "isabetli": 7
+      },
+      "KOCAELI": {
+        "toplam": 17,
+        "isabetli": 5
+      },
+      "ANKARA": {
+        "toplam": 33,
+        "isabetli": 14
+      },
+      "DIYARBAKIR": {
+        "toplam": 12,
+        "isabetli": 3
+      }
+    },
+    "bucket": {
+      "sartli": {
+        "toplam": 130,
+        "isabetli": 62
+      },
+      "maiden": {
+        "toplam": 23,
+        "isabetli": 8
+      },
+      "kv_grup": {
+        "toplam": 34,
+        "isabetli": 13
+      },
+      "other": {
+        "toplam": 2,
+        "isabetli": 1
+      }
+    }
+  }
+}
