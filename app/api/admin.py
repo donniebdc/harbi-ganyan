@@ -7,21 +7,32 @@ import re
 import subprocess
 import sys
 import threading
+import uuid
 from pathlib import Path
+from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator
 from sqlalchemy import or_
 from sqlalchemy.orm import Session
 
 from ..db import get_db
-from ..deps import require_admin
-from ..models import Bildirim, GonderilenBildirim, Kullanici, Uyelik
+from ..deps import effective_role, require_admin
+from ..models import (AdminIslemAudit, Bildirim, EditorProfil, GonderilenBildirim, Kullanici,
+                      RolDegisiklikAudit, TahminKaynak, Uyelik)
 from ..security import hash_sifre
 from .. import fcm
 from .. import uyelik_servis
+from .. import auth_session_service
+from ..time_contract import istanbul_input_to_utc_naive, istanbul_iso, utc_iso
 
 router = APIRouter(prefix="/admin/api", tags=["admin"])
+
+
+def _audit(db: Session, actor_id: int, action: str, target_id: int | None = None,
+           metadata: dict | None = None) -> None:
+    db.add(AdminIslemAudit(actor_id=actor_id, target_id=target_id,
+                           action=action, metadata_json=metadata))
 
 # ─── Manuel üretim (tarih/aralık için engine+export+import) ───
 _BACKEND_DIR = Path(os.environ.get("HG_BACKEND_DIR") or
@@ -74,12 +85,17 @@ class AdminUserCreate(BaseModel):
             raise ValueError("tier standart/vip olmali.")
         return v
 
+    @field_validator("uyelik_bitis")
+    @classmethod
+    def _uyelik_bitis(cls, v: datetime | None) -> datetime | None:
+        return istanbul_input_to_utc_naive(v) if v is not None else None
+
 
 class AdminUserUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
     tier: str | None = None
     aktif: bool | None = None
     email_dogrulandi: bool | None = None
-    is_admin: bool | None = None
     uyelik_bitis: datetime | None = None
     uzat_gun: int | None = None
 
@@ -96,6 +112,48 @@ class AdminUserUpdate(BaseModel):
         if v is not None and (v < 0 or v > 3650):
             raise ValueError("uzat_gun 0-3650 arasinda olmali.")
         return v
+
+    @field_validator("uyelik_bitis")
+    @classmethod
+    def _uyelik_bitis(cls, v: datetime | None) -> datetime | None:
+        return istanbul_input_to_utc_naive(v) if v is not None else None
+
+
+class AdminRoleUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    role: Literal["USER", "EDITOR", "ADMIN"]
+    public_ad: str | None = None
+
+    @field_validator("public_ad")
+    @classmethod
+    def _public_ad(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        value = value.strip()
+        if not value or len(value) > 60:
+            raise ValueError("public_ad 1-60 karakter olmalı.")
+        return value
+
+
+class AdminAccessUpdate(BaseModel):
+    """Tier ve rol birbirinden bağımsızdır; fazladan alanlar fail-closed reddedilir."""
+    model_config = ConfigDict(extra="forbid")
+    tier: Literal["standart", "vip"] | None = None
+    role: Literal["USER", "EDITOR", "ADMIN"] | None = None
+    correlation_id: str | None = None
+    confirm_self_tier: bool = False
+    confirm_admin_promotion: bool = False
+    confirm_role_demotion: bool = False
+
+    @field_validator("correlation_id")
+    @classmethod
+    def _correlation_id(cls, value: str | None) -> str | None:
+        if value is None:
+            return None
+        value = value.strip()
+        if not value or len(value) > 80 or not re.fullmatch(r"[A-Za-z0-9._:-]+", value):
+            raise ValueError("Geçersiz correlation_id.")
+        return value
 
 
 class BildirimReq(BaseModel):
@@ -156,24 +214,34 @@ def _sync_membership(db: Session, user: Kullanici, bitis: datetime | None = None
 
 def _user_payload(user: Kullanici, db: Session | None = None) -> dict:
     uyelik = _aktif_uyelik(user)
+    erisim = uyelik_servis.erisim_coz(db, user) if db is not None else None
+    # Sadece Google Play üzerinden alınan VIP üyelikler gelir sayacına dahil edilir.
+    # Manuel atanan VIP'ler para getirmediğinden haftalık tutara eklenmez.
+    if erisim is not None:
+        haftalik_tutar = TIER_PRICE_WEEKLY.get(user.tier, 0) if (user.aktif and erisim.source == "GOOGLE_PLAY") else 0
+    else:
+        haftalik_tutar = TIER_PRICE_WEEKLY.get(user.tier, 0) if user.aktif else 0
     out = {
         "id": user.id,
         "email": user.email,
         "tier": user.tier,
         "aktif": user.aktif,
         "is_admin": user.is_admin,
+        "rol": effective_role(user),
+        "is_editor": effective_role(user) in ("EDITOR", "ADMIN"),
+        "display_name": (user.editor_profil.public_ad if user.editor_profil and user.editor_profil.aktif else user.email),
+        "editor_public_ad": (user.editor_profil.public_ad if user.editor_profil else None),
         "email_dogrulandi": user.email_dogrulandi,
-        "created_at": user.created_at,
-        "uyelik_bitis": (uyelik.bitis or getattr(uyelik, "expires_at", None)) if uyelik else None,
+        "created_at": utc_iso(user.created_at),
+        "uyelik_bitis": utc_iso((uyelik.bitis or getattr(uyelik, "expires_at", None)) if uyelik else None),
         "uyelik_kaynak": uyelik.kaynak if uyelik else None,
-        "haftalik_tutar": TIER_PRICE_WEEKLY.get(user.tier, 0) if user.aktif else 0,
+        "haftalik_tutar": haftalik_tutar,
     }
-    # Faz 1C — additive alanlar (mevcut anahtarlar korunur):
-    if db is not None:
-        erisim = uyelik_servis.erisim_coz(db, user)
+    if erisim is not None:
         out["is_vip"] = erisim.is_vip
         out["vip_kaynak"] = erisim.source
-        out["vip_bitis"] = erisim.effective_until
+        out["vip_bitis"] = utc_iso(erisim.effective_until)
+        out["vip_bitis_istanbul"] = istanbul_iso(erisim.effective_until)
         out["suresi_doldu"] = erisim.expired_manual and not erisim.is_vip
     return out
 
@@ -183,14 +251,18 @@ def ozet(_: Kullanici = Depends(require_admin), db: Session = Depends(get_db)):
     users = db.query(Kullanici).all()
     aktif = [u for u in users if u.aktif]
     vip_list = [u for u in aktif if u.tier == "vip"]
-    vip = [u for u in aktif if u.tier == "vip"]
-    haftalik = sum(TIER_PRICE_WEEKLY.get(u.tier, 0) for u in aktif)
+    # Haftalık gelir: yalnızca Google Play üzerinden aktif VIP üyelikler sayılır.
+    # Manuel atanan (admin tarafından) VIP'ler bu sayaca dahil edilmez.
+    haftalik = sum(
+        TIER_PRICE_WEEKLY.get("vip", 0)
+        for u in vip_list
+        if uyelik_servis.erisim_coz(db, u).source == "GOOGLE_PLAY"
+    )
     return {
         "toplam_kullanici": len(users),
         "aktif_kullanici": len(aktif),
         "standart": len([u for u in aktif if u.tier == "standart"]),
         "vip": len(vip_list),
-        "vip": len(vip),
         "haftalik_gelir_tl": haftalik,
     }
 
@@ -214,7 +286,7 @@ def kullanicilar(
 
 
 @router.post("/kullanicilar", status_code=201)
-def kullanici_ekle(req: AdminUserCreate, _: Kullanici = Depends(require_admin),
+def kullanici_ekle(req: AdminUserCreate, admin: Kullanici = Depends(require_admin),
                    db: Session = Depends(get_db)):
     if db.query(Kullanici).filter_by(email=req.email).first():
         raise HTTPException(status_code=409, detail="Bu email zaten kayitli.")
@@ -224,6 +296,7 @@ def kullanici_ekle(req: AdminUserCreate, _: Kullanici = Depends(require_admin),
         email_dogrulandi=req.email_dogrulandi,
         tier=req.tier,
         is_admin=req.is_admin,
+        rol="ADMIN" if req.is_admin else "USER",
         aktif=True,
     )
     db.add(user)
@@ -236,6 +309,7 @@ def kullanici_ekle(req: AdminUserCreate, _: Kullanici = Depends(require_admin),
             _sync_membership(db, user, None)  # süresiz admin ataması (mevcut davranış)
     else:
         _sync_membership(db, user, req.uyelik_bitis)
+    _audit(db, admin.id, "USER_CREATE", user.id, {"tier": req.tier, "admin": req.is_admin})
     db.commit()
     db.refresh(user)
     return _user_payload(user, db)
@@ -256,8 +330,6 @@ def kullanici_guncelle(user_id: int, req: AdminUserUpdate,
         user.aktif = req.aktif
     if req.email_dogrulandi is not None:
         user.email_dogrulandi = req.email_dogrulandi
-    if req.is_admin is not None:
-        user.is_admin = req.is_admin
     if req.uzat_gun is not None:
         # +7g/+14g/+30g/+60g — merkezi servis: aktif manuel bitiş varsa ONA ekler
         # (kalan süre korunur), yoksa/geçmişse şimdiden başlatır (Faz 1C).
@@ -266,9 +338,154 @@ def kullanici_guncelle(user_id: int, req: AdminUserUpdate,
         uyelik_servis.manuel_vip_tarih_belirle(db, user, req.uyelik_bitis)
     else:
         _sync_membership(db, user, None)
+    _audit(db, admin.id, "USER_UPDATE", user.id,
+           {"active": req.aktif, "tier": req.tier, "extend_days": req.uzat_gun})
     db.commit()
     db.refresh(user)
     return _user_payload(user, db)
+
+
+def _ensure_editor_profile(db: Session, user: Kullanici, public_ad: str | None) -> EditorProfil:
+    profile = user.editor_profil
+    # Admin atamasında rumuz istenmez. Editör bu geçici adı kendi profilinden değiştirir.
+    chosen = public_ad or (profile.public_ad if profile else None) or f"Editör {user.id}"
+    if profile is None:
+        code = f"EDITOR_{user.id}"
+        source = db.query(TahminKaynak).filter_by(kod=code).one_or_none()
+        if source is None:
+            source = TahminKaynak(kaynak_tipi="EDITOR", kod=code,
+                                  gorunen_ad=chosen, aktif=True, sira=0)
+            db.add(source)
+            db.flush()
+        profile = EditorProfil(kullanici_id=user.id, kaynak_id=source.id,
+                               public_ad=chosen, aktif=True)
+        db.add(profile)
+    else:
+        profile.public_ad = chosen
+        profile.aktif = True
+        profile.kaynak.gorunen_ad = chosen
+        profile.kaynak.aktif = True
+    return profile
+
+
+@router.patch("/kullanicilar/{user_id}/erisim")
+def kullanici_erisim_guncelle(user_id: int, req: AdminAccessUpdate,
+                              admin: Kullanici = Depends(require_admin),
+                              db: Session = Depends(get_db)):
+    """Üyelik seviyesini ve yetki rolünü açık, bağımsız ve denetlenebilir değiştirir."""
+    user = db.get(Kullanici, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="Kullanıcı bulunamadı.")
+    old_role, old_tier = effective_role(user), user.tier
+    new_role = req.role if req.role is not None else old_role
+    new_tier = req.tier if req.tier is not None else old_tier
+    role_changed, tier_changed = new_role != old_role, new_tier != old_tier
+
+    if not role_changed and not tier_changed:
+        return {"changed": False, "user": _user_payload(user, db),
+                "audit_id": None, "sessions_revoked": 0}
+    if user.id == admin.id and tier_changed and not req.confirm_self_tier:
+        raise HTTPException(status_code=409, detail="Kendi tier değişiminiz açık onay gerektirir.")
+    if new_role == "ADMIN" and old_role != "ADMIN" and not req.confirm_admin_promotion:
+        raise HTTPException(status_code=409, detail="ADMIN yükseltmesi ikinci açık onay gerektirir.")
+    ranks = {"USER": 0, "EDITOR": 1, "ADMIN": 2}
+    if role_changed and ranks[new_role] < ranks[old_role] and not req.confirm_role_demotion:
+        raise HTTPException(status_code=409, detail="Rol düşürme açık onay gerektirir.")
+    if old_role == "ADMIN" and new_role != "ADMIN":
+        active_admins = db.query(Kullanici).filter(
+            Kullanici.aktif.is_(True),
+            or_(Kullanici.rol == "ADMIN", Kullanici.is_admin.is_(True)),
+        ).count()
+        if active_admins <= 1:
+            raise HTTPException(status_code=409, detail="Son aktif ADMIN rolünden düşürülemez.")
+
+    if tier_changed:
+        user.tier = new_tier
+        _sync_membership(db, user, None)
+    sessions_revoked = 0
+    if role_changed:
+        if new_role == "EDITOR":
+            _ensure_editor_profile(db, user, None)
+        elif old_role == "EDITOR" and user.editor_profil:
+            user.editor_profil.aktif = False
+            user.editor_profil.kaynak.aktif = False
+        user.rol = new_role
+        user.is_admin = new_role == "ADMIN"
+        sessions_revoked = auth_session_service.revoke_user_sessions(
+            db, user.id, reason="SECURITY_EVENT")
+        now = datetime.utcnow()
+        for device in user.cihazlar:
+            if device.is_active:
+                device.is_active = False
+                device.revoked_at = now
+                device.revoke_reason = "role_changed"
+
+    audit = RolDegisiklikAudit(
+        actor_id=admin.id, target_id=user.id,
+        old_role=old_role, new_role=new_role,
+        old_tier=old_tier, new_tier=new_tier,
+        reason=None,
+        correlation_id=req.correlation_id or f"phase23-{uuid.uuid4()}",
+        sessions_revoked=sessions_revoked,
+    )
+    db.add(audit)
+    db.commit()
+    db.refresh(user)
+    db.refresh(audit)
+    return {"changed": True, "user": _user_payload(user, db),
+            "audit_id": audit.id, "changed_at": audit.changed_at,
+            "correlation_id": audit.correlation_id,
+            "sessions_revoked": sessions_revoked}
+
+
+@router.patch("/kullanicilar/{user_id}/rol")
+def kullanici_rol_guncelle(user_id: int, req: AdminRoleUpdate,
+                           admin: Kullanici = Depends(require_admin),
+                           db: Session = Depends(get_db)):
+    user = db.get(Kullanici, user_id)
+    if user is None:
+        raise HTTPException(status_code=404, detail="Kullanıcı bulunamadı.")
+    old_role = effective_role(user)
+    new_role = req.role
+    if user.id == admin.id and old_role == "ADMIN" and new_role != "ADMIN":
+        raise HTTPException(status_code=400, detail="Kendi admin rolünüzü kaldıramazsınız.")
+    if old_role == new_role:
+        if new_role == "EDITOR" and req.public_ad:
+            _ensure_editor_profile(db, user, req.public_ad)
+            db.commit()
+            db.refresh(user)
+        return {"changed": False, "user": _user_payload(user, db), "audit_id": None}
+    if new_role == "EDITOR":
+        _ensure_editor_profile(db, user, req.public_ad)
+    elif old_role == "EDITOR" and user.editor_profil:
+        user.editor_profil.aktif = False
+        user.editor_profil.kaynak.aktif = False
+    user.rol = new_role
+    user.is_admin = new_role == "ADMIN"
+    audit = RolDegisiklikAudit(actor_id=admin.id, target_id=user.id,
+                               old_role=old_role, new_role=new_role)
+    db.add(audit)
+    db.commit()
+    db.refresh(user)
+    db.refresh(audit)
+    return {"changed": True, "user": _user_payload(user, db),
+            "audit_id": audit.id, "changed_at": audit.changed_at}
+
+
+@router.get("/rol-degisiklikleri")
+def rol_degisiklikleri(_: Kullanici = Depends(require_admin),
+                       db: Session = Depends(get_db),
+                       limit: int = Query(50, ge=1, le=200)):
+    rows = db.query(RolDegisiklikAudit).order_by(
+        RolDegisiklikAudit.changed_at.desc(), RolDegisiklikAudit.id.desc()).limit(limit).all()
+    return {"kayitlar": [{"id": row.id, "actor_id": row.actor_id,
+                           "target_id": row.target_id, "old_role": row.old_role,
+                           "new_role": row.new_role, "old_tier": row.old_tier,
+                           "new_tier": row.new_tier, "reason": row.reason,
+                           "correlation_id": row.correlation_id,
+                           "sessions_revoked": row.sessions_revoked,
+                           "changed_at": row.changed_at}
+                          for row in rows]}
 
 
 class SifreResetReq(BaseModel):
@@ -286,7 +503,7 @@ class SifreResetReq(BaseModel):
 
 @router.post("/kullanicilar/{user_id}/sifre")
 def kullanici_sifre_reset(user_id: int, req: SifreResetReq,
-                          _: Kullanici = Depends(require_admin),
+                          admin: Kullanici = Depends(require_admin),
                           db: Session = Depends(get_db)):
     """Kullanıcı şifresini değiştirir/sıfırlar. `sifre` verilmezse rastgele geçici
     şifre üretilir. Yeni şifre yanıtta BİR KEZ düz metin döner (admin kullanıcıya
@@ -304,20 +521,48 @@ def kullanici_sifre_reset(user_id: int, req: SifreResetReq,
     else:
         yeni = req.sifre
     user.sifre_hash = hash_sifre(yeni)
+    auth_session_service.revoke_user_sessions(db, user.id, reason="PASSWORD_CHANGED")
+    _audit(db, admin.id, "PASSWORD_RESET", user.id, {"temporary": gecici})
     db.commit()
     return {"id": user.id, "email": user.email, "sifre": yeni, "gecici": gecici}
 
 
-@router.delete("/kullanicilar/{user_id}", status_code=204)
+@router.delete("/kullanicilar/{user_id}")
 def kullanici_sil(user_id: int, admin: Kullanici = Depends(require_admin),
                   db: Session = Depends(get_db)):
     if user_id == admin.id:
-        raise HTTPException(status_code=400, detail="Kendi admin hesabinizi silemezsiniz.")
+        raise HTTPException(status_code=409, detail="Kendi admin hesabınızı silemezsiniz.")
     user = db.get(Kullanici, user_id)
     if user is None:
         raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
-    db.delete(user)
+    if not user.aktif:
+        return {"changed": False, "sessions_revoked": 0,
+                "user": _user_payload(user, db)}
+    if effective_role(user) == "ADMIN":
+        active_admins = db.query(Kullanici).filter(
+            Kullanici.aktif.is_(True),
+            or_(Kullanici.rol == "ADMIN", Kullanici.is_admin.is_(True)),
+        ).count()
+        if active_admins <= 1:
+            raise HTTPException(status_code=409, detail="Son aktif ADMIN silinemez.")
+    sessions_revoked = auth_session_service.revoke_user_sessions(
+        db, user.id, reason="ADMIN_REVOKE")
+    now = datetime.utcnow()
+    for device in user.cihazlar:
+        if device.is_active:
+            device.is_active = False
+            device.revoked_at = now
+            device.revoke_reason = "admin_soft_delete"
+    if user.editor_profil:
+        user.editor_profil.aktif = False
+        user.editor_profil.kaynak.aktif = False
+    user.aktif = False
+    _audit(db, admin.id, "USER_SOFT_DELETE", user.id,
+           {"sessions_revoked": sessions_revoked})
     db.commit()
+    db.refresh(user)
+    return {"changed": True, "sessions_revoked": sessions_revoked,
+            "user": _user_payload(user, db)}
 
 
 def _uret_calisiyor() -> bool:
@@ -393,7 +638,7 @@ def uret_durum(_: Kullanici = Depends(require_admin)):
 
 
 @router.post("/bildirimler", status_code=201)
-def bildirim_gonder(req: BildirimReq, _: Kullanici = Depends(require_admin),
+def bildirim_gonder(req: BildirimReq, admin: Kullanici = Depends(require_admin),
                     db: Session = Depends(get_db)):
     if req.kullanici_id is not None and db.get(Kullanici, req.kullanici_id) is None:
         raise HTTPException(status_code=404, detail="Kullanici bulunamadi.")
@@ -411,6 +656,8 @@ def bildirim_gonder(req: BildirimReq, _: Kullanici = Depends(require_admin),
         for user in targets:
             db.add(Bildirim(kullanici_id=user.id, baslik=req.baslik, mesaj=req.mesaj,
                             hedef_tier=req.hedef_tier))
+    _audit(db, admin.id, "NOTIFICATION_SEND", req.kullanici_id,
+           {"target_count": len(hedef_idler), "target_tier": req.hedef_tier})
     db.commit()
     # Uygulama-içi bildirim oluşturuldu; ayrıca FCM push (yapılandırılmışsa)
     push_adet = fcm.kullanicilara_push(db, hedef_idler, req.baslik, req.mesaj, {"tip": "admin"})
@@ -443,6 +690,11 @@ class VipOperationRequest(BaseModel):
         if v is not None and (v < 1 or v > 365):
             raise ValueError("days 1-365 arasinda olmali.")
         return v
+
+    @field_validator("vip_until")
+    @classmethod
+    def _vip_until(cls, v: datetime | None) -> datetime | None:
+        return istanbul_input_to_utc_naive(v) if v is not None else None
 
 
 class HediyeVipRequest(BaseModel):
@@ -493,6 +745,8 @@ def kullanici_vip(user_id: int, req: VipOperationRequest,
         eski, yeni = uyelik_servis.manuel_vip_tarih_belirle(db, user, req.vip_until)
     else:  # expire
         eski, yeni = uyelik_servis.manuel_vip_bitir(db, user)
+    _audit(db, admin.id, "VIP_UPDATE", user.id,
+           {"operation": req.operation, "days": req.days})
     db.commit()
     db.refresh(user)
     print(f"[admin-vip] admin={admin.id} user={user.id} op={req.operation} "
@@ -525,6 +779,7 @@ def kullanici_hediye_vip(user_id: int, req: HediyeVipRequest,
     db.add(GonderilenBildirim(anahtar=anahtar))
     db.add(Bildirim(kullanici_id=user.id, baslik=HEDIYE_VIP_BASLIK,
                     mesaj=HEDIYE_VIP_MESAJ))
+    _audit(db, admin.id, "GIFT_VIP", user.id, {"days": HEDIYE_VIP_GUN})
     db.commit()
     push_sent = False
     try:
